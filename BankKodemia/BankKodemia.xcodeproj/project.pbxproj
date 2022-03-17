@@ -14,6 +14,7 @@
 		E75D787327E2F8C100F95DDD /* Utils in Resources */ = {isa = PBXBuildFile; fileRef = E75D787227E2F8C100F95DDD /* Utils */; };
 		E75D787927E2FA2D00F95DDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75D787727E2FA2D00F95DDD /* AppDelegate.swift */; };
 		E75D787A27E2FA2D00F95DDD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75D787827E2FA2D00F95DDD /* SceneDelegate.swift */; };
+		FAAFC1DA27E302BB0019235E /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAFC1D927E302BB0019235E /* CreateAccountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		E75D787227E2F8C100F95DDD /* Utils */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Utils; sourceTree = "<group>"; };
 		E75D787727E2FA2D00F95DDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E75D787827E2FA2D00F95DDD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FAAFC1D927E302BB0019235E /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				E75D786027E2F7E300F95DDD /* ViewController.swift */,
+				FAAFC1D927E302BB0019235E /* CreateAccountViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAAFC1DA27E302BB0019235E /* CreateAccountViewController.swift in Sources */,
 				E75D787927E2FA2D00F95DDD /* AppDelegate.swift in Sources */,
 				E75D786127E2F7E300F95DDD /* ViewController.swift in Sources */,
 				E75D787A27E2FA2D00F95DDD /* SceneDelegate.swift in Sources */,
