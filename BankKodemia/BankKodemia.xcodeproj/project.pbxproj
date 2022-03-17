@@ -7,23 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E75D785D27E2F7E300F95DDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75D785C27E2F7E300F95DDD /* AppDelegate.swift */; };
-		E75D785F27E2F7E300F95DDD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75D785E27E2F7E300F95DDD /* SceneDelegate.swift */; };
 		E75D786127E2F7E300F95DDD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75D786027E2F7E300F95DDD /* ViewController.swift */; };
 		E75D786427E2F7E300F95DDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E75D786227E2F7E300F95DDD /* Main.storyboard */; };
 		E75D786627E2F7E400F95DDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75D786527E2F7E400F95DDD /* Assets.xcassets */; };
 		E75D786927E2F7E400F95DDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E75D786727E2F7E400F95DDD /* LaunchScreen.storyboard */; };
+		E75D787127E2F8A800F95DDD /* Models in Resources */ = {isa = PBXBuildFile; fileRef = E75D787027E2F8A800F95DDD /* Models */; };
+		E75D787327E2F8C100F95DDD /* Utils in Resources */ = {isa = PBXBuildFile; fileRef = E75D787227E2F8C100F95DDD /* Utils */; };
+		E75D787527E2F8D000F95DDD /* Delegates in Resources */ = {isa = PBXBuildFile; fileRef = E75D787427E2F8D000F95DDD /* Delegates */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E75D785927E2F7E300F95DDD /* BankKodemia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankKodemia.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E75D785C27E2F7E300F95DDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E75D785E27E2F7E300F95DDD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E75D786027E2F7E300F95DDD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E75D786327E2F7E300F95DDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E75D786527E2F7E400F95DDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E75D786827E2F7E400F95DDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E75D786A27E2F7E400F95DDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E75D787027E2F8A800F95DDD /* Models */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Models; sourceTree = "<group>"; };
+		E75D787227E2F8C100F95DDD /* Utils */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Utils; sourceTree = "<group>"; };
+		E75D787427E2F8D000F95DDD /* Delegates */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Delegates; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +58,9 @@
 		E75D785B27E2F7E300F95DDD /* BankKodemia */ = {
 			isa = PBXGroup;
 			children = (
-				E75D785C27E2F7E300F95DDD /* AppDelegate.swift */,
-				E75D785E27E2F7E300F95DDD /* SceneDelegate.swift */,
+				E75D787427E2F8D000F95DDD /* Delegates */,
+				E75D787227E2F8C100F95DDD /* Utils */,
+				E75D787027E2F8A800F95DDD /* Models */,
 				E75D786027E2F7E300F95DDD /* ViewController.swift */,
 				E75D786227E2F7E300F95DDD /* Main.storyboard */,
 				E75D786527E2F7E400F95DDD /* Assets.xcassets */,
@@ -127,7 +130,10 @@
 			files = (
 				E75D786927E2F7E400F95DDD /* LaunchScreen.storyboard in Resources */,
 				E75D786627E2F7E400F95DDD /* Assets.xcassets in Resources */,
+				E75D787327E2F8C100F95DDD /* Utils in Resources */,
+				E75D787127E2F8A800F95DDD /* Models in Resources */,
 				E75D786427E2F7E300F95DDD /* Main.storyboard in Resources */,
+				E75D787527E2F8D000F95DDD /* Delegates in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,8 +145,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E75D786127E2F7E300F95DDD /* ViewController.swift in Sources */,
-				E75D785D27E2F7E300F95DDD /* AppDelegate.swift in Sources */,
-				E75D785F27E2F7E300F95DDD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
