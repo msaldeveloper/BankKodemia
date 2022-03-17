@@ -9,16 +9,8 @@ import Foundation
 import UIKit
 
 extension UITextField{
-    func formatTextField(activate : Bool){
-        if activate == true {
-            self.textAlignment = .center
+    func formatTextField(){
+            self.textAlignment = .left
             self.backgroundColor = .clear
-            self.layer.cornerRadius = 4
-            self.layer.borderColor = ConstantsCGColor.greenBlue
-            self.layer.borderWidth = 1
-        }else {
-            
-        }
-        
     }
 }
