@@ -24,7 +24,7 @@ class LoginViewController: UIViewController {
     
     func UIInit(){
         returnButton()
-        returnLabel()
+        //returnLabel()
         welcomeLabel()
 //        emailField()
 //        passwordField()
@@ -33,12 +33,14 @@ class LoginViewController: UIViewController {
     }
     
     func returnButton(){
+        
         arrowButton = UIButton()
-        arrowButton?.setImage(UIImage(named: "back"), for: .normal)
-        arrowButton?.backgroundColor = .red
+        arrowButton?.backButton("return")
+//        arrowButton?.setImage(UIImage(named: "back"), for: .normal)
+        //arrowButton?.backgroundColor = .red
         arrowButton?.addTarget(self, action: #selector(backAction), for: .touchUpInside)
         view.addSubview(arrowButton!)
-        arrowButton?.addAnchorsAndSize(width: nil, height: nil, left: 20.5, top: 90, right: nil, bottom: nil)
+        arrowButton?.addAnchorsAndSize(width: 200, height: nil, left: 20.5, top: 90, right: nil, bottom: nil)
     }
     
     func returnLabel(){
