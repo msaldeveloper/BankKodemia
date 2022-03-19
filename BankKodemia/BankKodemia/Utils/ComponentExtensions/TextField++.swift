@@ -9,11 +9,14 @@ import Foundation
 import UIKit
 
 extension UITextField{
-    func formatTextField(){
-            self.textAlignment = .center
-            self.backgroundColor = .clear
-            self.layer.cornerRadius = 4
-            self.layer.borderColor = ConstantsCGColor.greenBlue
-            self.layer.borderWidth = 1
+    func formatTextField(_ inputText : String){
+        self.textAlignment = .left
+        self.autocapitalizationType = .none
+        self.backgroundColor = .clear
+        self.layer.cornerRadius = 4
+        self.attributedPlaceholder = NSAttributedString(
+            string: inputText,
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor(red: 0, green: 0, blue: 0, alpha: 0.7 )]
+        )
     }
 }

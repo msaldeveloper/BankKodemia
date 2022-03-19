@@ -18,6 +18,12 @@ extension UIButton{
         self.layer.borderWidth = 1
         self.layer.borderColor = ConstantsCGColor.greenBlue
     }
+    func formatTransparent(){
+        self.backgroundColor = .clear
+        self.layer.borderWidth = 1
+        self.layer.borderColor = ConstantsCGColor.transparent
+    }
+    
     func backButton(_ textDinamic: String){
         self.backgroundColor = .clear
         let arrowImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 13, height: 10))
