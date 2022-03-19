@@ -16,5 +16,5 @@ struct ConstantsCGColor{
 
 struct ConstantsUIColor{
     static let greenBlue : UIColor = UIColor(red: 0, green: 204/255, blue: 204/255, alpha: 0.9)
-    static let greyKodemia : UIColor = UIColor(red: 127/255, green: 127/255, blue: 127/255, alpha: 0.9
+    static let greyKodemia : UIColor = UIColor(red: 127/255, green: 127/255, blue: 127/255, alpha: 0.9)
 }
