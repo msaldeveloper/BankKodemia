@@ -15,6 +15,10 @@ extension UILabel{
         self.adjustsFontSizeToFitWidth = true
         self.textColor = .white
     }
+    func formatPurpleLink(){
+        self.backgroundColor = .clear
+        self.textColor = ConstantsUIColor.purpleLink
+    }
     
     func formartGreenBlue(){
         self.backgroundColor = .clear

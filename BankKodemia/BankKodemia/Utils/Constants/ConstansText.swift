@@ -16,6 +16,7 @@ struct TextLocals{
     // MARK: init session and welcome screen
     static let init_session_button_message: String = "Iniciar Sesión"
     static let init_session_create_account_button_message: String = "Crear Cuenta"
+    static let init_session_back_message: String = "Principal"
     static let init_session_top_message : String = "Iniciar Sesion"
     static let init_session_description_message: String = "Escribe el correo y teléfono con el que te registraste, a través de estos te enviaremos el acceso"
     static let init_session_top_email_input_message: String = "Escribe tu correo"
@@ -23,6 +24,7 @@ struct TextLocals{
     static let init_session_top_password_input_message: String = "Escribe tu contraseña"
     static let init_session_password_input_message: String = "********"
     static let init_session_help_message: String = "¿Necesitas ayuda? Escríbenos a "
+    static let init_session_help_link: String = "bankodemia@com.mx"
     static let init_session_welcome_message_top: String = "¡Adiós a las complicaciones!"
     static let init_session_welcome_message_bottom: String = "Usa el dinero a TU manera"
     
