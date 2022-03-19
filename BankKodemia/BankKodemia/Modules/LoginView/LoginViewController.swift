@@ -9,6 +9,7 @@ import UIKit
 
 
 class LoginViewController: UIViewController {
+    lazy var logo : UIImageView = UIImageView()
     var arrowButton: UIButton = UIButton()
     var initSessionLabel: UILabel = UILabel()
     var initSessionWelcomeLabel: UILabel = UILabel()
@@ -36,6 +37,7 @@ class LoginViewController: UIViewController {
     
     
     func UIInit(){
+        logoImage()
         returnButton()
         titleLabel()
         welcomeLabel()
@@ -43,6 +45,20 @@ class LoginViewController: UIViewController {
         passwordField()
         helpLabel()
         initSessionButton()
+    }
+    func logoImage(){
+        logo = UIImageView()
+        logo.image = UIImage(named: "logo")
+        logo.contentMode = .scaleAspectFit
+        view.addSubview(logo)
+        logo.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            logo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            //logo.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            //logo.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            logo.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: height/80),
+            logo.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.11)
+        ])
     }
     
     func returnButton(){
@@ -66,7 +82,7 @@ class LoginViewController: UIViewController {
             initSessionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             //logo.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             //logo.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            initSessionLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: height/80),
+            initSessionLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: height/15),
             //logo.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.11)
         ])
         //initSessionLabel.addAnchorsAndSize(width: 107, height: 21, left: nil, top: 125, right: nil, bottom: nil)
@@ -80,7 +96,7 @@ class LoginViewController: UIViewController {
         initSessionWelcomeLabel.lineBreakMode = .byWordWrapping
         initSessionWelcomeLabel.numberOfLines = 0
         view.addSubview(initSessionWelcomeLabel)
-        initSessionWelcomeLabel.addAnchorsAndSize(width: nil, height: nil, left: 21, top: 64, right: 21, bottom: nil, withAnchor: .top, relativeToView: initSessionLabel)
+        initSessionWelcomeLabel.addAnchorsAndSize(width: nil, height: nil, left: 21, top: 24, right: 21, bottom: nil, withAnchor: .top, relativeToView: initSessionLabel)
     }
     func emailField(){
         fieldEmail = UIView()
