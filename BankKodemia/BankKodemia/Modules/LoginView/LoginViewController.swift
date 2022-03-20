@@ -47,28 +47,14 @@ class LoginViewController: UIViewController {
         initSessionButton()
     }
     func logoImage(){
-        logo = UIImageView()
-        logo.image = UIImage(named: "logo")
-        logo.contentMode = .scaleAspectFit
         view.addSubview(logo)
-        logo.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            logo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            //logo.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            //logo.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            logo.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: height/80),
-            logo.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.11)
-        ])
+        logo.logoFormart(view: view)
     }
     
     func returnButton(){
-        
-        arrowButton = UIButton()
-        arrowButton.backButton(TextLocals.init_session_back_message)
-        arrowButton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
-        //arrowButton?.backgroundColor = .purple
         view.addSubview(arrowButton)
-        arrowButton.addAnchorsAndSize(width: 100, height: nil, left: 20.5, top: 90, right: nil, bottom: nil)
+        arrowButton.backButton(view: view, textDinamic: TextLocals.init_session_back_message, widthText: 9*width/40)
+        arrowButton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
     }
     
     func titleLabel(){
