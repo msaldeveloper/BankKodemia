@@ -21,6 +21,7 @@ class CreateAccountViewController: UIViewController {
     var emailTextLabel: UILabel = UILabel()
     var emailAccountTextField: UITextField = UITextField()
     
+    // Boton para continuar
     var incomingFieldView: UIView = UIView()
     var incomingTextLabel: UILabel = UILabel()
     var incomingTextLinkedLabel: UILabel = UILabel()
@@ -55,7 +56,7 @@ class CreateAccountViewController: UIViewController {
         NSLayoutConstraint.activate([
             logo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             logo.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: height/80),
-            logo.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.11)
+            logo.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.20)
         ])
     }
     
