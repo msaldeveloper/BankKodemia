@@ -62,7 +62,7 @@ class HomeViewController: UIViewController {
         
         view.addSubview(sendMoneyButton)
         
-        sendMoneyButton.addLabelGreeblue(button: sendMoneyButton, text: "Enviar")
+        sendMoneyButton.addLabelGreenblue(button: sendMoneyButton, text: "Enviar")
         
         
         receivingMoneyButton = UIButton(frame: CGRect(x: width - width/18 - 5*width/12, y: 11*height/40, width: 5*width/12, height: 3*height/80))

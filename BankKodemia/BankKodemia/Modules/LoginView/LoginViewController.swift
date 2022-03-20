@@ -126,20 +126,12 @@ class LoginViewController: UIViewController {
     }
     
     func initSessionButton(){
-        initSessionBottomButton = UIButton()
         initSessionBottomButton.formartBlueGreen()
-        initSessionBottomButton.layer.cornerRadius = 4
         initSessionBottomButton.addTarget(self, action: #selector(continueButton), for: .touchUpInside)
         view.addSubview(initSessionBottomButton)
         initSessionBottomButton.addAnchorsAndSize(width: nil, height: 42, left: 21, top: nil, right: 21, bottom: 46)
         
-        initSessionButtonLabel = UILabel()
-        initSessionButtonLabel.formartWhite()
-        initSessionButtonLabel.textAlignment = .center
-        initSessionButtonLabel.font = .boldSystemFont(ofSize: 18)
-        initSessionButtonLabel.text = TextLocals.continue_button_message
-        initSessionBottomButton.addSubview(initSessionButtonLabel)
-        initSessionButtonLabel.addAnchorsAndSize(width: nil, height: nil, left: 10, top: 10, right: 10, bottom: nil)
+        initSessionBottomButton.addLabelWhite(button: initSessionBottomButton, text: TextLocals.continue_button_message)
         
     }
     

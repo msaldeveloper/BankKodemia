@@ -43,7 +43,7 @@ extension UIButton{
         ])
     }
     
-    func addLabelGreeblue(button: UIButton, text: String){
+    func addLabelGreenblue(button: UIButton, text: String){
         let label = UILabel()
         button.addSubview(label)
         label.font = .boldSystemFont(ofSize: 9*height/400)
