@@ -42,7 +42,6 @@
 		FAA497C027E6BAFE007FCC32 /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA497AE27E6BAFD007FCC32 /* Poppins-ThinItalic.ttf */; };
 		FAA497C127E6BAFE007FCC32 /* Poppins-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA497AF27E6BAFD007FCC32 /* Poppins-ExtraLightItalic.ttf */; };
 		FAA497C327E6F0F8007FCC32 /* UIFont++.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA497C227E6F0F7007FCC32 /* UIFont++.swift */; };
-		FAA497C827E6FB93007FCC32 /* BrandBankodemiaOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA497C727E6FB93007FCC32 /* BrandBankodemiaOptionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,7 +82,6 @@
 		FAA497AE27E6BAFD007FCC32 /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ThinItalic.ttf"; sourceTree = "<group>"; };
 		FAA497AF27E6BAFD007FCC32 /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
 		FAA497C227E6F0F7007FCC32 /* UIFont++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont++.swift"; sourceTree = "<group>"; };
-		FAA497C727E6FB93007FCC32 /* BrandBankodemiaOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandBankodemiaOptionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +137,6 @@
 		E75D788F27E3096800F95DDD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				FAA497C627E6FB03007FCC32 /* Classes */,
 				E75D789327E309C500F95DDD /* ComponentExtensions */,
 				E75D789A27E309EA00F95DDD /* Constants */,
 				E75D789127E3099400F95DDD /* constraints.swift */,
@@ -237,14 +234,6 @@
 			path = fonts;
 			sourceTree = "<group>";
 		};
-		FAA497C627E6FB03007FCC32 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				FAA497C727E6FB93007FCC32 /* BrandBankodemiaOptionView.swift */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -340,7 +329,6 @@
 				E75D787927E2FA2D00F95DDD /* AppDelegate.swift in Sources */,
 				E75D789927E309D700F95DDD /* UILabel++.swift in Sources */,
 				E75D789D27E309FA00F95DDD /* ConstantsColor.swift in Sources */,
-				FAA497C827E6FB93007FCC32 /* BrandBankodemiaOptionView.swift in Sources */,
 				E75D789E27E309FA00F95DDD /* ConstansText.swift in Sources */,
 				E75D789727E309D700F95DDD /* TextField++.swift in Sources */,
 				E75D787A27E2FA2D00F95DDD /* SceneDelegate.swift in Sources */,
