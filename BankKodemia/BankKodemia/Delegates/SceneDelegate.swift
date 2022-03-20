@@ -20,6 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
                 window = UIWindow(frame: UIScreen.main.bounds)
                 window?.windowScene = scene
+
                 let view = LoginViewController()//cambiar por view a probar
                 window?.rootViewController = view
                 window?.makeKeyAndVisible()

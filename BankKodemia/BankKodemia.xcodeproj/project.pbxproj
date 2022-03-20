@@ -42,6 +42,7 @@
 		FAA497BF27E6BAFE007FCC32 /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA497AD27E6BAFD007FCC32 /* Poppins-Thin.ttf */; };
 		FAA497C027E6BAFE007FCC32 /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA497AE27E6BAFD007FCC32 /* Poppins-ThinItalic.ttf */; };
 		FAA497C127E6BAFE007FCC32 /* Poppins-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA497AF27E6BAFD007FCC32 /* Poppins-ExtraLightItalic.ttf */; };
+		FAA497C327E6F0F8007FCC32 /* UIFont++.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA497C227E6F0F7007FCC32 /* UIFont++.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		FAA497AD27E6BAFD007FCC32 /* Poppins-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.ttf"; sourceTree = "<group>"; };
 		FAA497AE27E6BAFD007FCC32 /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ThinItalic.ttf"; sourceTree = "<group>"; };
 		FAA497AF27E6BAFD007FCC32 /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		FAA497C227E6F0F7007FCC32 /* UIFont++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont++.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 				E75D789627E309D700F95DDD /* UILabel++.swift */,
 				E75D78A327E3167400F95DDD /* UIView++.swift */,
 				C59A81F827E6FD4B0038C662 /* UIImageView++.swift */,
+
 			);
 			path = ComponentExtensions;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				FAA4979C27E66094007FCC32 /* CreateAccountViewController.swift in Sources */,
 				E75D78CF27E45D3E00F95DDD /* Network.swift in Sources */,
 				E75D789227E3099400F95DDD /* constraints.swift in Sources */,
+				FAA497C327E6F0F8007FCC32 /* UIFont++.swift in Sources */,
 				E75D787927E2FA2D00F95DDD /* AppDelegate.swift in Sources */,
 				E75D789927E309D700F95DDD /* UILabel++.swift in Sources */,
 				E75D789D27E309FA00F95DDD /* ConstantsColor.swift in Sources */,

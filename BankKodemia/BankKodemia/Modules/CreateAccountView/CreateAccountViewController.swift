@@ -9,7 +9,7 @@ import UIKit
 
 class CreateAccountViewController: UIViewController {
     lazy var logo : UIImageView = UIImageView()
-
+    
     // SuggestEmail: Indicaciones de la seccion
     var emailSuggest: UIView = UIView()
     var arrowButton: UIButton = UIButton()
@@ -47,6 +47,7 @@ class CreateAccountViewController: UIViewController {
         
     }
     
+    
     func logoImage(){
         logo = UIImageView()
         logo.image = UIImage(named: "logo")
@@ -61,6 +62,21 @@ class CreateAccountViewController: UIViewController {
     }
     
     func suggestEmailSection(){
+        arrowButton = UIButton()
+        arrowButton.backButton(TextLocals.create_account_top_message)
+        arrowButton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
+        view.addSubview(arrowButton)
+        arrowButton.addAnchorsAndSize(width: 100, height: nil, left: 20.5, top: (height/100)*18, right: nil, bottom: nil)
+        
+        
+        infoSuggestLabel = UILabel()
+        infoSuggestLabel.text = TextLocals.create_account_description_message
+        infoSuggestLabel.font = UIFont(name: "Poppins-SemiBold", size: 18)
+        infoSuggestLabel.textAlignment = .left
+        infoSuggestLabel.lineBreakMode = .byWordWrapping
+        infoSuggestLabel.numberOfLines = 0
+        view.addSubview(infoSuggestLabel)
+        infoSuggestLabel.addAnchorsAndSize(width: nil, height: nil, left: 21, top: 24, right: 21, bottom: nil, withAnchor: .top, relativeToView: arrowButton)
         
     }
     
@@ -73,4 +89,24 @@ class CreateAccountViewController: UIViewController {
     }
     
 
+}
+
+// MARK: - OBJC Functions
+extension CreateAccountViewController {
+    @objc func backAction(){
+        print("back button pressed")
+        dismiss(animated: true)
+    }
+    @objc func linkAction(){
+        print("link pressed")
+    }
+    @objc func continueButton(){
+        print("continue button pressed")
+        
+//        for family in UIFont.familyNames.sorted() {
+//            let names = UIFont.fontNames(forFamilyName: family)
+//            print("Family: \(family) Font names: \(names)")
+//        }
+        
+    }
 }
