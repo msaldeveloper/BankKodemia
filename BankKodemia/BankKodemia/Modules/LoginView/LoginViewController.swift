@@ -47,28 +47,14 @@ class LoginViewController: UIViewController {
         initSessionButton()
     }
     func logoImage(){
-        logo = UIImageView()
-        logo.image = UIImage(named: "logo")
-        logo.contentMode = .scaleAspectFit
         view.addSubview(logo)
-        logo.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            logo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            //logo.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            //logo.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            logo.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: height/80),
-            logo.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.11)
-        ])
+        logo.logoFormart(view: view)
     }
     
     func returnButton(){
-        
-        arrowButton = UIButton()
-        arrowButton.backButton(TextLocals.init_session_back_message)
-        arrowButton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
-        //arrowButton?.backgroundColor = .purple
         view.addSubview(arrowButton)
-        arrowButton.addAnchorsAndSize(width: 100, height: nil, left: 20.5, top: 90, right: nil, bottom: nil)
+        arrowButton.backButton(view: view, textDinamic: TextLocals.init_session_back_message, widthText: 9*width/40)
+        arrowButton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
     }
     
     func titleLabel(){
@@ -140,20 +126,12 @@ class LoginViewController: UIViewController {
     }
     
     func initSessionButton(){
-        initSessionBottomButton = UIButton()
         initSessionBottomButton.formartBlueGreen()
-        initSessionBottomButton.layer.cornerRadius = 4
         initSessionBottomButton.addTarget(self, action: #selector(continueButton), for: .touchUpInside)
         view.addSubview(initSessionBottomButton)
         initSessionBottomButton.addAnchorsAndSize(width: nil, height: 42, left: 21, top: nil, right: 21, bottom: 46)
         
-        initSessionButtonLabel = UILabel()
-        initSessionButtonLabel.formartWhite()
-        initSessionButtonLabel.textAlignment = .center
-        initSessionButtonLabel.font = .boldSystemFont(ofSize: 18)
-        initSessionButtonLabel.text = TextLocals.continue_button_message
-        initSessionBottomButton.addSubview(initSessionButtonLabel)
-        initSessionButtonLabel.addAnchorsAndSize(width: nil, height: nil, left: 10, top: 10, right: 10, bottom: nil)
+        initSessionBottomButton.addLabelWhite(button: initSessionBottomButton, text: TextLocals.continue_button_message)
         
     }
     
