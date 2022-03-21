@@ -88,6 +88,7 @@ class LoginViewController: UIViewController {
         //initSessionLabel.addAnchorsAndSize(width: 107, height: 21, left: nil, top: 125, right: nil, bottom: nil)
         //, withAnchor: <#T##Anchor?#>, relativeToView: <#T##UIView?#>
     }
+    
     func welcomeLabel(){
         initSessionWelcomeLabel = UILabel()
         initSessionWelcomeLabel.text = TextLocals.init_session_description_message

@@ -27,4 +27,8 @@ extension UILabel{
         self.textColor = ConstantsUIColor.greenBlue
     }
     
+    func formartTitle(view: UIView){
+        
+    }
+    
 }
