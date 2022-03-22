@@ -30,7 +30,7 @@ struct TextLocals{
     
     // MARK: create account screens
     static let create_account_top_message: String = "ESCRIBE TU CORREO"
-    static let create_account_description_message: String = "Aquí recibirás comprobantes de tus movimientos e inormación sobre tu cuenta"
+    static let create_account_description_message: String = "Aquí recibirás comprobantes de tus movimientos e información sobre tu cuenta"
     static let create_account_notice_of_privacy_message: String = "Al tocar continuar aceptas nuestro"
     static let create_account_notice_of_privacy_bold_message: String = "Aviso de privacidad"
     static let create_account_data_input_top_message: String = "Escríbelos tal como aparecen en tu identificación oficial sin abreviaturas"

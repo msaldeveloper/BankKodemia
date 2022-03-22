@@ -152,7 +152,6 @@ class LoginViewController: UIViewController {
         helpMessageLabel = UITextField()
         helpMessageLabel.formatTextField(TextLocals.init_session_help_message)
         helpMessageLabel.textAlignment = .center
-        //helpMessageLabel.backgroundColor = .red
         linkMessageLabel.addSubview(helpMessageLabel)
         helpMessageLabel.addAnchorsAndSize(width: nil, height: nil, left: 21, top: nil, right: 21, bottom: 20)
         
