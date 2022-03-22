@@ -73,26 +73,26 @@ class CreateAccountViewController: UIViewController {
         
         infoSuggestLabel = UILabel()
         infoSuggestLabel.text = TextLocals.create_account_description_message
-        infoSuggestLabel.font = UIFont(name: "Poppins-Medium", size: 16)
+        infoSuggestLabel.font = UIFont(name: "Poppins-Medium", size: 20)
         infoSuggestLabel.textAlignment = .left
         infoSuggestLabel.lineBreakMode = .byWordWrapping
         infoSuggestLabel.numberOfLines = 0
         view.addSubview(infoSuggestLabel)
-        infoSuggestLabel.addAnchorsAndSize(width: nil, height: nil, left: 21, top: 24, right: 21, bottom: nil, withAnchor: .top, relativeToView: logo)
+        infoSuggestLabel.addAnchorsAndSize(width: nil, height: nil, left: 21, top: height/10, right: 21, bottom: nil, withAnchor: .top, relativeToView: logo)
     }
     
     func createEmailSection(){
         emailFieldView = UIView()
         emailFieldView.formatUIView(activate: false)
         view.addSubview(emailFieldView)
-        emailFieldView.addAnchorsAndSize(width: nil, height: 37, left: 21, top: 46, right: 21, bottom: nil, withAnchor: .top, relativeToView: infoSuggestLabel)
+        emailFieldView.addAnchorsAndSize(width: nil, height: 37, left: 21, top: height/10, right: 21, bottom: nil, withAnchor: .top, relativeToView: infoSuggestLabel)
         
         emailAccountTextField = UITextField()
-        emailAccountTextField.formatTextField(TextLocals.init_session_email_input_message)
+        emailAccountTextField.formatTextFieldGreenBlue(TextLocals.init_session_email_input_message)
         emailAccountTextField.font = UIFont(name: "Poppins-Medium", size: 18)
         emailAccountTextField.keyboardType = .emailAddress
         emailFieldView.addSubview(emailAccountTextField)
-        emailAccountTextField.addAnchorsAndSize(width: nil, height: nil, left: 10, top: 0, right: 10, bottom: 0)
+        emailAccountTextField.addAnchorsAndSize(width: nil, height: nil, left: 0, top: 0, right: 0, bottom: 0)
         
         
         
@@ -152,6 +152,10 @@ extension CreateAccountViewController {
     }
     @objc func continueButton(){
         print("continue button pressed")
+        
+        let detailAccountViewController = DetailAccountViewController()
+        detailAccountViewController.modalPresentationStyle = .fullScreen
+        present(detailAccountViewController, animated: true, completion: nil)
         
     }
 }

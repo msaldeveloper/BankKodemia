@@ -42,6 +42,8 @@
 		FAA497BF27E6BAFE007FCC32 /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA497AD27E6BAFD007FCC32 /* Poppins-Thin.ttf */; };
 		FAA497C027E6BAFE007FCC32 /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA497AE27E6BAFD007FCC32 /* Poppins-ThinItalic.ttf */; };
 		FAA497C127E6BAFE007FCC32 /* Poppins-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA497AF27E6BAFD007FCC32 /* Poppins-ExtraLightItalic.ttf */; };
+		FAA92A9727E96BD000083E10 /* CreatePaswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA92A9627E96BD000083E10 /* CreatePaswordViewController.swift */; };
+		FAA92A9A27E96C7700083E10 /* DetailAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA92A9927E96C7700083E10 /* DetailAccountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +84,8 @@
 		FAA497AD27E6BAFD007FCC32 /* Poppins-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.ttf"; sourceTree = "<group>"; };
 		FAA497AE27E6BAFD007FCC32 /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ThinItalic.ttf"; sourceTree = "<group>"; };
 		FAA497AF27E6BAFD007FCC32 /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		FAA92A9627E96BD000083E10 /* CreatePaswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePaswordViewController.swift; sourceTree = "<group>"; };
+		FAA92A9927E96C7700083E10 /* DetailAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAccountViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,7 +181,7 @@
 		E75D78CB27E45C0600F95DDD /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				FAA4979A27E66058007FCC32 /* CreateAccountView */,
+				FAA497CD27E960E5007FCC32 /* CreateNewAccountViews */,
 				E75D787627E2F99C00F95DDD /* LoginView */,
 				E75D78C727E45B4100F95DDD /* HomeView */,
 			);
@@ -232,6 +236,40 @@
 				FAA497AE27E6BAFD007FCC32 /* Poppins-ThinItalic.ttf */,
 			);
 			path = fonts;
+			sourceTree = "<group>";
+		};
+		FAA497CD27E960E5007FCC32 /* CreateNewAccountViews */ = {
+			isa = PBXGroup;
+			children = (
+				FAA92A9B27E96D5200083E10 /* PhoneViewController */,
+				FAA92A9827E96C2C00083E10 /* DetailAccountViewController */,
+				FAA92A9527E96BA700083E10 /* CreatePasswordView */,
+				FAA4979A27E66058007FCC32 /* CreateAccountView */,
+			);
+			path = CreateNewAccountViews;
+			sourceTree = "<group>";
+		};
+		FAA92A9527E96BA700083E10 /* CreatePasswordView */ = {
+			isa = PBXGroup;
+			children = (
+				FAA92A9627E96BD000083E10 /* CreatePaswordViewController.swift */,
+			);
+			path = CreatePasswordView;
+			sourceTree = "<group>";
+		};
+		FAA92A9827E96C2C00083E10 /* DetailAccountViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FAA92A9927E96C7700083E10 /* DetailAccountViewController.swift */,
+			);
+			path = DetailAccountViewController;
+			sourceTree = "<group>";
+		};
+		FAA92A9B27E96D5200083E10 /* PhoneViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PhoneViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,7 +373,9 @@
 				E75D78A427E3167400F95DDD /* UIView++.swift in Sources */,
 				E75D789827E309D700F95DDD /* UIButton++.swift in Sources */,
 				E75D78C627E45B0A00F95DDD /* ConstantsUIKit.swift in Sources */,
+				FAA92A9727E96BD000083E10 /* CreatePaswordViewController.swift in Sources */,
 				E75D78CA27E45B7800F95DDD /* HomeViewController.swift in Sources */,
+				FAA92A9A27E96C7700083E10 /* DetailAccountViewController.swift in Sources */,
 				E75D78A627E3193900F95DDD /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
