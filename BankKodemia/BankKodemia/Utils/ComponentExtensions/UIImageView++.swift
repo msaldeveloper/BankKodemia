@@ -10,14 +10,14 @@ import UIKit
 
 extension UIImageView{
     
-    func logoFormart(view : UIView){
+    func logoFormart(view : UIView){ 
         self.image = UIImage(named: "logo")
         self.contentMode = .scaleAspectFit
         self.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             self.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             self.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
-            self.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 3/18)
+            self.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/9)
         ])
     }
     
