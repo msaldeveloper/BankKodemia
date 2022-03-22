@@ -88,7 +88,7 @@ class CreateAccountViewController: UIViewController {
         emailFieldView.addAnchorsAndSize(width: nil, height: 37, left: 21, top: height/10, right: 21, bottom: nil, withAnchor: .top, relativeToView: infoSuggestLabel)
         
         emailAccountTextField = UITextField()
-        emailAccountTextField.formatTextFieldGreenBlue(TextLocals.init_session_email_input_message)
+        emailAccountTextField.formatTextField(TextLocals.init_session_email_input_message)
         emailAccountTextField.font = UIFont(name: "Poppins-Medium", size: 18)
         emailAccountTextField.keyboardType = .emailAddress
         emailFieldView.addSubview(emailAccountTextField)

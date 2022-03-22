@@ -34,4 +34,12 @@ extension UITextField{
             attributes: [NSAttributedString.Key.foregroundColor: UIColor(red: 0, green: 0, blue: 0, alpha: 0.7 )]
         )
     }
+    
+    func infoTextFielFormat(){
+        
+        self.formatTextField(" ")
+        self.font = UIFont(name: "Poppins-Medium", size: 18)
+        self.keyboardType = .emailAddress
+        self.addAnchorsAndSize(width: nil, height: nil, left: 10, top: 0, right: 10, bottom: 0)
+    }
 }
