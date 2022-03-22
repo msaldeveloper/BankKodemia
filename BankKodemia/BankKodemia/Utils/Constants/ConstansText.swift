@@ -46,6 +46,11 @@ struct TextLocals{
     static let create_account_data_input_phone_number_message: String = "Tu número de celular"
     static let create_account_data_input_botton_message: String = "para protejer tu cuenta, te enviaremos un código vía SMS"
     
+    static let create_account_identityverification_top_message: String = "Ahora, vamos a verificar tu identidad para proteger tu cuenta."
+    static let create_account_identityverification_botton_message: String = "Deberás subir una fotografía de tu INE o pasaporte vigente y tomarte una selfie. Si eres extranjero necesitarás una fotografía de tu documento migratorio (FM3)"
+    
+    static let create_account_idselect_top_message: String = "Seleccionado el tipo de documento que deseas fotografiar"
+    
     // MARK: home and tab bar screens
     
     static let home_available_cash_top_message: String = "DINERO DESPONIBLE"

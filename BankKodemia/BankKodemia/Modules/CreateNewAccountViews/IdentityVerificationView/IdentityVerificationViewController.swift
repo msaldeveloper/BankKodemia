@@ -1,5 +1,5 @@
 //
-//  PhoneAccountController.swift
+//  IdentityVerificationViewController.swift
 //  BankKodemia
 //
 //  Created by MacBook on 22/03/22.
@@ -7,16 +7,11 @@
 
 import UIKit
 
-class PhoneAccountViewController: UIViewController {
+class IdentityVerificationViewController: UIViewController {
     lazy var logo : UIImageView = UIImageView()
     
     // SuggestDetailInfo: Indicaciones de la seccion
     var infoSuggestLabel: UILabel = UILabel()
-    
-    // PhoneInfoFields: Indicaciones de la seccion
-    var phoneInfoFieldView: UIView = UIView()
-    var phoneInfoTextLabel: UILabel = UILabel()
-    var phoneInfoTextField: UITextField = UITextField()
     
     //Legal Information
     var legalButton: UIButton = UIButton()
@@ -39,7 +34,6 @@ class PhoneAccountViewController: UIViewController {
     func UIInit(){
         logoImage()
         suggestDetailInfoSection()
-        phoneInfoFieldSection()
         legalInformationSection()
         continueButtonSection()
        
@@ -53,7 +47,7 @@ class PhoneAccountViewController: UIViewController {
     func suggestDetailInfoSection(){
         
         infoSuggestLabel = UILabel()
-        infoSuggestLabel.text = TextLocals.create_account_data_input_top_message
+        infoSuggestLabel.text = TextLocals.create_account_identityverification_top_message
         infoSuggestLabel.font = UIFont(name: "Poppins-Medium", size: 20)
         infoSuggestLabel.textAlignment = .left
         infoSuggestLabel.lineBreakMode = .byWordWrapping
@@ -63,40 +57,21 @@ class PhoneAccountViewController: UIViewController {
         
     }
     
-    func phoneInfoFieldSection(){
-        
-        phoneInfoFieldView = UIView()
-        phoneInfoFieldView.formatUIView(activate: false)
-        view.addSubview(phoneInfoFieldView)
-        phoneInfoFieldView.addAnchorsAndSize(width: nil, height: 37, left: 21, top: height/20, right: 21, bottom: nil, withAnchor: .top, relativeToView: infoSuggestLabel)
-        
-        phoneInfoFieldView.addSubview(phoneInfoTextField)
-        phoneInfoTextField.infoTextFielFormat()
-        
-        phoneInfoTextLabel = UILabel()
-        phoneInfoTextLabel.text = TextLocals.create_account_data_input_phone_number_message
-        phoneInfoTextLabel.font = UIFont(name: "Poppins-Medium", size: 16)
-        phoneInfoTextField.addSubview(phoneInfoTextLabel)
-        phoneInfoTextLabel.addAnchorsAndSize(width: nil, height: nil, left: 0, top: nil, right: nil, bottom: 4, withAnchor: .bottom, relativeToView: phoneInfoFieldView)
-        
-        
-    }
-    
     func legalInformationSection(){
         
         legalButton = UIButton()
         legalButton.formatTransparent()
         legalButton.addTarget(self, action: #selector(linkAction), for: .touchUpInside)
         view.addSubview(legalButton)
-        legalButton.addAnchorsAndSize(width: nil, height: nil, left: 21, top: nil, right: 21, bottom: 100)
+        legalButton.addAnchorsAndSize(width: nil, height: 37, left: 21, top: (height/20)*2, right: 21, bottom: nil, withAnchor: .top, relativeToView: infoSuggestLabel)
                         
         legalTextLabel = UILabel()
-        legalTextLabel.text = TextLocals.create_account_data_input_botton_message
+        legalTextLabel.text = TextLocals.create_account_identityverification_botton_message
         legalTextLabel.numberOfLines = 0
         legalTextLabel.font = UIFont(name: "Poppins", size: 17)
-        legalTextLabel.textAlignment = .center
+        legalTextLabel.textAlignment = .justified
         legalButton.addSubview(legalTextLabel)
-        legalTextLabel.addAnchorsAndSize(width: nil, height: nil, left: 21, top: nil, right: 21, bottom: 20)
+        legalTextLabel.addAnchorsAndSize(width: nil, height: nil, left: 0, top: nil, right: 21, bottom: 20)
         
     }
     
@@ -119,7 +94,7 @@ class PhoneAccountViewController: UIViewController {
 }
 
 // MARK: - OBJC Functions
-extension PhoneAccountViewController {
+extension IdentityVerificationViewController {
     @objc func backAction(){
         print("back button pressed")
         dismiss(animated: true)
@@ -130,9 +105,9 @@ extension PhoneAccountViewController {
     @objc func continueButton(){
         print("continue button pressed")
         
-//        let detailAccountViewController = DetailAccountViewController()
-//        detailAccountViewController.modalPresentationStyle = .fullScreen
-//        present(detailAccountViewController, animated: true, completion: nil)
+        let idSelectViewController = IdSelectViewController()
+        idSelectViewController.modalPresentationStyle = .fullScreen
+        present(idSelectViewController, animated: true, completion: nil)
         
     }
 }
