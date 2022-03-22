@@ -181,9 +181,9 @@ extension DetailAccountViewController {
     @objc func continueButton(){
         print("continue button pressed")
         
-//        let detailAccountViewController = DetailAccountViewController()
-//        detailAccountViewController.modalPresentationStyle = .fullScreen
-//        present(detailAccountViewController, animated: true, completion: nil)
+        let phoneAccountViewController = PhoneAccountViewController()
+        phoneAccountViewController.modalPresentationStyle = .fullScreen
+        present(phoneAccountViewController, animated: true, completion: nil)
         
     }
 }

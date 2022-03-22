@@ -61,16 +61,6 @@ class CreateAccountViewController: UIViewController {
     
     func suggestEmailSection(){
         
-        
-//        infoSuggestLabel = UILabel()
-//        infoSuggestLabel.text = TextLocals.create_account_description_message
-//        infoSuggestLabel.font = UIFont(name: "Poppins-SemiBold", size: 18)
-//        infoSuggestLabel.textAlignment = .left
-//        infoSuggestLabel.lineBreakMode = .byWordWrapping
-//        infoSuggestLabel.numberOfLines = 0
-//        view.addSubview(infoSuggestLabel)
-//        infoSuggestLabel.addAnchorsAndSize(width: nil, height: nil, left: 21, top: 24, right: 21, bottom: nil, withAnchor: .top, relativeToView: arrowButton)
-        
         infoSuggestLabel = UILabel()
         infoSuggestLabel.text = TextLocals.create_account_description_message
         infoSuggestLabel.font = UIFont(name: "Poppins-Medium", size: 20)

@@ -44,6 +44,7 @@
 		FAA497C127E6BAFE007FCC32 /* Poppins-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA497AF27E6BAFD007FCC32 /* Poppins-ExtraLightItalic.ttf */; };
 		FAA92A9727E96BD000083E10 /* CreatePaswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA92A9627E96BD000083E10 /* CreatePaswordViewController.swift */; };
 		FAA92A9A27E96C7700083E10 /* DetailAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA92A9927E96C7700083E10 /* DetailAccountViewController.swift */; };
+		FAF8163627EA5E710098989A /* PhoneAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8163527EA5E710098989A /* PhoneAccountController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		FAA497AF27E6BAFD007FCC32 /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
 		FAA92A9627E96BD000083E10 /* CreatePaswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePaswordViewController.swift; sourceTree = "<group>"; };
 		FAA92A9927E96C7700083E10 /* DetailAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAccountViewController.swift; sourceTree = "<group>"; };
+		FAF8163527EA5E710098989A /* PhoneAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAccountController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,7 +243,7 @@
 		FAA497CD27E960E5007FCC32 /* CreateNewAccountViews */ = {
 			isa = PBXGroup;
 			children = (
-				FAA92A9B27E96D5200083E10 /* PhoneViewController */,
+				FAF8163427EA5E540098989A /* PhoneAccountController */,
 				FAA92A9827E96C2C00083E10 /* DetailAccountViewController */,
 				FAA92A9527E96BA700083E10 /* CreatePasswordView */,
 				FAA4979A27E66058007FCC32 /* CreateAccountView */,
@@ -265,11 +267,12 @@
 			path = DetailAccountViewController;
 			sourceTree = "<group>";
 		};
-		FAA92A9B27E96D5200083E10 /* PhoneViewController */ = {
+		FAF8163427EA5E540098989A /* PhoneAccountController */ = {
 			isa = PBXGroup;
 			children = (
+				FAF8163527EA5E710098989A /* PhoneAccountController.swift */,
 			);
-			path = PhoneViewController;
+			path = PhoneAccountController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,6 +375,7 @@
 				C59A81F927E6FD4B0038C662 /* UIImageView++.swift in Sources */,
 				E75D78A427E3167400F95DDD /* UIView++.swift in Sources */,
 				E75D789827E309D700F95DDD /* UIButton++.swift in Sources */,
+				FAF8163627EA5E710098989A /* PhoneAccountController.swift in Sources */,
 				E75D78C627E45B0A00F95DDD /* ConstantsUIKit.swift in Sources */,
 				FAA92A9727E96BD000083E10 /* CreatePaswordViewController.swift in Sources */,
 				E75D78CA27E45B7800F95DDD /* HomeViewController.swift in Sources */,
