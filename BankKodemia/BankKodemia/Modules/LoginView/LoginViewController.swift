@@ -53,26 +53,13 @@ class LoginViewController: UIViewController {
     
     func returnButton(){
         view.addSubview(arrowButton)
-        arrowButton.backButton(view: view, textDinamic: TextLocals.init_session_back_message, widthText: 9*width/40)
+        arrowButton.backButton(view: view, textDinamic: TextLocals.init_session_back_message, widthText: width/4)
         arrowButton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
     }
     
     func titleLabel(){
-        initSessionLabel = UILabel()
-        initSessionLabel.text = TextLocals.init_session_top_message
-        initSessionLabel.font = UIFont(name: "some", size: 14)
-        //initSessionLabel.backgroundColor = .red
         view.addSubview(initSessionLabel)
-        initSessionLabel.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            initSessionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            //logo.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            //logo.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            initSessionLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: height/15),
-            //logo.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.11)
-        ])
-        //initSessionLabel.addAnchorsAndSize(width: 107, height: 21, left: nil, top: 125, right: nil, bottom: nil)
-        //, withAnchor: <#T##Anchor?#>, relativeToView: <#T##UIView?#>
+        initSessionLabel.formartTitle(view: view, textTitle: TextLocals.init_session_top_message)
     }
     func welcomeLabel(){
         initSessionWelcomeLabel = UILabel()
