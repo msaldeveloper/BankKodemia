@@ -27,4 +27,17 @@ extension UILabel{
         self.textColor = ConstantsUIColor.greenBlue
     }
     
+    func formartTitle(view: UIView, textTitle: String){
+            self.font = UIFont(name: "Poppins-Bold", size: ConstantsUIKit.height/32)
+            self.text = textTitle
+            self.textAlignment = .center
+            self.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                self.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                self.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: ConstantsUIKit.height/10),
+                self.heightAnchor.constraint(equalToConstant: ConstantsUIKit.height/24),
+                self.widthAnchor.constraint(equalToConstant: ConstantsUIKit.width)
+            ])
+        }
+    
 }

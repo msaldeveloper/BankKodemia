@@ -112,13 +112,14 @@ extension UIButton{
         arrowImage.backgroundColor = .red
         self.addSubview(arrowImage)
         let textButton = UILabel(frame: CGRect(x: 3*ConstantsUIKit.height/160 + ConstantsUIKit.width/36, y: -ConstantsUIKit.height/240, width: widthText, height: ConstantsUIKit.height/30))
-        textButton.font = UIFont(name: "some", size: 7*ConstantsUIKit.height/400)
+        textButton.font = UIFont(name: "Poppins-Medium", size: ConstantsUIKit.height/40)
         textButton.text = textDinamic
+        textButton.textAlignment = .center
         self.addSubview(textButton)
         self.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             self.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: ConstantsUIKit.width/18),
-            self.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: height/10),
+            self.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: height/15),
             self.widthAnchor.constraint(equalToConstant: 3*ConstantsUIKit.height/160 + ConstantsUIKit.width/36 + widthText),
             self.heightAnchor.constraint(equalToConstant: ConstantsUIKit.height/40)
         ])
