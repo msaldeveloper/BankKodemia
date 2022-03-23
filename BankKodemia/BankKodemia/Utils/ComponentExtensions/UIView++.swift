@@ -23,4 +23,19 @@ extension UIView{
         }
 
     }
+    
+    func formatUIViewClear(activate : Bool){
+        if activate == true {
+            self.backgroundColor = .clear
+            self.layer.cornerRadius = 0
+            self.layer.borderColor = ConstantsCGColor.transparent
+            self.layer.borderWidth = 0
+        }else {
+            self.backgroundColor = .clear
+            self.layer.cornerRadius = 4
+            self.layer.borderColor = ConstantsCGColor.greyKodemia
+            self.layer.borderWidth = 1
+        }
+
+    }
 }

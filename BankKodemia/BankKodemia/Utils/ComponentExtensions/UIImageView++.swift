@@ -21,6 +21,16 @@ extension UIImageView{
         ])
     }
     
+    func arrowButtonIdentity(view : UIView){
+        self.image = UIImage(named: "flecha-derecha")
+        self.contentMode = .scaleAspectFit
+        self.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.rightAnchor.constraint(equalTo: view.rightAnchor),
+            self.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 3/33)
+        ])
+    }
+    
     func countFormart(view: UIView){
         self.image = UIImage(named: "count")
         self.contentMode = .scaleAspectFit

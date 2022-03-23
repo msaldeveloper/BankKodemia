@@ -51,6 +51,12 @@ struct TextLocals{
     
     static let create_account_idselect_top_message: String = "Seleccionado el tipo de documento que deseas fotografiar"
     
+    static let create_account_idselect_ine: String = "INE"
+    static let create_account_idselect_documento_migratorio: String = "Documento Migratorio"
+    static let create_account_idselect_pasaporte: String = "Pasaporte"
+    
+    static let create_account_idselect_bottom_message: String = "Conoce cómo protegemos tus documentos"
+    
     // MARK: home and tab bar screens
     
     static let home_available_cash_top_message: String = "DINERO DESPONIBLE"
