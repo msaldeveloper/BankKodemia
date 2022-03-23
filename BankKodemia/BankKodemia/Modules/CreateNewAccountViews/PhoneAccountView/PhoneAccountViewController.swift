@@ -53,7 +53,7 @@ class PhoneAccountViewController: UIViewController {
     func suggestDetailInfoSection(){
         
         infoSuggestLabel = UILabel()
-        infoSuggestLabel.text = TextLocals.create_account_data_input_top_message
+        infoSuggestLabel.text = Text.CreateAccount.PhoneVerification.ButtonBoldMessage
         infoSuggestLabel.font = UIFont(name: "Poppins-Medium", size: 20)
         infoSuggestLabel.textAlignment = .left
         infoSuggestLabel.lineBreakMode = .byWordWrapping
@@ -74,7 +74,7 @@ class PhoneAccountViewController: UIViewController {
         phoneInfoTextField.infoTextFielFormat()
         
         phoneInfoTextLabel = UILabel()
-        phoneInfoTextLabel.text = TextLocals.create_account_data_input_phone_number_message
+        phoneInfoTextLabel.text = Text.CreateAccount.PhoneVerification.LabelNumberMessage
         phoneInfoTextLabel.font = UIFont(name: "Poppins-Medium", size: 16)
         phoneInfoTextField.addSubview(phoneInfoTextLabel)
         phoneInfoTextLabel.addAnchorsAndSize(width: nil, height: nil, left: 0, top: nil, right: nil, bottom: 4, withAnchor: .bottom, relativeToView: phoneInfoFieldView)
@@ -91,7 +91,7 @@ class PhoneAccountViewController: UIViewController {
         legalButton.addAnchorsAndSize(width: nil, height: nil, left: 21, top: nil, right: 21, bottom: 100)
                         
         legalTextLabel = UILabel()
-        legalTextLabel.text = TextLocals.create_account_data_input_botton_message
+        legalTextLabel.text = Text.CreateAccount.PhoneVerification.BottonMessage
         legalTextLabel.numberOfLines = 0
         legalTextLabel.font = UIFont(name: "Poppins", size: 17)
         legalTextLabel.textAlignment = .center
@@ -130,9 +130,9 @@ extension PhoneAccountViewController {
     @objc func continueButton(){
         print("continue button pressed")
         
-//        let detailAccountViewController = DetailAccountViewController()
-//        detailAccountViewController.modalPresentationStyle = .fullScreen
-//        present(detailAccountViewController, animated: true, completion: nil)
+        let identityVerificarionViewController = IdentityVerificationViewController()
+        identityVerificarionViewController.modalPresentationStyle = .fullScreen
+        present(identityVerificarionViewController, animated: true, completion: nil)
         
     }
 }

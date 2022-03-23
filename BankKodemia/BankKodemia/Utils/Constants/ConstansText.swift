@@ -29,23 +29,24 @@ struct TextLocals{
     static let init_session_welcome_message_bottom: String = "Usa el dinero a TU manera"
     
     // MARK: create account screens
-    static let create_account_top_message: String = "ESCRIBE TU CORREO"
-    static let create_account_description_message: String = "Aquí recibirás comprobantes de tus movimientos e información sobre tu cuenta"
-    static let create_account_notice_of_privacy_message: String = "Al tocar continuar aceptas nuestro"
-    static let create_account_notice_of_privacy_bold_message: String = "Aviso de privacidad"
-    static let create_account_data_input_top_message: String = "Escríbelos tal como aparecen en tu identificación oficial sin abreviaturas"
-    static let create_account_data_input_name_message: String = "Nombre(s)"
-    static let create_account_data_input_lastname_message: String = "Apellido(s)"
-    static let create_account_data_input_ocupation_message: String = "Ocupación"
-    static let create_account_data_input_date_of_birth: String = "Fecha de nacimiento"
+//    static let create_account_top_message: String = "ESCRIBE TU CORREO"
+//    static let create_account_description_message: String = "Aquí recibirás comprobantes de tus movimientos e información sobre tu cuenta"
+//    static let create_account_notice_of_privacy_message: String = "Al tocar continuar aceptas nuestro"
+//    static let create_account_notice_of_privacy_bold_message: String = "Aviso de privacidad"
+//    static let create_account_data_input_top_message: String = "Escríbelos tal como aparecen en tu identificación oficial sin abreviaturas"
+//    static let create_account_data_input_name_message: String = "Nombre(s)"
+//    static let create_account_data_input_lastname_message: String = "Apellido(s)"
+//    static let create_account_data_input_ocupation_message: String = "Ocupación"
+//    static let create_account_data_input_date_of_birth: String = "Fecha de nacimiento"
     static let create_account_data_input_bottom_message: String = "Esta información es necesaria para verificar tu identidad."
     static let create_account_data_input_bottom_bold_message: String = "Nunca la usaremos sin tu consentimiento."
     static let create_account_data_input_modal_top_message: String = "Ingresa tu fecha de nacimiento"
+
     static let create_account_data_input_phone_top_message: String = "ESCRIBE TU TELÉFONO"
-    static let create_account_data_input_phone_bold_message: String = "Lo usarás para iniciar sesión"
-    static let create_account_data_input_phone_number_message: String = "Tu número de celular"
-    static let create_account_data_input_botton_message: String = "para protejer tu cuenta, te enviaremos un código vía SMS"
+
     
+    
+        
     // MARK: home and tab bar screens
     
     static let home_available_cash_top_message: String = "DINERO DESPONIBLE"
@@ -95,9 +96,57 @@ struct TextLocals{
     static let send_cash_successful_screen_message: String = "Tu transacción ha sido finalizada"
     static let send_cash_successful_screen_button: String = "Volver a Inicio"
     
-    
-    
-
-
 }
+
+struct Text{
+    struct CreateAccount{
+        
+        struct EmailRegister {
+            
+            static let TopMessage: String = "ESCRIBE TU CORREO"
+            static let DescriptionMessage: String = "Aquí recibirás comprobantes de tus movimientos e información sobre tu cuenta"
+            static let LabelMessage: String = "Escribe tu correo"
+            static let InputMessage: String = "correo@gmail.com"
+            static let PrivacyMessage: String = "Al tocar continuar aceptas nuestro"
+            static let PrivacyBoldMessage: String = "Aviso de privacidad"
+        }
+        
+        struct Detail {
+            static let TopMessage: String = "Escríbelos tal como aparecen en tu identificación oficial sin abreviaturas"
+            static let NameMessage: String = "Nombre(s)"
+            static let LastNameMessage: String = "Apellido(s)"
+            static let OcupationMessage: String = "Ocupación"
+            static let Date: String = "Fecha de nacimiento"
+        }
+        
+        struct PhoneVerification {
+            static let TopMessage: String = "ESCRIBE TU TELÉFONO"
+            static let ButtonBoldMessage: String = "Lo usarás para iniciar sesión"
+            static let LabelNumberMessage: String = "Tu número de celular"
+            static let BottonMessage: String = "para protejer tu cuenta, te enviaremos un código vía SMS"
+        }
+        
+        struct IdentityVerification {
+            static let TopMessage: String = "Ahora, vamos a verificar tu identidad para proteger tu cuenta."
+            static let BottonMessage: String = "Deberás subir una fotografía de tu INE o pasaporte vigente y tomarte una selfie. Si eres extranjero necesitarás una fotografía de tu documento migratorio (FM3)"
+        }
+        
+        struct Uploading {
+            static let TopMessage: String = "Dale permiso a Bankodemia para utilizar la cámara. Asegúrate de tener buena luz y enfocar bien tu documento de frente."
+            static let BottonMessage: String = "Subir Información"
+            static let BottonUploadMessage: String = "Arrastra tu archivo aquí o subelo desde tu ORDENADOR"
+        }
+        
+        struct IdSelect {
+            static let Ine: String = "INE"
+            static let ImmigrantDoc: String = "Documento Migratorio"
+            static let Passport: String = "Pasaporte"
+            static let TopMessage: String = "Seleccionado el tipo de documento que deseas fotografiar"
+            static let BottomMessage: String = "Conoce cómo protegemos tus documentos"
+        }
+        
+    }
+}
+
+
 

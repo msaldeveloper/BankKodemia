@@ -17,7 +17,17 @@ extension UIImageView{
         NSLayoutConstraint.activate([
             self.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             self.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
-            self.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 3/18)
+            self.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/9)
+        ])
+    }
+    
+    func arrowButtonIdentity(view : UIView){
+        self.image = UIImage(named: "flecha-derecha")
+        self.contentMode = .scaleAspectFit
+        self.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.rightAnchor.constraint(equalTo: view.rightAnchor),
+            self.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 3/33)
         ])
     }
     

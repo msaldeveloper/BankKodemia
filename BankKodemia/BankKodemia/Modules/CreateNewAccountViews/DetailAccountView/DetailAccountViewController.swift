@@ -69,7 +69,7 @@ class DetailAccountViewController: UIViewController {
     func suggestDetailInfoSection(){
         
         infoSuggestDetailLabel = UILabel()
-        infoSuggestDetailLabel.text = TextLocals.create_account_data_input_top_message
+        infoSuggestDetailLabel.text = Text.CreateAccount.Detail.TopMessage
         infoSuggestDetailLabel.font = UIFont(name: "Poppins-Medium", size: 20)
         infoSuggestDetailLabel.textAlignment = .left
         infoSuggestDetailLabel.lineBreakMode = .byWordWrapping
@@ -90,7 +90,7 @@ class DetailAccountViewController: UIViewController {
         nameInfoTextField.infoTextFielFormat()
         
         nameInfoTextLabel = UILabel()
-        nameInfoTextLabel.text = TextLocals.create_account_data_input_name_message
+        nameInfoTextLabel.text = Text.CreateAccount.Detail.NameMessage
         nameInfoTextLabel.font = UIFont(name: "Poppins-Medium", size: 16)
         nameInfoTextField.addSubview(nameInfoTextLabel)
         nameInfoTextLabel.addAnchorsAndSize(width: nil, height: nil, left: 0, top: nil, right: nil, bottom: 4, withAnchor: .bottom, relativeToView: nameInfoFieldView)
@@ -108,7 +108,7 @@ class DetailAccountViewController: UIViewController {
         lastNameInfoTextField.infoTextFielFormat()
         
         latNameInfoTextLabel = UILabel()
-        latNameInfoTextLabel.text = TextLocals.create_account_data_input_lastname_message
+        latNameInfoTextLabel.text = Text.CreateAccount.Detail.LastNameMessage
         latNameInfoTextLabel.font = UIFont(name: "Poppins-Medium", size: 16)
         lastNameInfoTextField.addSubview(latNameInfoTextLabel)
         latNameInfoTextLabel.addAnchorsAndSize(width: nil, height: nil, left: 0, top: nil, right: nil, bottom: 4, withAnchor: .bottom, relativeToView: lastNameInfoFieldView)
@@ -126,7 +126,7 @@ class DetailAccountViewController: UIViewController {
         occupationInfoTextField.infoTextFielFormat()
         
         occupationInfoTextLabel = UILabel()
-        occupationInfoTextLabel.text = TextLocals.create_account_data_input_ocupation_message
+        occupationInfoTextLabel.text = Text.CreateAccount.Detail.OcupationMessage
         occupationInfoTextLabel.font = UIFont(name: "Poppins-Medium", size: 16)
         occupationInfoTextField.addSubview(occupationInfoTextLabel)
         occupationInfoTextLabel.addAnchorsAndSize(width: nil, height: nil, left: 0, top: nil, right: nil, bottom: 4, withAnchor: .bottom, relativeToView: occupationInfoFieldView)
@@ -144,7 +144,7 @@ class DetailAccountViewController: UIViewController {
         dateInfoTextField.infoTextFielFormat()
         
         dateInfoTextLabel = UILabel()
-        dateInfoTextLabel.text = TextLocals.create_account_data_input_date_of_birth
+        dateInfoTextLabel.text = Text.CreateAccount.Detail.Date
         dateInfoTextLabel.font = UIFont(name: "Poppins-Medium", size: 16)
         dateInfoFieldView.addSubview(dateInfoTextLabel)
         dateInfoTextLabel.addAnchorsAndSize(width: nil, height: nil, left: 0, top: nil, right: nil, bottom: 4, withAnchor: .bottom, relativeToView: dateInfoFieldView)

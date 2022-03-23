@@ -44,7 +44,10 @@
 		FAA497C127E6BAFE007FCC32 /* Poppins-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA497AF27E6BAFD007FCC32 /* Poppins-ExtraLightItalic.ttf */; };
 		FAA92A9727E96BD000083E10 /* CreatePaswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA92A9627E96BD000083E10 /* CreatePaswordViewController.swift */; };
 		FAA92A9A27E96C7700083E10 /* DetailAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA92A9927E96C7700083E10 /* DetailAccountViewController.swift */; };
-		FAF8163627EA5E710098989A /* PhoneAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8163527EA5E710098989A /* PhoneAccountController.swift */; };
+		FAF8163627EA5E710098989A /* PhoneAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8163527EA5E710098989A /* PhoneAccountViewController.swift */; };
+		FAF8163A27EA73220098989A /* IdentityVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8163927EA73220098989A /* IdentityVerificationViewController.swift */; };
+		FAF8163D27EA7A610098989A /* IdSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8163C27EA7A610098989A /* IdSelectViewController.swift */; };
+		FAF8164027EAC5EA0098989A /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8163F27EAC5EA0098989A /* UploadViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,7 +90,10 @@
 		FAA497AF27E6BAFD007FCC32 /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
 		FAA92A9627E96BD000083E10 /* CreatePaswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePaswordViewController.swift; sourceTree = "<group>"; };
 		FAA92A9927E96C7700083E10 /* DetailAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAccountViewController.swift; sourceTree = "<group>"; };
-		FAF8163527EA5E710098989A /* PhoneAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAccountController.swift; sourceTree = "<group>"; };
+		FAF8163527EA5E710098989A /* PhoneAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAccountViewController.swift; sourceTree = "<group>"; };
+		FAF8163927EA73220098989A /* IdentityVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityVerificationViewController.swift; sourceTree = "<group>"; };
+		FAF8163C27EA7A610098989A /* IdSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdSelectViewController.swift; sourceTree = "<group>"; };
+		FAF8163F27EAC5EA0098989A /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,8 +249,11 @@
 		FAA497CD27E960E5007FCC32 /* CreateNewAccountViews */ = {
 			isa = PBXGroup;
 			children = (
-				FAF8163427EA5E540098989A /* PhoneAccountController */,
-				FAA92A9827E96C2C00083E10 /* DetailAccountViewController */,
+				FAF8163E27EAC5C70098989A /* UploadView */,
+				FAF8163B27EA7A010098989A /* IdSelectView */,
+				FAF8163827EA72CB0098989A /* IdentityVerificationView */,
+				FAF8163427EA5E540098989A /* PhoneAccountView */,
+				FAA92A9827E96C2C00083E10 /* DetailAccountView */,
 				FAA92A9527E96BA700083E10 /* CreatePasswordView */,
 				FAA4979A27E66058007FCC32 /* CreateAccountView */,
 			);
@@ -259,20 +268,44 @@
 			path = CreatePasswordView;
 			sourceTree = "<group>";
 		};
-		FAA92A9827E96C2C00083E10 /* DetailAccountViewController */ = {
+		FAA92A9827E96C2C00083E10 /* DetailAccountView */ = {
 			isa = PBXGroup;
 			children = (
 				FAA92A9927E96C7700083E10 /* DetailAccountViewController.swift */,
 			);
-			path = DetailAccountViewController;
+			path = DetailAccountView;
 			sourceTree = "<group>";
 		};
-		FAF8163427EA5E540098989A /* PhoneAccountController */ = {
+		FAF8163427EA5E540098989A /* PhoneAccountView */ = {
 			isa = PBXGroup;
 			children = (
-				FAF8163527EA5E710098989A /* PhoneAccountController.swift */,
+				FAF8163527EA5E710098989A /* PhoneAccountViewController.swift */,
 			);
-			path = PhoneAccountController;
+			path = PhoneAccountView;
+			sourceTree = "<group>";
+		};
+		FAF8163827EA72CB0098989A /* IdentityVerificationView */ = {
+			isa = PBXGroup;
+			children = (
+				FAF8163927EA73220098989A /* IdentityVerificationViewController.swift */,
+			);
+			path = IdentityVerificationView;
+			sourceTree = "<group>";
+		};
+		FAF8163B27EA7A010098989A /* IdSelectView */ = {
+			isa = PBXGroup;
+			children = (
+				FAF8163C27EA7A610098989A /* IdSelectViewController.swift */,
+			);
+			path = IdSelectView;
+			sourceTree = "<group>";
+		};
+		FAF8163E27EAC5C70098989A /* UploadView */ = {
+			isa = PBXGroup;
+			children = (
+				FAF8163F27EAC5EA0098989A /* UploadViewController.swift */,
+			);
+			path = UploadView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,18 +397,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAA4979C27E66094007FCC32 /* CreateAccountViewController.swift in Sources */,
+				FAF8164027EAC5EA0098989A /* UploadViewController.swift in Sources */,
 				E75D78CF27E45D3E00F95DDD /* Network.swift in Sources */,
 				E75D789227E3099400F95DDD /* constraints.swift in Sources */,
 				E75D787927E2FA2D00F95DDD /* AppDelegate.swift in Sources */,
 				E75D789927E309D700F95DDD /* UILabel++.swift in Sources */,
+				FAF8163A27EA73220098989A /* IdentityVerificationViewController.swift in Sources */,
 				E75D789D27E309FA00F95DDD /* ConstantsColor.swift in Sources */,
+				FAF8163D27EA7A610098989A /* IdSelectViewController.swift in Sources */,
 				E75D789E27E309FA00F95DDD /* ConstansText.swift in Sources */,
 				E75D789727E309D700F95DDD /* TextField++.swift in Sources */,
 				E75D787A27E2FA2D00F95DDD /* SceneDelegate.swift in Sources */,
 				C59A81F927E6FD4B0038C662 /* UIImageView++.swift in Sources */,
 				E75D78A427E3167400F95DDD /* UIView++.swift in Sources */,
 				E75D789827E309D700F95DDD /* UIButton++.swift in Sources */,
-				FAF8163627EA5E710098989A /* PhoneAccountController.swift in Sources */,
+				FAF8163627EA5E710098989A /* PhoneAccountViewController.swift in Sources */,
 				E75D78C627E45B0A00F95DDD /* ConstantsUIKit.swift in Sources */,
 				FAA92A9727E96BD000083E10 /* CreatePaswordViewController.swift in Sources */,
 				E75D78CA27E45B7800F95DDD /* HomeViewController.swift in Sources */,

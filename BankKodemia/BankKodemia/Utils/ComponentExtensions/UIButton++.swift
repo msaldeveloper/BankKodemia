@@ -27,12 +27,59 @@ extension UIButton{
         self.layer.borderColor = ConstantsCGColor.transparent
     }
     
+    func formatPhantom(){
+        self.backgroundColor = .clear
+        self.layer.borderWidth = 0
+        self.layer.cornerRadius = 0
+        self.layer.borderColor = ConstantsCGColor.transparent
+    }
+    
+    func formatGray(){
+        self.backgroundColor = ConstantsUIColor.lightgreyKodemia
+        self.layer.borderWidth = 0
+        self.layer.cornerRadius = 0
+        self.layer.borderColor = ConstantsCGColor.transparent
+    }
+    
     func addLabelWhite(button: UIButton, text: String){
         let label = UILabel()
         button.addSubview(label)
         label.font = .boldSystemFont(ofSize: 9*height/400)
         label.textColor = .white
         label.textAlignment = .center
+        label.text = text
+        label.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            label.leadingAnchor.constraint(equalTo: button.leadingAnchor, constant: 0),
+            label.topAnchor.constraint(equalTo: button.topAnchor, constant: 0),
+            label.widthAnchor.constraint(equalTo: button.widthAnchor, multiplier: 1),
+            label.heightAnchor.constraint(equalTo: button.heightAnchor, multiplier: 1)
+        ])
+    }
+    
+    func addLabelDarkGray(button: UIButton, text: String){
+        let label = UILabel()
+        button.addSubview(label)
+        label.font = .boldSystemFont(ofSize: 9*height/400)
+        label.textColor = .darkGray
+        label.textAlignment = .left
+        label.text = text
+        label.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            label.leadingAnchor.constraint(equalTo: button.leadingAnchor, constant: 0),
+            label.topAnchor.constraint(equalTo: button.topAnchor, constant: 0),
+            label.widthAnchor.constraint(equalTo: button.widthAnchor, multiplier: 1),
+            label.heightAnchor.constraint(equalTo: button.heightAnchor, multiplier: 1)
+        ])
+    }
+    
+    func addLabelUploader(button: UIButton, text: String){
+        let label = UILabel()
+        button.addSubview(label)
+        label.font = UIFont(name: "Poppins-Medium", size: 14)
+        label.textColor = .darkGray
+        label.textAlignment = .center
+        label.numberOfLines = 2
         label.text = text
         label.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
