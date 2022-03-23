@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C59A81F927E6FD4B0038C662 /* UIImageView++.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59A81F827E6FD4B0038C662 /* UIImageView++.swift */; };
+		E75D786127E2F7E300F95DDD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75D786027E2F7E300F95DDD /* ViewController.swift */; };
 		E75D786627E2F7E400F95DDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75D786527E2F7E400F95DDD /* Assets.xcassets */; };
 		E75D786927E2F7E400F95DDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E75D786727E2F7E400F95DDD /* LaunchScreen.storyboard */; };
 		E75D787927E2FA2D00F95DDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75D787727E2FA2D00F95DDD /* AppDelegate.swift */; };
@@ -18,38 +18,12 @@
 		E75D789927E309D700F95DDD /* UILabel++.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75D789627E309D700F95DDD /* UILabel++.swift */; };
 		E75D789D27E309FA00F95DDD /* ConstantsColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75D789B27E309FA00F95DDD /* ConstantsColor.swift */; };
 		E75D789E27E309FA00F95DDD /* ConstansText.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75D789C27E309FA00F95DDD /* ConstansText.swift */; };
-		E75D78A427E3167400F95DDD /* UIView++.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75D78A327E3167400F95DDD /* UIView++.swift */; };
-		E75D78A627E3193900F95DDD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75D78A527E3193900F95DDD /* LoginViewController.swift */; };
-		E75D78C627E45B0A00F95DDD /* ConstantsUIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75D78C527E45B0A00F95DDD /* ConstantsUIKit.swift */; };
-		E75D78CA27E45B7800F95DDD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75D78C927E45B7800F95DDD /* HomeViewController.swift */; };
-		E75D78CF27E45D3E00F95DDD /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75D78CE27E45D3E00F95DDD /* Network.swift */; };
-		FAA4979C27E66094007FCC32 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA4979B27E66094007FCC32 /* CreateAccountViewController.swift */; };
-		FAA497B027E6BAFE007FCC32 /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA4979E27E6BAFC007FCC32 /* Poppins-MediumItalic.ttf */; };
-		FAA497B127E6BAFE007FCC32 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA4979F27E6BAFC007FCC32 /* Poppins-Light.ttf */; };
-		FAA497B227E6BAFE007FCC32 /* Poppins-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA497A027E6BAFC007FCC32 /* Poppins-BlackItalic.ttf */; };
-		FAA497B327E6BAFE007FCC32 /* Poppins-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA497A127E6BAFC007FCC32 /* Poppins-BoldItalic.ttf */; };
-		FAA497B427E6BAFE007FCC32 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA497A227E6BAFC007FCC32 /* Poppins-Medium.ttf */; };
-		FAA497B527E6BAFE007FCC32 /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA497A327E6BAFC007FCC32 /* Poppins-ExtraLight.ttf */; };
-		FAA497B627E6BAFE007FCC32 /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA497A427E6BAFC007FCC32 /* Poppins-Black.ttf */; };
-		FAA497B727E6BAFE007FCC32 /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA497A527E6BAFD007FCC32 /* Poppins-ExtraBold.ttf */; };
-		FAA497B827E6BAFE007FCC32 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA497A627E6BAFD007FCC32 /* Poppins-Regular.ttf */; };
-		FAA497B927E6BAFE007FCC32 /* Poppins-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA497A727E6BAFD007FCC32 /* Poppins-ExtraBoldItalic.ttf */; };
-		FAA497BA27E6BAFE007FCC32 /* Poppins-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA497A827E6BAFD007FCC32 /* Poppins-LightItalic.ttf */; };
-		FAA497BB27E6BAFE007FCC32 /* Poppins-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA497A927E6BAFD007FCC32 /* Poppins-Italic.ttf */; };
-		FAA497BC27E6BAFE007FCC32 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA497AA27E6BAFD007FCC32 /* Poppins-SemiBold.ttf */; };
-		FAA497BD27E6BAFE007FCC32 /* Poppins-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA497AB27E6BAFD007FCC32 /* Poppins-SemiBoldItalic.ttf */; };
-		FAA497BE27E6BAFE007FCC32 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA497AC27E6BAFD007FCC32 /* Poppins-Bold.ttf */; };
-		FAA497BF27E6BAFE007FCC32 /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA497AD27E6BAFD007FCC32 /* Poppins-Thin.ttf */; };
-		FAA497C027E6BAFE007FCC32 /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA497AE27E6BAFD007FCC32 /* Poppins-ThinItalic.ttf */; };
-		FAA497C127E6BAFE007FCC32 /* Poppins-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA497AF27E6BAFD007FCC32 /* Poppins-ExtraLightItalic.ttf */; };
-		FAA92A9727E96BD000083E10 /* CreatePaswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA92A9627E96BD000083E10 /* CreatePaswordViewController.swift */; };
-		FAA92A9A27E96C7700083E10 /* DetailAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA92A9927E96C7700083E10 /* DetailAccountViewController.swift */; };
-		FAF8163627EA5E710098989A /* PhoneAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8163527EA5E710098989A /* PhoneAccountController.swift */; };
+		E75D78A227E3108500F95DDD /* UIView++.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75D78A127E3108500F95DDD /* UIView++.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C59A81F827E6FD4B0038C662 /* UIImageView++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView++.swift"; sourceTree = "<group>"; };
 		E75D785927E2F7E300F95DDD /* BankKodemia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankKodemia.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E75D786027E2F7E300F95DDD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E75D786527E2F7E400F95DDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E75D786827E2F7E400F95DDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E75D786A27E2F7E400F95DDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,33 +35,7 @@
 		E75D789627E309D700F95DDD /* UILabel++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel++.swift"; sourceTree = "<group>"; };
 		E75D789B27E309FA00F95DDD /* ConstantsColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantsColor.swift; sourceTree = "<group>"; };
 		E75D789C27E309FA00F95DDD /* ConstansText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstansText.swift; sourceTree = "<group>"; };
-		E75D78A327E3167400F95DDD /* UIView++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView++.swift"; sourceTree = "<group>"; };
-		E75D78A527E3193900F95DDD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		E75D78C527E45B0A00F95DDD /* ConstantsUIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsUIKit.swift; sourceTree = "<group>"; };
-		E75D78C927E45B7800F95DDD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		E75D78CE27E45D3E00F95DDD /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		FAA4979B27E66094007FCC32 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
-		FAA4979E27E6BAFC007FCC32 /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
-		FAA4979F27E6BAFC007FCC32 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
-		FAA497A027E6BAFC007FCC32 /* Poppins-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BlackItalic.ttf"; sourceTree = "<group>"; };
-		FAA497A127E6BAFC007FCC32 /* Poppins-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BoldItalic.ttf"; sourceTree = "<group>"; };
-		FAA497A227E6BAFC007FCC32 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
-		FAA497A327E6BAFC007FCC32 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
-		FAA497A427E6BAFC007FCC32 /* Poppins-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.ttf"; sourceTree = "<group>"; };
-		FAA497A527E6BAFD007FCC32 /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
-		FAA497A627E6BAFD007FCC32 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
-		FAA497A727E6BAFD007FCC32 /* Poppins-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
-		FAA497A827E6BAFD007FCC32 /* Poppins-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-LightItalic.ttf"; sourceTree = "<group>"; };
-		FAA497A927E6BAFD007FCC32 /* Poppins-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Italic.ttf"; sourceTree = "<group>"; };
-		FAA497AA27E6BAFD007FCC32 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
-		FAA497AB27E6BAFD007FCC32 /* Poppins-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
-		FAA497AC27E6BAFD007FCC32 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
-		FAA497AD27E6BAFD007FCC32 /* Poppins-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.ttf"; sourceTree = "<group>"; };
-		FAA497AE27E6BAFD007FCC32 /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ThinItalic.ttf"; sourceTree = "<group>"; };
-		FAA497AF27E6BAFD007FCC32 /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
-		FAA92A9627E96BD000083E10 /* CreatePaswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePaswordViewController.swift; sourceTree = "<group>"; };
-		FAA92A9927E96C7700083E10 /* DetailAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAccountViewController.swift; sourceTree = "<group>"; };
-		FAF8163527EA5E710098989A /* PhoneAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAccountController.swift; sourceTree = "<group>"; };
+		E75D78A127E3108500F95DDD /* UIView++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView++.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,34 +68,41 @@
 		E75D785B27E2F7E300F95DDD /* BankKodemia */ = {
 			isa = PBXGroup;
 			children = (
-				FAA4979D27E6BADB007FCC32 /* fonts */,
-				E75D78CD27E45D2500F95DDD /* Services */,
-				E75D78CC27E45D0100F95DDD /* Delegates */,
-				E75D78CB27E45C0600F95DDD /* Modules */,
+				E75D789027E3097F00F95DDD /* Models */,
 				E75D788F27E3096800F95DDD /* Utils */,
+				E75D787627E2F99C00F95DDD /* Views */,
 				E75D786527E2F7E400F95DDD /* Assets.xcassets */,
 				E75D786727E2F7E400F95DDD /* LaunchScreen.storyboard */,
 				E75D786A27E2F7E400F95DDD /* Info.plist */,
+				E75D787727E2FA2D00F95DDD /* AppDelegate.swift */,
+				E75D787827E2FA2D00F95DDD /* SceneDelegate.swift */,
 			);
 			path = BankKodemia;
 			sourceTree = "<group>";
 		};
-		E75D787627E2F99C00F95DDD /* LoginView */ = {
+		E75D787627E2F99C00F95DDD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E75D78A527E3193900F95DDD /* LoginViewController.swift */,
+				E75D786027E2F7E300F95DDD /* ViewController.swift */,
 			);
-			path = LoginView;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		E75D788F27E3096800F95DDD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				E75D789327E309C500F95DDD /* ComponentExtensions */,
-				E75D789A27E309EA00F95DDD /* Constants */,
 				E75D789127E3099400F95DDD /* constraints.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		E75D789027E3097F00F95DDD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E75D789A27E309EA00F95DDD /* Constants */,
+				E75D789327E309C500F95DDD /* ComponentExtensions */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		E75D789327E309C500F95DDD /* ComponentExtensions */ = {
@@ -156,8 +111,7 @@
 				E75D789427E309D700F95DDD /* TextField++.swift */,
 				E75D789527E309D700F95DDD /* UIButton++.swift */,
 				E75D789627E309D700F95DDD /* UILabel++.swift */,
-				E75D78A327E3167400F95DDD /* UIView++.swift */,
-				C59A81F827E6FD4B0038C662 /* UIImageView++.swift */,
+				E75D78A127E3108500F95DDD /* UIView++.swift */,
 			);
 			path = ComponentExtensions;
 			sourceTree = "<group>";
@@ -167,112 +121,8 @@
 			children = (
 				E75D789C27E309FA00F95DDD /* ConstansText.swift */,
 				E75D789B27E309FA00F95DDD /* ConstantsColor.swift */,
-				E75D78C527E45B0A00F95DDD /* ConstantsUIKit.swift */,
 			);
 			path = Constants;
-			sourceTree = "<group>";
-		};
-		E75D78C727E45B4100F95DDD /* HomeView */ = {
-			isa = PBXGroup;
-			children = (
-				E75D78C927E45B7800F95DDD /* HomeViewController.swift */,
-			);
-			path = HomeView;
-			sourceTree = "<group>";
-		};
-		E75D78CB27E45C0600F95DDD /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-				FAA497CD27E960E5007FCC32 /* CreateNewAccountViews */,
-				E75D787627E2F99C00F95DDD /* LoginView */,
-				E75D78C727E45B4100F95DDD /* HomeView */,
-			);
-			path = Modules;
-			sourceTree = "<group>";
-		};
-		E75D78CC27E45D0100F95DDD /* Delegates */ = {
-			isa = PBXGroup;
-			children = (
-				E75D787727E2FA2D00F95DDD /* AppDelegate.swift */,
-				E75D787827E2FA2D00F95DDD /* SceneDelegate.swift */,
-			);
-			path = Delegates;
-			sourceTree = "<group>";
-		};
-		E75D78CD27E45D2500F95DDD /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				E75D78CE27E45D3E00F95DDD /* Network.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		FAA4979A27E66058007FCC32 /* CreateAccountView */ = {
-			isa = PBXGroup;
-			children = (
-				FAA4979B27E66094007FCC32 /* CreateAccountViewController.swift */,
-			);
-			path = CreateAccountView;
-			sourceTree = "<group>";
-		};
-		FAA4979D27E6BADB007FCC32 /* fonts */ = {
-			isa = PBXGroup;
-			children = (
-				FAA497A427E6BAFC007FCC32 /* Poppins-Black.ttf */,
-				FAA497A027E6BAFC007FCC32 /* Poppins-BlackItalic.ttf */,
-				FAA497AC27E6BAFD007FCC32 /* Poppins-Bold.ttf */,
-				FAA497A127E6BAFC007FCC32 /* Poppins-BoldItalic.ttf */,
-				FAA497A527E6BAFD007FCC32 /* Poppins-ExtraBold.ttf */,
-				FAA497A727E6BAFD007FCC32 /* Poppins-ExtraBoldItalic.ttf */,
-				FAA497A327E6BAFC007FCC32 /* Poppins-ExtraLight.ttf */,
-				FAA497AF27E6BAFD007FCC32 /* Poppins-ExtraLightItalic.ttf */,
-				FAA497A927E6BAFD007FCC32 /* Poppins-Italic.ttf */,
-				FAA4979F27E6BAFC007FCC32 /* Poppins-Light.ttf */,
-				FAA497A827E6BAFD007FCC32 /* Poppins-LightItalic.ttf */,
-				FAA497A227E6BAFC007FCC32 /* Poppins-Medium.ttf */,
-				FAA4979E27E6BAFC007FCC32 /* Poppins-MediumItalic.ttf */,
-				FAA497A627E6BAFD007FCC32 /* Poppins-Regular.ttf */,
-				FAA497AA27E6BAFD007FCC32 /* Poppins-SemiBold.ttf */,
-				FAA497AB27E6BAFD007FCC32 /* Poppins-SemiBoldItalic.ttf */,
-				FAA497AD27E6BAFD007FCC32 /* Poppins-Thin.ttf */,
-				FAA497AE27E6BAFD007FCC32 /* Poppins-ThinItalic.ttf */,
-			);
-			path = fonts;
-			sourceTree = "<group>";
-		};
-		FAA497CD27E960E5007FCC32 /* CreateNewAccountViews */ = {
-			isa = PBXGroup;
-			children = (
-				FAF8163427EA5E540098989A /* PhoneAccountController */,
-				FAA92A9827E96C2C00083E10 /* DetailAccountViewController */,
-				FAA92A9527E96BA700083E10 /* CreatePasswordView */,
-				FAA4979A27E66058007FCC32 /* CreateAccountView */,
-			);
-			path = CreateNewAccountViews;
-			sourceTree = "<group>";
-		};
-		FAA92A9527E96BA700083E10 /* CreatePasswordView */ = {
-			isa = PBXGroup;
-			children = (
-				FAA92A9627E96BD000083E10 /* CreatePaswordViewController.swift */,
-			);
-			path = CreatePasswordView;
-			sourceTree = "<group>";
-		};
-		FAA92A9827E96C2C00083E10 /* DetailAccountViewController */ = {
-			isa = PBXGroup;
-			children = (
-				FAA92A9927E96C7700083E10 /* DetailAccountViewController.swift */,
-			);
-			path = DetailAccountViewController;
-			sourceTree = "<group>";
-		};
-		FAF8163427EA5E540098989A /* PhoneAccountController */ = {
-			isa = PBXGroup;
-			children = (
-				FAF8163527EA5E710098989A /* PhoneAccountController.swift */,
-			);
-			path = PhoneAccountController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,26 +183,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAA497BC27E6BAFE007FCC32 /* Poppins-SemiBold.ttf in Resources */,
-				FAA497BD27E6BAFE007FCC32 /* Poppins-SemiBoldItalic.ttf in Resources */,
-				FAA497B927E6BAFE007FCC32 /* Poppins-ExtraBoldItalic.ttf in Resources */,
-				FAA497BF27E6BAFE007FCC32 /* Poppins-Thin.ttf in Resources */,
-				FAA497BA27E6BAFE007FCC32 /* Poppins-LightItalic.ttf in Resources */,
-				FAA497BB27E6BAFE007FCC32 /* Poppins-Italic.ttf in Resources */,
 				E75D786927E2F7E400F95DDD /* LaunchScreen.storyboard in Resources */,
-				FAA497B427E6BAFE007FCC32 /* Poppins-Medium.ttf in Resources */,
-				FAA497B027E6BAFE007FCC32 /* Poppins-MediumItalic.ttf in Resources */,
-				FAA497B227E6BAFE007FCC32 /* Poppins-BlackItalic.ttf in Resources */,
-				FAA497B527E6BAFE007FCC32 /* Poppins-ExtraLight.ttf in Resources */,
-				FAA497B327E6BAFE007FCC32 /* Poppins-BoldItalic.ttf in Resources */,
-				FAA497C127E6BAFE007FCC32 /* Poppins-ExtraLightItalic.ttf in Resources */,
-				FAA497B727E6BAFE007FCC32 /* Poppins-ExtraBold.ttf in Resources */,
-				FAA497BE27E6BAFE007FCC32 /* Poppins-Bold.ttf in Resources */,
-				FAA497B627E6BAFE007FCC32 /* Poppins-Black.ttf in Resources */,
-				FAA497B827E6BAFE007FCC32 /* Poppins-Regular.ttf in Resources */,
 				E75D786627E2F7E400F95DDD /* Assets.xcassets in Resources */,
-				FAA497C027E6BAFE007FCC32 /* Poppins-ThinItalic.ttf in Resources */,
-				FAA497B127E6BAFE007FCC32 /* Poppins-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,24 +195,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAA4979C27E66094007FCC32 /* CreateAccountViewController.swift in Sources */,
-				E75D78CF27E45D3E00F95DDD /* Network.swift in Sources */,
 				E75D789227E3099400F95DDD /* constraints.swift in Sources */,
 				E75D787927E2FA2D00F95DDD /* AppDelegate.swift in Sources */,
 				E75D789927E309D700F95DDD /* UILabel++.swift in Sources */,
 				E75D789D27E309FA00F95DDD /* ConstantsColor.swift in Sources */,
 				E75D789E27E309FA00F95DDD /* ConstansText.swift in Sources */,
+				E75D786127E2F7E300F95DDD /* ViewController.swift in Sources */,
 				E75D789727E309D700F95DDD /* TextField++.swift in Sources */,
 				E75D787A27E2FA2D00F95DDD /* SceneDelegate.swift in Sources */,
-				C59A81F927E6FD4B0038C662 /* UIImageView++.swift in Sources */,
-				E75D78A427E3167400F95DDD /* UIView++.swift in Sources */,
+				E75D78A227E3108500F95DDD /* UIView++.swift in Sources */,
 				E75D789827E309D700F95DDD /* UIButton++.swift in Sources */,
-				FAF8163627EA5E710098989A /* PhoneAccountController.swift in Sources */,
-				E75D78C627E45B0A00F95DDD /* ConstantsUIKit.swift in Sources */,
-				FAA92A9727E96BD000083E10 /* CreatePaswordViewController.swift in Sources */,
-				E75D78CA27E45B7800F95DDD /* HomeViewController.swift in Sources */,
-				FAA92A9A27E96C7700083E10 /* DetailAccountViewController.swift in Sources */,
-				E75D78A627E3193900F95DDD /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
