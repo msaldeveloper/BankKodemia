@@ -62,7 +62,7 @@ class CreateAccountViewController: UIViewController {
     func suggestEmailSection(){
         
         infoSuggestLabel = UILabel()
-        infoSuggestLabel.text = TextLocals.create_account_description_message
+        infoSuggestLabel.text = Text.CreateAccount.EmailRegister.DescriptionMessage
         infoSuggestLabel.font = UIFont(name: "Poppins-Medium", size: 20)
         infoSuggestLabel.textAlignment = .left
         infoSuggestLabel.lineBreakMode = .byWordWrapping
@@ -78,7 +78,7 @@ class CreateAccountViewController: UIViewController {
         emailFieldView.addAnchorsAndSize(width: nil, height: 37, left: 21, top: height/10, right: 21, bottom: nil, withAnchor: .top, relativeToView: infoSuggestLabel)
         
         emailAccountTextField = UITextField()
-        emailAccountTextField.formatTextField(TextLocals.init_session_email_input_message)
+        emailAccountTextField.formatTextField(Text.CreateAccount.EmailRegister.InputMessage)
         emailAccountTextField.font = UIFont(name: "Poppins-Medium", size: 18)
         emailAccountTextField.keyboardType = .emailAddress
         emailFieldView.addSubview(emailAccountTextField)
@@ -87,7 +87,7 @@ class CreateAccountViewController: UIViewController {
         
         
         emailTextLabel = UILabel()
-        emailTextLabel.text = TextLocals.init_session_top_email_input_message
+        emailTextLabel.text = Text.CreateAccount.EmailRegister.LabelMessage
         emailTextLabel.font = UIFont(name: "Poppins-Medium", size: 16)
         emailFieldView.addSubview(emailTextLabel)
         emailTextLabel.addAnchorsAndSize(width: nil, height: nil, left: 0, top: nil, right: nil, bottom: 2, withAnchor: .bottom, relativeToView: emailAccountTextField)
@@ -102,14 +102,14 @@ class CreateAccountViewController: UIViewController {
                 
         legalTextLinkedLabel = UILabel()
         legalTextLinkedLabel.formatPurpleLink()
-        legalTextLinkedLabel.text = TextLocals.create_account_notice_of_privacy_bold_message
+        legalTextLinkedLabel.text = Text.CreateAccount.EmailRegister.PrivacyBoldMessage
         legalTextLinkedLabel.font = UIFont(name: "Poppins", size: 17)
         legalTextLinkedLabel.textAlignment = .center
         legalButton.addSubview(legalTextLinkedLabel)
         legalTextLinkedLabel.addAnchorsAndSize(width: nil, height: nil, left: 10, top: 10, right: 10, bottom: 10)
         
         legalTextLabel = UILabel()
-        legalTextLabel.text = TextLocals.create_account_notice_of_privacy_message
+        legalTextLabel.text = Text.CreateAccount.EmailRegister.PrivacyMessage
         legalTextLabel.font = UIFont(name: "Poppins", size: 17)
         legalTextLabel.textAlignment = .center
         legalTextLinkedLabel.addSubview(legalTextLabel)

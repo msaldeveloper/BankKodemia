@@ -68,7 +68,7 @@ class IdSelectViewController: UIViewController {
     func suggestDetailInfoSection(){
         
         infoSuggestLabel = UILabel()
-        infoSuggestLabel.text = TextLocals.create_account_idselect_top_message
+        infoSuggestLabel.text = Text.CreateAccount.IdSelect.TopMessage
         infoSuggestLabel.font = UIFont(name: "Poppins-Medium", size: 20)
         infoSuggestLabel.textAlignment = .left
         infoSuggestLabel.lineBreakMode = .byWordWrapping
@@ -90,7 +90,7 @@ class IdSelectViewController: UIViewController {
         ineButton.addTarget(self, action: #selector(continueButton), for: .touchUpInside)
         ineView.addSubview(ineButton)
         ineButton.addAnchorsAndSize(width: nil, height: 42, left: 10, top: 0, right: 0, bottom: 0)
-        ineButton.addLabelDarkGray(button: ineButton, text: TextLocals.create_account_idselect_ine)
+        ineButton.addLabelDarkGray(button: ineButton, text: Text.CreateAccount.IdSelect.Ine)
         
         ineView.addSubview(ineRightArrow)
         ineRightArrow.arrowButtonIdentity(view: view)
@@ -109,7 +109,7 @@ class IdSelectViewController: UIViewController {
         immigrantDocumentButton.addTarget(self, action: #selector(continueButton), for: .touchUpInside)
         immigrantDocumentView.addSubview(immigrantDocumentButton)
         immigrantDocumentButton.addAnchorsAndSize(width: nil, height: 42, left: 10, top: 0, right: 0, bottom: 0)
-        immigrantDocumentButton.addLabelDarkGray(button: immigrantDocumentButton, text: TextLocals.create_account_idselect_documento_migratorio)
+        immigrantDocumentButton.addLabelDarkGray(button: immigrantDocumentButton, text: Text.CreateAccount.IdSelect.ImmigrantDoc)
         
         immigrantDocumentView.addSubview(immigrantDocumentRightArrow)
         immigrantDocumentRightArrow.arrowButtonIdentity(view: view)
@@ -128,7 +128,7 @@ class IdSelectViewController: UIViewController {
         passportButton.addTarget(self, action: #selector(continueButton), for: .touchUpInside)
         passportView.addSubview(passportButton)
         passportButton.addAnchorsAndSize(width: nil, height: 42, left: 10, top: 0, right: 0, bottom: 0)
-        passportButton.addLabelDarkGray(button: passportButton, text: TextLocals.create_account_idselect_pasaporte)
+        passportButton.addLabelDarkGray(button: passportButton, text: Text.CreateAccount.IdSelect.Passport)
         
         passportView.addSubview(passportRightArrow)
         passportRightArrow.arrowButtonIdentity(view: view)
@@ -144,7 +144,7 @@ class IdSelectViewController: UIViewController {
         legalButton.addAnchorsAndSize(width: nil, height: nil, left: 21, top: nil, right: 21, bottom: 100)
                         
         legalTextLabel = UILabel()
-        legalTextLabel.text = TextLocals.create_account_idselect_bottom_message
+        legalTextLabel.text = Text.CreateAccount.IdSelect.BottomMessage
         legalTextLabel.numberOfLines = 0
         legalTextLabel.font = UIFont(name: "Poppins", size: 17)
         legalTextLabel.textAlignment = .center

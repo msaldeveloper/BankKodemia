@@ -47,7 +47,7 @@ class UploadViewController: UIViewController {
     func suggestDetailInfoSection(){
         
         infoSuggestLabel = UILabel()
-        infoSuggestLabel.text = TextLocals.create_account_upload_top_message
+        infoSuggestLabel.text = Text.CreateAccount.Uploading.TopMessage
         infoSuggestLabel.font = UIFont(name: "Poppins-Medium", size: 20)
         infoSuggestLabel.textAlignment = .left
         infoSuggestLabel.lineBreakMode = .byWordWrapping
@@ -68,7 +68,7 @@ class UploadViewController: UIViewController {
         uploadboxButton.addTarget(self, action: #selector(linkAction), for: .touchUpInside)
         uploadboxView.addSubview(uploadboxButton)
         uploadboxButton.addAnchorsAndSize(width: nil, height: 42, left: 0, top: 0, right: 0, bottom: 0)
-        uploadboxButton.addLabelUploader(button: uploadboxButton, text: TextLocals.create_account_upload_botton_upload_message)
+        uploadboxButton.addLabelUploader(button: uploadboxButton, text: Text.CreateAccount.Uploading.BottonUploadMessage)
 
         
     }
@@ -80,7 +80,7 @@ class UploadViewController: UIViewController {
         view.addSubview(uploadButton)
         uploadButton.addAnchorsAndSize(width: nil, height: 42, left: 21, top: nil, right: 21, bottom: 46)
         
-        uploadButton.addLabelWhite(button: uploadButton, text: TextLocals.create_account_upload_botton_message)
+        uploadButton.addLabelWhite(button: uploadButton, text: Text.CreateAccount.Uploading.BottonMessage)
         
     }
     
