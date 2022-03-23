@@ -54,8 +54,9 @@ struct TextLocals{
     static let create_account_idselect_ine: String = "INE"
     static let create_account_idselect_documento_migratorio: String = "Documento Migratorio"
     static let create_account_idselect_pasaporte: String = "Pasaporte"
-    
     static let create_account_idselect_bottom_message: String = "Conoce cómo protegemos tus documentos"
+    
+    static let create_account_upload_top_message: String = "Dale permiso a Bankodemia para utilizar la cámara. Asegúrate de tener buena luz y enfocar bien tu documento de frente."
     
     // MARK: home and tab bar screens
     

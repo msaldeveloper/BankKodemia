@@ -153,10 +153,7 @@ class IdSelectViewController: UIViewController {
 
     }
     
-    func continueButtonSection(){
-        
-        
-    }
+
     
     
     
@@ -177,9 +174,9 @@ extension IdSelectViewController {
     @objc func continueButton(){
         print("continue button pressed")
         
-//        let detailAccountViewController = DetailAccountViewController()
-//        detailAccountViewController.modalPresentationStyle = .fullScreen
-//        present(detailAccountViewController, animated: true, completion: nil)
+        let uploadViewController = UploadViewController()
+        uploadViewController.modalPresentationStyle = .fullScreen
+        present(uploadViewController, animated: true, completion: nil)
         
     }
 }

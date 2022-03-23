@@ -47,6 +47,7 @@
 		FAF8163627EA5E710098989A /* PhoneAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8163527EA5E710098989A /* PhoneAccountViewController.swift */; };
 		FAF8163A27EA73220098989A /* IdentityVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8163927EA73220098989A /* IdentityVerificationViewController.swift */; };
 		FAF8163D27EA7A610098989A /* IdSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8163C27EA7A610098989A /* IdSelectViewController.swift */; };
+		FAF8164027EAC5EA0098989A /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8163F27EAC5EA0098989A /* UploadViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		FAF8163527EA5E710098989A /* PhoneAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAccountViewController.swift; sourceTree = "<group>"; };
 		FAF8163927EA73220098989A /* IdentityVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityVerificationViewController.swift; sourceTree = "<group>"; };
 		FAF8163C27EA7A610098989A /* IdSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdSelectViewController.swift; sourceTree = "<group>"; };
+		FAF8163F27EAC5EA0098989A /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +249,7 @@
 		FAA497CD27E960E5007FCC32 /* CreateNewAccountViews */ = {
 			isa = PBXGroup;
 			children = (
+				FAF8163E27EAC5C70098989A /* UploadView */,
 				FAF8163B27EA7A010098989A /* IdSelectView */,
 				FAF8163827EA72CB0098989A /* IdentityVerificationView */,
 				FAF8163427EA5E540098989A /* PhoneAccountView */,
@@ -295,6 +298,14 @@
 				FAF8163C27EA7A610098989A /* IdSelectViewController.swift */,
 			);
 			path = IdSelectView;
+			sourceTree = "<group>";
+		};
+		FAF8163E27EAC5C70098989A /* UploadView */ = {
+			isa = PBXGroup;
+			children = (
+				FAF8163F27EAC5EA0098989A /* UploadViewController.swift */,
+			);
+			path = UploadView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAA4979C27E66094007FCC32 /* CreateAccountViewController.swift in Sources */,
+				FAF8164027EAC5EA0098989A /* UploadViewController.swift in Sources */,
 				E75D78CF27E45D3E00F95DDD /* Network.swift in Sources */,
 				E75D789227E3099400F95DDD /* constraints.swift in Sources */,
 				E75D787927E2FA2D00F95DDD /* AppDelegate.swift in Sources */,
