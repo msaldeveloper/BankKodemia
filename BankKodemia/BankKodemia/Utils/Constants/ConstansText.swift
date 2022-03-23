@@ -57,6 +57,8 @@ struct TextLocals{
     static let create_account_idselect_bottom_message: String = "Conoce cómo protegemos tus documentos"
     
     static let create_account_upload_top_message: String = "Dale permiso a Bankodemia para utilizar la cámara. Asegúrate de tener buena luz y enfocar bien tu documento de frente."
+    static let create_account_upload_botton_message: String = "Subir Información"
+    static let create_account_upload_botton_upload_message: String = "Arrastra tu archivo aquí o subelo desde tu ORDENADOR"
     
     // MARK: home and tab bar screens
     

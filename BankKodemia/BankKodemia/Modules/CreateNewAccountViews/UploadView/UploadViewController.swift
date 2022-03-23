@@ -12,16 +12,12 @@ class UploadViewController: UIViewController {
     
     // SuggestDetailInfo: Indicaciones de la seccion
     var infoSuggestLabel : UILabel = UILabel()
-    
-
-        
-    //Legal Information
-    var legalButton: UIButton = UIButton()
-    var legalTextLabel: UILabel = UILabel()
-    
+    //UploadBox
+    var uploadboxView : UIView = UIView()
+    var uploadboxLabel : UILabel = UILabel()
+    var uploadboxButton : UIButton = UIButton()
     // Boton para continuar
-    var incomingButton: UIButton = UIButton()
-    
+    var uploadButton : UIButton = UIButton()
     
     var backgroundColor = ConstantsUIColor.clearBackground
     
@@ -36,6 +32,8 @@ class UploadViewController: UIViewController {
     func UIInit(){
         logoImage()
         suggestDetailInfoSection()
+        uploadBoxSection()
+        uploadButtonSection()
     
         
        
@@ -59,16 +57,39 @@ class UploadViewController: UIViewController {
         
     }
     
-    
-    
-    
-    
-    
-    
-    func legalInformationSection(){
+    func uploadBoxSection(){
         
-  
+        uploadboxView = UIView()
+        uploadboxView.formatUIViewDash(activate: false)
+        view.addSubview(uploadboxView)
+        uploadboxView.addAnchorsAndSize(width: nil, height: height/4, left: 21, top: height/20, right: 21, bottom: nil, withAnchor: .top, relativeToView: infoSuggestLabel)
+        
+        uploadboxButton.formatGray()
+        uploadboxButton.addTarget(self, action: #selector(linkAction), for: .touchUpInside)
+        uploadboxView.addSubview(uploadboxButton)
+        uploadboxButton.addAnchorsAndSize(width: nil, height: 42, left: 0, top: 0, right: 0, bottom: 0)
+        uploadboxButton.addLabelUploader(button: uploadboxButton, text: TextLocals.create_account_upload_botton_upload_message)
+
+        
     }
+    
+    func uploadButtonSection(){
+        
+        uploadButton.formartBlueGreen()
+        uploadButton.addTarget(self, action: #selector(upload), for: .touchUpInside)
+        view.addSubview(uploadButton)
+        uploadButton.addAnchorsAndSize(width: nil, height: 42, left: 21, top: nil, right: 21, bottom: 46)
+        
+        uploadButton.addLabelWhite(button: uploadButton, text: TextLocals.create_account_upload_botton_message)
+        
+    }
+    
+    
+    
+    
+    
+    
+  
     
 
     
@@ -87,6 +108,10 @@ extension UploadViewController {
     }
     @objc func linkAction(){
         print("link pressed")
+    }
+    
+    @objc func upload(){
+        print("upload file")
     }
 
 }

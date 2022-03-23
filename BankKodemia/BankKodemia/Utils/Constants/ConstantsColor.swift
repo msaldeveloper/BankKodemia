@@ -22,6 +22,7 @@ struct ConstantsUIColor{
     static let clearBackground: UIColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
     static let greenBlue : UIColor = UIColor(red: 0, green: 204/255, blue: 204/255, alpha: 0.9)
     static let greyKodemia : UIColor = UIColor(red: 127/255, green: 127/255, blue: 127/255, alpha: 0.9)
+    static let lightgreyKodemia: UIColor = UIColor(red: 127/255, green: 127/255, blue: 127/255, alpha: 0.05)
     static let purpleLink : UIColor = UIColor(red: 123/255, green: 120/255, blue: 234/255, alpha: 0.92)
 
 }
