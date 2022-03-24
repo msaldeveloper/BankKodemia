@@ -11,7 +11,7 @@ import UIKit
 extension UILabel{
     func formartWhite(){
         self.backgroundColor = .clear
-        self.font = .boldSystemFont(ofSize: 50)
+        self.font = UIFont(name: "Poppins-Bold", size: 50)
         self.adjustsFontSizeToFitWidth = true
         self.textColor = .white
     }
@@ -22,13 +22,15 @@ extension UILabel{
     
     func formartGreenBlue(){
         self.backgroundColor = .clear
-        self.font = .boldSystemFont(ofSize: 50)
+        self.font = UIFont(name: "Poppins-Bold", size: 50)
         self.adjustsFontSizeToFitWidth = true
         self.textColor = ConstantsUIColor.greenBlue
     }
     
     func formartTitle(view: UIView, textTitle: String){
-            self.font = UIFont(name: "Poppins-Bold", size: ConstantsUIKit.height/32)
+        
+            self.textColor = .darkGray
+            self.font = UIFont(name: "Poppins-Bold", size: ConstantsUIKit.height/35)
             self.text = textTitle
             self.textAlignment = .center
             self.translatesAutoresizingMaskIntoConstraints = false

@@ -64,13 +64,14 @@ class LoginViewController: UIViewController {
     func welcomeLabel(){
         initSessionWelcomeLabel = UILabel()
         initSessionWelcomeLabel.text = TextLocals.init_session_description_message
-        initSessionWelcomeLabel.font = UIFont(name: "some", size: 16)
+        initSessionWelcomeLabel.font = UIFont(name: "Poppins-Medium", size: 4*ConstantsUIKit.height/175)
         initSessionWelcomeLabel.textAlignment = .left
         initSessionWelcomeLabel.lineBreakMode = .byWordWrapping
         initSessionWelcomeLabel.numberOfLines = 0
         view.addSubview(initSessionWelcomeLabel)
         initSessionWelcomeLabel.addAnchorsAndSize(width: nil, height: nil, left: 21, top: 24, right: 21, bottom: nil, withAnchor: .top, relativeToView: initSessionLabel)
     }
+    
     func emailField(){
         fieldEmail = UIView()
         fieldEmail.formatUIView(activate: false)
@@ -87,7 +88,7 @@ class LoginViewController: UIViewController {
         
         textFieldLabelTop = UILabel()
         textFieldLabelTop.text = TextLocals.init_session_top_email_input_message
-        textFieldLabelTop.font = UIFont(name: "some", size: 14)
+        textFieldLabelTop.font = UIFont(name: "Poppins-Medium", size: ConstantsUIKit.height/50)
         view.addSubview(textFieldLabelTop)
         textFieldLabelTop.addAnchorsAndSize(width: nil, height: nil, left: 21, top: nil, right: nil, bottom: 2, withAnchor: .bottom, relativeToView: textFieldEmail)
     }
@@ -107,7 +108,7 @@ class LoginViewController: UIViewController {
         
         passwordFieldLabelTop = UILabel()
         passwordFieldLabelTop.text = TextLocals.init_session_top_password_input_message
-        passwordFieldLabelTop.font = UIFont(name: "some", size: 14)
+        passwordFieldLabelTop.font = UIFont(name: "Poppins-Medium", size: ConstantsUIKit.height/50)
         view.addSubview(passwordFieldLabelTop)
         passwordFieldLabelTop.addAnchorsAndSize(width: nil, height: nil, left: 21, top: nil, right: nil, bottom: 2, withAnchor: .bottom, relativeToView: textFieldPassword)
     }
@@ -128,9 +129,11 @@ class LoginViewController: UIViewController {
         linkMessageButton.addTarget(self, action: #selector(linkAction), for: .touchUpInside)
         view.addSubview(linkMessageButton)
         linkMessageButton.addAnchorsAndSize(width: nil, height: nil, left: 21, top: nil, right: 21, bottom: 100)
+        linkMessageButton.backgroundColor = .red
         
         linkMessageLabel = UILabel()
         linkMessageLabel.formatPurpleLink()
+        linkMessageLabel.font = UIFont(name: "Poppins-Medium", size: ConstantsUIKit.height/50)
         linkMessageLabel.text = TextLocals.init_session_help_link
         linkMessageLabel.textAlignment = .center
         linkMessageButton.addSubview(linkMessageLabel)

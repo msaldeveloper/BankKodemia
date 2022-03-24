@@ -44,7 +44,7 @@ extension UIButton{
     func addLabelWhite(button: UIButton, text: String){
         let label = UILabel()
         button.addSubview(label)
-        label.font = .boldSystemFont(ofSize: 9*height/400)
+        label.font = UIFont(name: "Poppins-Medium", size: 9*ConstantsUIKit.height/350)
         label.textColor = .white
         label.textAlignment = .center
         label.text = text
@@ -60,7 +60,7 @@ extension UIButton{
     func addLabelDarkGray(button: UIButton, text: String){
         let label = UILabel()
         button.addSubview(label)
-        label.font = .boldSystemFont(ofSize: 9*height/400)
+        label.font = UIFont(name: "Poppins-Medium", size: 9*ConstantsUIKit.height/350)
         label.textColor = .darkGray
         label.textAlignment = .left
         label.text = text
@@ -76,7 +76,7 @@ extension UIButton{
     func addLabelUploader(button: UIButton, text: String){
         let label = UILabel()
         button.addSubview(label)
-        label.font = UIFont(name: "Poppins-Medium", size: 14)
+        label.font = UIFont(name: "Poppins-Medium", size: ConstantsUIKit.height/50)
         label.textColor = .darkGray
         label.textAlignment = .center
         label.numberOfLines = 2
@@ -93,7 +93,7 @@ extension UIButton{
     func addLabelGreenblue(button: UIButton, text: String){
         let label = UILabel()
         button.addSubview(label)
-        label.font = .boldSystemFont(ofSize: 9*height/400)
+        label.font = UIFont(name: "Poppins-Medium", size: 9*ConstantsUIKit.height/350)
         label.textColor = ConstantsUIColor.greenBlue
         label.textAlignment = .center
         label.text = text
@@ -112,16 +112,17 @@ extension UIButton{
         arrowImage.backgroundColor = .red
         self.addSubview(arrowImage)
         let textButton = UILabel(frame: CGRect(x: 3*ConstantsUIKit.height/160 + ConstantsUIKit.width/36, y: -ConstantsUIKit.height/240, width: widthText, height: ConstantsUIKit.height/30))
-        textButton.font = UIFont(name: "Poppins-Medium", size: ConstantsUIKit.height/40)
+        textButton.font = UIFont(name: "Poppins-Medium", size: ConstantsUIKit.height/50)
         textButton.text = textDinamic
+        textButton.textColor = ConstantsUIColor.greyKodemia
         textButton.textAlignment = .center
         self.addSubview(textButton)
         self.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             self.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: ConstantsUIKit.width/18),
-            self.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: height/15),
+            self.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: height/16),
             self.widthAnchor.constraint(equalToConstant: 3*ConstantsUIKit.height/160 + ConstantsUIKit.width/36 + widthText),
-            self.heightAnchor.constraint(equalToConstant: ConstantsUIKit.height/40)
+            self.heightAnchor.constraint(equalToConstant: 9*ConstantsUIKit.height/350)
         ])
         
     }
