@@ -140,9 +140,9 @@ extension CreatePasswordViewController {
     @objc func continueButton(){
         print("continue button pressed")
         
-//        let idSelectViewController = IdSelectViewController()
-//        idSelectViewController.modalPresentationStyle = .fullScreen
-//        present(idSelectViewController, animated: true, completion: nil)
+        let loadingViewController = LoadingViewController()
+        loadingViewController.modalPresentationStyle = .fullScreen
+        present(loadingViewController, animated: true, completion: nil)
         
     }
 }

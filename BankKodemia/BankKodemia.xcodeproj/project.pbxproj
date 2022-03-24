@@ -48,6 +48,7 @@
 		FAF8163A27EA73220098989A /* IdentityVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8163927EA73220098989A /* IdentityVerificationViewController.swift */; };
 		FAF8163D27EA7A610098989A /* IdSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8163C27EA7A610098989A /* IdSelectViewController.swift */; };
 		FAF8164027EAC5EA0098989A /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8163F27EAC5EA0098989A /* UploadViewController.swift */; };
+		FAF8164427EC08980098989A /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8164327EC08980098989A /* LoadingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +95,7 @@
 		FAF8163927EA73220098989A /* IdentityVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityVerificationViewController.swift; sourceTree = "<group>"; };
 		FAF8163C27EA7A610098989A /* IdSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdSelectViewController.swift; sourceTree = "<group>"; };
 		FAF8163F27EAC5EA0098989A /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
+		FAF8164327EC08980098989A /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 		E75D78CB27E45C0600F95DDD /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				FAF8164227EC08810098989A /* LoadingView */,
 				FAA497CD27E960E5007FCC32 /* CreateNewAccountViews */,
 				E75D787627E2F99C00F95DDD /* LoginView */,
 				E75D78C727E45B4100F95DDD /* HomeView */,
@@ -308,6 +311,14 @@
 			path = UploadView;
 			sourceTree = "<group>";
 		};
+		FAF8164227EC08810098989A /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				FAF8164327EC08980098989A /* LoadingViewController.swift */,
+			);
+			path = LoadingView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -415,6 +426,7 @@
 				E75D78C627E45B0A00F95DDD /* ConstantsUIKit.swift in Sources */,
 				FAA92A9727E96BD000083E10 /* CreatePaswordViewController.swift in Sources */,
 				E75D78CA27E45B7800F95DDD /* HomeViewController.swift in Sources */,
+				FAF8164427EC08980098989A /* LoadingViewController.swift in Sources */,
 				FAA92A9A27E96C7700083E10 /* DetailAccountViewController.swift in Sources */,
 				E75D78A627E3193900F95DDD /* LoginViewController.swift in Sources */,
 			);

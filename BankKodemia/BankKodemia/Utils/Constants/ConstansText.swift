@@ -155,6 +155,12 @@ struct Text{
             
         }
         
+        struct Loading {
+            static let TransactionMessage: String = "Espera un momento, estamos procesando tu transacción"
+            static let UpdatingMessage: String = "Espera un momento, estamos enviando tus datos"
+            
+        }
+        
     }
 }
 
