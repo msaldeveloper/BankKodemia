@@ -9,6 +9,12 @@ import Foundation
 import UIKit
 
 extension UILabel{
+    func formatGreyText(){
+            self.backgroundColor = .clear
+            self.textColor = ConstantsUIColor.greyText
+            self.textAlignment = .left
+        }
+    
     func formartWhite(){
         self.backgroundColor = .clear
         self.font = .boldSystemFont(ofSize: 50)
