@@ -32,6 +32,14 @@ extension UIImageView{
         ])
     }
     
+    func logoImageXL(view : UIView){
+        self.contentMode = .scaleAspectFit
+        self.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        ])
+    }
+    
     func arrowButtonIdentity(view : UIView){
         self.image = UIImage(named: "flecha-derecha")
         self.contentMode = .scaleAspectFit
