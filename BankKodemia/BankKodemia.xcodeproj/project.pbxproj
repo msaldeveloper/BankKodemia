@@ -49,6 +49,8 @@
 		FAF8163A27EA73220098989A /* IdentityVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8163927EA73220098989A /* IdentityVerificationViewController.swift */; };
 		FAF8163D27EA7A610098989A /* IdSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8163C27EA7A610098989A /* IdSelectViewController.swift */; };
 		FAF8164027EAC5EA0098989A /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8163F27EAC5EA0098989A /* UploadViewController.swift */; };
+		FAF8164427EC08980098989A /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8164327EC08980098989A /* LoadingViewController.swift */; };
+		FAF8164727EC230E0098989A /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8164627EC230E0098989A /* SuccessViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +98,8 @@
 		FAF8163927EA73220098989A /* IdentityVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityVerificationViewController.swift; sourceTree = "<group>"; };
 		FAF8163C27EA7A610098989A /* IdSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdSelectViewController.swift; sourceTree = "<group>"; };
 		FAF8163F27EAC5EA0098989A /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
+		FAF8164327EC08980098989A /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		FAF8164627EC230E0098989A /* SuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				C98304B227EBD27D00EFD48A /* WelcomeView */,
+				FAF8164227EC08810098989A /* LoadingView */,
 				FAA497CD27E960E5007FCC32 /* CreateNewAccountViews */,
 				E75D787627E2F99C00F95DDD /* LoginView */,
 				E75D78C727E45B4100F95DDD /* HomeView */,
@@ -260,6 +265,7 @@
 		FAA497CD27E960E5007FCC32 /* CreateNewAccountViews */ = {
 			isa = PBXGroup;
 			children = (
+				FAF8164527EC22F30098989A /* SuccessView */,
 				FAF8163E27EAC5C70098989A /* UploadView */,
 				FAF8163B27EA7A010098989A /* IdSelectView */,
 				FAF8163827EA72CB0098989A /* IdentityVerificationView */,
@@ -317,6 +323,22 @@
 				FAF8163F27EAC5EA0098989A /* UploadViewController.swift */,
 			);
 			path = UploadView;
+			sourceTree = "<group>";
+		};
+		FAF8164227EC08810098989A /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				FAF8164327EC08980098989A /* LoadingViewController.swift */,
+			);
+			path = LoadingView;
+			sourceTree = "<group>";
+		};
+		FAF8164527EC22F30098989A /* SuccessView */ = {
+			isa = PBXGroup;
+			children = (
+				FAF8164627EC230E0098989A /* SuccessViewController.swift */,
+			);
+			path = SuccessView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -427,7 +449,9 @@
 				E75D78C627E45B0A00F95DDD /* ConstantsUIKit.swift in Sources */,
 				FAA92A9727E96BD000083E10 /* CreatePaswordViewController.swift in Sources */,
 				E75D78CA27E45B7800F95DDD /* HomeViewController.swift in Sources */,
+				FAF8164427EC08980098989A /* LoadingViewController.swift in Sources */,
 				FAA92A9A27E96C7700083E10 /* DetailAccountViewController.swift in Sources */,
+				FAF8164727EC230E0098989A /* SuccessViewController.swift in Sources */,
 				E75D78A627E3193900F95DDD /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

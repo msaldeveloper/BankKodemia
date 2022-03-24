@@ -145,6 +145,22 @@ struct Text{
             static let BottomMessage: String = "Conoce cómo protegemos tus documentos"
         }
         
+        struct CreatePassword {
+            static let TopMessage: String = "Crea una contraseña segura"
+            static let MediumMessage: String = "La usarás para entrar a la app y confirmar tus transacciones."
+            static let BottomMessage: String = "Usa al menos 6 caracteres alfanuméricos, no consecutivos ni repetidos."
+            static let CreateLabel: String = "Contraseña"
+            static let ConfirmLabel: String = "Confirma tu contraseña"
+            static let ButtonCreateMessage: String = "Crear Contraseña"
+            
+        }
+        
+        struct Loading {
+            static let TransactionMessage: String = "Espera un momento, estamos procesando tu transacción"
+            static let UpdatingMessage: String = "Espera un momento, estamos enviando tus datos"
+            
+        }
+        
     }
 }
 

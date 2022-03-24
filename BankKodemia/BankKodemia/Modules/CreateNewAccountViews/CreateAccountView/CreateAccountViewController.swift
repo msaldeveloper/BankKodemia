@@ -16,6 +16,11 @@ class CreateAccountViewController: UIViewController {
     var titleSuggestLabel: UILabel = UILabel()
     var infoSuggestLabel: UILabel = UILabel()
     
+    //
+    var fieldEmail : UIView = UIView()
+    var textFieldEmail : UITextField = UITextField()
+    var textFieldLabelTop : UILabel = UILabel()
+    
     // EmailField: Indicaciones de la seccion
     var emailFieldView: UIView = UIView()
     var emailTextLabel: UILabel = UILabel()
@@ -72,25 +77,25 @@ class CreateAccountViewController: UIViewController {
     }
     
     func createEmailSection(){
+        
         emailFieldView = UIView()
         emailFieldView.formatUIView(activate: false)
         view.addSubview(emailFieldView)
-        emailFieldView.addAnchorsAndSize(width: nil, height: 37, left: 21, top: height/10, right: 21, bottom: nil, withAnchor: .top, relativeToView: infoSuggestLabel)
+        emailFieldView.addAnchorsAndSize(width: nil, height: 37, left: 21, top: 46, right: 21, bottom: nil, withAnchor: .top, relativeToView: infoSuggestLabel)
         
         emailAccountTextField = UITextField()
         emailAccountTextField.formatTextField(Text.CreateAccount.EmailRegister.InputMessage)
-        emailAccountTextField.font = UIFont(name: "Poppins-Medium", size: 18)
+        emailAccountTextField.font = UIFont(name: "Poppins-Medium", size: 14)
         emailAccountTextField.keyboardType = .emailAddress
         emailFieldView.addSubview(emailAccountTextField)
-        emailAccountTextField.addAnchorsAndSize(width: nil, height: nil, left: 0, top: 0, right: 0, bottom: 0)
-        
-        
+        emailAccountTextField.addAnchorsAndSize(width: nil, height: nil, left: 10, top: 0, right: 10, bottom: 0)
         
         emailTextLabel = UILabel()
         emailTextLabel.text = Text.CreateAccount.EmailRegister.LabelMessage
-        emailTextLabel.font = UIFont(name: "Poppins-Medium", size: 16)
-        emailFieldView.addSubview(emailTextLabel)
-        emailTextLabel.addAnchorsAndSize(width: nil, height: nil, left: 0, top: nil, right: nil, bottom: 2, withAnchor: .bottom, relativeToView: emailAccountTextField)
+        emailTextLabel.font = UIFont(name: "Poppins-Medium", size: 14)
+        view.addSubview(emailTextLabel)
+        emailTextLabel.addAnchorsAndSize(width: nil, height: nil, left: 21, top: nil, right: nil, bottom: 2, withAnchor: .bottom, relativeToView: emailFieldView)
+    
     }
     
     func legalInformationSection(){

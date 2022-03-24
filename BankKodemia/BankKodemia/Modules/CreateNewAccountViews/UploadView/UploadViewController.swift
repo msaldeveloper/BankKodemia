@@ -112,6 +112,11 @@ extension UploadViewController {
     
     @objc func upload(){
         print("upload file")
+        
+        let createPasswordViewController = CreatePasswordViewController()
+        createPasswordViewController.modalPresentationStyle = .fullScreen
+        present(createPasswordViewController, animated: true, completion: nil)
+        
     }
 
 }
