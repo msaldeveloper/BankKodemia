@@ -23,6 +23,7 @@
 		E75D78C627E45B0A00F95DDD /* ConstantsUIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75D78C527E45B0A00F95DDD /* ConstantsUIKit.swift */; };
 		E75D78CA27E45B7800F95DDD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75D78C927E45B7800F95DDD /* HomeViewController.swift */; };
 		E75D78CF27E45D3E00F95DDD /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75D78CE27E45D3E00F95DDD /* Network.swift */; };
+		E7F4F1C227EC1B9500000AE1 /* HomeServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F4F1C127EC1B9500000AE1 /* HomeServicesViewController.swift */; };
 		FAA4979C27E66094007FCC32 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA4979B27E66094007FCC32 /* CreateAccountViewController.swift */; };
 		FAA497B027E6BAFE007FCC32 /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA4979E27E6BAFC007FCC32 /* Poppins-MediumItalic.ttf */; };
 		FAA497B127E6BAFE007FCC32 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA4979F27E6BAFC007FCC32 /* Poppins-Light.ttf */; };
@@ -69,6 +70,7 @@
 		E75D78C527E45B0A00F95DDD /* ConstantsUIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsUIKit.swift; sourceTree = "<group>"; };
 		E75D78C927E45B7800F95DDD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E75D78CE27E45D3E00F95DDD /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		E7F4F1C127EC1B9500000AE1 /* HomeServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeServicesViewController.swift; sourceTree = "<group>"; };
 		FAA4979B27E66094007FCC32 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		FAA4979E27E6BAFC007FCC32 /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
 		FAA4979F27E6BAFC007FCC32 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
@@ -189,9 +191,9 @@
 		E75D78CB27E45C0600F95DDD /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				E7F4F1C327EC221900000AE1 /* HomeViews */,
 				FAA497CD27E960E5007FCC32 /* CreateNewAccountViews */,
 				E75D787627E2F99C00F95DDD /* LoginView */,
-				E75D78C727E45B4100F95DDD /* HomeView */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -211,6 +213,23 @@
 				E75D78CE27E45D3E00F95DDD /* Network.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		E7F4F1C027EC1A1100000AE1 /* HomeServicesView */ = {
+			isa = PBXGroup;
+			children = (
+				E7F4F1C127EC1B9500000AE1 /* HomeServicesViewController.swift */,
+			);
+			path = HomeServicesView;
+			sourceTree = "<group>";
+		};
+		E7F4F1C327EC221900000AE1 /* HomeViews */ = {
+			isa = PBXGroup;
+			children = (
+				E75D78C727E45B4100F95DDD /* HomeView */,
+				E7F4F1C027EC1A1100000AE1 /* HomeServicesView */,
+			);
+			path = HomeViews;
 			sourceTree = "<group>";
 		};
 		FAA4979A27E66058007FCC32 /* CreateAccountView */ = {
@@ -412,6 +431,7 @@
 				E75D78A427E3167400F95DDD /* UIView++.swift in Sources */,
 				E75D789827E309D700F95DDD /* UIButton++.swift in Sources */,
 				FAF8163627EA5E710098989A /* PhoneAccountViewController.swift in Sources */,
+				E7F4F1C227EC1B9500000AE1 /* HomeServicesViewController.swift in Sources */,
 				E75D78C627E45B0A00F95DDD /* ConstantsUIKit.swift in Sources */,
 				FAA92A9727E96BD000083E10 /* CreatePaswordViewController.swift in Sources */,
 				E75D78CA27E45B7800F95DDD /* HomeViewController.swift in Sources */,
