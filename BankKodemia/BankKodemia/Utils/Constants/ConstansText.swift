@@ -161,6 +161,12 @@ struct Text{
             
         }
         
+        struct Success {
+            static let ConfirmationMessage: String = "¡Listo! Recibimos tu información. Usualmente tardamos unos minutos en verificar, pero en caso de tener algún problema, nos comunicaremos contigo."
+            static let ThakYouMessage: String = "¡GRACIAS POR USAR BANKODEMIA!"
+            static let FinishMessage: String = "Volver al Inicio"
+        }
+        
     }
 }
 

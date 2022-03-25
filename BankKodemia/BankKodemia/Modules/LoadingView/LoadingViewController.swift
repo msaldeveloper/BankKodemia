@@ -13,6 +13,7 @@ class LoadingViewController: UIViewController {
     // SuggestDetailInfo: Indicaciones de la seccion
     var infoSuggestLabel: UILabel = UILabel()
     var loadingMessageLabel: UILabel = UILabel()
+
     
     var updating = Text.CreateAccount.Loading.UpdatingMessage
     var Transaction = Text.CreateAccount.Loading.TransactionMessage
@@ -47,6 +48,7 @@ class LoadingViewController: UIViewController {
         loadingMessageLabel.numberOfLines = 2
         view.addSubview(loadingMessageLabel)
         loadingMessageLabel.addAnchorsAndSize(width: nil, height: nil, left: 21, top: nil, right: 21, bottom: (height/5)*2, withAnchor: .top, relativeToView: logoXL)
+        
     }
 
 }
