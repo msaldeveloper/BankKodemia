@@ -16,7 +16,7 @@ struct TextLocals{
     // MARK: init session and welcome screen
     static let init_session_button_message: String = "Iniciar Sesión"
     static let init_session_create_account_button_message: String = "Crear Cuenta"
-    static let init_session_back_message: String = "Principal"
+    static let init_session_back_message: String = "PRINCIPAL"
     static let init_session_top_message : String = "Iniciar Sesion"
     static let init_session_description_message: String = "Escribe el correo y teléfono con el que te registraste, a través de estos te enviaremos el acceso"
     static let init_session_top_email_input_message: String = "Escribe tu correo"

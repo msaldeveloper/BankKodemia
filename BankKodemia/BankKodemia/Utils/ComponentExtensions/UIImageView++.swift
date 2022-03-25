@@ -52,22 +52,22 @@ extension UIImageView{
     
     func countFormart(view: UIView){
         self.image = UIImage(named: "count")
-        self.contentMode = .scaleAspectFit
         self.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             self.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 3*ConstantsUIKit.width/36),
             self.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: ConstantsUIKit.height/100),
-            self.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/15)
+            self.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/15),
+            self.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/15)
         ])
     }
     
     func helpFormart(view: UIView){
         self.image = UIImage(named: "help")
-        self.contentMode = .scaleAspectFit
         self.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             self.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -3*ConstantsUIKit.width/36),
             self.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: ConstantsUIKit.height/100),
+            self.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/15),
             self.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/15)
         ])
     }
