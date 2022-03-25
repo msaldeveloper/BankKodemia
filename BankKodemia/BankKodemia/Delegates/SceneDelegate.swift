@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
 
-                let view = HomeServicesViewController()//cambiar por view a probar
+                let view = AddNewRecipientViewController()//cambiar por view a probar
                 window?.rootViewController = view
                 window?.makeKeyAndVisible()
     }

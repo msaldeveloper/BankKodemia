@@ -162,6 +162,21 @@ struct Text{
         }
         
     }
+    struct AddNewRecipient {
+        static let BackButton: String = "AGREGAR CONTACTO"
+        static let ClabeLabel: String = "CLABE"
+        static let CardLabel: String = "TARJETA"
+        static let DigitsLabel: String = "18 dígitos"
+        static let CardNumberLabel: String = "No. de tarjeta"
+        static let InstitutionLabel: String = "Institución"
+        static let NameLabel: String = "Nombre"
+        static let EmailLabel: String = "Correo de notificación"
+        static let AddRecipientButton: String = "Agregar Contacto"
+        static let BackToInitButton: String = "Volver a Inicio"
+        static let ImageBottomLabel: String = "Tu contacto fue agregado con éxito"
+        
+        
+    }
 }
 
 
