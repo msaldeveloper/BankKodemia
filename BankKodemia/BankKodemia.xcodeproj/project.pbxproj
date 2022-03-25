@@ -8,11 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		C59A81F927E6FD4B0038C662 /* UIImageView++.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59A81F827E6FD4B0038C662 /* UIImageView++.swift */; };
-
 		C5B7DE7827EBE587004AE6C7 /* TransactionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B7DE7727EBE587004AE6C7 /* TransactionDetailsViewController.swift */; };
 		C5B7DE7B27ECEAB6004AE6C7 /* SendMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B7DE7A27ECEAB6004AE6C7 /* SendMoneyViewController.swift */; };
 		C5B7DE7E27ECF790004AE6C7 /* ShipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B7DE7D27ECF790004AE6C7 /* ShipViewController.swift */; };
-
+		C98304B827EDEE9B00EFD48A /* TabCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98304B727EDEE9B00EFD48A /* TabCardViewController.swift */; };
 		E75D786627E2F7E400F95DDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75D786527E2F7E400F95DDD /* Assets.xcassets */; };
 		E75D786927E2F7E400F95DDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E75D786727E2F7E400F95DDD /* LaunchScreen.storyboard */; };
 		E75D787927E2FA2D00F95DDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75D787727E2FA2D00F95DDD /* AppDelegate.swift */; };
@@ -59,11 +58,10 @@
 
 /* Begin PBXFileReference section */
 		C59A81F827E6FD4B0038C662 /* UIImageView++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView++.swift"; sourceTree = "<group>"; };
-
 		C5B7DE7727EBE587004AE6C7 /* TransactionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsViewController.swift; sourceTree = "<group>"; };
 		C5B7DE7A27ECEAB6004AE6C7 /* SendMoneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyViewController.swift; sourceTree = "<group>"; };
 		C5B7DE7D27ECF790004AE6C7 /* ShipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipViewController.swift; sourceTree = "<group>"; };
-
+		C98304B727EDEE9B00EFD48A /* TabCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabCardViewController.swift; sourceTree = "<group>"; };
 		E75D785927E2F7E300F95DDD /* BankKodemia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankKodemia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E75D786527E2F7E400F95DDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E75D786827E2F7E400F95DDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -121,10 +119,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-
 		C5B7DE7227EBE517004AE6C7 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
+				C98304B727EDEE9B00EFD48A /* TabCardViewController.swift */,
 				E75D78C927E45B7800F95DDD /* HomeViewController.swift */,
 			);
 			path = HomeView;
@@ -145,7 +143,6 @@
 				C5B7DE7D27ECF790004AE6C7 /* ShipViewController.swift */,
 			);
 			path = SendMoneyView;
-
 			sourceTree = "<group>";
 		};
 		E75D785027E2F7E300F95DDD = {
@@ -232,7 +229,6 @@
 		E75D78CB27E45C0600F95DDD /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				C98304B227EBD27D00EFD48A /* WelcomeView */,
 				FAF8164227EC08810098989A /* LoadingView */,
 				FAA497CD27E960E5007FCC32 /* CreateNewAccountViews */,
 				E75D787627E2F99C00F95DDD /* LoginView */,
@@ -472,7 +468,6 @@
 				E75D789727E309D700F95DDD /* TextField++.swift in Sources */,
 				E75D787A27E2FA2D00F95DDD /* SceneDelegate.swift in Sources */,
 				C59A81F927E6FD4B0038C662 /* UIImageView++.swift in Sources */,
-				C98304B427EBD29F00EFD48A /* WelcomeViewController.swift in Sources */,
 				E75D78A427E3167400F95DDD /* UIView++.swift in Sources */,
 				E75D789827E309D700F95DDD /* UIButton++.swift in Sources */,
 				FAF8163627EA5E710098989A /* PhoneAccountViewController.swift in Sources */,
@@ -480,6 +475,7 @@
 				C5B7DE7B27ECEAB6004AE6C7 /* SendMoneyViewController.swift in Sources */,
 				FAA92A9727E96BD000083E10 /* CreatePaswordViewController.swift in Sources */,
 				E75D78CA27E45B7800F95DDD /* HomeViewController.swift in Sources */,
+				C98304B827EDEE9B00EFD48A /* TabCardViewController.swift in Sources */,
 				FAF8164427EC08980098989A /* LoadingViewController.swift in Sources */,
 				C5B7DE7E27ECF790004AE6C7 /* ShipViewController.swift in Sources */,
 				FAA92A9A27E96C7700083E10 /* DetailAccountViewController.swift in Sources */,

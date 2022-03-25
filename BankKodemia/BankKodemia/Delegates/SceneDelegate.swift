@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
 
-                let view = ShipViewController()//cambiar por view a probar
+                let view = TabCardViewController()//cambiar por view a probar
                 window?.rootViewController = view
                 window?.makeKeyAndVisible()
     }
