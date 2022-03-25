@@ -163,7 +163,8 @@ struct Text{
         
     }
     struct AddNewRecipient {
-        static let BackButton: String = "AGREGAR CONTACTO"
+        static let BackButton: String = "ENVIAR DINERO"
+        static let PageTitle:String = "AGREGAR CONTACTO"
         static let ClabeLabel: String = "CLABE"
         static let CardLabel: String = "TARJETA"
         static let DigitsLabel: String = "18 dígitos"
