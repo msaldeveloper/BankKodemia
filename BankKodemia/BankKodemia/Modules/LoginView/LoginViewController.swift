@@ -19,7 +19,7 @@ class LoginViewController: UIViewController {
     var passwordFieldLabelTop: UILabel = UILabel()
     var fieldPassword : UIView = UIView()
     var textFieldPassword: UITextField = UITextField()
-    var helpMessageLabel: UITextField = UITextField()
+    var helpMessageLabel: UILabel = UILabel()
     var linkMessageButton: UIButton = UIButton()
     var linkMessageLabel: UILabel = UILabel()
     var initSessionBottomButton: UIButton = UIButton()
@@ -64,7 +64,7 @@ class LoginViewController: UIViewController {
     func welcomeLabel(){
         initSessionWelcomeLabel = UILabel()
         initSessionWelcomeLabel.text = TextLocals.init_session_description_message
-        initSessionWelcomeLabel.font = UIFont(name: "Poppins-Medium", size: 4*ConstantsUIKit.height/175)
+        initSessionWelcomeLabel.font = ConstantsFont.f16Normal
         initSessionWelcomeLabel.textAlignment = .left
         initSessionWelcomeLabel.lineBreakMode = .byWordWrapping
         initSessionWelcomeLabel.numberOfLines = 0
@@ -88,7 +88,7 @@ class LoginViewController: UIViewController {
         
         textFieldLabelTop = UILabel()
         textFieldLabelTop.text = TextLocals.init_session_top_email_input_message
-        textFieldLabelTop.font = UIFont(name: "Poppins-Medium", size: ConstantsUIKit.height/50)
+        textFieldLabelTop.font = ConstantsFont.f14Normal
         view.addSubview(textFieldLabelTop)
         textFieldLabelTop.addAnchorsAndSize(width: nil, height: nil, left: 21, top: nil, right: nil, bottom: 2, withAnchor: .bottom, relativeToView: textFieldEmail)
     }
@@ -108,7 +108,7 @@ class LoginViewController: UIViewController {
         
         passwordFieldLabelTop = UILabel()
         passwordFieldLabelTop.text = TextLocals.init_session_top_password_input_message
-        passwordFieldLabelTop.font = UIFont(name: "Poppins-Medium", size: ConstantsUIKit.height/50)
+        passwordFieldLabelTop.font = ConstantsFont.f14Normal
         view.addSubview(passwordFieldLabelTop)
         passwordFieldLabelTop.addAnchorsAndSize(width: nil, height: nil, left: 21, top: nil, right: nil, bottom: 2, withAnchor: .bottom, relativeToView: textFieldPassword)
     }
@@ -128,22 +128,23 @@ class LoginViewController: UIViewController {
         linkMessageButton.formatTransparent()
         linkMessageButton.addTarget(self, action: #selector(linkAction), for: .touchUpInside)
         view.addSubview(linkMessageButton)
-        linkMessageButton.addAnchorsAndSize(width: nil, height: nil, left: 21, top: nil, right: 21, bottom: 100)
-        linkMessageButton.backgroundColor = .red
+        linkMessageButton.addAnchorsAndSize(width: nil, height: nil, left: 21, top: nil, right: 21, bottom: 120)
         
         linkMessageLabel = UILabel()
         linkMessageLabel.formatPurpleLink()
-        linkMessageLabel.font = UIFont(name: "Poppins-Medium", size: ConstantsUIKit.height/50)
+        linkMessageLabel.font = ConstantsFont.f14Normal
         linkMessageLabel.text = TextLocals.init_session_help_link
         linkMessageLabel.textAlignment = .center
         linkMessageButton.addSubview(linkMessageLabel)
-        linkMessageLabel.addAnchorsAndSize(width: nil, height: nil, left: 10, top: 10, right: 10, bottom: 10)
+        linkMessageLabel.addAnchorsAndSize(width: nil, height: nil, left: 10, top: 10, right: 10, bottom: 0)
         
-        helpMessageLabel = UITextField()
-        helpMessageLabel.formatTextField(TextLocals.init_session_help_message)
+        helpMessageLabel = UILabel()
+        helpMessageLabel.text = TextLocals.init_session_help_message
+        helpMessageLabel.font = ConstantsFont.f14Normal
+        helpMessageLabel.textColor = ConstantsUIColor.greyKodemia
         helpMessageLabel.textAlignment = .center
         linkMessageLabel.addSubview(helpMessageLabel)
-        helpMessageLabel.addAnchorsAndSize(width: nil, height: nil, left: 21, top: nil, right: 21, bottom: 20)
+        helpMessageLabel.addAnchorsAndSize(width: nil, height: nil, left: 21, top: nil, right: 21, bottom:  ConstantsUIKit.height/50 + 5)
         
         
         

@@ -44,7 +44,7 @@ extension UIButton{
     func addLabelWhite(button: UIButton, text: String){
         let label = UILabel()
         button.addSubview(label)
-        label.font = UIFont(name: "Poppins-Medium", size: 9*ConstantsUIKit.height/350)
+        label.font = ConstantsFont.f18SemiBold
         label.textColor = .white
         label.textAlignment = .center
         label.text = text
@@ -60,7 +60,7 @@ extension UIButton{
     func addLabelDarkGray(button: UIButton, text: String){
         let label = UILabel()
         button.addSubview(label)
-        label.font = UIFont(name: "Poppins-Medium", size: 9*ConstantsUIKit.height/350)
+        label.font = ConstantsFont.f18SemiBold
         label.textColor = .darkGray
         label.textAlignment = .left
         label.text = text
@@ -76,7 +76,7 @@ extension UIButton{
     func addLabelUploader(button: UIButton, text: String){
         let label = UILabel()
         button.addSubview(label)
-        label.font = UIFont(name: "Poppins-Medium", size: ConstantsUIKit.height/50)
+        label.font = ConstantsFont.f14SemiBold
         label.textColor = .darkGray
         label.textAlignment = .center
         label.numberOfLines = 2
@@ -93,7 +93,7 @@ extension UIButton{
     func addLabelGreenblue(button: UIButton, text: String){
         let label = UILabel()
         button.addSubview(label)
-        label.font = UIFont(name: "Poppins-Medium", size: 9*ConstantsUIKit.height/350)
+        label.font = ConstantsFont.f18SemiBold
         label.textColor = ConstantsUIColor.greenBlue
         label.textAlignment = .center
         label.text = text
@@ -112,7 +112,7 @@ extension UIButton{
         arrowImage.backgroundColor = .red
         self.addSubview(arrowImage)
         let textButton = UILabel(frame: CGRect(x: 3*ConstantsUIKit.height/160 + ConstantsUIKit.width/36, y: -ConstantsUIKit.height/240, width: widthText, height: ConstantsUIKit.height/30))
-        textButton.font = UIFont(name: "Poppins-Medium", size: ConstantsUIKit.height/50)
+        textButton.font = ConstantsFont.f14Normal
         textButton.text = textDinamic
         textButton.textColor = ConstantsUIColor.greyKodemia
         textButton.textAlignment = .center

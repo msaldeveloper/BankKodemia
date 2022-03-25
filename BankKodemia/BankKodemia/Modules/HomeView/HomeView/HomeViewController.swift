@@ -49,12 +49,12 @@ class HomeViewController: UIViewController {
         
         money.text = "$160.00"
         money.textAlignment = .center
-        money.font = UIFont(name: "Poppins-Bold", size: height/35)
+        money.font = ConstantsFont.f20SemiBold
         view.addSubview(money)
         money.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             money.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            money.topAnchor.constraint(equalTo: view.topAnchor, constant: height/5),
+            money.topAnchor.constraint(equalTo: moneyTitle.bottomAnchor, constant: 3*height/120),
             money.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 4/5)
         ])
         
@@ -88,7 +88,7 @@ class HomeViewController: UIViewController {
             movementsTable.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             movementsTable.topAnchor.constraint(equalTo: view.topAnchor, constant: 27*height/80),
             movementsTable.widthAnchor.constraint(equalToConstant: width),
-            movementsTable.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 15/26)
+            movementsTable.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 8/13)
         ])
         
         
