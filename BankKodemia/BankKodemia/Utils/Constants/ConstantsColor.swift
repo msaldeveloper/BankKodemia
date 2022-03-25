@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 struct ConstantsCGColor{
+    static let greyText: CGColor = CGColor(red: 97/255, green: 97/255, blue: 97/255, alpha: 0.9)
     static let transparent: CGColor = CGColor(red: 1, green: 1, blue: 1, alpha: 0)
     static let clearBackground: CGColor = CGColor(red: 1, green: 1, blue: 1, alpha: 1)
     static let greenBlue : CGColor = CGColor(red: 0, green: 204/255, blue: 204/255, alpha: 0.9)
@@ -18,6 +19,7 @@ struct ConstantsCGColor{
 }
 
 struct ConstantsUIColor{
+    static let greyText: UIColor = UIColor(red: 97/255, green: 97/255, blue: 97/255, alpha: 0.9)
     static let transparent: UIColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
     static let clearBackground: UIColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
     static let greenBlue : UIColor = UIColor(red: 0, green: 204/255, blue: 204/255, alpha: 0.9)
