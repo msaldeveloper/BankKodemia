@@ -147,7 +147,6 @@
 			isa = PBXGroup;
 			children = (
 				C5B7DE7A27ECEAB6004AE6C7 /* SendMoneyViewController.swift */,
-				C5B7DE7D27ECF790004AE6C7 /* ShipViewController.swift */,
 			);
 			path = SendMoneyView;
 			sourceTree = "<group>";
@@ -199,6 +198,14 @@
 				E70B647C27EDB32500F94109 /* WelcomeViewController.swift */,
 			);
 			path = WelcomeView;
+			sourceTree = "<group>";
+		};
+		E70B649927EF8F1300F94109 /* ShipView */ = {
+			isa = PBXGroup;
+			children = (
+				C5B7DE7D27ECF790004AE6C7 /* ShipViewController.swift */,
+			);
+			path = ShipView;
 			sourceTree = "<group>";
 		};
 		E75D785027E2F7E300F95DDD = {
@@ -275,6 +282,7 @@
 		E75D78C727E45B4100F95DDD /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
+				E70B649927EF8F1300F94109 /* ShipView */,
 				C98304BB27EE0EF500EFD48A /* HomeCard */,
 				E70B646C27ED974100F94109 /* HomeServices */,
 				C5B7DE7927ECEA92004AE6C7 /* SendMoneyView */,
