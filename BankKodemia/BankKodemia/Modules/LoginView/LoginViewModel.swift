@@ -8,10 +8,14 @@
 import Foundation
 import Combine
 
-struct LoginViewModel {
+class LoginViewModel {
     
     //publisher -----      -----suscriptores
 //    publisher por default = PassthroughSubject
+    var emailFlag : Bool = false
+    var passwordFlag : Bool = false
+    var responseFlag : Bool = false
+    
     
     fileprivate var newAlertText: String {
         didSet{
@@ -22,47 +26,66 @@ struct LoginViewModel {
     public var validationState = PassthroughSubject<String,Never>()//declarando publisher
     
     
-    public mutating func getAlert(_ Value : String){//funcion que se va a llamar desde nuestro ViewController
+    public func getAlert(_ Value : String){//funcion que se va a llamar desde nuestro ViewController
         if Value == "" {
             print("get alert dispatched")
-            newAlert("credential")
+            newAlert("response")
+        }else {
+            self.emailFlag = true
         }
+        
         
     }
     
-    public mutating func emailAlert(_ Value : String){//funcion que se va a llamar desde nuestro ViewController
+    public func emailAlert(_ Value : String){//funcion que se va a llamar desde nuestro ViewController
         if Value == "" {
             print("get alert dispatched")
             newAlert("email")
+        }else {
+            self.passwordFlag = true
         }
         
     }
     
-    public mutating func passwordAlert(_ Value : String){//funcion que se va a llamar desde nuestro ViewController
+    public func passwordAlert(_ Value : String){//funcion que se va a llamar desde nuestro ViewController
         if Value == "" {
             print("get alert dispatched")
             newAlert("password")
+        }else {
+            self.responseFlag = true
+            goToNextPage()
         }
         
+    }
+    func goToNextPage(){
+        if self.emailFlag == true && self.passwordFlag == true && self.responseFlag == true {
+//            let HomeView = HomeViewController()
+//            HomeView.modalPresentationStyle = .fullScreen
+//            present(HomeView,animated: true,completion:{print("register button press validated")} )
+        }
     }
     
     init() {
         self.newAlertText = ""
     }
     
-    mutating private func newAlert(_ type : String){
+     private func newAlert(_ type : String){
         if type == "email"{
             print("new alert dispatched")
             let textEmailAlert: String = "Ingrese Un Correo Electronico"
             newAlertText = textEmailAlert
         }else if type == "password"{
             print("new alert dispatched")
-            let textEmailAlert: String = "Ingrese Un Password"
-            newAlertText = textEmailAlert
-        }else {
+            let textPasswordAlert: String = "Ingrese Un Password"
+            newAlertText = textPasswordAlert
+        }else if type == "response"{
             print("new alert dispatched")
             let textEmailAlert: String = "Credenciales Invalidas Intente de Nuevo"
             newAlertText = textEmailAlert
+        }else {
+            print("new alert dispatched")
+            let access: String = "access"
+            newAlertText = access
         }
         
     }
