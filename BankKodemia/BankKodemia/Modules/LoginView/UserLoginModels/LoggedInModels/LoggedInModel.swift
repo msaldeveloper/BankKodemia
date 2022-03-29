@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct LoggedInModel {
+    let token: String
+    let expiresIn: String
+}

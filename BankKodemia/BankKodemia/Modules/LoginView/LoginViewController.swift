@@ -162,7 +162,14 @@ class LoginViewController: UIViewController {
                 return "nuevas " + string
             })
             .sink{ newAlertText in
-                self.updateAlert(newAlertText)
+               print("esperando acceso ->",newAlertText)
+                if newAlertText == "access"{
+                    self.sesionActiva()
+                }else {
+                    print("new alert -->>",newAlertText)
+                    self.updateAlert(newAlertText)//self.sesionActiva()
+                }
+                
             }
             .store(in: &cancellables)
     }
@@ -175,8 +182,36 @@ class LoginViewController: UIViewController {
         alert.addAction(aceptar)
         self.present(alert, animated: true, completion: nil)
     }
+    func sesionActiva(){
+            print("Estamos logueados")
+    
+            let  tabBarVC = UITabBarController()
+            let home = HomeViewController()
+            let target = HomeCardViewController()
+            let services = HomeServicesViewController()
+            //let logOut = ViewController()
+            home.title = "INICIO"
+            target.title = "TARJETA"
+            services.title = "SERVICIOS"
+            //logOut.title = "LogOut"
+            UITabBar.appearance().tintColor = .black
+            UITabBar.appearance().isTranslucent = true
+            UITabBar.appearance().backgroundColor = UIColor.gray
+    //        home.tabBarItem.image = UIImage(named: "casa25")
+    //        search.tabBarItem.image = UIImage(named: "search25")
+            //logOut.tabBarItem.image = UIImage(named: "logout25")
+            tabBarVC.setViewControllers([home,target,services], animated: false)
+            tabBarVC.modalPresentationStyle = .fullScreen
+            present(tabBarVC, animated: true, completion: nil)
+            }
+    }
 
-}
+    extension UITabBar {
+        static func setAppearanceTabbar(){
+            UITabBar.appearance().backgroundColor = .red
+        }
+    
+    }
 // MARK: - OBJC Functions
 extension LoginViewController {
     @objc func backAction(){
@@ -188,6 +223,7 @@ extension LoginViewController {
     }
     @objc func continueButton(){
         print("continue button pressed")
+        self.loginViewModel.getAlert()
         self.loginViewModel.emailAlert(self.textFieldEmail.text ?? "")
         self.loginViewModel.passwordAlert(self.textFieldPassword.text ?? "")
         
