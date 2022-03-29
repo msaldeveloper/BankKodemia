@@ -16,6 +16,13 @@
 		E70B647327ED996700F94109 /* AddNewRecipientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70B647227ED996700F94109 /* AddNewRecipientViewController.swift */; };
 		E70B647627ED999100F94109 /* ConfirmNewRecipientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70B647527ED999100F94109 /* ConfirmNewRecipientViewController.swift */; };
 		E70B647D27EDB32500F94109 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70B647C27EDB32500F94109 /* WelcomeViewController.swift */; };
+		E70B649B27EF919100F94109 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70B649A27EF919100F94109 /* LoginViewModel.swift */; };
+		E70B64A127EFC83400F94109 /* LoggedInDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70B64A027EFC83400F94109 /* LoggedInDataModel.swift */; };
+		E70B64A327EFC84700F94109 /* InvalidCredentialsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70B64A227EFC84700F94109 /* InvalidCredentialsDataModel.swift */; };
+		E70B64A527EFCDE500F94109 /* InvalidCredentialsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70B64A427EFCDE500F94109 /* InvalidCredentialsModel.swift */; };
+		E70B64A727EFCDF700F94109 /* LoggedInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70B64A627EFCDF700F94109 /* LoggedInModel.swift */; };
+		E70B64AB27EFF6D300F94109 /* LoginInDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70B64AA27EFF6D200F94109 /* LoginInDataManager.swift */; };
+		E71F303327F0249A00E6E9DF /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E71F303227F0249A00E6E9DF /* Alamofire */; };
 		E75D786627E2F7E400F95DDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75D786527E2F7E400F95DDD /* Assets.xcassets */; };
 		E75D786927E2F7E400F95DDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E75D786727E2F7E400F95DDD /* LaunchScreen.storyboard */; };
 		E75D787927E2FA2D00F95DDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75D787727E2FA2D00F95DDD /* AppDelegate.swift */; };
@@ -70,6 +77,12 @@
 		E70B647227ED996700F94109 /* AddNewRecipientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewRecipientViewController.swift; sourceTree = "<group>"; };
 		E70B647527ED999100F94109 /* ConfirmNewRecipientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmNewRecipientViewController.swift; sourceTree = "<group>"; };
 		E70B647C27EDB32500F94109 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		E70B649A27EF919100F94109 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		E70B64A027EFC83400F94109 /* LoggedInDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInDataModel.swift; sourceTree = "<group>"; };
+		E70B64A227EFC84700F94109 /* InvalidCredentialsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvalidCredentialsDataModel.swift; sourceTree = "<group>"; };
+		E70B64A427EFCDE500F94109 /* InvalidCredentialsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvalidCredentialsModel.swift; sourceTree = "<group>"; };
+		E70B64A627EFCDF700F94109 /* LoggedInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInModel.swift; sourceTree = "<group>"; };
+		E70B64AA27EFF6D200F94109 /* LoginInDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInDataManager.swift; sourceTree = "<group>"; };
 		E75D785927E2F7E300F95DDD /* BankKodemia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankKodemia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E75D786527E2F7E400F95DDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E75D786827E2F7E400F95DDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -121,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E71F303327F0249A00E6E9DF /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,7 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				C5B7DE7A27ECEAB6004AE6C7 /* SendMoneyViewController.swift */,
-				C5B7DE7D27ECF790004AE6C7 /* ShipViewController.swift */,
 			);
 			path = SendMoneyView;
 			sourceTree = "<group>";
@@ -201,6 +214,49 @@
 			path = WelcomeView;
 			sourceTree = "<group>";
 		};
+		E70B649927EF8F1300F94109 /* ShipView */ = {
+			isa = PBXGroup;
+			children = (
+				C5B7DE7D27ECF790004AE6C7 /* ShipViewController.swift */,
+			);
+			path = ShipView;
+			sourceTree = "<group>";
+		};
+		E70B649E27EFC7E100F94109 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E70B649F27EFC7F300F94109 /* UserLoginModels */ = {
+			isa = PBXGroup;
+			children = (
+				E70B64A927EFCE4100F94109 /* InvalidCredentialsModels */,
+				E70B64A827EFCE2B00F94109 /* LoggedInModels */,
+			);
+			path = UserLoginModels;
+			sourceTree = "<group>";
+		};
+		E70B64A827EFCE2B00F94109 /* LoggedInModels */ = {
+			isa = PBXGroup;
+			children = (
+				E70B64A627EFCDF700F94109 /* LoggedInModel.swift */,
+				E70B64A027EFC83400F94109 /* LoggedInDataModel.swift */,
+				E70B64AA27EFF6D200F94109 /* LoginInDataManager.swift */,
+			);
+			path = LoggedInModels;
+			sourceTree = "<group>";
+		};
+		E70B64A927EFCE4100F94109 /* InvalidCredentialsModels */ = {
+			isa = PBXGroup;
+			children = (
+				E70B64A427EFCDE500F94109 /* InvalidCredentialsModel.swift */,
+				E70B64A227EFC84700F94109 /* InvalidCredentialsDataModel.swift */,
+			);
+			path = InvalidCredentialsModels;
+			sourceTree = "<group>";
+		};
 		E75D785027E2F7E300F95DDD = {
 			isa = PBXGroup;
 			children = (
@@ -235,7 +291,9 @@
 		E75D787627E2F99C00F95DDD /* LoginView */ = {
 			isa = PBXGroup;
 			children = (
+				E70B649F27EFC7F300F94109 /* UserLoginModels */,
 				E75D78A527E3193900F95DDD /* LoginViewController.swift */,
+				E70B649A27EF919100F94109 /* LoginViewModel.swift */,
 			);
 			path = LoginView;
 			sourceTree = "<group>";
@@ -275,6 +333,7 @@
 		E75D78C727E45B4100F95DDD /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
+				E70B649927EF8F1300F94109 /* ShipView */,
 				C98304BB27EE0EF500EFD48A /* HomeCard */,
 				E70B646C27ED974100F94109 /* HomeServices */,
 				C5B7DE7927ECEA92004AE6C7 /* SendMoneyView */,
@@ -309,6 +368,7 @@
 		E75D78CD27E45D2500F95DDD /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E70B649E27EFC7E100F94109 /* Models */,
 				E75D78CE27E45D3E00F95DDD /* Network.swift */,
 			);
 			path = Services;
@@ -442,6 +502,9 @@
 			dependencies = (
 			);
 			name = BankKodemia;
+			packageProductDependencies = (
+				E71F303227F0249A00E6E9DF /* Alamofire */,
+			);
 			productName = BankKodemia;
 			productReference = E75D785927E2F7E300F95DDD /* BankKodemia.app */;
 			productType = "com.apple.product-type.application";
@@ -470,6 +533,9 @@
 				Base,
 			);
 			mainGroup = E75D785027E2F7E300F95DDD;
+			packageReferences = (
+				E71F303127F0249900E6E9DF /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = E75D785A27E2F7E300F95DDD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -515,6 +581,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAA4979C27E66094007FCC32 /* CreateAccountViewController.swift in Sources */,
+				E70B64A127EFC83400F94109 /* LoggedInDataModel.swift in Sources */,
 				FAF8164027EAC5EA0098989A /* UploadViewController.swift in Sources */,
 				E75D78CF27E45D3E00F95DDD /* Network.swift in Sources */,
 				E75D789227E3099400F95DDD /* constraints.swift in Sources */,
@@ -525,6 +592,7 @@
 				C5B7DE7827EBE587004AE6C7 /* TransactionDetailsViewController.swift in Sources */,
 				FAF8163D27EA7A610098989A /* IdSelectViewController.swift in Sources */,
 				E75D789E27E309FA00F95DDD /* ConstansText.swift in Sources */,
+				E70B64A327EFC84700F94109 /* InvalidCredentialsDataModel.swift in Sources */,
 				E75D789727E309D700F95DDD /* TextField++.swift in Sources */,
 				E75D787A27E2FA2D00F95DDD /* SceneDelegate.swift in Sources */,
 				C59A81F927E6FD4B0038C662 /* UIImageView++.swift in Sources */,
@@ -534,10 +602,14 @@
 				C98304BD27EE0F0500EFD48A /* HomeCardViewController.swift in Sources */,
 				E75D78C627E45B0A00F95DDD /* ConstantsUIKit.swift in Sources */,
 				C5B7DE7B27ECEAB6004AE6C7 /* SendMoneyViewController.swift in Sources */,
+				E70B649B27EF919100F94109 /* LoginViewModel.swift in Sources */,
 				FAA92A9727E96BD000083E10 /* CreatePaswordViewController.swift in Sources */,
 				E70B647627ED999100F94109 /* ConfirmNewRecipientViewController.swift in Sources */,
 				E70B647D27EDB32500F94109 /* WelcomeViewController.swift in Sources */,
+				E70B64A527EFCDE500F94109 /* InvalidCredentialsModel.swift in Sources */,
 				E75D78CA27E45B7800F95DDD /* HomeViewController.swift in Sources */,
+				E70B64A727EFCDF700F94109 /* LoggedInModel.swift in Sources */,
+				E70B64AB27EFF6D300F94109 /* LoginInDataManager.swift in Sources */,
 				FAF8164427EC08980098989A /* LoadingViewController.swift in Sources */,
 				C5B7DE7E27ECF790004AE6C7 /* ShipViewController.swift in Sources */,
 				E70B646E27ED976300F94109 /* HomeServicesViewController.swift in Sources */,
@@ -754,6 +826,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E71F303127F0249900E6E9DF /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E71F303227F0249A00E6E9DF /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E71F303127F0249900E6E9DF /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E75D785127E2F7E300F95DDD /* Project object */;
 }
