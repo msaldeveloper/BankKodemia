@@ -22,33 +22,36 @@ struct Login: Encodable {
 
 
 
-func loginApp(_ testEmail: String,_ testPassword: String){
+func loginApp(_ testEmail: String,_ testPassword: String) -> DataResponsePublisher<LoggedInData>{
     let login = Login(email: testEmail, password: testPassword)
-    AF
+    let publisher = AF
         .request(urlBase,
                method: .post,
                parameters: login,
-               encoder: JSONParameterEncoder.default)
-        .response { response in
-            debugPrint(response)
-            let responseLogin = String(bytes: response.data!, encoding: .utf8)
-            print("response --> ", responseLogin ?? "")
-            let statusCode = response.response?.statusCode
-            print( statusCode ?? "")//status code
-            let result = response.data
-            let decoder = JSONDecoder()
-            do {
-                let decodedData = try decoder.decode(LoggedInData.self, from: result!)
-                print(decodedData.token)
-                let token = decodedData.token
-                let time = decodedData.expiresIn
-                let login = LoggedInModel(token: token, expiresIn: time)
-                print(login)
-                loginViewModel.tokenReciver(accessToken: login.token)
-            } catch {
-                print("this is an error ---> ",error)
-            }
-        }
+                 encoder: JSONParameterEncoder.default)
+        .validate()
+        .publishDecodable(type: LoggedInData.self)
+//        .response { response in
+//            debugPrint(response)
+//            let responseLogin = String(bytes: response.data!, encoding: .utf8)
+//            print("response --> ", responseLogin ?? "")
+//            let statusCode = response.response?.statusCode
+//            print( statusCode ?? "")//status code
+//            let result = response.data
+//            let decoder = JSONDecoder()
+//            do {
+//                let decodedData = try decoder.decode(LoggedInData.self, from: result!)
+//                print(decodedData.token)
+//                let token = decodedData.token
+//                let time = decodedData.expiresIn
+//                let login = LoggedInModel(token: token, expiresIn: time)
+//                print(login)
+//                loginViewModel.tokenReciver(accessToken: login.token)
+//            } catch {
+//                print("this is an error ---> ",error)
+//            }
+//        }
+    return publisher
 }
 
 

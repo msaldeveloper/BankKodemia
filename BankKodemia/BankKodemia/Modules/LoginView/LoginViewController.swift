@@ -158,9 +158,6 @@ class LoginViewController: UIViewController {
     fileprivate func validationBind(){
         self.loginViewModel
             .validationState
-            .map({ string in
-                return "nuevas " + string
-            })
             .sink{ newAlertText in
                print("esperando acceso ->",newAlertText)
                 if newAlertText == "access"{

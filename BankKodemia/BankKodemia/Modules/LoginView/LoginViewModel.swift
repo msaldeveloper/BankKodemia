@@ -17,6 +17,7 @@ class LoginViewModel {
     var responseFlag : Bool = false
     private var chocolateCookie : String = String()
     private var lemonCookie : String = String()
+    private var cancellables: [AnyCancellable] = []
     //var loginViewController = LoginViewController()
     
     
@@ -38,7 +39,6 @@ class LoginViewModel {
             print("get alert dispatched")
             newAlert("email")
         }else {
-            userLogin()
             self.chocolateCookie = value
             self.emailFlag = true
             print(value)
@@ -50,7 +50,6 @@ class LoginViewModel {
             print("get alert dispatched")
             newAlert("password")
         }else {
-            userLogin()
             self.lemonCookie = value
             self.passwordFlag = true
             print(value)
@@ -75,8 +74,18 @@ class LoginViewModel {
         }
     }
     private func userLogin(){
-        loginApp(self.chocolateCookie, self.lemonCookie)
-        print("@@@@@@@@",self.chocolateCookie, self.lemonCookie)
+        loginApp(self.chocolateCookie, self.lemonCookie).sink{ result in
+            switch result.result {
+            case .success(_):
+                self.newAlert("access")
+            case .failure(_):
+                
+                self.newAlert("forbiden")
+            }
+            print("@@@@@@@@>>",result.value?.token ?? "")
+            print(result.response?.statusCode ?? "" )
+            //let token = result.response
+        }.store(in: &cancellables)
     }
     
     init() {
@@ -89,7 +98,7 @@ class LoginViewModel {
             newAlertText = textEmailAlert
         }else if type == "password"{
             print("new alert dispatched")
-            let textPasswordAlert: String = "Ingrese Un Password"
+            let textPasswordAlert: String = "Ingrese Una Contraseña"
             newAlertText = textPasswordAlert
         }else if type == "response"{
             print("new alert dispatched")
@@ -99,7 +108,12 @@ class LoginViewModel {
             print("access dispatched")
             let access: String = "access"
             newAlertText = access
+        }else if type == "forbiden" {
+            print("access dispatched")
+            let access: String = "Correo o contraseña incorrectos"
+            newAlertText = access
         }
         
     }
 }
+
