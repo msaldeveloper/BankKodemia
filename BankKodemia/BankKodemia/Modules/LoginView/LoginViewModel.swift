@@ -3,13 +3,10 @@
 //  BankKodemia
 //
 //  Created by Mario Saldana on 26/03/22.
-//
-
 import Foundation
 import Combine
 
 class LoginViewModel {
-    
     //publisher -----      -----suscriptores
 //    publisher por default = PassthroughSubject
     var emailFlag : Bool = false
@@ -20,15 +17,12 @@ class LoginViewModel {
     private var cancellables: [AnyCancellable] = []
     //var loginViewController = LoginViewController()
     
-    
     fileprivate var newAlertText: String {
         didSet{
             validationState.send(newAlertText)
         }
     }
-    
     public var validationState = PassthroughSubject<String,Never>()//declarando publisher
-    
     
     public func getAlert(){//funcion que se va a llamar desde nuestro ViewController
         print("get alert dispatched")
@@ -55,19 +49,6 @@ class LoginViewModel {
             print(value)
             flagValidator()        }
     }
-    func tokenReciver(accessToken: String){
-        print("access token --> ",accessToken)
-        if accessToken != "" {
-            newAlert("access")
-//            self.responseFlag = true
-//            goToNextPage()
-        }
-    }
-    func goToNextPage(){
-        if self.emailFlag == true && self.passwordFlag == true && self.responseFlag == true {
-            newAlert("access")
-        }
-    }
     private func flagValidator(){
         if self.chocolateCookie != "" && self.lemonCookie != "" {
             userLogin()
@@ -87,7 +68,6 @@ class LoginViewModel {
             //let token = result.response
         }.store(in: &cancellables)
     }
-    
     init() {
         self.newAlertText = ""
     }
@@ -113,7 +93,5 @@ class LoginViewModel {
             let access: String = "Correo o contraseña incorrectos"
             newAlertText = access
         }
-        
     }
 }
-
