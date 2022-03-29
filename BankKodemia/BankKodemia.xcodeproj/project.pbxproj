@@ -504,11 +504,7 @@
 			);
 			name = BankKodemia;
 			packageProductDependencies = (
-<<<<<<< HEAD
 				E71F303227F0249A00E6E9DF /* Alamofire */,
-=======
-				FABD5D6D27F2C57000895007 /* Alamofire */,
->>>>>>> f8480b6 (install AlamoFire)
 			);
 			productName = BankKodemia;
 			productReference = E75D785927E2F7E300F95DDD /* BankKodemia.app */;
@@ -539,11 +535,7 @@
 			);
 			mainGroup = E75D785027E2F7E300F95DDD;
 			packageReferences = (
-<<<<<<< HEAD
 				E71F303127F0249900E6E9DF /* XCRemoteSwiftPackageReference "Alamofire" */,
-=======
-				FABD5D6C27F2C57000895007 /* XCRemoteSwiftPackageReference "Alamofire" */,
->>>>>>> f8480b6 (install AlamoFire)
 			);
 			productRefGroup = E75D785A27E2F7E300F95DDD /* Products */;
 			projectDirPath = "";
@@ -837,11 +829,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-<<<<<<< HEAD
 		E71F303127F0249900E6E9DF /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-=======
-		FABD5D6C27F2C57000895007 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
->>>>>>> f8480b6 (install AlamoFire)
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -852,15 +840,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-<<<<<<< HEAD
 		E71F303227F0249A00E6E9DF /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E71F303127F0249900E6E9DF /* XCRemoteSwiftPackageReference "Alamofire" */;
-=======
-		FABD5D6D27F2C57000895007 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FABD5D6C27F2C57000895007 /* XCRemoteSwiftPackageReference "Alamofire" */;
->>>>>>> f8480b6 (install AlamoFire)
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
