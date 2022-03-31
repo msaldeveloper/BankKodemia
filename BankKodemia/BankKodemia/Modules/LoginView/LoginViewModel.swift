@@ -18,6 +18,7 @@ class LoginViewModel {
     var passwordFlag : Bool = false
     var responseFlag : Bool = false
     private var chocolateCookie : String = String()
+    var getUserRequest = GetUserRequest()
     private var lemonCookie : String = String()
     private var cancellables: [AnyCancellable] = []
     //var loginViewController = LoginViewController()
@@ -74,12 +75,13 @@ class LoginViewModel {
     
     private func userLogin(){
         loginApp(self.chocolateCookie, self.lemonCookie).sink{ result in
+            self.getUserRequest.tokenReciver(token: result.value?.token ?? "")
             switch result.result {
             case .success(_):
                 self.newAlert("access")
                 Auth.auth().signIn(withEmail: self.chocolateCookie, password: self.lemonCookie, completion: nil)
                 //self.token = result.value?.token ?? ""
-                LoggedInModel(token: result.value?.token ?? "")
+                //LoggedInModel(token: result.value?.token ?? "")
             case .failure(_):
                 self.newAlert("forbiden")
             }
