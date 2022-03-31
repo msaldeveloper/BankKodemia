@@ -180,10 +180,23 @@ extension DetailAccountViewController {
     }
     @objc func continueButton(){
         print("continue button pressed")
+
+        let name = nameInfoTextLabel.text
+        let lastname = lastNameInfoTextField.text
+        let occupation = occupationInfoTextField.text
+        let date = dateInfoTextLabel.text
+      
         
-        let phoneAccountViewController = PhoneAccountViewController()
-        phoneAccountViewController.modalPresentationStyle = .fullScreen
-        present(phoneAccountViewController, animated: true, completion: nil)
-        
+        if ( occupation?.isEmpty )! || ( name?.isEmpty )! || ( lastname?.isEmpty )! || ( date?.isEmpty )!  {
+            print("Llena correctamente los campos requeridos")
+            
+        } else {
+            
+            print("Bien hecho")
+            let phoneAccountViewController = PhoneAccountViewController()
+            phoneAccountViewController.modalPresentationStyle = .fullScreen
+            present(phoneAccountViewController, animated: true, completion: nil)
+            
+        }
     }
 }

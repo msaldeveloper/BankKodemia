@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class CreatePasswordViewController: UIViewController {
     lazy var logo : UIImageView = UIImageView()
@@ -140,9 +141,27 @@ extension CreatePasswordViewController {
     @objc func continueButton(){
         print("continue button pressed")
         
-        let loadingViewController = LoadingViewController()
-        loadingViewController.modalPresentationStyle = .fullScreen
-        present(loadingViewController, animated: true, completion: nil)
+        let createPassword = createPasswordTextField.text
+        let confirmPassword = confirmPasswordTextField.text
+        
+        if createPassword == confirmPassword {
+            print("Las contraseñas coinciden")
+
+            let regexPassword = "^(?=.{8,}$)(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$"
+            if (createPassword?.range(of: regexPassword, options: .regularExpression, range: nil, locale: nil) != nil) {
+
+                let successViewController = SuccessViewController()
+                successViewController.modalPresentationStyle = .fullScreen
+                present(successViewController, animated: true, completion: nil)
+            }else{
+                print("Llena correctamente los campos requeridos")
+            }
+        } else{
+            print("Las contraseñas NO coinciden")
+        }
+        
+      
+
         
     }
 }

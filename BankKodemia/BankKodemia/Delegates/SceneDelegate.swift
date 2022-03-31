@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
 
-                let view = LoginViewController()//cambiar por view a probar
+                let view = CreateAccountViewController()//cambiar por view a probar
                 window?.rootViewController = view
                 window?.makeKeyAndVisible()
     }

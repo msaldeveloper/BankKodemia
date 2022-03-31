@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PhoneAccountViewController: UIViewController {
+class PhoneAccountViewController: UIViewController, UITextViewDelegate {
     lazy var logo : UIImageView = UIImageView()
     
     // SuggestDetailInfo: Indicaciones de la seccion
@@ -111,6 +111,22 @@ class PhoneAccountViewController: UIViewController {
         
     }
     
+    func textView(_ textView: UITextView,
+                  shouldChangeTextIn range: NSRange,
+                  replacementText text: String) -> Bool {
+        return self.textLimit(existingText: textView.text,
+                              newText: text,
+                              limit: 10)
+    }
+    
+    private func textLimit(existingText: String?,
+                           newText: String,
+                           limit: Int) -> Bool {
+        let text = existingText ?? ""
+        let isAtLimit = text.count + newText.count <= limit
+        return isAtLimit
+    }
+    
     
     
     
@@ -130,9 +146,23 @@ extension PhoneAccountViewController {
     @objc func continueButton(){
         print("continue button pressed")
         
-        let identityVerificarionViewController = IdentityVerificationViewController()
-        identityVerificarionViewController.modalPresentationStyle = .fullScreen
-        present(identityVerificarionViewController, animated: true, completion: nil)
+        let phone = phoneInfoTextField.text
+        let regexPhone = #"^\(?\d{3}\)?[ -]?\d{3}[ -]?\d{4}$"#
+
+      
+        if (phone?.range(of: regexPhone, options: .regularExpression, range: nil, locale: nil) != nil){
+            
+            let identityVerificarionViewController = IdentityVerificationViewController()
+            identityVerificarionViewController.modalPresentationStyle = .fullScreen
+            present(identityVerificarionViewController, animated: true, completion: nil)
+            
+        }else{
+            
+            print("Llena correctamente los campos requeridos")
+        }
+    
+        
+        
         
     }
 }

@@ -148,9 +148,20 @@ extension CreateAccountViewController {
     @objc func continueButton(){
         print("continue button pressed")
         
-        let detailAccountViewController = DetailAccountViewController()
-        detailAccountViewController.modalPresentationStyle = .fullScreen
-        present(detailAccountViewController, animated: true, completion: nil)
+        let mail = emailAccountTextField.text
+        let regexMail = "^([a-z]|[A-Z])+(\\w|\\W)+@(([a-z]|[A-Z])+\\.([a-z]|[A-Z])+|([a-z]|[A-Z])+\\.([a-z]|[A-Z])+\\.([a-z]|[A-Z])+)$"
+        
+        if (mail?.range(of: regexMail, options: .regularExpression, range: nil, locale: nil) != nil){
+                
+            
+            print("Bien hecho")
+            let detailAccountViewController = DetailAccountViewController()
+            detailAccountViewController.modalPresentationStyle = .fullScreen
+            present(detailAccountViewController, animated: true, completion: nil)
+            
+        } else {
+            print("Llena correctamente el campo requerido")
+        }
         
     }
 }
