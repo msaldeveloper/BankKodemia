@@ -36,8 +36,17 @@ class LoginViewController: UIViewController {
         view.backgroundColor = backgroundColor
         UIInit()
         validationBind()
+        //Looks for single or multiple taps.
+             let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
 
-        // Do any additional setup after loading the view.
+            //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+            //tap.cancelsTouchesInView = false
+
+            view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     
@@ -86,6 +95,7 @@ class LoginViewController: UIViewController {
         textFieldEmail = UITextField()
         textFieldEmail.formatTextField(TextLocals.init_session_email_input_message)
         textFieldEmail.keyboardType = .emailAddress
+        
         fieldEmail.addSubview(textFieldEmail)
         textFieldEmail.addAnchorsAndSize(width: nil, height: nil, left: 10, top: 0, right: 10, bottom: 0)
         
@@ -166,7 +176,6 @@ class LoginViewController: UIViewController {
                     print("new alert -->>",newAlertText)
                     self.updateAlert(newAlertText)//self.sesionActiva()
                 }
-                
             }
             .store(in: &cancellables)
     }

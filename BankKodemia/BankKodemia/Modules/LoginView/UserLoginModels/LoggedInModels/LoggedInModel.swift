@@ -7,7 +7,6 @@
 
 import Foundation
 
-//struct LoggedInModel {
-//    let token: String
-//    let expiresIn: String
-//}
+struct LoggedInModel {
+    let token: String
+}

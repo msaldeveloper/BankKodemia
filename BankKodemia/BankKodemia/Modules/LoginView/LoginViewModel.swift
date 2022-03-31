@@ -5,6 +5,11 @@
 //  Created by Mario Saldana on 26/03/22.
 import Foundation
 import Combine
+import FirebaseAuth
+import FirebaseDatabase
+protocol TokenProtocol {
+    func updateToken(token: LoggedInModel)
+}
 
 class LoginViewModel {
     //publisher -----      -----suscriptores
@@ -22,7 +27,18 @@ class LoginViewModel {
             validationState.send(newAlertText)
         }
     }
+//    fileprivate var token : String {
+//        didSet{
+//            tokenSender.send(token)
+//        }
+//    }
     public var validationState = PassthroughSubject<String,Never>()//declarando publisher
+    //public var tokenSender = PassthroughSubject<String,Never>()//declarando publisher
+    
+    init() {
+        self.newAlertText = ""
+        //self.token = ""
+    }
     
     public func getAlert(){//funcion que se va a llamar desde nuestro ViewController
         print("get alert dispatched")
@@ -52,25 +68,27 @@ class LoginViewModel {
     private func flagValidator(){
         if self.chocolateCookie != "" && self.lemonCookie != "" {
             userLogin()
+            
         }
     }
+    
     private func userLogin(){
         loginApp(self.chocolateCookie, self.lemonCookie).sink{ result in
             switch result.result {
             case .success(_):
                 self.newAlert("access")
+                Auth.auth().signIn(withEmail: self.chocolateCookie, password: self.lemonCookie, completion: nil)
+                //self.token = result.value?.token ?? ""
+                LoggedInModel(token: result.value?.token ?? "")
             case .failure(_):
-                
                 self.newAlert("forbiden")
             }
             print("@@@@@@@@>>",result.value?.token ?? "")
             print(result.response?.statusCode ?? "" )
-            //let token = result.response
+            
         }.store(in: &cancellables)
     }
-    init() {
-        self.newAlertText = ""
-    }
+
      private func newAlert(_ type : String){
         if type == "email"{
             print("new alert dispatched")
@@ -80,10 +98,6 @@ class LoginViewModel {
             print("new alert dispatched")
             let textPasswordAlert: String = "Ingrese Una Contraseña"
             newAlertText = textPasswordAlert
-        }else if type == "response"{
-            print("new alert dispatched")
-            let textEmailAlert: String = "Credenciales Invalidas Intente de Nuevo"
-            newAlertText = textEmailAlert
         }else if type == "access" {
             print("access dispatched")
             let access: String = "access"

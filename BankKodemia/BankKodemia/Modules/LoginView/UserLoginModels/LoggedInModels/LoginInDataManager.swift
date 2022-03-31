@@ -14,7 +14,7 @@ import Combine
 //}
 
 let urlBase = "https://bankodemia.kodemia.mx/auth/login?expires_in=1h"
-private var loginViewModel = LoginViewModel()
+//private var loginViewModel = LoginViewModel()
 struct Login: Encodable {
     let email: String
     let password: String
@@ -24,11 +24,11 @@ struct Login: Encodable {
 
 func loginApp(_ testEmail: String,_ testPassword: String) -> DataResponsePublisher<LoggedInData>{
     let login = Login(email: testEmail, password: testPassword)
-    let publisher = AF
+    let loginPublisher = AF
         .request(urlBase,
-               method: .post,
-               parameters: login,
-                 encoder: JSONParameterEncoder.default)
+                method: .post,
+                parameters: login,
+                encoder: JSONParameterEncoder.default)
         .validate()
         .publishDecodable(type: LoggedInData.self)
 //        .response { response in
@@ -51,7 +51,7 @@ func loginApp(_ testEmail: String,_ testPassword: String) -> DataResponsePublish
 //                print("this is an error ---> ",error)
 //            }
 //        }
-    return publisher
+    return loginPublisher
 }
 
 
