@@ -8,24 +8,24 @@ import Alamofire
 import Combine
 let urlGetUserFullProfile = Text.Routes.urlBase+Text.Routes.getUserFullProfile
 
-class GetUserRequest: TokenProtocol {
-    func updateToken(token: LoggedInModel){
-        print("token send by protocol",token.token)
-        tokenReciver(token: token.token)
-    }
+class GetUserRequest {
     
-    func tokenReciver(token : String){
-        let headers: HTTPHeaders = [
-            "Authorization" : "Bearer "+token,
-            "Accept": "application/json"
-        ]
-        getUserProfile(headers)
-    }
+//    func tokenReciver(token : String){
+//        let headers: HTTPHeaders = [
+//            "Authorization" : "Bearer "+token,
+//            "Accept": "application/json"
+//        ]
+//        getUserProfile(headers)
+//    }
     
-    func getUserProfile(_ token : HTTPHeaders ){
+    func getUserProfile(_ token : HTTPHeaders )-> DataResponsePublisher<GetUserFullData>{
         print("this token ",urlGetUserFullProfile,token)
-        AF.request(urlGetUserFullProfile,headers: token).response { response in
+        let fullProfile = AF
+            .request(urlGetUserFullProfile, headers: token)
+            .response { response in
             debugPrint(response)
-        }
+            }.validate()
+            .publishDecodable(type: GetUserFullData.self)
+        return fullProfile
     }
 }

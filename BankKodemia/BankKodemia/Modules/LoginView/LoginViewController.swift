@@ -95,7 +95,6 @@ class LoginViewController: UIViewController {
         textFieldEmail = UITextField()
         textFieldEmail.formatTextField(TextLocals.init_session_email_input_message)
         textFieldEmail.keyboardType = .emailAddress
-        
         fieldEmail.addSubview(textFieldEmail)
         textFieldEmail.addAnchorsAndSize(width: nil, height: nil, left: 10, top: 0, right: 10, bottom: 0)
         
@@ -229,28 +228,7 @@ extension LoginViewController {
     }
     @objc func continueButton(){
         print("continue button pressed")
-        self.loginViewModel.getAlert()
-        self.loginViewModel.emailAlert(self.textFieldEmail.text ?? "")
-        self.loginViewModel.passwordAlert(self.textFieldPassword.text ?? "")
+        self.loginViewModel.loginValidator(self.textFieldEmail.text ?? "", self.textFieldPassword.text ?? "")
         
-//        if self.textFieldEmail.text == "" {
-//            alerta = "Ingrese un Correo"
-//            let alert = UIAlertController(title: "Error :(", message: alerta, preferredStyle: .alert)
-//            let aceptar = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
-//            alert.addAction(aceptar)
-//            self.present(alert, animated: true, completion: nil)
-//        }
-//        if self.textFieldPassword.text == "" {
-//            alerta = "Ingrese una contraseña"
-//            let alert = UIAlertController(title: "Error :(", message: alerta, preferredStyle: .alert)
-//            let aceptar = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
-//            alert.addAction(aceptar)
-//            self.present(alert, animated: true, completion: nil)
-//        }
-//        let response = 401
-//        if response == 401 {
-//            self.loginViewModel.getAlert()
-//            print("get alert dispatch")
-        //}
     }
 }
