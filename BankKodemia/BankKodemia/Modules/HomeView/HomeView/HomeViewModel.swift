@@ -19,10 +19,9 @@ class HomeViewModel {
             "Authorization" : "Bearer "+token,
             "Accept": "application/json"
         ]
-        getUserRequest.getUserProfile(headers)
-            .sink{ fullData in
-                print("balance", fullData.value?.data.balance ?? 0.0)
+        getUserRequest
+            .getUserProfile(headers).sink{ fullData in
+                print("balance",fullData.value?.data.balance ?? 0.0)
             }.store(in: &cancellables)
     }
-    
 }
