@@ -24,6 +24,7 @@
 		E73FFB4F27F7D84A004E46CB /* AddRecipientDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB4E27F7D84A004E46CB /* AddRecipientDataManager.swift */; };
 		E73FFB5227F7D884004E46CB /* AddRecipientData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB5127F7D884004E46CB /* AddRecipientData.swift */; };
 		E73FFB5427F7DB16004E46CB /* AddRecipientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB5327F7DB16004E46CB /* AddRecipientViewModel.swift */; };
+		E73FFB5727F8FE6B004E46CB /* HomeUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB5627F8FE6B004E46CB /* HomeUserModel.swift */; };
 		E754E2AA27F411A500CBFC47 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E754E2A927F411A500CBFC47 /* FirebaseAuth */; };
 		E754E2AC27F411A500CBFC47 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = E754E2AB27F411A500CBFC47 /* FirebaseAuthCombine-Community */; };
 		E754E2AE27F411A500CBFC47 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = E754E2AD27F411A500CBFC47 /* FirebaseDatabase */; };
@@ -93,6 +94,7 @@
 		E73FFB4E27F7D84A004E46CB /* AddRecipientDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipientDataManager.swift; sourceTree = "<group>"; };
 		E73FFB5127F7D884004E46CB /* AddRecipientData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipientData.swift; sourceTree = "<group>"; };
 		E73FFB5327F7DB16004E46CB /* AddRecipientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipientViewModel.swift; sourceTree = "<group>"; };
+		E73FFB5627F8FE6B004E46CB /* HomeUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeUserModel.swift; sourceTree = "<group>"; };
 		E754E2B127F4145D00CBFC47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E754E2B327F4170600CBFC47 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E754E2B627F41C9300CBFC47 /* HomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataManager.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 		E754E2B527F41C0200CBFC47 /* HomeModels */ = {
 			isa = PBXGroup;
 			children = (
+				E73FFB5627F8FE6B004E46CB /* HomeUserModel.swift */,
 				E754E2B827F5B22D00CBFC47 /* HomeUserData.swift */,
 				E754E2B627F41C9300CBFC47 /* HomeDataManager.swift */,
 			);
@@ -658,6 +661,7 @@
 				E754E2B927F5B22D00CBFC47 /* HomeUserData.swift in Sources */,
 				E70B64AB27EFF6D300F94109 /* LoginInDataManager.swift in Sources */,
 				FAF8164427EC08980098989A /* LoadingViewController.swift in Sources */,
+				E73FFB5727F8FE6B004E46CB /* HomeUserModel.swift in Sources */,
 				C5B7DE7E27ECF790004AE6C7 /* ShipViewController.swift in Sources */,
 				E70B646E27ED976300F94109 /* HomeServicesViewController.swift in Sources */,
 				FAA92A9A27E96C7700083E10 /* DetailAccountViewController.swift in Sources */,
