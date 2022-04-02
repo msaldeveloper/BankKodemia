@@ -23,6 +23,15 @@
 		E70B64A727EFCDF700F94109 /* LoggedInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70B64A627EFCDF700F94109 /* LoggedInModel.swift */; };
 		E70B64AB27EFF6D300F94109 /* LoginInDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70B64AA27EFF6D200F94109 /* LoginInDataManager.swift */; };
 		E71F303327F0249A00E6E9DF /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E71F303227F0249A00E6E9DF /* Alamofire */; };
+		E754E2AA27F411A500CBFC47 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E754E2A927F411A500CBFC47 /* FirebaseAuth */; };
+		E754E2AC27F411A500CBFC47 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = E754E2AB27F411A500CBFC47 /* FirebaseAuthCombine-Community */; };
+		E754E2AE27F411A500CBFC47 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = E754E2AD27F411A500CBFC47 /* FirebaseDatabase */; };
+		E754E2B027F411A500CBFC47 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = E754E2AF27F411A500CBFC47 /* FirebaseRemoteConfig */; };
+		E754E2B227F4145D00CBFC47 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E754E2B127F4145D00CBFC47 /* GoogleService-Info.plist */; };
+		E754E2B427F4170600CBFC47 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E754E2B327F4170600CBFC47 /* HomeViewModel.swift */; };
+		E754E2B727F41C9300CBFC47 /* HomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E754E2B627F41C9300CBFC47 /* HomeDataManager.swift */; };
+		E754E2B927F5B22D00CBFC47 /* HomeUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E754E2B827F5B22D00CBFC47 /* HomeUserData.swift */; };
+		E754E2BB27F5B25200CBFC47 /* HomeUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E754E2BA27F5B25200CBFC47 /* HomeUserModel.swift */; };
 		E75D786627E2F7E400F95DDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75D786527E2F7E400F95DDD /* Assets.xcassets */; };
 		E75D786927E2F7E400F95DDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E75D786727E2F7E400F95DDD /* LaunchScreen.storyboard */; };
 		E75D787927E2FA2D00F95DDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75D787727E2FA2D00F95DDD /* AppDelegate.swift */; };
@@ -84,6 +93,11 @@
 		E70B64A427EFCDE500F94109 /* InvalidCredentialsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvalidCredentialsModel.swift; sourceTree = "<group>"; };
 		E70B64A627EFCDF700F94109 /* LoggedInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInModel.swift; sourceTree = "<group>"; };
 		E70B64AA27EFF6D200F94109 /* LoginInDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInDataManager.swift; sourceTree = "<group>"; };
+		E754E2B127F4145D00CBFC47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E754E2B327F4170600CBFC47 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		E754E2B627F41C9300CBFC47 /* HomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataManager.swift; sourceTree = "<group>"; };
+		E754E2B827F5B22D00CBFC47 /* HomeUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUserData.swift; sourceTree = "<group>"; };
+		E754E2BA27F5B25200CBFC47 /* HomeUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUserModel.swift; sourceTree = "<group>"; };
 		E75D785927E2F7E300F95DDD /* BankKodemia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankKodemia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E75D786527E2F7E400F95DDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E75D786827E2F7E400F95DDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -136,6 +150,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E71F303327F0249A00E6E9DF /* Alamofire in Frameworks */,
+				E754E2AC27F411A500CBFC47 /* FirebaseAuthCombine-Community in Frameworks */,
+				E754E2AE27F411A500CBFC47 /* FirebaseDatabase in Frameworks */,
+				E754E2AA27F411A500CBFC47 /* FirebaseAuth in Frameworks */,
+				E754E2B027F411A500CBFC47 /* FirebaseRemoteConfig in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,7 +163,9 @@
 		C5B7DE7227EBE517004AE6C7 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
+				E754E2B527F41C0200CBFC47 /* HomeModels */,
 				E75D78C927E45B7800F95DDD /* HomeViewController.swift */,
+				E754E2B327F4170600CBFC47 /* HomeViewModel.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -258,6 +278,16 @@
 			path = InvalidCredentialsModels;
 			sourceTree = "<group>";
 		};
+		E754E2B527F41C0200CBFC47 /* HomeModels */ = {
+			isa = PBXGroup;
+			children = (
+				E754E2BA27F5B25200CBFC47 /* HomeUserModel.swift */,
+				E754E2B827F5B22D00CBFC47 /* HomeUserData.swift */,
+				E754E2B627F41C9300CBFC47 /* HomeDataManager.swift */,
+			);
+			path = HomeModels;
+			sourceTree = "<group>";
+		};
 		E75D785027E2F7E300F95DDD = {
 			isa = PBXGroup;
 			children = (
@@ -285,6 +315,7 @@
 				E75D786527E2F7E400F95DDD /* Assets.xcassets */,
 				E75D786727E2F7E400F95DDD /* LaunchScreen.storyboard */,
 				E75D786A27E2F7E400F95DDD /* Info.plist */,
+				E754E2B127F4145D00CBFC47 /* GoogleService-Info.plist */,
 			);
 			path = BankKodemia;
 			sourceTree = "<group>";
@@ -505,6 +536,10 @@
 			name = BankKodemia;
 			packageProductDependencies = (
 				E71F303227F0249A00E6E9DF /* Alamofire */,
+				E754E2A927F411A500CBFC47 /* FirebaseAuth */,
+				E754E2AB27F411A500CBFC47 /* FirebaseAuthCombine-Community */,
+				E754E2AD27F411A500CBFC47 /* FirebaseDatabase */,
+				E754E2AF27F411A500CBFC47 /* FirebaseRemoteConfig */,
 			);
 			productName = BankKodemia;
 			productReference = E75D785927E2F7E300F95DDD /* BankKodemia.app */;
@@ -536,6 +571,7 @@
 			mainGroup = E75D785027E2F7E300F95DDD;
 			packageReferences = (
 				E71F303127F0249900E6E9DF /* XCRemoteSwiftPackageReference "Alamofire" */,
+				E754E2A827F411A500CBFC47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = E75D785A27E2F7E300F95DDD /* Products */;
 			projectDirPath = "";
@@ -571,6 +607,7 @@
 				E75D786627E2F7E400F95DDD /* Assets.xcassets in Resources */,
 				FAA497C027E6BAFE007FCC32 /* Poppins-ThinItalic.ttf in Resources */,
 				FAA497B127E6BAFE007FCC32 /* Poppins-Light.ttf in Resources */,
+				E754E2B227F4145D00CBFC47 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,6 +628,7 @@
 				FAF8163A27EA73220098989A /* IdentityVerificationViewController.swift in Sources */,
 				E75D789D27E309FA00F95DDD /* ConstantsColor.swift in Sources */,
 				C5B7DE7827EBE587004AE6C7 /* TransactionDetailsViewController.swift in Sources */,
+				E754E2B727F41C9300CBFC47 /* HomeDataManager.swift in Sources */,
 				FAF8163D27EA7A610098989A /* IdSelectViewController.swift in Sources */,
 				E75D789E27E309FA00F95DDD /* ConstansText.swift in Sources */,
 				E70B64A327EFC84700F94109 /* InvalidCredentialsDataModel.swift in Sources */,
@@ -600,6 +638,7 @@
 				E75D78A427E3167400F95DDD /* UIView++.swift in Sources */,
 				E75D789827E309D700F95DDD /* UIButton++.swift in Sources */,
 				FAF8163627EA5E710098989A /* PhoneAccountViewController.swift in Sources */,
+				E754E2B427F4170600CBFC47 /* HomeViewModel.swift in Sources */,
 				C98304BD27EE0F0500EFD48A /* HomeCardViewController.swift in Sources */,
 				E75D78C627E45B0A00F95DDD /* ConstantsUIKit.swift in Sources */,
 				C5B7DE7B27ECEAB6004AE6C7 /* SendMoneyViewController.swift in Sources */,
@@ -610,9 +649,11 @@
 				E70B64A527EFCDE500F94109 /* InvalidCredentialsModel.swift in Sources */,
 				E75D78CA27E45B7800F95DDD /* HomeViewController.swift in Sources */,
 				E70B64A727EFCDF700F94109 /* LoggedInModel.swift in Sources */,
+				E754E2B927F5B22D00CBFC47 /* HomeUserData.swift in Sources */,
 				E70B64AB27EFF6D300F94109 /* LoginInDataManager.swift in Sources */,
 				FAF8164427EC08980098989A /* LoadingViewController.swift in Sources */,
 				C5B7DE7E27ECF790004AE6C7 /* ShipViewController.swift in Sources */,
+				E754E2BB27F5B25200CBFC47 /* HomeUserModel.swift in Sources */,
 				E70B646E27ED976300F94109 /* HomeServicesViewController.swift in Sources */,
 				FAA92A9A27E96C7700083E10 /* DetailAccountViewController.swift in Sources */,
 				FAF8164727EC230E0098989A /* SuccessViewController.swift in Sources */,
@@ -837,6 +878,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		E754E2A827F411A500CBFC47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -844,6 +893,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E71F303127F0249900E6E9DF /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		E754E2A927F411A500CBFC47 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E754E2A827F411A500CBFC47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		E754E2AB27F411A500CBFC47 /* FirebaseAuthCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E754E2A827F411A500CBFC47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAuthCombine-Community";
+		};
+		E754E2AD27F411A500CBFC47 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E754E2A827F411A500CBFC47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		E754E2AF27F411A500CBFC47 /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E754E2A827F411A500CBFC47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
