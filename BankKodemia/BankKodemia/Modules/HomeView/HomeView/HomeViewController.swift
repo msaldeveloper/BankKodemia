@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Combine
 
 class HomeViewController: UIViewController {
 
@@ -23,6 +24,11 @@ class HomeViewController: UIViewController {
     lazy var receivingMoneyButton : UIButton = UIButton()
     lazy var receivingMoneyLabel : UILabel = UILabel()
     lazy var movementsTable : UITableView = UITableView()
+    
+    var homeViewModel : HomeViewModel = HomeViewModel()
+    var movementsList : [TransactionModel] = []
+    
+    private var cancellables: [AnyCancellable] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +36,15 @@ class HomeViewController: UIViewController {
         view.backgroundColor = .white
         
         initUI()
+        
+        movementsTable.delegate = self
+        movementsTable.dataSource = self
+        
+        receiveBalance()
+        newData()
+        reloadData()
+        
+        homeViewModel.leadData()
         
     }
     
@@ -47,7 +62,6 @@ class HomeViewController: UIViewController {
         view.addSubview(moneyTitle)
         moneyTitle.formartTitle(view: view, textTitle: TextLocals.home_available_cash_top_message)
         
-        money.text = "$160.00"
         money.textAlignment = .center
         money.font = ConstantsFont.f20SemiBold
         view.addSubview(money)
@@ -80,8 +94,7 @@ class HomeViewController: UIViewController {
         receivingMoneyButton.addLabelWhite(button: receivingMoneyButton, text: TextLocals.home_receive_button)
         
         
-        movementsTable.backgroundColor = .systemGray5
-        movementsTable.layer.cornerRadius = 10
+        movementsTable.backgroundColor = .white
         view.addSubview(movementsTable)
         movementsTable.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -94,7 +107,77 @@ class HomeViewController: UIViewController {
         
     }
     
+    //suscriptor para traer la data del tablaView
+    fileprivate func newData(){
+        self.homeViewModel
+            .dataTableView
+            .sink{ newList in
+                print("""
+        %%%%%%%%%%%%%%%%%%
+        SUSCRIPTOR LLAMADO
+        %%%%%%%%%%%%%%%%%%
+        """)
+                self.movementsList = newList
+            }
+            .store(in: &cancellables)
+    }
+    
+    //suscriptor para saber cuando recargar la data de la tableView
+    fileprivate func reloadData(){
+        self.homeViewModel
+            .reloadDataTableView
+            .sink{ _ in
+                DispatchQueue.main.async {
+                    self.movementsTable.reloadData()
+                }
+            }
+            .store(in: &cancellables)
+    }
+    
+    //suscriptor para traer el balance del usuario
+    fileprivate func receiveBalance(){
+        self.homeViewModel
+            .reloadBalance
+            .sink{ balance in
+                self.money.text = String(balance)
+                self.money.text = "$" + (self.money.text ?? "")
+            }
+            .store(in: &cancellables)
+    }
+    
+}
 
 
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(movementsList.count)
+        return movementsList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell : UITableViewCell = ContenidoTableViewCell(transaction: movementsList[indexPath.row])
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return height/10
+    }
+    
+    /*
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let post = postsList[indexPath.row]
+        let vc = DetallesTransaccion(post: post)
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
+        
+    }
+     */
+    
 }
 

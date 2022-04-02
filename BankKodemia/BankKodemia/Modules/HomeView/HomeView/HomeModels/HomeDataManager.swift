@@ -6,6 +6,7 @@
 import Foundation
 import Alamofire
 import Combine
+
 let urlGetUserFullProfile = Text.Routes.urlBase+Text.Routes.getUserFullProfile
 
 class GetUserRequest {
@@ -14,9 +15,6 @@ class GetUserRequest {
         print("this token ",urlGetUserFullProfile,token)
         return AF
             .request(urlGetUserFullProfile, method: .get, headers: token)
-            .response { fullData in
-                debugPrint(fullData)
-            }
             .validate()
             .publishDecodable(type: GetUserFullData.self)
     }
