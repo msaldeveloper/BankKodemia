@@ -14,13 +14,11 @@ class HomeViewModel {
     var getUserRequest = GetUserRequest()
     
     func tokenReciver(token : String){
-        
         let headers: HTTPHeaders = [
             "Authorization" : "Bearer "+token,
             "Accept": "application/json"
         ]
-        getUserRequest
-            .getUserProfile(headers).sink{ fullData in
+        getUserRequest.getUserProfile(headers).sink{ fullData in
                 print("balance",fullData.value?.data.balance ?? 0.0)
             }.store(in: &cancellables)
     }
