@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5336769B27F8418A00A0E0A5 /* ContenidoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5336769A27F8418A00A0E0A5 /* ContenidoTableViewCell.swift */; };
 		C59A81F927E6FD4B0038C662 /* UIImageView++.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59A81F827E6FD4B0038C662 /* UIImageView++.swift */; };
 		C5B7DE7827EBE587004AE6C7 /* TransactionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B7DE7727EBE587004AE6C7 /* TransactionDetailsViewController.swift */; };
 		C5B7DE7B27ECEAB6004AE6C7 /* SendMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B7DE7A27ECEAB6004AE6C7 /* SendMoneyViewController.swift */; };
@@ -18,11 +19,20 @@
 		E70B647D27EDB32500F94109 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70B647C27EDB32500F94109 /* WelcomeViewController.swift */; };
 		E70B649B27EF919100F94109 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70B649A27EF919100F94109 /* LoginViewModel.swift */; };
 		E70B64A127EFC83400F94109 /* LoggedInDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70B64A027EFC83400F94109 /* LoggedInDataModel.swift */; };
-		E70B64A327EFC84700F94109 /* InvalidCredentialsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70B64A227EFC84700F94109 /* InvalidCredentialsDataModel.swift */; };
-		E70B64A527EFCDE500F94109 /* InvalidCredentialsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70B64A427EFCDE500F94109 /* InvalidCredentialsModel.swift */; };
-		E70B64A727EFCDF700F94109 /* LoggedInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70B64A627EFCDF700F94109 /* LoggedInModel.swift */; };
 		E70B64AB27EFF6D300F94109 /* LoginInDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70B64AA27EFF6D200F94109 /* LoginInDataManager.swift */; };
 		E71F303327F0249A00E6E9DF /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E71F303227F0249A00E6E9DF /* Alamofire */; };
+		E73FFB4F27F7D84A004E46CB /* AddRecipientDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB4E27F7D84A004E46CB /* AddRecipientDataManager.swift */; };
+		E73FFB5227F7D884004E46CB /* AddRecipientData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB5127F7D884004E46CB /* AddRecipientData.swift */; };
+		E73FFB5427F7DB16004E46CB /* AddRecipientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB5327F7DB16004E46CB /* AddRecipientViewModel.swift */; };
+		E73FFB5727F8FE6B004E46CB /* HomeUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB5627F8FE6B004E46CB /* HomeUserModel.swift */; };
+		E754E2AA27F411A500CBFC47 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E754E2A927F411A500CBFC47 /* FirebaseAuth */; };
+		E754E2AC27F411A500CBFC47 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = E754E2AB27F411A500CBFC47 /* FirebaseAuthCombine-Community */; };
+		E754E2AE27F411A500CBFC47 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = E754E2AD27F411A500CBFC47 /* FirebaseDatabase */; };
+		E754E2B027F411A500CBFC47 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = E754E2AF27F411A500CBFC47 /* FirebaseRemoteConfig */; };
+		E754E2B227F4145D00CBFC47 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E754E2B127F4145D00CBFC47 /* GoogleService-Info.plist */; };
+		E754E2B427F4170600CBFC47 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E754E2B327F4170600CBFC47 /* HomeViewModel.swift */; };
+		E754E2B727F41C9300CBFC47 /* HomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E754E2B627F41C9300CBFC47 /* HomeDataManager.swift */; };
+		E754E2B927F5B22D00CBFC47 /* HomeUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E754E2B827F5B22D00CBFC47 /* HomeUserData.swift */; };
 		E75D786627E2F7E400F95DDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75D786527E2F7E400F95DDD /* Assets.xcassets */; };
 		E75D786927E2F7E400F95DDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E75D786727E2F7E400F95DDD /* LaunchScreen.storyboard */; };
 		E75D787927E2FA2D00F95DDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75D787727E2FA2D00F95DDD /* AppDelegate.swift */; };
@@ -38,6 +48,8 @@
 		E75D78C627E45B0A00F95DDD /* ConstantsUIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75D78C527E45B0A00F95DDD /* ConstantsUIKit.swift */; };
 		E75D78CA27E45B7800F95DDD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75D78C927E45B7800F95DDD /* HomeViewController.swift */; };
 		E75D78CF27E45D3E00F95DDD /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75D78CE27E45D3E00F95DDD /* Network.swift */; };
+		FA9F2D2427F8ACF4008073A7 /* CreateNewAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9F2D2327F8ACF3008073A7 /* CreateNewAccountViewModel.swift */; };
+		FA9F2D2627F90AB7008073A7 /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9F2D2527F90AB7008073A7 /* CreateAccountViewModel.swift */; };
 		FAA4979C27E66094007FCC32 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA4979B27E66094007FCC32 /* CreateAccountViewController.swift */; };
 		FAA497B027E6BAFE007FCC32 /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA4979E27E6BAFC007FCC32 /* Poppins-MediumItalic.ttf */; };
 		FAA497B127E6BAFE007FCC32 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA4979F27E6BAFC007FCC32 /* Poppins-Light.ttf */; };
@@ -59,7 +71,6 @@
 		FAA497C127E6BAFE007FCC32 /* Poppins-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA497AF27E6BAFD007FCC32 /* Poppins-ExtraLightItalic.ttf */; };
 		FAA92A9727E96BD000083E10 /* CreatePaswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA92A9627E96BD000083E10 /* CreatePaswordViewController.swift */; };
 		FAA92A9A27E96C7700083E10 /* DetailAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA92A9927E96C7700083E10 /* DetailAccountViewController.swift */; };
-		FABD5D6E27F2C57000895007 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FABD5D6D27F2C57000895007 /* Alamofire */; };
 		FAF8163627EA5E710098989A /* PhoneAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8163527EA5E710098989A /* PhoneAccountViewController.swift */; };
 		FAF8163A27EA73220098989A /* IdentityVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8163927EA73220098989A /* IdentityVerificationViewController.swift */; };
 		FAF8163D27EA7A610098989A /* IdSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8163C27EA7A610098989A /* IdSelectViewController.swift */; };
@@ -69,6 +80,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5336769A27F8418A00A0E0A5 /* ContenidoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContenidoTableViewCell.swift; sourceTree = "<group>"; };
 		C59A81F827E6FD4B0038C662 /* UIImageView++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView++.swift"; sourceTree = "<group>"; };
 		C5B7DE7727EBE587004AE6C7 /* TransactionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsViewController.swift; sourceTree = "<group>"; };
 		C5B7DE7A27ECEAB6004AE6C7 /* SendMoneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyViewController.swift; sourceTree = "<group>"; };
@@ -80,10 +92,15 @@
 		E70B647C27EDB32500F94109 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		E70B649A27EF919100F94109 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E70B64A027EFC83400F94109 /* LoggedInDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInDataModel.swift; sourceTree = "<group>"; };
-		E70B64A227EFC84700F94109 /* InvalidCredentialsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvalidCredentialsDataModel.swift; sourceTree = "<group>"; };
-		E70B64A427EFCDE500F94109 /* InvalidCredentialsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvalidCredentialsModel.swift; sourceTree = "<group>"; };
-		E70B64A627EFCDF700F94109 /* LoggedInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInModel.swift; sourceTree = "<group>"; };
 		E70B64AA27EFF6D200F94109 /* LoginInDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInDataManager.swift; sourceTree = "<group>"; };
+		E73FFB4E27F7D84A004E46CB /* AddRecipientDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipientDataManager.swift; sourceTree = "<group>"; };
+		E73FFB5127F7D884004E46CB /* AddRecipientData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipientData.swift; sourceTree = "<group>"; };
+		E73FFB5327F7DB16004E46CB /* AddRecipientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipientViewModel.swift; sourceTree = "<group>"; };
+		E73FFB5627F8FE6B004E46CB /* HomeUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeUserModel.swift; sourceTree = "<group>"; };
+		E754E2B127F4145D00CBFC47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E754E2B327F4170600CBFC47 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		E754E2B627F41C9300CBFC47 /* HomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataManager.swift; sourceTree = "<group>"; };
+		E754E2B827F5B22D00CBFC47 /* HomeUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUserData.swift; sourceTree = "<group>"; };
 		E75D785927E2F7E300F95DDD /* BankKodemia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankKodemia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E75D786527E2F7E400F95DDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E75D786827E2F7E400F95DDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -101,6 +118,8 @@
 		E75D78C527E45B0A00F95DDD /* ConstantsUIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsUIKit.swift; sourceTree = "<group>"; };
 		E75D78C927E45B7800F95DDD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E75D78CE27E45D3E00F95DDD /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		FA9F2D2327F8ACF3008073A7 /* CreateNewAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewAccountViewModel.swift; sourceTree = "<group>"; };
+		FA9F2D2527F90AB7008073A7 /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
 		FAA4979B27E66094007FCC32 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		FAA4979E27E6BAFC007FCC32 /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
 		FAA4979F27E6BAFC007FCC32 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
@@ -136,6 +155,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E71F303327F0249A00E6E9DF /* Alamofire in Frameworks */,
+				E754E2AC27F411A500CBFC47 /* FirebaseAuthCombine-Community in Frameworks */,
+				E754E2AE27F411A500CBFC47 /* FirebaseDatabase in Frameworks */,
+				E754E2AA27F411A500CBFC47 /* FirebaseAuth in Frameworks */,
+				E754E2B027F411A500CBFC47 /* FirebaseRemoteConfig in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,7 +168,10 @@
 		C5B7DE7227EBE517004AE6C7 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
+				E754E2B527F41C0200CBFC47 /* HomeModels */,
 				E75D78C927E45B7800F95DDD /* HomeViewController.swift */,
+				E754E2B327F4170600CBFC47 /* HomeViewModel.swift */,
+				5336769A27F8418A00A0E0A5 /* ContenidoTableViewCell.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -194,6 +220,8 @@
 		E70B647027ED993600F94109 /* AddRecipient */ = {
 			isa = PBXGroup;
 			children = (
+				E73FFB5027F7D859004E46CB /* AddRecipientModels */,
+				E73FFB5527F7DBAD004E46CB /* AddRecipientViewModel */,
 				E70B647227ED996700F94109 /* AddNewRecipientViewController.swift */,
 			);
 			path = AddRecipient;
@@ -233,7 +261,6 @@
 		E70B649F27EFC7F300F94109 /* UserLoginModels */ = {
 			isa = PBXGroup;
 			children = (
-				E70B64A927EFCE4100F94109 /* InvalidCredentialsModels */,
 				E70B64A827EFCE2B00F94109 /* LoggedInModels */,
 			);
 			path = UserLoginModels;
@@ -242,20 +269,37 @@
 		E70B64A827EFCE2B00F94109 /* LoggedInModels */ = {
 			isa = PBXGroup;
 			children = (
-				E70B64A627EFCDF700F94109 /* LoggedInModel.swift */,
 				E70B64A027EFC83400F94109 /* LoggedInDataModel.swift */,
 				E70B64AA27EFF6D200F94109 /* LoginInDataManager.swift */,
 			);
 			path = LoggedInModels;
 			sourceTree = "<group>";
 		};
-		E70B64A927EFCE4100F94109 /* InvalidCredentialsModels */ = {
+		E73FFB5027F7D859004E46CB /* AddRecipientModels */ = {
 			isa = PBXGroup;
 			children = (
-				E70B64A427EFCDE500F94109 /* InvalidCredentialsModel.swift */,
-				E70B64A227EFC84700F94109 /* InvalidCredentialsDataModel.swift */,
+				E73FFB5127F7D884004E46CB /* AddRecipientData.swift */,
 			);
-			path = InvalidCredentialsModels;
+			path = AddRecipientModels;
+			sourceTree = "<group>";
+		};
+		E73FFB5527F7DBAD004E46CB /* AddRecipientViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E73FFB4E27F7D84A004E46CB /* AddRecipientDataManager.swift */,
+				E73FFB5327F7DB16004E46CB /* AddRecipientViewModel.swift */,
+			);
+			path = AddRecipientViewModel;
+			sourceTree = "<group>";
+		};
+		E754E2B527F41C0200CBFC47 /* HomeModels */ = {
+			isa = PBXGroup;
+			children = (
+				E73FFB5627F8FE6B004E46CB /* HomeUserModel.swift */,
+				E754E2B827F5B22D00CBFC47 /* HomeUserData.swift */,
+				E754E2B627F41C9300CBFC47 /* HomeDataManager.swift */,
+			);
+			path = HomeModels;
 			sourceTree = "<group>";
 		};
 		E75D785027E2F7E300F95DDD = {
@@ -285,6 +329,7 @@
 				E75D786527E2F7E400F95DDD /* Assets.xcassets */,
 				E75D786727E2F7E400F95DDD /* LaunchScreen.storyboard */,
 				E75D786A27E2F7E400F95DDD /* Info.plist */,
+				E754E2B127F4145D00CBFC47 /* GoogleService-Info.plist */,
 			);
 			path = BankKodemia;
 			sourceTree = "<group>";
@@ -379,6 +424,7 @@
 			isa = PBXGroup;
 			children = (
 				FAA4979B27E66094007FCC32 /* CreateAccountViewController.swift */,
+				FA9F2D2527F90AB7008073A7 /* CreateAccountViewModel.swift */,
 			);
 			path = CreateAccountView;
 			sourceTree = "<group>";
@@ -419,6 +465,7 @@
 				FAA92A9827E96C2C00083E10 /* DetailAccountView */,
 				FAA92A9527E96BA700083E10 /* CreatePasswordView */,
 				FAA4979A27E66058007FCC32 /* CreateAccountView */,
+				FA9F2D2327F8ACF3008073A7 /* CreateNewAccountViewModel.swift */,
 			);
 			path = CreateNewAccountViews;
 			sourceTree = "<group>";
@@ -505,6 +552,10 @@
 			name = BankKodemia;
 			packageProductDependencies = (
 				E71F303227F0249A00E6E9DF /* Alamofire */,
+				E754E2A927F411A500CBFC47 /* FirebaseAuth */,
+				E754E2AB27F411A500CBFC47 /* FirebaseAuthCombine-Community */,
+				E754E2AD27F411A500CBFC47 /* FirebaseDatabase */,
+				E754E2AF27F411A500CBFC47 /* FirebaseRemoteConfig */,
 			);
 			productName = BankKodemia;
 			productReference = E75D785927E2F7E300F95DDD /* BankKodemia.app */;
@@ -536,6 +587,7 @@
 			mainGroup = E75D785027E2F7E300F95DDD;
 			packageReferences = (
 				E71F303127F0249900E6E9DF /* XCRemoteSwiftPackageReference "Alamofire" */,
+				E754E2A827F411A500CBFC47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = E75D785A27E2F7E300F95DDD /* Products */;
 			projectDirPath = "";
@@ -571,6 +623,7 @@
 				E75D786627E2F7E400F95DDD /* Assets.xcassets in Resources */,
 				FAA497C027E6BAFE007FCC32 /* Poppins-ThinItalic.ttf in Resources */,
 				FAA497B127E6BAFE007FCC32 /* Poppins-Light.ttf in Resources */,
+				E754E2B227F4145D00CBFC47 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,24 +635,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAA4979C27E66094007FCC32 /* CreateAccountViewController.swift in Sources */,
+				FA9F2D2427F8ACF4008073A7 /* CreateNewAccountViewModel.swift in Sources */,
 				E70B64A127EFC83400F94109 /* LoggedInDataModel.swift in Sources */,
 				FAF8164027EAC5EA0098989A /* UploadViewController.swift in Sources */,
 				E75D78CF27E45D3E00F95DDD /* Network.swift in Sources */,
 				E75D789227E3099400F95DDD /* constraints.swift in Sources */,
+				5336769B27F8418A00A0E0A5 /* ContenidoTableViewCell.swift in Sources */,
 				E75D787927E2FA2D00F95DDD /* AppDelegate.swift in Sources */,
 				E75D789927E309D700F95DDD /* UILabel++.swift in Sources */,
 				FAF8163A27EA73220098989A /* IdentityVerificationViewController.swift in Sources */,
 				E75D789D27E309FA00F95DDD /* ConstantsColor.swift in Sources */,
 				C5B7DE7827EBE587004AE6C7 /* TransactionDetailsViewController.swift in Sources */,
+				E754E2B727F41C9300CBFC47 /* HomeDataManager.swift in Sources */,
+				E73FFB5227F7D884004E46CB /* AddRecipientData.swift in Sources */,
 				FAF8163D27EA7A610098989A /* IdSelectViewController.swift in Sources */,
 				E75D789E27E309FA00F95DDD /* ConstansText.swift in Sources */,
-				E70B64A327EFC84700F94109 /* InvalidCredentialsDataModel.swift in Sources */,
 				E75D789727E309D700F95DDD /* TextField++.swift in Sources */,
 				E75D787A27E2FA2D00F95DDD /* SceneDelegate.swift in Sources */,
 				C59A81F927E6FD4B0038C662 /* UIImageView++.swift in Sources */,
 				E75D78A427E3167400F95DDD /* UIView++.swift in Sources */,
 				E75D789827E309D700F95DDD /* UIButton++.swift in Sources */,
 				FAF8163627EA5E710098989A /* PhoneAccountViewController.swift in Sources */,
+				E754E2B427F4170600CBFC47 /* HomeViewModel.swift in Sources */,
 				C98304BD27EE0F0500EFD48A /* HomeCardViewController.swift in Sources */,
 				E75D78C627E45B0A00F95DDD /* ConstantsUIKit.swift in Sources */,
 				C5B7DE7B27ECEAB6004AE6C7 /* SendMoneyViewController.swift in Sources */,
@@ -607,17 +664,20 @@
 				FAA92A9727E96BD000083E10 /* CreatePaswordViewController.swift in Sources */,
 				E70B647627ED999100F94109 /* ConfirmNewRecipientViewController.swift in Sources */,
 				E70B647D27EDB32500F94109 /* WelcomeViewController.swift in Sources */,
-				E70B64A527EFCDE500F94109 /* InvalidCredentialsModel.swift in Sources */,
 				E75D78CA27E45B7800F95DDD /* HomeViewController.swift in Sources */,
-				E70B64A727EFCDF700F94109 /* LoggedInModel.swift in Sources */,
+				E754E2B927F5B22D00CBFC47 /* HomeUserData.swift in Sources */,
 				E70B64AB27EFF6D300F94109 /* LoginInDataManager.swift in Sources */,
+				FA9F2D2627F90AB7008073A7 /* CreateAccountViewModel.swift in Sources */,
 				FAF8164427EC08980098989A /* LoadingViewController.swift in Sources */,
+				E73FFB5727F8FE6B004E46CB /* HomeUserModel.swift in Sources */,
 				C5B7DE7E27ECF790004AE6C7 /* ShipViewController.swift in Sources */,
 				E70B646E27ED976300F94109 /* HomeServicesViewController.swift in Sources */,
 				FAA92A9A27E96C7700083E10 /* DetailAccountViewController.swift in Sources */,
 				FAF8164727EC230E0098989A /* SuccessViewController.swift in Sources */,
 				E75D78A627E3193900F95DDD /* LoginViewController.swift in Sources */,
 				E70B647327ED996700F94109 /* AddNewRecipientViewController.swift in Sources */,
+				E73FFB5427F7DB16004E46CB /* AddRecipientViewModel.swift in Sources */,
+				E73FFB4F27F7D84A004E46CB /* AddRecipientDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -837,6 +897,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		E754E2A827F411A500CBFC47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -844,6 +912,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E71F303127F0249900E6E9DF /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		E754E2A927F411A500CBFC47 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E754E2A827F411A500CBFC47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		E754E2AB27F411A500CBFC47 /* FirebaseAuthCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E754E2A827F411A500CBFC47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAuthCombine-Community";
+		};
+		E754E2AD27F411A500CBFC47 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E754E2A827F411A500CBFC47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		E754E2AF27F411A500CBFC47 /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E754E2A827F411A500CBFC47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

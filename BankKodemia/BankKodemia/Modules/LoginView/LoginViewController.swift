@@ -36,8 +36,17 @@ class LoginViewController: UIViewController {
         view.backgroundColor = backgroundColor
         UIInit()
         validationBind()
+        //Looks for single or multiple taps.
+             let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
 
-        // Do any additional setup after loading the view.
+            //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+            //tap.cancelsTouchesInView = false
+
+            view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     
@@ -166,7 +175,6 @@ class LoginViewController: UIViewController {
                     print("new alert -->>",newAlertText)
                     self.updateAlert(newAlertText)//self.sesionActiva()
                 }
-                
             }
             .store(in: &cancellables)
     }
@@ -185,7 +193,7 @@ class LoginViewController: UIViewController {
             let  tabBarVC = UITabBarController()
             let home = HomeViewController()
             let target = HomeCardViewController()
-            let services = HomeServicesViewController()
+            let services = AddNewRecipientViewController()//HomeServicesViewController()
             //let logOut = ViewController()
             home.title = "INICIO"
             target.title = "TARJETA"
@@ -220,28 +228,7 @@ extension LoginViewController {
     }
     @objc func continueButton(){
         print("continue button pressed")
-        self.loginViewModel.getAlert()
-        self.loginViewModel.emailAlert(self.textFieldEmail.text ?? "")
-        self.loginViewModel.passwordAlert(self.textFieldPassword.text ?? "")
+        self.loginViewModel.loginValidator(self.textFieldEmail.text ?? "", self.textFieldPassword.text ?? "")
         
-//        if self.textFieldEmail.text == "" {
-//            alerta = "Ingrese un Correo"
-//            let alert = UIAlertController(title: "Error :(", message: alerta, preferredStyle: .alert)
-//            let aceptar = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
-//            alert.addAction(aceptar)
-//            self.present(alert, animated: true, completion: nil)
-//        }
-//        if self.textFieldPassword.text == "" {
-//            alerta = "Ingrese una contraseña"
-//            let alert = UIAlertController(title: "Error :(", message: alerta, preferredStyle: .alert)
-//            let aceptar = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
-//            alert.addAction(aceptar)
-//            self.present(alert, animated: true, completion: nil)
-//        }
-//        let response = 401
-//        if response == 401 {
-//            self.loginViewModel.getAlert()
-//            print("get alert dispatch")
-        //}
     }
 }

@@ -148,6 +148,8 @@ extension PhoneAccountViewController {
         
         let phone = phoneInfoTextField.text
         let regexPhone = #"^\(?\d{3}\)?[ -]?\d{3}[ -]?\d{4}$"#
+        
+//        let regexPhone = "^({3}[0-9]+)[-]?({3}[0-9]+)[-]?({4}[0-9]+)$"
 
       
         if (phone?.range(of: regexPhone, options: .regularExpression, range: nil, locale: nil) != nil){

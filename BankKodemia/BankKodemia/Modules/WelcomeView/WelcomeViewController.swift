@@ -130,9 +130,9 @@ extension WelcomeViewController {
     @objc func goToSignUp(){
         print("Vamos a crear la cuenta...")
         
-        let detailAccountViewController = DetailAccountViewController()
-        detailAccountViewController.modalPresentationStyle = .fullScreen
-        present(detailAccountViewController, animated: true, completion: nil)
+        let createAccountViewController = CreateAccountViewController()
+        createAccountViewController.modalPresentationStyle = .fullScreen
+        present(createAccountViewController, animated: true, completion: nil)
         
     }
     @objc func goToLogIn(){
