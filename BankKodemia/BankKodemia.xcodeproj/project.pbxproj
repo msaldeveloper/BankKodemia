@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5336769B27F8418A00A0E0A5 /* ContenidoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5336769A27F8418A00A0E0A5 /* ContenidoTableViewCell.swift */; };
 		C59A81F927E6FD4B0038C662 /* UIImageView++.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59A81F827E6FD4B0038C662 /* UIImageView++.swift */; };
 		C5B7DE7827EBE587004AE6C7 /* TransactionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B7DE7727EBE587004AE6C7 /* TransactionDetailsViewController.swift */; };
 		C5B7DE7B27ECEAB6004AE6C7 /* SendMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B7DE7A27ECEAB6004AE6C7 /* SendMoneyViewController.swift */; };
@@ -77,6 +78,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5336769A27F8418A00A0E0A5 /* ContenidoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContenidoTableViewCell.swift; sourceTree = "<group>"; };
 		C59A81F827E6FD4B0038C662 /* UIImageView++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView++.swift"; sourceTree = "<group>"; };
 		C5B7DE7727EBE587004AE6C7 /* TransactionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsViewController.swift; sourceTree = "<group>"; };
 		C5B7DE7A27ECEAB6004AE6C7 /* SendMoneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				E754E2B527F41C0200CBFC47 /* HomeModels */,
 				E75D78C927E45B7800F95DDD /* HomeViewController.swift */,
 				E754E2B327F4170600CBFC47 /* HomeViewModel.swift */,
+				5336769A27F8418A00A0E0A5 /* ContenidoTableViewCell.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 				FAF8164027EAC5EA0098989A /* UploadViewController.swift in Sources */,
 				E75D78CF27E45D3E00F95DDD /* Network.swift in Sources */,
 				E75D789227E3099400F95DDD /* constraints.swift in Sources */,
+				5336769B27F8418A00A0E0A5 /* ContenidoTableViewCell.swift in Sources */,
 				E75D787927E2FA2D00F95DDD /* AppDelegate.swift in Sources */,
 				E75D789927E309D700F95DDD /* UILabel++.swift in Sources */,
 				FAF8163A27EA73220098989A /* IdentityVerificationViewController.swift in Sources */,

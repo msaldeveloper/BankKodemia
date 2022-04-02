@@ -23,28 +23,13 @@ struct DataClassModel {
 // MARK: - Transaction
 struct TransactionModel {
     let id: String
-    let amount: Int
+    let amount: Double
     let type, concept, createdAt: String
-    let issuer, destinationUser: UserModel
+    let issuer, destinationUser: User
     let isIncome: Bool
-
-    enum CodingKeys: String, CodingKey {
-        case id
-        case amount, type, concept
-        case createdAt
-        case issuer, destinationUser, isIncome
-    }
 }
 
 // MARK: - User
 struct UserModel {
-    let id, email, name, lastName: String
-    let occupation, birthDate, password, phone: String
-    let isPhoneVerified: Bool
-    let identityImage, identityImageType: String
-
-    enum CodingKeys: String, CodingKey {
-        case id
-        case email, name, lastName, occupation, birthDate, password, phone, isPhoneVerified, identityImage, identityImageType
-    }
+    let _id, email, name, lastName: String
 }
