@@ -184,6 +184,10 @@ struct Text{
         
         
     }
+    struct Routes {
+        static let urlBase: String = "https://bankodemia.kodemia.mx"
+        static let getUserFullProfile = "/users/me/profile"
+    }
 }
 
 

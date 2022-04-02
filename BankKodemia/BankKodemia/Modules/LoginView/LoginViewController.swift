@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 
 class LoginViewController: UIViewController {
@@ -24,6 +25,9 @@ class LoginViewController: UIViewController {
     var linkMessageLabel: UILabel = UILabel()
     var initSessionBottomButton: UIButton = UIButton()
     var initSessionButtonLabel: UILabel = UILabel()
+    var alerta = ""
+    private var loginViewModel = LoginViewModel()
+    private var cancellables: [AnyCancellable] = []
 
     var backgroundColor = ConstantsUIColor.clearBackground
 
@@ -31,8 +35,18 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = backgroundColor
         UIInit()
+        validationBind()
+        //Looks for single or multiple taps.
+             let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
 
-        // Do any additional setup after loading the view.
+            //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+            //tap.cancelsTouchesInView = false
+
+            view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     
@@ -149,10 +163,60 @@ class LoginViewController: UIViewController {
         
         
     }
+    //suscriptor
+    fileprivate func validationBind(){
+        self.loginViewModel
+            .validationState
+            .sink{ newAlertText in
+               print("esperando acceso ->",newAlertText)
+                if newAlertText == "access"{
+                    self.sesionActiva()
+                }else {
+                    print("new alert -->>",newAlertText)
+                    self.updateAlert(newAlertText)//self.sesionActiva()
+                }
+            }
+            .store(in: &cancellables)
+    }
     
+    func updateAlert(_ alertText: String){
+        alerta = alertText
+        print(alertText)
+        let alert = UIAlertController(title: "Error :(", message: alerta, preferredStyle: .alert)
+        let aceptar = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+        alert.addAction(aceptar)
+        self.present(alert, animated: true, completion: nil)
+    }
+    func sesionActiva(){
+            print("Estamos logueados")
     
+            let  tabBarVC = UITabBarController()
+            let home = HomeViewController()
+            let target = HomeCardViewController()
+            let services = HomeServicesViewController()
+            //let logOut = ViewController()
+            home.title = "INICIO"
+            target.title = "TARJETA"
+            services.title = "SERVICIOS"
+            //logOut.title = "LogOut"
+            UITabBar.appearance().tintColor = .black
+            UITabBar.appearance().isTranslucent = true
+            UITabBar.appearance().backgroundColor = UIColor.gray
+    //        home.tabBarItem.image = UIImage(named: "casa25")
+    //        search.tabBarItem.image = UIImage(named: "search25")
+            //logOut.tabBarItem.image = UIImage(named: "logout25")
+            tabBarVC.setViewControllers([home,target,services], animated: false)
+            tabBarVC.modalPresentationStyle = .fullScreen
+            present(tabBarVC, animated: true, completion: nil)
+            }
+    }
 
-}
+    extension UITabBar {
+        static func setAppearanceTabbar(){
+            UITabBar.appearance().backgroundColor = .red
+        }
+    
+    }
 // MARK: - OBJC Functions
 extension LoginViewController {
     @objc func backAction(){
@@ -164,5 +228,7 @@ extension LoginViewController {
     }
     @objc func continueButton(){
         print("continue button pressed")
+        self.loginViewModel.loginValidator(self.textFieldEmail.text ?? "", self.textFieldPassword.text ?? "")
+        
     }
 }
