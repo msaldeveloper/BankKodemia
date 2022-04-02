@@ -38,11 +38,16 @@ class AddNewRecipientViewController: UIViewController {
     var textFieldEmailTop : UILabel = UILabel()
     
     var addContactButton : UIButton = UIButton()
+    var addRecipientViewModel = AddRecipientViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = backgroundColor
+        self.addRecipientViewModel.listUserDataRequest()
         initUI()
+    }
+    func tokenBind(){
+        
     }
     func initUI(){
         logoComponent()
