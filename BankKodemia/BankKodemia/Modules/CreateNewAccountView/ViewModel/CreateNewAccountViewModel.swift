@@ -9,17 +9,14 @@ import Foundation
 import Combine
 
 class CreateNewAccountViewModel {
-    //CreateAccount
-    private var mailData : String = ""
-    //DetailAccount
-    private var nameData : String = ""
-    private var lastNameData : String = ""
-    private var occupationData : String = ""
-    private var dateData : String = ""
-    //PhoneAccount
-    private var phoneData : String = ""
-    //PasswordAccount
-    private var passwordData : String = ""
+ 
+    private var mailData : String = ""  //CreateAccount
+    private var nameData : String = ""  //DetailAccount
+    private var lastNameData : String = ""  //DetailAccount
+    private var occupationData : String = ""  //DetailAccount
+    private var dateData : String = ""  //DetailAccount
+    private var phoneData : String = ""  //PhoneAccount
+    private var passwordData : String = ""  //PasswordAccount
     
     private var cancellables: [AnyCancellable] = []
     
@@ -34,7 +31,7 @@ class CreateNewAccountViewModel {
         self.newAlertText = ""
     }
     
-    //Registro de Email - CreateAccount
+    // CreateAccount
     func emailAccountValidator(_ email: String){
         if email == ""{
             newAlertEmail("email")
@@ -44,7 +41,8 @@ class CreateNewAccountViewModel {
     }
     private func newAlertEmail(_ type: String){
         if type == "email"{
-            let textEmailAlert: String = "Ingrese un correo electrónico"
+            let textEmailAlert: String =  TextAlerts.EmailEmpty
+            //let textEmailAlert: String = "Ingrese un correo electrónico"
             newAlertText = textEmailAlert
         }
     }
@@ -74,19 +72,24 @@ class CreateNewAccountViewModel {
     }
     private func newAlertCreateAccount(_ type: String){
         if type == "all"{
-            let textAllAlert: String = "Llena correctamente todos los campos requeridos"
+            let textAllAlert: String = TextAlerts.AllTextFieldsEmpty
+            //let textAllAlert: String = "Llena correctamente todos los campos requeridos"
             newAlertText = textAllAlert
         }else if type == "firstName"{
-            let textFirstNameAlert: String = "Ingrese su nombre"
+            let textFirstNameAlert: String = TextAlerts.TextFirstNameEmpty
+            //let textFirstNameAlert: String = "Ingrese su nombre"
             newAlertText = textFirstNameAlert
         }else if type == "lastName"{
-            let textLastNameAlert: String = "Ingrese su apellido"
+            let textLastNameAlert: String = TextAlerts.TextLastNameEmpty
+            //let textLastNameAlert: String = "Ingrese su apellido"
             newAlertText = textLastNameAlert
         }else if type == "occupation"{
-            let textOccupationAlert: String = "Ingrese su ocupación"
+            let textOccupationAlert: String = TextAlerts.TextOccupationEmpty
+            //let textOccupationAlert: String = "Ingrese su ocupación"
             newAlertText = textOccupationAlert
         }else if type == "date"{
-            let textDateAlert: String = "Ingrese su fecha de nacimiento"
+            let textDateAlert: String = TextAlerts.TextDateEmpty
+            //let textDateAlert: String = "Ingrese su fecha de nacimiento"
             newAlertText = textDateAlert
         }
     }
@@ -102,7 +105,8 @@ class CreateNewAccountViewModel {
     }
     private func newAlertPhone(_ type: String){
         if type == "phone"{
-            let textPhoneAlert: String = "Ingrese su teléfono"
+            let textPhoneAlert: String = TextAlerts.TextPhoneEmpty
+            //let textPhoneAlert: String = "Ingrese su teléfono"
             newAlertText = textPhoneAlert
         }
     }
@@ -121,6 +125,8 @@ class CreateNewAccountViewModel {
     //Func newAlertId
     private func newAlertId(_ type: String){
         if type == "id"{
+            
+            //let textIdAlert: String = TextAlerts.TextPhoneEmpty
             let textIdAlert: String = "Envíe una foto de una identificacion"
             newAlertText = textIdAlert
         }else if type == "success" {
@@ -145,22 +151,17 @@ class CreateNewAccountViewModel {
     }
     private func newAlertPassword(_ type: String){
         if type == "all"{
-            let textAllAlert: String = "Llena correctamente todos los campos requeridos"
-            newAlertText = textAllAlert
+            let textAllPasswordAlert: String = TextAlerts.AllPasswordFieldsEmpty
+            //let textAllPasswordAlert: String = "Llena correctamente todos los campos requeridos"
+            newAlertText = textAllPasswordAlert
         }else if type == "createNewPassword"{
-            let textPasswordAlert: String = "Ingrese una contraseña"
+            let textPasswordAlert: String = TextAlerts.TextPasswordEmpty
+            //let textPasswordAlert: String = "Ingrese una contraseña"
             newAlertText = textPasswordAlert
         }else if type == "confirmNewPassword"{
-            let textConfirmPasswordAlert: String = "La contraseña no coincide"
+            let textConfirmPasswordAlert: String = TextAlerts.TextConfirmPasswordEmpty
+            //let textConfirmPasswordAlert: String = "La contraseña no coincide"
             newAlertText = textConfirmPasswordAlert
         }
     }
-    
-
-    
-
-
-    
-
-    
 }

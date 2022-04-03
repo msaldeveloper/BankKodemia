@@ -48,6 +48,7 @@
 		E75D78C627E45B0A00F95DDD /* ConstantsUIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75D78C527E45B0A00F95DDD /* ConstantsUIKit.swift */; };
 		E75D78CA27E45B7800F95DDD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75D78C927E45B7800F95DDD /* HomeViewController.swift */; };
 		E75D78CF27E45D3E00F95DDD /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75D78CE27E45D3E00F95DDD /* Network.swift */; };
+		FA72740E27FA2DC500BC81E6 /* ConstantsAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72740D27FA2DC500BC81E6 /* ConstantsAlerts.swift */; };
 		FA9F2D2427F8ACF4008073A7 /* CreateNewAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9F2D2327F8ACF3008073A7 /* CreateNewAccountViewModel.swift */; };
 		FAA4979C27E66094007FCC32 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA4979B27E66094007FCC32 /* CreateAccountViewController.swift */; };
 		FAA497B027E6BAFE007FCC32 /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA4979E27E6BAFC007FCC32 /* Poppins-MediumItalic.ttf */; };
@@ -117,6 +118,7 @@
 		E75D78C527E45B0A00F95DDD /* ConstantsUIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsUIKit.swift; sourceTree = "<group>"; };
 		E75D78C927E45B7800F95DDD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E75D78CE27E45D3E00F95DDD /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		FA72740D27FA2DC500BC81E6 /* ConstantsAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsAlerts.swift; sourceTree = "<group>"; };
 		FA9F2D2327F8ACF3008073A7 /* CreateNewAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewAccountViewModel.swift; sourceTree = "<group>"; };
 		FAA4979B27E66094007FCC32 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		FAA4979E27E6BAFC007FCC32 /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
@@ -393,7 +395,7 @@
 				E70B647B27EDB2F600F94109 /* WelcomeView */,
 				E70B646F27ED992900F94109 /* AddNewRecipient */,
 				FAF8164227EC08810098989A /* LoadingView */,
-				FAA497CD27E960E5007FCC32 /* CreateNewAccountViews */,
+				FAA497CD27E960E5007FCC32 /* CreateNewAccountView */,
 				E75D787627E2F99C00F95DDD /* LoginView */,
 				E75D78C727E45B4100F95DDD /* HomeView */,
 			);
@@ -418,12 +420,36 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		FAA4979A27E66058007FCC32 /* CreateAccountView */ = {
+		FA72740B27FA2CD700BC81E6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FA9F2D2327F8ACF3008073A7 /* CreateNewAccountViewModel.swift */,
+				FA72740D27FA2DC500BC81E6 /* ConstantsAlerts.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FA72740C27FA2CF500BC81E6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FAF8164527EC22F30098989A /* Success */,
+				FAF8163E27EAC5C70098989A /* Upload */,
+				FAF8163B27EA7A010098989A /* IdSelect */,
+				FAF8163827EA72CB0098989A /* IdentityVerification */,
+				FAF8163427EA5E540098989A /* PhoneAccount */,
+				FAA92A9827E96C2C00083E10 /* DetailAccount */,
+				FAA92A9527E96BA700083E10 /* CreatePassword */,
+				FAA4979A27E66058007FCC32 /* CreateAccount */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FAA4979A27E66058007FCC32 /* CreateAccount */ = {
 			isa = PBXGroup;
 			children = (
 				FAA4979B27E66094007FCC32 /* CreateAccountViewController.swift */,
 			);
-			path = CreateAccountView;
+			path = CreateAccount;
 			sourceTree = "<group>";
 		};
 		FAA4979D27E6BADB007FCC32 /* fonts */ = {
@@ -451,68 +477,61 @@
 			path = fonts;
 			sourceTree = "<group>";
 		};
-		FAA497CD27E960E5007FCC32 /* CreateNewAccountViews */ = {
+		FAA497CD27E960E5007FCC32 /* CreateNewAccountView */ = {
 			isa = PBXGroup;
 			children = (
-				FAF8164527EC22F30098989A /* SuccessView */,
-				FAF8163E27EAC5C70098989A /* UploadView */,
-				FAF8163B27EA7A010098989A /* IdSelectView */,
-				FAF8163827EA72CB0098989A /* IdentityVerificationView */,
-				FAF8163427EA5E540098989A /* PhoneAccountView */,
-				FAA92A9827E96C2C00083E10 /* DetailAccountView */,
-				FAA92A9527E96BA700083E10 /* CreatePasswordView */,
-				FAA4979A27E66058007FCC32 /* CreateAccountView */,
-				FA9F2D2327F8ACF3008073A7 /* CreateNewAccountViewModel.swift */,
+				FA72740C27FA2CF500BC81E6 /* ViewControllers */,
+				FA72740B27FA2CD700BC81E6 /* ViewModel */,
 			);
-			path = CreateNewAccountViews;
+			path = CreateNewAccountView;
 			sourceTree = "<group>";
 		};
-		FAA92A9527E96BA700083E10 /* CreatePasswordView */ = {
+		FAA92A9527E96BA700083E10 /* CreatePassword */ = {
 			isa = PBXGroup;
 			children = (
 				FAA92A9627E96BD000083E10 /* CreatePaswordViewController.swift */,
 			);
-			path = CreatePasswordView;
+			path = CreatePassword;
 			sourceTree = "<group>";
 		};
-		FAA92A9827E96C2C00083E10 /* DetailAccountView */ = {
+		FAA92A9827E96C2C00083E10 /* DetailAccount */ = {
 			isa = PBXGroup;
 			children = (
 				FAA92A9927E96C7700083E10 /* DetailAccountViewController.swift */,
 			);
-			path = DetailAccountView;
+			path = DetailAccount;
 			sourceTree = "<group>";
 		};
-		FAF8163427EA5E540098989A /* PhoneAccountView */ = {
+		FAF8163427EA5E540098989A /* PhoneAccount */ = {
 			isa = PBXGroup;
 			children = (
 				FAF8163527EA5E710098989A /* PhoneAccountViewController.swift */,
 			);
-			path = PhoneAccountView;
+			path = PhoneAccount;
 			sourceTree = "<group>";
 		};
-		FAF8163827EA72CB0098989A /* IdentityVerificationView */ = {
+		FAF8163827EA72CB0098989A /* IdentityVerification */ = {
 			isa = PBXGroup;
 			children = (
 				FAF8163927EA73220098989A /* IdentityVerificationViewController.swift */,
 			);
-			path = IdentityVerificationView;
+			path = IdentityVerification;
 			sourceTree = "<group>";
 		};
-		FAF8163B27EA7A010098989A /* IdSelectView */ = {
+		FAF8163B27EA7A010098989A /* IdSelect */ = {
 			isa = PBXGroup;
 			children = (
 				FAF8163C27EA7A610098989A /* IdSelectViewController.swift */,
 			);
-			path = IdSelectView;
+			path = IdSelect;
 			sourceTree = "<group>";
 		};
-		FAF8163E27EAC5C70098989A /* UploadView */ = {
+		FAF8163E27EAC5C70098989A /* Upload */ = {
 			isa = PBXGroup;
 			children = (
 				FAF8163F27EAC5EA0098989A /* UploadViewController.swift */,
 			);
-			path = UploadView;
+			path = Upload;
 			sourceTree = "<group>";
 		};
 		FAF8164227EC08810098989A /* LoadingView */ = {
@@ -523,12 +542,12 @@
 			path = LoadingView;
 			sourceTree = "<group>";
 		};
-		FAF8164527EC22F30098989A /* SuccessView */ = {
+		FAF8164527EC22F30098989A /* Success */ = {
 			isa = PBXGroup;
 			children = (
 				FAF8164627EC230E0098989A /* SuccessViewController.swift */,
 			);
-			path = SuccessView;
+			path = Success;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -655,6 +674,7 @@
 				FAF8163627EA5E710098989A /* PhoneAccountViewController.swift in Sources */,
 				E754E2B427F4170600CBFC47 /* HomeViewModel.swift in Sources */,
 				C98304BD27EE0F0500EFD48A /* HomeCardViewController.swift in Sources */,
+				FA72740E27FA2DC500BC81E6 /* ConstantsAlerts.swift in Sources */,
 				E75D78C627E45B0A00F95DDD /* ConstantsUIKit.swift in Sources */,
 				C5B7DE7B27ECEAB6004AE6C7 /* SendMoneyViewController.swift in Sources */,
 				E70B649B27EF919100F94109 /* LoginViewModel.swift in Sources */,
