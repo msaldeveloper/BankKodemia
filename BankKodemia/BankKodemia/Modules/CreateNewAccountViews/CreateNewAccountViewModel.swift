@@ -9,8 +9,18 @@ import Foundation
 import Combine
 
 class CreateNewAccountViewModel {
+    //CreateAccount
+    private var mailData : String = ""
+    //DetailAccount
+    private var nameData : String = ""
+    private var lastNameData : String = ""
+    private var occupationData : String = ""
+    private var dateData : String = ""
+    //PhoneAccount
+    private var phoneData : String = ""
+    //PasswordAccount
+    private var passwordData : String = ""
     
-    private var mail : String = ""
     private var cancellables: [AnyCancellable] = []
     
     fileprivate var newAlertText: String {
@@ -24,90 +34,49 @@ class CreateNewAccountViewModel {
         self.newAlertText = ""
     }
     
-    //Registro de Email
+    //Registro de Email - CreateAccount
     func emailAccountValidator(_ email: String){
         if email == ""{
             newAlertEmail("email")
         } else {
-            mail = email
-            //emailUser(email)
+            mailData = email
         }
     }
-    
-    //Func newAlertEmail
     private func newAlertEmail(_ type: String){
         if type == "email"{
             let textEmailAlert: String = "Ingrese un correo electrónico"
             newAlertText = textEmailAlert
         }
     }
+        
     
-//    private func emailUser(_ email: String){
-//            
-//    }
-    
-    
-    //Registro  de  Nombre, Apellido, Ocupacion y Fecha  de Nacimiento
+    //Registro  de  Nombre, Apellido, Ocupacion y Fecha  de Nacimiento - DetailAccount
     func createAccountValidator(_ firstName: String, _ lastName: String, _ occupation: String, _ date: String){
-        if firstName == ""{
+        if  (firstName == "") && (lastName == "") && (occupation == "") && (date == ""){
+            newAlertCreateAccount("all")
+        } else if firstName == ""{
             newAlertCreateAccount("firstName")
         }else if lastName == ""{
-            newAlertCreateAccount("LastName")
+            newAlertCreateAccount("lastName")
         }else if occupation == ""{
             newAlertCreateAccount("occupation")
         }else if date == "" {
             newAlertCreateAccount("date")
         }else {
-            createUser(firstName, lastName, occupation, date)
+         
+            nameData = firstName
+            lastNameData = lastName
+            occupationData = occupation
+            dateData = date
+            
         }
+        
     }
-    
-    private func createUser(_ firstName: String, _ lastName: String, _ occupation: String, _ date: String){
-    }
-    
-    //Registro  de  Celular
-    func phoneAccountValidator(_ phone: String){
-        if phone == ""{
-            newAlertPhone("phone")
-        } else {
-            phoneUser(phone)
-        }
-    }
-    
-    private func phoneUser(_ phone: String){
-    }
-    
-    //Registro  de  ID
-    func idAccountValidator(_ id: String){
-        if id == ""{
-            newAlertId("id")
-        } else {
-            idUser(id)
-        }
-    }
-    
-    private func idUser(_ id: String){
-    }
-    
-    //Registro  de  Contraseña
-    func passwordAccountValidator(_ createNewPassword: String, _ confirmNewPassword: String){
-        if createNewPassword == ""{
-            newAlertPassword("createNewPassword")
-        }else if confirmNewPassword == ""{
-            newAlertPassword("confirmNewPassword")
-        } else {
-            createPasswordUser(createNewPassword, confirmNewPassword)
-        }
-    }
-    
-    private func createPasswordUser(_ createNewPassword: String, _ confirmNewPassword: String){
-    }
-    
-
-    
-    //Func newAlertCreateAccount
     private func newAlertCreateAccount(_ type: String){
-        if type == "firstName"{
+        if type == "all"{
+            let textAllAlert: String = "Llena correctamente todos los campos requeridos"
+            newAlertText = textAllAlert
+        }else if type == "firstName"{
             let textFirstNameAlert: String = "Ingrese su nombre"
             newAlertText = textFirstNameAlert
         }else if type == "lastName"{
@@ -119,23 +88,36 @@ class CreateNewAccountViewModel {
         }else if type == "date"{
             let textDateAlert: String = "Ingrese su fecha de nacimiento"
             newAlertText = textDateAlert
-        }else if type == "success" {
-            let success: String = "success"
-            newAlertText = success
         }
     }
     
-    //Func newAlertPhone
+    
+    //Registro  de  Celular
+    func phoneAccountValidator(_ phone: String){
+        if phone == ""{
+            newAlertPhone("phone")
+        } else {
+            phoneData = phone
+        }
+    }
     private func newAlertPhone(_ type: String){
         if type == "phone"{
             let textPhoneAlert: String = "Ingrese su teléfono"
             newAlertText = textPhoneAlert
-        }else if type == "success" {
-            let success: String = "success"
-            newAlertText = success
         }
     }
     
+    
+    
+    
+    //Registro  de  ID
+    func idAccountValidator(_ id: String){
+        if id == ""{
+            newAlertId("id")
+        } else {
+//            idUser(id)
+        }
+    }
     //Func newAlertId
     private func newAlertId(_ type: String){
         if type == "id"{
@@ -147,18 +129,38 @@ class CreateNewAccountViewModel {
         }
     }
     
-    //Func newAlertPassword
+    
+    
+    //Registro  de  Contraseña
+    func passwordAccountValidator(_ createNewPassword: String, _ confirmNewPassword: String){
+        if (createNewPassword == "") && (confirmNewPassword == ""){
+            newAlertPassword("all")
+        }else if createNewPassword == ""{
+            newAlertPassword("createNewPassword")
+        }else if confirmNewPassword == ""{
+            newAlertPassword("confirmNewPassword")
+        } else {
+            passwordData = createNewPassword
+        }
+    }
     private func newAlertPassword(_ type: String){
-        if type == "createNewPassword"{
+        if type == "all"{
+            let textAllAlert: String = "Llena correctamente todos los campos requeridos"
+            newAlertText = textAllAlert
+        }else if type == "createNewPassword"{
             let textPasswordAlert: String = "Ingrese una contraseña"
             newAlertText = textPasswordAlert
         }else if type == "confirmNewPassword"{
             let textConfirmPasswordAlert: String = "La contraseña no coincide"
             newAlertText = textConfirmPasswordAlert
-        }else if type == "success" {
-            let success: String = "success"
-            newAlertText = success
         }
     }
+    
+
+    
+
+
+    
+
     
 }

@@ -148,7 +148,7 @@ struct Text{
         struct CreatePassword {
             static let TopMessage: String = "Crea una contraseña segura"
             static let MediumMessage: String = "La usarás para entrar a la app y confirmar tus transacciones."
-            static let BottomMessage: String = "Usa al menos 6 caracteres alfanuméricos, no consecutivos ni repetidos."
+            static let BottomMessage: String = "La contraseña debe de tener una mayuscula, un numero y un signo."
             static let CreateLabel: String = "Contraseña"
             static let ConfirmLabel: String = "Confirma tu contraseña"
             static let ButtonCreateMessage: String = "Crear Contraseña"

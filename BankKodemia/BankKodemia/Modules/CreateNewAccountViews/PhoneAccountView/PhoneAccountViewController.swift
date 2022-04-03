@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class PhoneAccountViewController: UIViewController, UITextViewDelegate {
     lazy var logo : UIImageView = UIImageView()
@@ -25,6 +26,10 @@ class PhoneAccountViewController: UIViewController, UITextViewDelegate {
     // Boton para continuar
     var incomingButton: UIButton = UIButton()
     
+    var alerta = ""
+    private var createNewAccountViewModel = CreateNewAccountViewModel()
+    private var cancellables: [AnyCancellable] = []
+    
     
     var backgroundColor = ConstantsUIColor.clearBackground
     
@@ -32,8 +37,18 @@ class PhoneAccountViewController: UIViewController, UITextViewDelegate {
         super.viewDidLoad()
         view.backgroundColor = backgroundColor
         UIInit()
+        validationBind()
+        //Looks for single or multiple taps.
+             let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
 
-        // Do any additional setup after loading the view.
+            //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+            //tap.cancelsTouchesInView = false
+
+            view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     func UIInit(){
@@ -111,6 +126,33 @@ class PhoneAccountViewController: UIViewController, UITextViewDelegate {
         
     }
     
+    //suscriptor
+    fileprivate func validationBind(){
+        self.createNewAccountViewModel
+            .validationState
+            .sink{ newAlertText in
+               print("esperando acceso ->",newAlertText)
+                if newAlertText == "access"{
+                    
+                    
+                }else {
+                    print("new alert -->>",newAlertText)
+                    self.updateAlert(newAlertText)
+                }
+            }
+            .store(in: &cancellables)
+    }
+    
+    func updateAlert(_ alertText: String){
+        alerta = alertText
+        print(alertText)
+        let alert = UIAlertController(title: "Error :(", message: alerta, preferredStyle: .alert)
+        let aceptar = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+        alert.addAction(aceptar)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
     func textView(_ textView: UITextView,
                   shouldChangeTextIn range: NSRange,
                   replacementText text: String) -> Bool {
@@ -145,13 +187,9 @@ extension PhoneAccountViewController {
     }
     @objc func continueButton(){
         print("continue button pressed")
-        
         let phone = phoneInfoTextField.text
+        self.createNewAccountViewModel.phoneAccountValidator(phone ?? "")
         let regexPhone = #"^\(?\d{3}\)?[ -]?\d{3}[ -]?\d{4}$"#
-        
-//        let regexPhone = "^({3}[0-9]+)[-]?({3}[0-9]+)[-]?({4}[0-9]+)$"
-
-      
         if (phone?.range(of: regexPhone, options: .regularExpression, range: nil, locale: nil) != nil){
             
             let identityVerificarionViewController = IdentityVerificationViewController()
