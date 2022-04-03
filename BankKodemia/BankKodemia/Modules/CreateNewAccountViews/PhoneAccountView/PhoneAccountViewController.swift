@@ -197,7 +197,7 @@ extension PhoneAccountViewController {
             present(identityVerificarionViewController, animated: true, completion: nil)
             
         }else{
-            
+            self.updateAlert("Tu número celular no puede tener mas de 10 dígitos")
             print("Llena correctamente los campos requeridos")
         }
     
