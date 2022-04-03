@@ -10,6 +10,7 @@ import Combine
 
 class CreateNewAccountViewModel {
     
+    private var mail : String = ""
     private var cancellables: [AnyCancellable] = []
     
     fileprivate var newAlertText: String {
@@ -28,13 +29,22 @@ class CreateNewAccountViewModel {
         if email == ""{
             newAlertEmail("email")
         } else {
-            emailUser(email)
+            mail = email
+            //emailUser(email)
         }
     }
     
-    private func emailUser(_ email: String){
-            
+    //Func newAlertEmail
+    private func newAlertEmail(_ type: String){
+        if type == "email"{
+            let textEmailAlert: String = "Ingrese un correo electrónico"
+            newAlertText = textEmailAlert
+        }
     }
+    
+//    private func emailUser(_ email: String){
+//            
+//    }
     
     
     //Registro  de  Nombre, Apellido, Ocupacion y Fecha  de Nacimiento
@@ -93,16 +103,7 @@ class CreateNewAccountViewModel {
     private func createPasswordUser(_ createNewPassword: String, _ confirmNewPassword: String){
     }
     
-    //Func newAlertEmail
-    private func newAlertEmail(_ type: String){
-        if type == "email"{
-            let textEmailAlert: String = "Ingrese un correo electrónico"
-            newAlertText = textEmailAlert
-        }else if type == "success" {
-            let success: String = "success"
-            newAlertText = success
-            }
-    }
+
     
     //Func newAlertCreateAccount
     private func newAlertCreateAccount(_ type: String){

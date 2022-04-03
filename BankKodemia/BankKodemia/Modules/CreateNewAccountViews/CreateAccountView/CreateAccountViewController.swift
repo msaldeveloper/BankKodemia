@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class CreateAccountViewController: UIViewController {
     lazy var logo : UIImageView = UIImageView()
@@ -38,7 +39,7 @@ class CreateAccountViewController: UIViewController {
     
     var alerta = ""
     private var createNewAccountViewModel = CreateNewAccountViewModel()
-    //private var cancellables: [AnyCancellable] = []
+    private var cancellables: [AnyCancellable] = []
 
     
     var backgroundColor = ConstantsUIColor.clearBackground
@@ -156,12 +157,13 @@ class CreateAccountViewController: UIViewController {
                print("esperando acceso ->",newAlertText)
                 if newAlertText == "access"{
                     
+                    
                 }else {
                     print("new alert -->>",newAlertText)
-                    
+                    self.updateAlert(newAlertText)
                 }
             }
-            //.store(in: &cancellables)
+            .store(in: &cancellables)
     }
     
     func updateAlert(_ alertText: String){
@@ -186,23 +188,19 @@ extension CreateAccountViewController {
     }
     @objc func continueButton(){
         print("continue button pressed")
-        
         self.createNewAccountViewModel.emailAccountValidator(self.emailAccountTextField.text ?? "")
         
-//        let mail = emailAccountTextField.text
-//        let regexMail = "^([a-z]|[A-Z])+(\\w|\\W)+@(([a-z]|[A-Z])+\\.([a-z]|[A-Z])+|([a-z]|[A-Z])+\\.([a-z]|[A-Z])+\\.([a-z]|[A-Z])+)$"
-//
-//        if (mail?.range(of: regexMail, options: .regularExpression, range: nil, locale: nil) != nil){
-//
-//
-//            print("Bien hecho")
-//            let detailAccountViewController = DetailAccountViewController()
-//            detailAccountViewController.modalPresentationStyle = .fullScreen
-//            present(detailAccountViewController, animated: true, completion: nil)
-//
-//        } else {
-//            print("Llena correctamente el campo requerido")
-//        }
+        let mail = emailAccountTextField.text
+        let regexMail = "^([a-z]|[A-Z])+(\\w|\\W)+@(([a-z]|[A-Z])+\\.([a-z]|[A-Z])+|([a-z]|[A-Z])+\\.([a-z]|[A-Z])+\\.([a-z]|[A-Z])+)$"
+
+        if (mail?.range(of: regexMail, options: .regularExpression, range: nil, locale: nil) != nil){
+            print("Bien hecho")
+            let detailAccountViewController = DetailAccountViewController()
+            detailAccountViewController.modalPresentationStyle = .fullScreen
+            present(detailAccountViewController, animated: true, completion: nil)
+        } else {
+            self.updateAlert("Ingresa un correo valido")
+        }
         
     }
 }
