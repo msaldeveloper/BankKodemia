@@ -112,11 +112,6 @@ class HomeViewController: UIViewController {
         self.homeViewModel
             .dataTableView
             .sink{ newList in
-                print("""
-        %%%%%%%%%%%%%%%%%%
-        SUSCRIPTOR LLAMADO
-        %%%%%%%%%%%%%%%%%%
-        """)
                 self.movementsList = newList
             }
             .store(in: &cancellables)
@@ -168,16 +163,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         return height/10
     }
     
-    /*
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let post = postsList[indexPath.row]
-        let vc = DetallesTransaccion(post: post)
+        let transaction = movementsList[indexPath.row]
+        let vc = TransactionDetailsViewController(transaction: transaction)
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
         
     }
-     */
     
 }
 
