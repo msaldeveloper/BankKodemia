@@ -32,7 +32,16 @@ class CreateNewAccountViewModel {
     }
     
     // CreateAccount
-    func emailAccountValidator(_ email: String){
+    func EmailRegExpValidator(_ email: String){
+        if (email.range(of: RegExp.Email, options: .regularExpression, range: nil, locale: nil) != nil) {
+            print("Se ha ingresado un correo valido")
+        }else{
+            print("regexEmail")
+            newAlertEmail("regexEmail")
+        }
+    }
+ 
+    func EmailAccountValidator(_ email: String){
         if email == ""{
             newAlertEmail("email")
         } else {
@@ -44,6 +53,11 @@ class CreateNewAccountViewModel {
             let textEmailAlert: String =  TextAlerts.EmailEmpty
             //let textEmailAlert: String = "Ingrese un correo electrónico"
             newAlertText = textEmailAlert
+        } else if type == "regexEmail" {
+            let textRegex: String =  TextAlerts.InvalidEmail
+            //let textRegex: String =  "Ingresa un correo valido"
+            newAlertText = textRegex
+            
         }
     }
         
@@ -94,8 +108,15 @@ class CreateNewAccountViewModel {
         }
     }
     
-    
     //Registro  de  Celular
+    func PhoneRegExpValidator(_ phone: String){
+        if (phone.range(of: RegExp.Phone, options: .regularExpression, range: nil, locale: nil) != nil) {
+            print(TextAlerts.SuccesValidation)
+        }else{
+            newAlertPhone("regexPhone")
+        }
+    }
+    
     func phoneAccountValidator(_ phone: String){
         if phone == ""{
             newAlertPhone("phone")
@@ -108,6 +129,11 @@ class CreateNewAccountViewModel {
             let textPhoneAlert: String = TextAlerts.TextPhoneEmpty
             //let textPhoneAlert: String = "Ingrese su teléfono"
             newAlertText = textPhoneAlert
+        } else if type == "regexPhone"{
+            let textRegexPhone: String = TextAlerts.InvalidPhone
+            //let textRegexPhone: String = "Tu número celular debe contener 10 dígitos"
+            newAlertText = textRegexPhone
+            
         }
     }
     
@@ -138,6 +164,21 @@ class CreateNewAccountViewModel {
     
     
     //Registro  de  Contraseña
+    func PasswordRegExpValidator(_ createNewPassword: String, _ confirmNewPassword: String){
+        if createNewPassword == confirmNewPassword {
+            if (createNewPassword.range(of: RegExp.Password, options: .regularExpression, range: nil, locale: nil) != nil) {
+                print(TextAlerts.SuccesValidation)
+            }else {
+                print("OH NOOOOOO")
+                newAlertPassword("regexPassword")
+            }
+        }else {
+            print("NO son iguales")
+            newAlertPassword("regexUnequalPassword")
+        }
+        
+    }
+    
     func passwordAccountValidator(_ createNewPassword: String, _ confirmNewPassword: String){
         if (createNewPassword == "") && (confirmNewPassword == ""){
             newAlertPassword("all")
@@ -162,6 +203,12 @@ class CreateNewAccountViewModel {
             let textConfirmPasswordAlert: String = TextAlerts.TextConfirmPasswordEmpty
             //let textConfirmPasswordAlert: String = "La contraseña no coincide"
             newAlertText = textConfirmPasswordAlert
+        }else if type == "regexPassword"{
+            let textRegexPassword: String = "La contraseña debe de tener una mayuscula, un numero y un signo"
+            newAlertText = textRegexPassword
+        }else if type == "regexUnequalPassword"{
+            let textUnequalPassword: String = "Las contraseñas NO coinciden"
+            newAlertText = textUnequalPassword
         }
     }
 }

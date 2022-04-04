@@ -188,19 +188,14 @@ extension CreateAccountViewController {
     }
     @objc func continueButton(){
         print("continue button pressed")
-        self.createNewAccountViewModel.emailAccountValidator(self.emailAccountTextField.text ?? "")
         
-        let mail = emailAccountTextField.text
-        let regexMail = "^([a-z]|[A-Z])+(\\w|\\W)+@(([a-z]|[A-Z])+\\.([a-z]|[A-Z])+|([a-z]|[A-Z])+\\.([a-z]|[A-Z])+\\.([a-z]|[A-Z])+)$"
-
-        if (mail?.range(of: regexMail, options: .regularExpression, range: nil, locale: nil) != nil){
-            print("Bien hecho")
-            let detailAccountViewController = DetailAccountViewController()
-            detailAccountViewController.modalPresentationStyle = .fullScreen
-            present(detailAccountViewController, animated: true, completion: nil)
-        } else {
-            self.updateAlert("Ingresa un correo valido")
-        }
+        self.createNewAccountViewModel.EmailAccountValidator(self.emailAccountTextField.text ?? "")
+        
+        self.createNewAccountViewModel.EmailRegExpValidator(self.emailAccountTextField.text ?? "")
+    
+        let detailAccountViewController = DetailAccountViewController()
+        detailAccountViewController.modalPresentationStyle = .fullScreen
+        present(detailAccountViewController, animated: true, completion: nil)
         
     }
 }

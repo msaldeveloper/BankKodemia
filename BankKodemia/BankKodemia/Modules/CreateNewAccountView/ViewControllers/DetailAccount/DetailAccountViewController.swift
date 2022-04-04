@@ -221,27 +221,16 @@ extension DetailAccountViewController {
     }
     @objc func continueButton(){
         print("continue button pressed")
-        
-        let name = nameInfoTextField.text
-        let lastname = lastNameInfoTextField.text
-        let occupation = occupationInfoTextField.text
-        let date = dateInfoTextField.text
-        
+                
         self.createNewAccountViewModel.createAccountValidator(
-            name ?? "",
-            lastname ?? "",
-            occupation ?? "",
-            date ?? ""
+            nameInfoTextField.text ?? "",
+            lastNameInfoTextField.text ?? "",
+            occupationInfoTextField.text ?? "",
+            dateInfoTextField.text ?? ""
         )
         
-        if ( name?.isEmpty )! && ( lastname?.isEmpty)! && ( occupation?.isEmpty )! && ( date?.isEmpty )! {
-            
-            print("error")
-        } else {
-            print("Bien hecho")
-            let phoneAccountViewController = PhoneAccountViewController()
-            phoneAccountViewController.modalPresentationStyle = .fullScreen
-            present(phoneAccountViewController, animated: true, completion: nil)
-        }
+        let phoneAccountViewController = PhoneAccountViewController()
+        phoneAccountViewController.modalPresentationStyle = .fullScreen
+        present(phoneAccountViewController, animated: true, completion: nil)
     }
 }

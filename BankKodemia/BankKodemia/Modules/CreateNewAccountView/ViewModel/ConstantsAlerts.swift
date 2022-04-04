@@ -9,8 +9,11 @@ import Foundation
 import CoreText
 
 struct TextAlerts{
+    // MARK: Succes
+    static let SuccesValidation: String = "Validación Exitosa"
     // MARK: EmailAccountValidator
     static let EmailEmpty: String = "Ingrese un correo electrónico"
+    static let InvalidEmail: String = "Ingresa un correo valido"
     // MARK: CreateAccountValidator
     static let AllTextFieldsEmpty: String = "Llena correctamente todos los campos requeridos"
     static let TextFirstNameEmpty: String = "Ingrese su nombre"
@@ -19,6 +22,7 @@ struct TextAlerts{
     static let TextDateEmpty: String = "Ingrese su fecha de nacimiento"
     // MARK: PhoneAccountValidator
     static let TextPhoneEmpty: String = "Ingrese su teléfono"
+    static let InvalidPhone: String = "Tu número celular debe contener 10 dígitos"
     // MARK: IdAccountValidator
     static let TextIdEmpty: String = "Envíe una foto de una identificacion"
     // MARK: PasswordAccountValidator
