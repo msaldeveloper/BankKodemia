@@ -10,13 +10,13 @@ import Combine
 
 class CreateNewAccountViewModel {
  
-    private var mailData : String = ""  //CreateAccount
-    private var nameData : String = ""  //DetailAccount
-    private var lastNameData : String = ""  //DetailAccount
-    private var occupationData : String = ""  //DetailAccount
-    private var dateData : String = ""  //DetailAccount
-    private var phoneData : String = ""  //PhoneAccount
-    private var passwordData : String = ""  //PasswordAccount
+    static var emailData : String = ""  //CreateAccount
+    private static var nameData : String = ""  //DetailAccount
+    private static var lastNameData : String = ""  //DetailAccount
+    private static var occupationData : String = ""  //DetailAccount
+    private static var dateData : String = ""  //DetailAccount
+    private static var phoneData : String = ""  //PhoneAccount
+    private static var passwordData : String = ""  //PasswordAccount
     
     private var cancellables: [AnyCancellable] = []
     
@@ -31,36 +31,34 @@ class CreateNewAccountViewModel {
         self.newAlertText = ""
     }
     
-    // CreateAccount
+    // MARK: CreateAccount
     func EmailRegExpValidator(_ email: String){
         if (email.range(of: RegExp.Email, options: .regularExpression, range: nil, locale: nil) != nil) {
-            print("Se ha ingresado un correo valido")
+            print(TextAlerts.SuccesValidation)
         }else{
             print("regexEmail")
             newAlertEmail("regexEmail")
         }
     }
- 
     func EmailAccountValidator(_ email: String){
         if email == ""{
             newAlertEmail("email")
         } else {
-            mailData = email
+            CreateNewAccountViewModel.emailData = email
         }
     }
-    private func newAlertEmail(_ type: String){
-        if type == "email"{
-            let textEmailAlert: String =  TextAlerts.EmailEmpty
-            newAlertText = textEmailAlert
-        } else if type == "regexEmail" {
-            let textRegex: String =  TextAlerts.InvalidEmail
-            newAlertText = textRegex
-            
+        private func newAlertEmail(_ type: String){
+            if type == "email"{
+                let textEmailAlert: String =  TextAlerts.EmailEmpty
+                newAlertText = textEmailAlert
+            } else if type == "regexEmail" {
+                let textRegex: String =  TextAlerts.InvalidEmail
+                newAlertText = textRegex
+                
+            }
         }
-    }
         
-    
-    //Registro  de  Nombre, Apellido, Ocupacion y Fecha  de Nacimiento - DetailAccount
+    // MARK: DetailAccount
     func createAccountValidator(_ firstName: String, _ lastName: String, _ occupation: String, _ date: String){
         if  (firstName == "") && (lastName == "") && (occupation == "") && (date == ""){
             newAlertCreateAccount("all")
@@ -73,12 +71,10 @@ class CreateNewAccountViewModel {
         }else if date == "" {
             newAlertCreateAccount("date")
         }else {
-         
-            nameData = firstName
-            lastNameData = lastName
-            occupationData = occupation
-            dateData = date
-            
+            CreateNewAccountViewModel.nameData = firstName
+            CreateNewAccountViewModel.lastNameData = lastName
+            CreateNewAccountViewModel.occupationData = occupation
+            CreateNewAccountViewModel.dateData = date
         }
         
     }
@@ -101,7 +97,7 @@ class CreateNewAccountViewModel {
         }
     }
     
-    //Registro  de  Celular
+    // MARK: PhoneeAccount
     func PhoneRegExpValidator(_ phone: String){
         if (phone.range(of: RegExp.Phone, options: .regularExpression, range: nil, locale: nil) != nil) {
             print(TextAlerts.SuccesValidation)
@@ -109,29 +105,25 @@ class CreateNewAccountViewModel {
             newAlertPhone("regexPhone")
         }
     }
-    
     func phoneAccountValidator(_ phone: String){
         if phone == ""{
             newAlertPhone("phone")
         } else {
-            phoneData = phone
+            CreateNewAccountViewModel.phoneData = phone
         }
     }
-    private func newAlertPhone(_ type: String){
-        if type == "phone"{
-            let textPhoneAlert: String = TextAlerts.TextPhoneEmpty
-            newAlertText = textPhoneAlert
-        } else if type == "regexPhone"{
-            let textRegexPhone: String = TextAlerts.InvalidPhone
-            newAlertText = textRegexPhone
-            
+        private func newAlertPhone(_ type: String){
+            if type == "phone"{
+                let textPhoneAlert: String = TextAlerts.TextPhoneEmpty
+                newAlertText = textPhoneAlert
+            } else if type == "regexPhone"{
+                let textRegexPhone: String = TextAlerts.InvalidPhone
+                newAlertText = textRegexPhone
+                
+            }
         }
-    }
-    
-    
-    
-    
-    //Registro  de  ID
+
+    // MARK: IdSelect
     func idAccountValidator(_ id: String){
         if id == ""{
             newAlertId("id")
@@ -139,20 +131,17 @@ class CreateNewAccountViewModel {
 //            idUser(id)
         }
     }
-    //Func newAlertId
+
     private func newAlertId(_ type: String){
         if type == "id"{
             
             //let textIdAlert: String = TextAlerts.TextPhoneEmpty
             let textIdAlert: String = "Envíe una foto de una identificacion"
             newAlertText = textIdAlert
-        }else if type == "success" {
-            let success: String = "success"
-            newAlertText = success
         }
     }
     
-    //Registro  de  Contraseña
+    // MARK: CreatePassword
     func PasswordRegExpValidator(_ createNewPassword: String, _ confirmNewPassword: String){
         if createNewPassword == confirmNewPassword {
             if (createNewPassword.range(of: RegExp.Password, options: .regularExpression, range: nil, locale: nil) != nil) {
@@ -163,9 +152,7 @@ class CreateNewAccountViewModel {
         }else {
             newAlertPassword("regexUnequalPassword")
         }
-        
     }
-    
     func passwordAccountValidator(_ createNewPassword: String, _ confirmNewPassword: String){
         if (createNewPassword == "") && (confirmNewPassword == ""){
             newAlertPassword("all")
@@ -174,25 +161,39 @@ class CreateNewAccountViewModel {
         }else if confirmNewPassword == ""{
             newAlertPassword("confirmNewPassword")
         } else {
-            passwordData = createNewPassword
+            CreateNewAccountViewModel.passwordData = createNewPassword
         }
     }
-    private func newAlertPassword(_ type: String){
-        if type == "all"{
-            let textAllPasswordAlert: String = TextAlerts.AllPasswordFieldsEmpty
-            newAlertText = textAllPasswordAlert
-        }else if type == "createNewPassword"{
-            let textPasswordAlert: String = TextAlerts.TextPasswordEmpty
-            newAlertText = textPasswordAlert
-        }else if type == "confirmNewPassword"{
-            let textConfirmPasswordAlert: String = TextAlerts.TextConfirmPasswordEmpty
-            newAlertText = textConfirmPasswordAlert
-        }else if type == "regexPassword"{
-            let textRegexPassword: String = TextAlerts.TextFailPassword
-            newAlertText = textRegexPassword
-        }else if type == "regexUnequalPassword"{
-            let textUnequalPassword: String = TextAlerts.TextWrongPassword
-            newAlertText = textUnequalPassword
+        private func newAlertPassword(_ type: String){
+            if type == "all"{
+                let textAllPasswordAlert: String = TextAlerts.AllPasswordFieldsEmpty
+                newAlertText = textAllPasswordAlert
+            }else if type == "createNewPassword"{
+                let textPasswordAlert: String = TextAlerts.TextPasswordEmpty
+                newAlertText = textPasswordAlert
+            }else if type == "confirmNewPassword"{
+                let textConfirmPasswordAlert: String = TextAlerts.TextConfirmPasswordEmpty
+                newAlertText = textConfirmPasswordAlert
+            }else if type == "regexPassword"{
+                let textRegexPassword: String = TextAlerts.TextFailPassword
+                newAlertText = textRegexPassword
+            }else if type == "regexUnequalPassword"{
+                let textUnequalPassword: String = TextAlerts.TextWrongPassword
+                newAlertText = textUnequalPassword
+            }
         }
-    }
+    
+//    private func userCreate(_ chocolateCookie:String,_ lemonCookie: String ){
+//        createApp(chocolateCookie, lemonCookie).sink{ result in
+//            let token = result.value?.token ?? ""
+//            self.tokenDispatcher(token)
+//            switch result.result {
+//            case .success(_):
+//                self.newAlert("access")
+//                Auth.auth().signIn(withEmail: chocolateCookie, password: lemonCookie, completion: nil)
+//            case .failure(_):
+//                self.newAlert("forbiden")
+//            }
+//        }.store(in: &cancellables)
+//    }
 }
