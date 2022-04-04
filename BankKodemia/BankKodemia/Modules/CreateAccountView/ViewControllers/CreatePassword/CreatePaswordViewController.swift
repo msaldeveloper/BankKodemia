@@ -122,6 +122,7 @@ class CreatePasswordViewController: UIViewController {
         confirmPasswordFieldView.addAnchorsAndSize(width: nil, height: 37, left: 21, top: height/20, right: 21, bottom: nil, withAnchor: .top, relativeToView: createPasswordFieldView)
         
         confirmPasswordFieldView.addSubview(confirmPasswordTextField)
+        confirmPasswordTextField.isSecureTextEntry = true
         confirmPasswordTextField.infoTextFielFormat()
         
         confirmPasswordTextLabel = UILabel()
@@ -181,29 +182,18 @@ extension CreatePasswordViewController {
     @objc func continueButton(){
         print("continue button pressed")
         
-        let createPassword = createPasswordTextField.text
-        let confirmPassword = confirmPasswordTextField.text
-        self.createNewAccountViewModel.passwordAccountValidator(createPassword ?? "", confirmPassword ?? "" )
-        if createPassword == confirmPassword {
-            let regexPassword = "^(?=.{8,}$)(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$"
-            if (createPassword?.range(of: regexPassword, options: .regularExpression, range: nil, locale: nil) != nil) {
-
-                let successViewController = SuccessViewController()
-                successViewController.modalPresentationStyle = .fullScreen
-                present(successViewController, animated: true, completion: nil)
-            }else{
-                print("error")
-                self.updateAlert("La contraseña debe de tener una mayuscula, un numero y un signo")
-                
-            }
-        } else{
-            print("Las contraseñas NO coinciden")
-            self.updateAlert("Las contraseñas NO coinciden")
-        }
+        self.createNewAccountViewModel.passwordAccountValidator(
+            createPasswordTextField.text ?? "",
+            confirmPasswordTextField.text ?? "" )
         
-      
-
+        self.createNewAccountViewModel.PasswordRegExpValidator(
+            createPasswordTextField.text ?? "",
+            confirmPasswordTextField.text ?? "" )
         
+        let successViewController = SuccessViewController()
+        successViewController.modalPresentationStyle = .fullScreen
+        present(successViewController, animated: true, completion: nil)
+    
     }
 }
 

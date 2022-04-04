@@ -187,22 +187,13 @@ extension PhoneAccountViewController {
     }
     @objc func continueButton(){
         print("continue button pressed")
-        let phone = phoneInfoTextField.text
-        self.createNewAccountViewModel.phoneAccountValidator(phone ?? "")
-        let regexPhone = #"^\(?\d{3}\)?[ -]?\d{3}[ -]?\d{4}$"#
-        if (phone?.range(of: regexPhone, options: .regularExpression, range: nil, locale: nil) != nil){
-            
-            let identityVerificarionViewController = IdentityVerificationViewController()
-            identityVerificarionViewController.modalPresentationStyle = .fullScreen
-            present(identityVerificarionViewController, animated: true, completion: nil)
-            
-        }else{
-            self.updateAlert("Tu número celular no puede tener mas de 10 dígitos")
-            print("Llena correctamente los campos requeridos")
-        }
+        
+        self.createNewAccountViewModel.phoneAccountValidator(phoneInfoTextField.text ?? "")
+        self.createNewAccountViewModel.PhoneRegExpValidator(phoneInfoTextField.text ?? "")
+        
+        let identityVerificarionViewController = IdentityVerificationViewController()
+        identityVerificarionViewController.modalPresentationStyle = .fullScreen
+        present(identityVerificarionViewController, animated: true, completion: nil)
     
-        
-        
-        
     }
 }
