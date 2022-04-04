@@ -161,19 +161,15 @@ class CreateNewAccountViewModel {
         }
     }
     
-    
-    
     //Registro  de  Contraseña
     func PasswordRegExpValidator(_ createNewPassword: String, _ confirmNewPassword: String){
         if createNewPassword == confirmNewPassword {
             if (createNewPassword.range(of: RegExp.Password, options: .regularExpression, range: nil, locale: nil) != nil) {
                 print(TextAlerts.SuccesValidation)
             }else {
-                print("OH NOOOOOO")
                 newAlertPassword("regexPassword")
             }
         }else {
-            print("NO son iguales")
             newAlertPassword("regexUnequalPassword")
         }
         
@@ -204,10 +200,12 @@ class CreateNewAccountViewModel {
             //let textConfirmPasswordAlert: String = "La contraseña no coincide"
             newAlertText = textConfirmPasswordAlert
         }else if type == "regexPassword"{
-            let textRegexPassword: String = "La contraseña debe de tener una mayuscula, un numero y un signo"
+            let textRegexPassword: String = TextAlerts.TextFailPassword
+            //let textRegexPassword: String = "La contraseña debe de tener una mayuscula, un numero y un signo"
             newAlertText = textRegexPassword
         }else if type == "regexUnequalPassword"{
-            let textUnequalPassword: String = "Las contraseñas NO coinciden"
+            let textUnequalPassword: String = TextAlerts.TextWrongPassword
+            //let textUnequalPassword: String = "Las contraseñas NO coinciden"
             newAlertText = textUnequalPassword
         }
     }

@@ -29,4 +29,6 @@ struct TextAlerts{
     static let AllPasswordFieldsEmpty: String = "Llena correctamente todos los campos requeridos"
     static let TextPasswordEmpty: String = "Ingrese una contraseña"
     static let TextConfirmPasswordEmpty: String = "La contraseña no coincide"
+    static let TextFailPassword: String = "La contraseña debe de tener una mayuscula, un numero y un signo"
+    static let TextWrongPassword: String = "Las contraseñas NO coinciden"
 }
