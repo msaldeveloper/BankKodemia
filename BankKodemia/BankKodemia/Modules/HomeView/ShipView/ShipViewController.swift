@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ShipViewController: UIViewController {
+class ShipViewController: UIViewController{
     
     let width = ConstantsUIKit.width
     let height = ConstantsUIKit.height
@@ -19,11 +19,13 @@ class ShipViewController: UIViewController {
     lazy var shipToNameDetail : UILabel = UILabel()
     lazy var shipToCountDetail : UILabel = UILabel()
     
+    lazy var moneySign : UILabel = UILabel()
     lazy var quantityLabel : UILabel = UILabel()
     lazy var quantityTextField : UITextField = UITextField()
     lazy var quantityDetail : UILabel = UILabel()
     
     lazy var conceptLabel : UILabel = UILabel()
+    lazy var conceptCounLabel : UILabel = UILabel()
     lazy var conceptBackground : UIView = UIView()
     lazy var conceptTextField : UITextView = UITextView()
     
@@ -33,6 +35,8 @@ class ShipViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         initUI()
+        quantityTextField.delegate = self
+        conceptTextField.delegate = self
     }
     
     func initUI(){
@@ -77,7 +81,7 @@ class ShipViewController: UIViewController {
         quantityLabel.listDetails(view: view, previous: shipToCountDetail, height: 1/30)
         
         quantityTextField.borderStyle = .none
-        quantityTextField.placeholder = "$0.0"
+        quantityTextField.placeholder = "0.0"
         quantityTextField.textAlignment = .center
         quantityTextField.font = ConstantsFont.f20SemiBold
         view.addSubview(quantityTextField)
@@ -85,8 +89,18 @@ class ShipViewController: UIViewController {
         NSLayoutConstraint.activate([
             quantityTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             quantityTextField.topAnchor.constraint(equalTo: quantityLabel.bottomAnchor, constant: 0),
-            quantityTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 8/9),
             quantityTextField.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 2/30)
+        ])
+        
+        moneySign.backgroundColor = .clear
+        moneySign.textColor = .black
+        moneySign.text = "$"
+        moneySign.font = ConstantsFont.f20SemiBold
+        view.addSubview(moneySign)
+        moneySign.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            moneySign.centerYAnchor.constraint(equalTo: quantityTextField.centerYAnchor),
+            moneySign.trailingAnchor.constraint(equalTo: quantityTextField.leadingAnchor, constant: 0),
         ])
         
         quantityDetail.text = TextLocals.send_cash_spei_message
@@ -101,6 +115,15 @@ class ShipViewController: UIViewController {
         conceptLabel.textColor = .darkGray
         view.addSubview(conceptLabel)
         conceptLabel.listDetails(view: view, previous: quantityDetail, height: 1/30)
+        
+        conceptCounLabel.font = ConstantsFont.f14Regular
+        conceptCounLabel.textColor = ConstantsUIColor.greyKodemia
+        view.addSubview(conceptCounLabel)
+        conceptCounLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            conceptCounLabel.centerYAnchor.constraint(equalTo: conceptLabel.centerYAnchor),
+            conceptCounLabel.leadingAnchor.constraint(equalTo: conceptLabel.trailingAnchor, constant: -19*width/30),
+        ])
         
         conceptBackground.backgroundColor = ConstantsUIColor.greyKodemia
         conceptBackground.layer.cornerRadius = 10
@@ -129,7 +152,7 @@ class ShipViewController: UIViewController {
         makeTransferButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             makeTransferButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            makeTransferButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -height/16),
+            makeTransferButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -height/10),
             makeTransferButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 8/9),
             makeTransferButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/20)
         ])
@@ -139,7 +162,6 @@ class ShipViewController: UIViewController {
         
     }
     
-
 }
 // MARK: - OBJC Functions
 extension ShipViewController {
@@ -147,4 +169,27 @@ extension ShipViewController {
         print("back button pressed")
         dismiss(animated: true)
     }
+}
+// MARK: - Extension UITextView
+extension ShipViewController: UITextViewDelegate{
+    
+    func textViewDidChange(_ textView: UITextView) {
+        conceptCounLabel.text = String(conceptTextField.text.count) + "/40"
+        if conceptTextField.text.count == 41 {
+            conceptCounLabel.text = "40/40"
+            conceptTextField.text.remove(at: conceptTextField.text.index(before: conceptTextField.text.endIndex))
+        }
+    }
+    
+}
+
+// MARK: - Extension UITextField
+extension ShipViewController: UITextFieldDelegate{
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        if quantityTextField.text?.count == 21{
+            quantityTextField.text?.remove(at: (quantityTextField.text?.index(before: quantityTextField.text!.endIndex))!)
+        }
+    }
+    
 }
