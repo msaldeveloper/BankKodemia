@@ -397,7 +397,7 @@
 				E70B647B27EDB2F600F94109 /* WelcomeView */,
 				E70B646F27ED992900F94109 /* AddNewRecipient */,
 				FAF8164227EC08810098989A /* LoadingView */,
-				FAA497CD27E960E5007FCC32 /* CreateNewAccountView */,
+				FAA497CD27E960E5007FCC32 /* CreateAccountView */,
 				E75D787627E2F99C00F95DDD /* LoginView */,
 				E75D78C727E45B4100F95DDD /* HomeView */,
 			);
@@ -426,8 +426,6 @@
 			isa = PBXGroup;
 			children = (
 				FA9F2D2327F8ACF3008073A7 /* CreateNewAccountViewModel.swift */,
-				FA72740D27FA2DC500BC81E6 /* ConstantsAlerts.swift */,
-				FA72740F27FA5E4000BC81E6 /* ConstantRegExp.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -445,6 +443,15 @@
 				FAA4979A27E66058007FCC32 /* CreateAccount */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FA72741127FA7AA000BC81E6 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				FA72740D27FA2DC500BC81E6 /* ConstantsAlerts.swift */,
+				FA72740F27FA5E4000BC81E6 /* ConstantRegExp.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		FAA4979A27E66058007FCC32 /* CreateAccount */ = {
@@ -480,13 +487,14 @@
 			path = fonts;
 			sourceTree = "<group>";
 		};
-		FAA497CD27E960E5007FCC32 /* CreateNewAccountView */ = {
+		FAA497CD27E960E5007FCC32 /* CreateAccountView */ = {
 			isa = PBXGroup;
 			children = (
+				FA72741127FA7AA000BC81E6 /* Constants */,
 				FA72740C27FA2CF500BC81E6 /* ViewControllers */,
 				FA72740B27FA2CD700BC81E6 /* ViewModel */,
 			);
-			path = CreateNewAccountView;
+			path = CreateAccountView;
 			sourceTree = "<group>";
 		};
 		FAA92A9527E96BA700083E10 /* CreatePassword */ = {

@@ -51,11 +51,9 @@ class CreateNewAccountViewModel {
     private func newAlertEmail(_ type: String){
         if type == "email"{
             let textEmailAlert: String =  TextAlerts.EmailEmpty
-            //let textEmailAlert: String = "Ingrese un correo electrónico"
             newAlertText = textEmailAlert
         } else if type == "regexEmail" {
             let textRegex: String =  TextAlerts.InvalidEmail
-            //let textRegex: String =  "Ingresa un correo valido"
             newAlertText = textRegex
             
         }
@@ -87,23 +85,18 @@ class CreateNewAccountViewModel {
     private func newAlertCreateAccount(_ type: String){
         if type == "all"{
             let textAllAlert: String = TextAlerts.AllTextFieldsEmpty
-            //let textAllAlert: String = "Llena correctamente todos los campos requeridos"
             newAlertText = textAllAlert
         }else if type == "firstName"{
             let textFirstNameAlert: String = TextAlerts.TextFirstNameEmpty
-            //let textFirstNameAlert: String = "Ingrese su nombre"
             newAlertText = textFirstNameAlert
         }else if type == "lastName"{
             let textLastNameAlert: String = TextAlerts.TextLastNameEmpty
-            //let textLastNameAlert: String = "Ingrese su apellido"
             newAlertText = textLastNameAlert
         }else if type == "occupation"{
             let textOccupationAlert: String = TextAlerts.TextOccupationEmpty
-            //let textOccupationAlert: String = "Ingrese su ocupación"
             newAlertText = textOccupationAlert
         }else if type == "date"{
             let textDateAlert: String = TextAlerts.TextDateEmpty
-            //let textDateAlert: String = "Ingrese su fecha de nacimiento"
             newAlertText = textDateAlert
         }
     }
@@ -127,11 +120,9 @@ class CreateNewAccountViewModel {
     private func newAlertPhone(_ type: String){
         if type == "phone"{
             let textPhoneAlert: String = TextAlerts.TextPhoneEmpty
-            //let textPhoneAlert: String = "Ingrese su teléfono"
             newAlertText = textPhoneAlert
         } else if type == "regexPhone"{
             let textRegexPhone: String = TextAlerts.InvalidPhone
-            //let textRegexPhone: String = "Tu número celular debe contener 10 dígitos"
             newAlertText = textRegexPhone
             
         }
@@ -189,23 +180,18 @@ class CreateNewAccountViewModel {
     private func newAlertPassword(_ type: String){
         if type == "all"{
             let textAllPasswordAlert: String = TextAlerts.AllPasswordFieldsEmpty
-            //let textAllPasswordAlert: String = "Llena correctamente todos los campos requeridos"
             newAlertText = textAllPasswordAlert
         }else if type == "createNewPassword"{
             let textPasswordAlert: String = TextAlerts.TextPasswordEmpty
-            //let textPasswordAlert: String = "Ingrese una contraseña"
             newAlertText = textPasswordAlert
         }else if type == "confirmNewPassword"{
             let textConfirmPasswordAlert: String = TextAlerts.TextConfirmPasswordEmpty
-            //let textConfirmPasswordAlert: String = "La contraseña no coincide"
             newAlertText = textConfirmPasswordAlert
         }else if type == "regexPassword"{
             let textRegexPassword: String = TextAlerts.TextFailPassword
-            //let textRegexPassword: String = "La contraseña debe de tener una mayuscula, un numero y un signo"
             newAlertText = textRegexPassword
         }else if type == "regexUnequalPassword"{
             let textUnequalPassword: String = TextAlerts.TextWrongPassword
-            //let textUnequalPassword: String = "Las contraseñas NO coinciden"
             newAlertText = textUnequalPassword
         }
     }
