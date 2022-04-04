@@ -10,6 +10,8 @@ import Combine
 
 class DetailAccountViewController: UIViewController {
     lazy var logo : UIImageView = UIImageView()
+    //var UIDatePicker : UIControl = UIControl()
+    var datePicker: UIDatePicker = UIDatePicker()
     
     // SuggestDetailInfo: Indicaciones de la seccion
     var infoSuggestDetailLabel: UILabel = UILabel()

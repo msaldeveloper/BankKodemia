@@ -50,6 +50,8 @@
 		E75D78CF27E45D3E00F95DDD /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75D78CE27E45D3E00F95DDD /* Network.swift */; };
 		FA72740E27FA2DC500BC81E6 /* ConstantsAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72740D27FA2DC500BC81E6 /* ConstantsAlerts.swift */; };
 		FA72741027FA5E4000BC81E6 /* ConstantRegExp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72740F27FA5E4000BC81E6 /* ConstantRegExp.swift */; };
+		FA72741427FAA15600BC81E6 /* CreateAccountDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72741327FAA15600BC81E6 /* CreateAccountDataModel.swift */; };
+		FA72741627FAA18E00BC81E6 /* CreateAccountDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72741527FAA18E00BC81E6 /* CreateAccountDataManager.swift */; };
 		FA9F2D2427F8ACF4008073A7 /* CreateNewAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9F2D2327F8ACF3008073A7 /* CreateNewAccountViewModel.swift */; };
 		FAA4979C27E66094007FCC32 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA4979B27E66094007FCC32 /* CreateAccountViewController.swift */; };
 		FAA497B027E6BAFE007FCC32 /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA4979E27E6BAFC007FCC32 /* Poppins-MediumItalic.ttf */; };
@@ -121,6 +123,8 @@
 		E75D78CE27E45D3E00F95DDD /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		FA72740D27FA2DC500BC81E6 /* ConstantsAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsAlerts.swift; sourceTree = "<group>"; };
 		FA72740F27FA5E4000BC81E6 /* ConstantRegExp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantRegExp.swift; sourceTree = "<group>"; };
+		FA72741327FAA15600BC81E6 /* CreateAccountDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountDataModel.swift; sourceTree = "<group>"; };
+		FA72741527FAA18E00BC81E6 /* CreateAccountDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountDataManager.swift; sourceTree = "<group>"; };
 		FA9F2D2327F8ACF3008073A7 /* CreateNewAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewAccountViewModel.swift; sourceTree = "<group>"; };
 		FAA4979B27E66094007FCC32 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		FAA4979E27E6BAFC007FCC32 /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
@@ -454,6 +458,15 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		FA72741227FAA04E00BC81E6 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				FA72741327FAA15600BC81E6 /* CreateAccountDataModel.swift */,
+				FA72741527FAA18E00BC81E6 /* CreateAccountDataManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		FAA4979A27E66058007FCC32 /* CreateAccount */ = {
 			isa = PBXGroup;
 			children = (
@@ -490,6 +503,7 @@
 		FAA497CD27E960E5007FCC32 /* CreateAccountView */ = {
 			isa = PBXGroup;
 			children = (
+				FA72741227FAA04E00BC81E6 /* Networking */,
 				FA72741127FA7AA000BC81E6 /* Constants */,
 				FA72740C27FA2CF500BC81E6 /* ViewControllers */,
 				FA72740B27FA2CD700BC81E6 /* ViewModel */,
@@ -684,6 +698,7 @@
 				E75D789827E309D700F95DDD /* UIButton++.swift in Sources */,
 				FAF8163627EA5E710098989A /* PhoneAccountViewController.swift in Sources */,
 				E754E2B427F4170600CBFC47 /* HomeViewModel.swift in Sources */,
+				FA72741627FAA18E00BC81E6 /* CreateAccountDataManager.swift in Sources */,
 				C98304BD27EE0F0500EFD48A /* HomeCardViewController.swift in Sources */,
 				FA72740E27FA2DC500BC81E6 /* ConstantsAlerts.swift in Sources */,
 				E75D78C627E45B0A00F95DDD /* ConstantsUIKit.swift in Sources */,
@@ -694,6 +709,7 @@
 				E70B647D27EDB32500F94109 /* WelcomeViewController.swift in Sources */,
 				E75D78CA27E45B7800F95DDD /* HomeViewController.swift in Sources */,
 				FA72741027FA5E4000BC81E6 /* ConstantRegExp.swift in Sources */,
+				FA72741427FAA15600BC81E6 /* CreateAccountDataModel.swift in Sources */,
 				E754E2B927F5B22D00CBFC47 /* HomeUserData.swift in Sources */,
 				E70B64AB27EFF6D300F94109 /* LoginInDataManager.swift in Sources */,
 				FAF8164427EC08980098989A /* LoadingViewController.swift in Sources */,
