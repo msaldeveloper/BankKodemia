@@ -83,6 +83,7 @@ class CreateAccountViewController: UIViewController {
         
         infoSuggestLabel = UILabel()
         infoSuggestLabel.text = Text.CreateAccount.EmailRegister.DescriptionMessage
+        infoSuggestLabel.textColor = .black
         infoSuggestLabel.font = UIFont(name: "Poppins-Medium", size: 20)
         infoSuggestLabel.textAlignment = .left
         infoSuggestLabel.lineBreakMode = .byWordWrapping
@@ -106,6 +107,7 @@ class CreateAccountViewController: UIViewController {
         emailAccountTextField.addAnchorsAndSize(width: nil, height: nil, left: 10, top: 0, right: 10, bottom: 0)
         
         emailTextLabel = UILabel()
+        emailTextLabel.textColor = .black
         emailTextLabel.text = Text.CreateAccount.EmailRegister.LabelMessage
         emailTextLabel.font = UIFont(name: "Poppins-Medium", size: 14)
         view.addSubview(emailTextLabel)
@@ -130,7 +132,9 @@ class CreateAccountViewController: UIViewController {
         
         legalTextLabel = UILabel()
         legalTextLabel.text = Text.CreateAccount.EmailRegister.PrivacyMessage
-        legalTextLabel.font = UIFont(name: "Poppins", size: 17)
+        legalTextLabel.textColor = .black
+        legalTextLabel.adjustsFontSizeToFitWidth = true
+        legalTextLabel.font = ConstantsFont.f14Normal
         legalTextLabel.textAlignment = .center
         legalTextLinkedLabel.addSubview(legalTextLabel)
         legalTextLabel.addAnchorsAndSize(width: nil, height: nil, left: 21, top: nil, right: 21, bottom: 20)

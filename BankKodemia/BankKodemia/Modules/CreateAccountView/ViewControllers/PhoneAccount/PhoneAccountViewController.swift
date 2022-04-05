@@ -68,6 +68,7 @@ class PhoneAccountViewController: UIViewController, UITextViewDelegate {
     func suggestDetailInfoSection(){
         
         infoSuggestLabel = UILabel()
+        infoSuggestLabel.textColor = .black
         infoSuggestLabel.text = Text.CreateAccount.PhoneVerification.ButtonBoldMessage
         infoSuggestLabel.font = UIFont(name: "Poppins-Medium", size: 20)
         infoSuggestLabel.textAlignment = .left
@@ -87,8 +88,10 @@ class PhoneAccountViewController: UIViewController, UITextViewDelegate {
         
         phoneInfoFieldView.addSubview(phoneInfoTextField)
         phoneInfoTextField.infoTextFielFormat()
-        
+        phoneInfoTextField.keyboardType = .numberPad
+    
         phoneInfoTextLabel = UILabel()
+        phoneInfoTextLabel.textColor = .black
         phoneInfoTextLabel.text = Text.CreateAccount.PhoneVerification.LabelNumberMessage
         phoneInfoTextLabel.font = UIFont(name: "Poppins-Medium", size: 16)
         phoneInfoTextField.addSubview(phoneInfoTextLabel)
@@ -106,6 +109,7 @@ class PhoneAccountViewController: UIViewController, UITextViewDelegate {
         legalButton.addAnchorsAndSize(width: nil, height: nil, left: 21, top: nil, right: 21, bottom: 100)
                         
         legalTextLabel = UILabel()
+        legalTextLabel.textColor = .black
         legalTextLabel.text = Text.CreateAccount.PhoneVerification.BottonMessage
         legalTextLabel.numberOfLines = 0
         legalTextLabel.font = UIFont(name: "Poppins", size: 17)

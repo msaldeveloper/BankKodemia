@@ -66,6 +66,7 @@ class UploadViewController: UIViewController {
     func suggestDetailInfoSection(){
         
         infoSuggestLabel = UILabel()
+        infoSuggestLabel.textColor = .black
         infoSuggestLabel.text = Text.CreateAccount.Uploading.TopMessage
         infoSuggestLabel.font = UIFont(name: "Poppins-Medium", size: 20)
         infoSuggestLabel.textAlignment = .left

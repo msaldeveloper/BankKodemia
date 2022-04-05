@@ -16,7 +16,6 @@ class AddRecipientTableViewCell: UITableViewCell {
     
     var nameIssuer = UILabel()
     var id = UILabel()
-    var amount = UILabel()
     
     var userList = UserDataModel(_id: "", email: "", name: "", lastName: "")
     
@@ -45,6 +44,7 @@ class AddRecipientTableViewCell: UITableViewCell {
         self.addSubview(ownContent)
         
         nameIssuer = UILabel(frame: CGRect(x: 20, y: 0, width: width-40, height: (heigth/7 - 10)/3))
+        nameIssuer.textColor = .black
         nameIssuer.text = "\(userList.name) \(userList.lastName)"
         nameIssuer.textAlignment = .left
         nameIssuer.font = ConstantsFont.f14SemiBold
@@ -52,6 +52,7 @@ class AddRecipientTableViewCell: UITableViewCell {
         ownContent.addSubview(nameIssuer)
         
         id = UILabel(frame: CGRect(x: 20, y: (heigth/7 - 10)/3, width: width-40, height: (heigth/7 - 10)/3))
+        id.textColor = .black
         id.text = userList._id
         id.textAlignment = .left
         id.font = ConstantsFont.f14Regular

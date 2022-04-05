@@ -39,7 +39,7 @@ class SendMoneyViewController: UIViewController {
         titleView.formartTitle(view: view, textTitle: TextLocals.send_cash_top_message)
         
         view.addSubview(addContact)
-        addContact.image = UIImage(named: "count")
+        addContact.image = UIImage(named: "userPlus")
         addContact.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             addContact.centerYAnchor.constraint(equalTo: titleView.centerYAnchor),
