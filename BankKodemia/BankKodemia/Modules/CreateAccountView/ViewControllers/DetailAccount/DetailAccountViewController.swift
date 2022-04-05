@@ -74,8 +74,6 @@ class DetailAccountViewController: UIViewController {
         occupationDetailInfoField()
         dateDetailInfoField()
         continueButtonSection()
-       
-        
     }
     
     func logoImage(){

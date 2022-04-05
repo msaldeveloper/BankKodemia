@@ -9,13 +9,15 @@ import Foundation
 import Combine
 
 class CreateNewAccountViewModel {
- 
-    static var emailData : String = ""  //CreateAccount
+    
+    private static var emailData : String = ""  //CreateAccount
     private static var nameData : String = ""  //DetailAccount
     private static var lastNameData : String = ""  //DetailAccount
     private static var occupationData : String = ""  //DetailAccount
     private static var dateData : String = ""  //DetailAccount
     private static var phoneData : String = ""  //PhoneAccount
+    private static var identityImage : String = ""  //IMAGEN
+    private static var identityImageType : String = ""  //TIPO DE INE
     private static var passwordData : String = ""  //PasswordAccount
     
     private var cancellables: [AnyCancellable] = []
@@ -109,6 +111,9 @@ class CreateNewAccountViewModel {
         if phone == ""{
             newAlertPhone("phone")
         } else {
+            var newPhone = phone
+            newPhone.insert("+", at: phone.startIndex)
+            let phone = newPhone
             CreateNewAccountViewModel.phoneData = phone
         }
     }
@@ -124,20 +129,36 @@ class CreateNewAccountViewModel {
         }
 
     // MARK: IdSelect
-    func idAccountValidator(_ id: String){
-        if id == ""{
-            newAlertId("id")
+    func idSelectValidator(_ idSelect: String){
+        if idSelect == ""{
+            newAlertIdSelect("idSelect")
         } else {
-//            idUser(id)
+           CreateNewAccountViewModel.identityImageType = idSelect
         }
     }
 
-    private func newAlertId(_ type: String){
-        if type == "id"{
-            
-            //let textIdAlert: String = TextAlerts.TextPhoneEmpty
-            let textIdAlert: String = "Envíe una foto de una identificacion"
-            newAlertText = textIdAlert
+    private func newAlertIdSelect(_ type: String){
+        if type == "idSelect"{
+            //let textIdSelect: String = TextAlerts.TextIdSelectEmpty
+            let textIdSelectAlert: String = "Selecciona un Documento como identificación oficial"
+            newAlertText = textIdSelectAlert
+        }
+    }
+    
+    // MARK: Upload
+    func uploadValidator(_ idUpload: String){
+        if idUpload == ""{
+            newAlertIdSelect("idUpload")
+        } else {
+           CreateNewAccountViewModel.identityImage = idUpload
+        }
+    }
+
+    private func newAlertUpload(_ type: String){
+        if type == "idUpload"{
+            //let textIdSelect: String = TextAlerts.TextIdSelectEmpty
+            let textIdUploadAlert: String = "Envía una fotografía de tu identificación"
+            newAlertText = textIdUploadAlert
         }
     }
     
@@ -182,18 +203,34 @@ class CreateNewAccountViewModel {
                 newAlertText = textUnequalPassword
             }
         }
-    
-//    private func userCreate(_ chocolateCookie:String,_ lemonCookie: String ){
-//        createApp(chocolateCookie, lemonCookie).sink{ result in
-//            let token = result.value?.token ?? ""
-//            self.tokenDispatcher(token)
-//            switch result.result {
-//            case .success(_):
-//                self.newAlert("access")
-//                Auth.auth().signIn(withEmail: chocolateCookie, password: lemonCookie, completion: nil)
-//            case .failure(_):
-//                self.newAlert("forbiden")
-//            }
-//        }.store(in: &cancellables)
-//    }
+ 
+    func userCreate(){
+        createApp(CreateNewAccountViewModel.emailData, CreateNewAccountViewModel.nameData, CreateNewAccountViewModel.lastNameData, CreateNewAccountViewModel.dateData,
+            CreateNewAccountViewModel.passwordData,
+            CreateNewAccountViewModel.phoneData,
+            CreateNewAccountViewModel.identityImage,
+            CreateNewAccountViewModel.identityImageType,
+            CreateNewAccountViewModel.occupationData
+        )
+            .sink{ result in
+                print("Codigo de Validacion", result.result)
+            switch result.result {
+            case .success(_):
+                self.newAlert("access")
+
+            case .failure(_):
+                self.newAlert("forbiden")
+            }
+        }
+            .store(in: &cancellables)
+    }
+    private func newAlert(_ type : String){
+        if type == "access" {
+           let access: String = "access"
+           newAlertText = access
+       }else if type == "forbiden" {
+           let access: String = "Datos incorrectos X"
+           newAlertText = access
+       }
+   }
 }
