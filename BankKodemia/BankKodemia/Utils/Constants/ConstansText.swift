@@ -182,7 +182,7 @@ struct Text{
         static let AddRecipientButton: String = "Agregar Contacto"
         static let BackToInitButton: String = "Volver a Inicio"
         static let ImageBottomLabel: String = "Tu contacto fue agregado con éxito"
-        
+        static let ImageBottomLabelSuccess: String = "Tu transacción a sido finalizada"
         
     }
     struct Routes {
@@ -190,6 +190,11 @@ struct Text{
         static let getUserFullProfile = "/users/me/profile"
         static let listUsers = "/users"
         static let transactions = "/transactions"
+    }
+    struct Profile {
+        static let titleProfile: String = "PERFIL"
+        static let idProfile: String = "ID Usuario"
+        static let emailProfile: String = "Correo Usuario"
     }
 }
 

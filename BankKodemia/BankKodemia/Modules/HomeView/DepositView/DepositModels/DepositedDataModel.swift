@@ -7,13 +7,29 @@
 
 import Foundation
 
-// MARK: - DepositedData
+
+// MARK: - ListUsers
 struct DepositedData: Codable {
     let success: Bool
-    let data: Datum
+    let data: DataClassDeposit
 }
 
 // MARK: - DataClass
-struct Datum: Codable {
-    let finalBalance: Int
+struct DataClassDeposit: Codable {
+    let transaction: TransactionDeposit
+    let finalBalance: Double
+}
+
+// MARK: - Transaction
+struct TransactionDeposit: Codable {
+    let _id, concept: String
+    let issuer: Issuer
+    let type: String
+    let amount: Double
+    let created_at: String
+}
+
+// MARK: - Issuer
+struct Issuer: Codable {
+    let _id, lastName, name, email: String
 }

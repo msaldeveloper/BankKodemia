@@ -32,6 +32,8 @@
 		E73FFB5927FBD314004E46CB /* ListUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB5827FBD314004E46CB /* ListUsersViewController.swift */; };
 		E73FFB5B27FBFB96004E46CB /* AddRecipientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB5A27FBFB96004E46CB /* AddRecipientModel.swift */; };
 		E73FFB5D27FBFE2C004E46CB /* AddRecipientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB5C27FBFE2C004E46CB /* AddRecipientTableViewCell.swift */; };
+		E73FFB6027FCCA9C004E46CB /* SuccessFullScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB5F27FCCA9C004E46CB /* SuccessFullScreenViewController.swift */; };
+		E73FFB6327FCD845004E46CB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB6227FCD845004E46CB /* ProfileViewController.swift */; };
 		E754E2AA27F411A500CBFC47 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E754E2A927F411A500CBFC47 /* FirebaseAuth */; };
 		E754E2AC27F411A500CBFC47 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = E754E2AB27F411A500CBFC47 /* FirebaseAuthCombine-Community */; };
 		E754E2AE27F411A500CBFC47 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = E754E2AD27F411A500CBFC47 /* FirebaseDatabase */; };
@@ -114,6 +116,8 @@
 		E73FFB5827FBD314004E46CB /* ListUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersViewController.swift; sourceTree = "<group>"; };
 		E73FFB5A27FBFB96004E46CB /* AddRecipientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipientModel.swift; sourceTree = "<group>"; };
 		E73FFB5C27FBFE2C004E46CB /* AddRecipientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipientTableViewCell.swift; sourceTree = "<group>"; };
+		E73FFB5F27FCCA9C004E46CB /* SuccessFullScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessFullScreenViewController.swift; sourceTree = "<group>"; };
+		E73FFB6227FCD845004E46CB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E754E2B127F4145D00CBFC47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E754E2B327F4170600CBFC47 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E754E2B627F41C9300CBFC47 /* HomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataManager.swift; sourceTree = "<group>"; };
@@ -225,8 +229,8 @@
 		C929EEF227FC060300596736 /* DepositModels */ = {
 			isa = PBXGroup;
 			children = (
-				C929EEF327FC065300596736 /* DepositDataManager.swift */,
 				C929EEF527FC096F00596736 /* DepositedDataModel.swift */,
+				C929EEF327FC065300596736 /* DepositDataManager.swift */,
 			);
 			path = DepositModels;
 			sourceTree = "<group>";
@@ -334,6 +338,22 @@
 			path = AddRecipientViewModel;
 			sourceTree = "<group>";
 		};
+		E73FFB5E27FCCA7C004E46CB /* SuccessFulScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E73FFB5F27FCCA9C004E46CB /* SuccessFullScreenViewController.swift */,
+			);
+			path = SuccessFulScreen;
+			sourceTree = "<group>";
+		};
+		E73FFB6127FCD829004E46CB /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				E73FFB6227FCD845004E46CB /* ProfileViewController.swift */,
+			);
+			path = ProfileView;
+			sourceTree = "<group>";
+		};
 		E754E2B527F41C0200CBFC47 /* HomeModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -435,6 +455,8 @@
 		E75D78CB27E45C0600F95DDD /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				E73FFB6127FCD829004E46CB /* ProfileView */,
+				E73FFB5E27FCCA7C004E46CB /* SuccessFulScreen */,
 				E70B647B27EDB2F600F94109 /* WelcomeView */,
 				E70B646F27ED992900F94109 /* AddNewRecipient */,
 				FAF8164227EC08810098989A /* LoadingView */,
@@ -758,6 +780,8 @@
 				FAF8164427EC08980098989A /* LoadingViewController.swift in Sources */,
 				E73FFB5727F8FE6B004E46CB /* HomeUserModel.swift in Sources */,
 				C5B7DE7E27ECF790004AE6C7 /* ShipViewController.swift in Sources */,
+				E73FFB6327FCD845004E46CB /* ProfileViewController.swift in Sources */,
+				E73FFB6027FCCA9C004E46CB /* SuccessFullScreenViewController.swift in Sources */,
 				E70B646E27ED976300F94109 /* HomeServicesViewController.swift in Sources */,
 				FAA92A9A27E96C7700083E10 /* DetailAccountViewController.swift in Sources */,
 				E73FFB5B27FBFB96004E46CB /* AddRecipientModel.swift in Sources */,
