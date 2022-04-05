@@ -19,12 +19,6 @@ class AddRecipientViewModel {
     var getUserData = GetUserRequest()
     static var newToken = HTTPHeaders()
     
-    
-    fileprivate var requestValidator: HTTPHeaders {
-        didSet{
-            listUserDataRequestPublisher.send(requestValidator)
-        }
-    }
     var listUserDataRequestPublisher = PassthroughSubject<HTTPHeaders,Never>()
     
     
@@ -58,7 +52,6 @@ class AddRecipientViewModel {
     init() {
         self.data = []
         self.reload = false
-        self.requestValidator = HTTPHeaders()
     }
     
     func tokenReciver(token : String){
@@ -67,9 +60,8 @@ class AddRecipientViewModel {
             "Accept": "application/json"
         ]
         print("token in token reciver",token)
-        requestValidator = headers
         AddRecipientViewModel.newToken = headers
-        
+
         
     }
     

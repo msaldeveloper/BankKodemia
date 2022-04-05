@@ -19,6 +19,7 @@ class DepositViewController: UIViewController {
     
     lazy var quantityLabel : UILabel = UILabel()
     lazy var quantityTextField : UITextField = UITextField()
+    lazy var quantityMoneyField: UITextField = UITextField()
     lazy var quantityDetail : UILabel = UILabel()
     
     lazy var conceptLabel : UILabel = UILabel()
@@ -38,9 +39,6 @@ class DepositViewController: UIViewController {
         validationBind()
         //Looks for single or multiple taps.
              let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-
-            //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
-            //tap.cancelsTouchesInView = false
 
             view.addGestureRecognizer(tap)
     }
@@ -79,6 +77,7 @@ class DepositViewController: UIViewController {
         quantityTextField.placeholder = "$0.0"
         quantityTextField.textAlignment = .center
         quantityTextField.font = ConstantsFont.f20SemiBold
+        quantityTextField.keyboardType = .numberPad
         view.addSubview(quantityTextField)
         quantityTextField.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -88,6 +87,8 @@ class DepositViewController: UIViewController {
             quantityTextField.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 2/30)
         ])
         
+    
+    
         quantityDetail.text = "MXN"
         quantityDetail.font = ConstantsFont.f14Normal
         quantityDetail.textColor = ConstantsUIColor.greenBlue
@@ -101,7 +102,7 @@ class DepositViewController: UIViewController {
         view.addSubview(conceptLabel)
         conceptLabel.listDetails(view: view, previous: quantityDetail, height: 1/30)
 
-        conceptBackground.backgroundColor = ConstantsUIColor.greyKodemia
+        conceptBackground.backgroundColor = ConstantsUIColor.greyBackGround
         conceptBackground.layer.cornerRadius = 10
         view.addSubview(conceptBackground)
         conceptBackground.translatesAutoresizingMaskIntoConstraints = false
@@ -144,15 +145,19 @@ class DepositViewController: UIViewController {
             .validationState
             .sink{ newAlertText in
                print("esperando acceso ->",newAlertText)
-                if newAlertText == "access"{
-//                    self.sesionActiva()
-                    print("access")
+                if newAlertText == "success"{
+                    self.successfulSreen()
                 }else {
                     print("new alert -->>",newAlertText)
                     self.updateAlert(newAlertText)//self.sesionActiva()
                 }
             }
             .store(in: &cancellables)
+    }
+    func successfulSreen(){
+        let successFulScreen = SuccessFullScreenViewController()
+        successFulScreen.modalPresentationStyle = .fullScreen
+        present(successFulScreen,animated: true,completion:{print("register button press validated")} )
     }
     
     func updateAlert(_ alertText: String){
@@ -176,5 +181,9 @@ extension DepositViewController {
         print("deposit button pressed")
         self.depositViewModel.depositValidator(quantityTextField.text ?? "", self.conceptTextField.text ?? "")
         
+    }
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
 }

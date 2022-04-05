@@ -1,13 +1,13 @@
 //
-//  ConfirmNewRecipientViewController.swift
+//  SuccessFullScreenViewController.swift
 //  BankKodemia
 //
-//  Created by Mario Saldana on 25/03/22.
+//  Created by Mario Saldana on 05/04/22.
 //
 
 import UIKit
 
-class ConfirmNewRecipientViewController: UIViewController {
+class SuccessFullScreenViewController: UIViewController {
     var backgroundColor = ConstantsUIColor.clearBackground
     var logo : UIImageView = UIImageView()
     var personsImage : UIImageView = UIImageView()
@@ -32,12 +32,12 @@ class ConfirmNewRecipientViewController: UIViewController {
     }
     func centerImage(){
         view.addSubview(personsImage)
-        personsImage.image = UIImage(named: "users")
+        personsImage.image = UIImage(named: "icon")
         personsImage.contentMode = .scaleAspectFit
         personsImage.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             personsImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            personsImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: (height/20)*7),
+            personsImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: (height/20)*2),
             //personsImage.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1)
             personsImage.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1)
         ])
@@ -45,7 +45,8 @@ class ConfirmNewRecipientViewController: UIViewController {
     func bottomImageLabelComponent(){
         view.addSubview(bottomImageLabel)
         //bottomImageLabel.formartTitle(view: view, textTitle: Text.AddNewRecipient.ImageBottomLabel)
-        bottomImageLabel.text = Text.AddNewRecipient.ImageBottomLabel
+        bottomImageLabel.textColor = .black
+        bottomImageLabel.text = Text.AddNewRecipient.ImageBottomLabelSuccess
         bottomImageLabel.textColor = UIColor.darkText
         bottomImageLabel.textAlignment = .center
         bottomImageLabel.font = UIFont(name: "Poppins-Medium", size: 16)
@@ -54,7 +55,7 @@ class ConfirmNewRecipientViewController: UIViewController {
     }
     func backToInitButtonComponent(){
         backToInit.formartBlueGreen()
-        backToInit.addTarget(self, action: #selector(backToInitAction), for: .touchUpInside)
+        backToInit.addTarget(self, action: #selector(backToInitActionn), for: .touchUpInside)
         view.addSubview(backToInit)
         backToInit.addAnchorsAndSize(width: nil, height: 42, left: 21, top: nil, right: 21, bottom: 46)
         
@@ -63,9 +64,8 @@ class ConfirmNewRecipientViewController: UIViewController {
 
 }
 // MARK: - OBJC Functions
-extension ConfirmNewRecipientViewController {
-    @objc func backToInitAction(){
-        print("backToInit button pressed")
+extension SuccessFullScreenViewController {
+    @objc func backToInitActionn(){
         let homeViewModel = HomeViewController()
         homeViewModel.modalPresentationStyle = .fullScreen
         present(homeViewModel,animated: true,completion:{print("home back")} )

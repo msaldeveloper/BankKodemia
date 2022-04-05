@@ -25,6 +25,8 @@ class HomeViewController: UIViewController {
     lazy var receivingMoneyLabel : UILabel = UILabel()
     lazy var movementsTable : UITableView = UITableView()
     
+    lazy var backImage: UIButton = UIButton()
+    
     var homeViewModel : HomeViewModel = HomeViewModel()
     var movementsList : [[TransactionModel]] = []
     
@@ -50,8 +52,18 @@ class HomeViewController: UIViewController {
     
     func initUI(){
         
-        view.addSubview(countButton)
-        countButton.countFormart(view: view)
+        backImage.setImage(UIImage(named: "count"), for: .normal)
+        backImage.addTarget(self, action:#selector(countImageAction) , for: .touchUpInside)
+        backImage.tintColor = UIColor.red
+        view.addSubview(backImage)
+        backImage.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            backImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 3*ConstantsUIKit.width/36),
+            backImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: ConstantsUIKit.height/100),
+            backImage.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/15),
+            backImage.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/15)
+        ])
+
         
         view.addSubview(helpButton)
         helpButton.helpFormart(view: view)
@@ -155,6 +167,12 @@ extension HomeViewController {
         let sendMoneyViewController = SendMoneyViewController()
         sendMoneyViewController.modalPresentationStyle = .fullScreen
         present(sendMoneyViewController,animated: true,completion:{print("register button press validated")} )
+    }
+    @objc func countImageAction(){
+        print("image tap")
+        let profileViewController = ProfileViewController()
+        profileViewController.modalPresentationStyle = .fullScreen
+        present(profileViewController,animated: true,completion:{print("register button press validated")} )
     }
 }
 //MARK: - table View
