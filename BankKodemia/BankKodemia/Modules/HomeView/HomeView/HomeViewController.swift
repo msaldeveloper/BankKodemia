@@ -26,7 +26,7 @@ class HomeViewController: UIViewController {
     lazy var movementsTable : UITableView = UITableView()
     
     var homeViewModel : HomeViewModel = HomeViewModel()
-    var movementsList : [TransactionModel] = []
+    var movementsList : [[TransactionModel]] = []
     
     private var cancellables: [AnyCancellable] = []
 
@@ -146,16 +146,26 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(movementsList.count)
         return movementsList.count
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView() // Aqui definimos el UIView el cual se va a retornar en la funcion
+        let label = UILabel(frame: CGRect(x: 10, y: 0, width: 8*width/9, height: 20))
+        label.text = String(movementsList[section][0].createdAt[..<(movementsList[section][0].createdAt.firstIndex(of: "T") ?? movementsList[section][0].createdAt.endIndex)])
+        label.font = ConstantsFont.f14Normal
+        view.addSubview(label)
+        
+        return view
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return movementsList[section].count
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell : UITableViewCell = ContenidoTableViewCell(transaction: movementsList[indexPath.row])
+        let transaction = movementsList[indexPath.section][indexPath.row]
+        let cell : UITableViewCell = ContenidoTableViewCell(transaction: transaction)
         return cell
     }
     
@@ -166,7 +176,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let transaction = movementsList[indexPath.row]
+        let transaction = movementsList[indexPath.section][indexPath.row]
         let vc = TransactionDetailsViewController(transaction: transaction)
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
