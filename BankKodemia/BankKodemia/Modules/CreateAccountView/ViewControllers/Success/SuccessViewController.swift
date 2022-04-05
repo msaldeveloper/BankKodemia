@@ -8,6 +8,8 @@
 import UIKit
 
 class SuccessViewController: UIViewController {
+    var createNewAccountViewModel  = CreateNewAccountViewModel ()
+    
     lazy var logo : UIImageView = UIImageView()
     var success : UIImageView = UIImageView()
    
@@ -28,6 +30,7 @@ class SuccessViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = backgroundColor
         UIInit()
+        createNewAccountViewModel.userCreate()
         
     }
     

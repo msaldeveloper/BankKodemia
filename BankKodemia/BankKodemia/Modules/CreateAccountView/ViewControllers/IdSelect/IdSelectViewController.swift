@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class IdSelectViewController: UIViewController {
     lazy var logo : UIImageView = UIImageView()
@@ -22,9 +23,9 @@ class IdSelectViewController: UIViewController {
     var passportButton : UIButton = UIButton()
     var immigrantDocumentButton : UIButton = UIButton()
     
-    var ineButtonLabel : UIButton = UIButton()
-    var passportButtonLabel : UIButton = UIButton()
-    var immigrantDocumentButtonlabel : UIButton = UIButton()
+    var ineButtonLabel : UILabel = UILabel()
+    var passportButtonLabel : UILabel = UILabel()
+    var immigrantDocumentButtonlabel : UILabel = UILabel()
     
     var arrowButton : UIImageView = UIImageView()
     var ineRightArrow : UIImageView = UIImageView()
@@ -38,6 +39,9 @@ class IdSelectViewController: UIViewController {
     // Boton para continuar
     var incomingButton: UIButton = UIButton()
     
+    var alerta = ""
+    private var createNewAccountViewModel = CreateNewAccountViewModel()
+    private var cancellables: [AnyCancellable] = []
     
     var backgroundColor = ConstantsUIColor.clearBackground
     
@@ -45,8 +49,18 @@ class IdSelectViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = backgroundColor
         UIInit()
+        validationBind()
+        //Looks for single or multiple taps.
+             let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
 
-        // Do any additional setup after loading the view.
+            //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+            //tap.cancelsTouchesInView = false
+
+            view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     func UIInit(){
@@ -56,8 +70,6 @@ class IdSelectViewController: UIViewController {
         immigrantDocumentSelectorButton()
         passportSelectorButton()
         legalInformationSection()
-        
-       
     }
     
     func logoImage(){
@@ -87,10 +99,15 @@ class IdSelectViewController: UIViewController {
         
         
         ineButton.formatPhantom()
-        ineButton.addTarget(self, action: #selector(continueButton), for: .touchUpInside)
+        ineButton.addTarget(self, action: #selector(continueIneButton), for: .touchUpInside)
         ineView.addSubview(ineButton)
         ineButton.addAnchorsAndSize(width: nil, height: 42, left: 10, top: 0, right: 0, bottom: 0)
         ineButton.addLabelDarkGray(button: ineButton, text: Text.CreateAccount.IdSelect.Ine)
+        
+        ineButtonLabel = UILabel()
+        ineButtonLabel.textColor = .black
+        ineButtonLabel.text = Text.CreateAccount.IdSelect.Ine
+        ineButton.addSubview(ineButtonLabel)
         
         ineView.addSubview(ineRightArrow)
         ineRightArrow.arrowButtonIdentity(view: view)
@@ -106,10 +123,15 @@ class IdSelectViewController: UIViewController {
         
         
         immigrantDocumentButton.formatPhantom()
-        immigrantDocumentButton.addTarget(self, action: #selector(continueButton), for: .touchUpInside)
+        immigrantDocumentButton.addTarget(self, action: #selector(continueImmigrantButton), for: .touchUpInside)
         immigrantDocumentView.addSubview(immigrantDocumentButton)
         immigrantDocumentButton.addAnchorsAndSize(width: nil, height: 42, left: 10, top: 0, right: 0, bottom: 0)
         immigrantDocumentButton.addLabelDarkGray(button: immigrantDocumentButton, text: Text.CreateAccount.IdSelect.ImmigrantDoc)
+        
+        immigrantDocumentButtonlabel = UILabel()
+        immigrantDocumentButtonlabel.textColor = .black
+        immigrantDocumentButtonlabel.text = Text.CreateAccount.IdSelect.ImmigrantDoc
+        immigrantDocumentButton.addSubview(immigrantDocumentButtonlabel)
         
         immigrantDocumentView.addSubview(immigrantDocumentRightArrow)
         immigrantDocumentRightArrow.arrowButtonIdentity(view: view)
@@ -125,10 +147,17 @@ class IdSelectViewController: UIViewController {
         
         
         passportButton.formatPhantom()
-        passportButton.addTarget(self, action: #selector(continueButton), for: .touchUpInside)
+        passportButton.addTarget(self, action: #selector(continuePassportButton), for: .touchUpInside)
+       
         passportView.addSubview(passportButton)
         passportButton.addAnchorsAndSize(width: nil, height: 42, left: 10, top: 0, right: 0, bottom: 0)
         passportButton.addLabelDarkGray(button: passportButton, text: Text.CreateAccount.IdSelect.Passport)
+        
+        passportButtonLabel = UILabel()
+        passportButtonLabel.textColor = .black
+        passportButtonLabel.text = Text.CreateAccount.IdSelect.Passport
+        passportButton.addSubview(passportButtonLabel)
+        
         
         passportView.addSubview(passportRightArrow)
         passportRightArrow.arrowButtonIdentity(view: view)
@@ -153,12 +182,31 @@ class IdSelectViewController: UIViewController {
 
     }
     
-
+    //suscriptor
+    fileprivate func validationBind(){
+        self.createNewAccountViewModel
+            .validationState
+            .sink{ newAlertText in
+               print("esperando acceso ->",newAlertText)
+                if newAlertText == "access"{
+                    
+                    
+                }else {
+                    print("new alert -->>",newAlertText)
+                    self.updateAlert(newAlertText)
+                }
+            }
+            .store(in: &cancellables)
+    }
     
-    
-    
-    
-    
+    func updateAlert(_ alertText: String){
+        alerta = alertText
+        print(alertText)
+        let alert = UIAlertController(title: "Error :(", message: alerta, preferredStyle: .alert)
+        let aceptar = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+        alert.addAction(aceptar)
+        self.present(alert, animated: true, completion: nil)
+    }
 
 }
 
@@ -171,12 +219,35 @@ extension IdSelectViewController {
     @objc func linkAction(){
         print("link pressed")
     }
-    @objc func continueButton(){
-        print("continue button pressed")
+    @objc func continueIneButton(){
+        print("INE button pressed")
+        let idSelected = ineButtonLabel.text ?? ""
+        self.createNewAccountViewModel.idSelectValidator(idSelected)
+        print("ID seleccionado:", ineButtonLabel.text ?? "")
+        continueButton()
+    }
+    
+    @objc func continuePassportButton(){
+        print("Passport button pressed")
+        let idSelected = passportButtonLabel.text ?? ""
+        self.createNewAccountViewModel.idSelectValidator(idSelected)
+        print("ID seleccionado:", passportButtonLabel.text ?? "")
+        continueButton()
+    }
+    
+    @objc func continueImmigrantButton(){
+        print("Immigrant button pressed")
+        let idSelected = immigrantDocumentButtonlabel.text ?? ""
+        self.createNewAccountViewModel.idSelectValidator(idSelected)
+        print("ID seleccionado:", immigrantDocumentButtonlabel.text ?? "")
         
+        continueButton()
+    }
+    
+    @objc func continueButton(){
+       print("continue button pressed")
         let uploadViewController = UploadViewController()
         uploadViewController.modalPresentationStyle = .fullScreen
         present(uploadViewController, animated: true, completion: nil)
-        
     }
 }

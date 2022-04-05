@@ -49,7 +49,8 @@ class CreatePasswordViewController: UIViewController {
             //tap.cancelsTouchesInView = false
 
             view.addGestureRecognizer(tap)
-        print("Email:", CreateNewAccountViewModel.emailData)
+        //print("data:",CreateNewAccountViewModel.emailData)
+           
     }
     @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.

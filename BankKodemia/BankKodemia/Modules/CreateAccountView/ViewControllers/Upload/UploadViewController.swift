@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class UploadViewController: UIViewController {
     lazy var logo : UIImageView = UIImageView()
@@ -19,14 +20,28 @@ class UploadViewController: UIViewController {
     // Boton para continuar
     var uploadButton : UIButton = UIButton()
     
+    var alerta = ""
+    private var createNewAccountViewModel = CreateNewAccountViewModel()
+    private var cancellables: [AnyCancellable] = []
+    
     var backgroundColor = ConstantsUIColor.clearBackground
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = backgroundColor
         UIInit()
+        validationBind()
+        //Looks for single or multiple taps.
+             let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
 
-        // Do any additional setup after loading the view.
+            //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+            //tap.cancelsTouchesInView = false
+
+            view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     func UIInit(){
@@ -81,23 +96,32 @@ class UploadViewController: UIViewController {
         uploadButton.addAnchorsAndSize(width: nil, height: 42, left: 21, top: nil, right: 21, bottom: 46)
         
         uploadButton.addLabelWhite(button: uploadButton, text: Text.CreateAccount.Uploading.BottonMessage)
-        
+    }
+    //suscriptor
+    fileprivate func validationBind(){
+        self.createNewAccountViewModel
+            .validationState
+            .sink{ newAlertText in
+               print("esperando acceso ->",newAlertText)
+                if newAlertText == "access"{
+                    
+                    
+                }else {
+                    print("new alert -->>",newAlertText)
+                    self.updateAlert(newAlertText)
+                }
+            }
+            .store(in: &cancellables)
     }
     
-    
-    
-    
-    
-    
-  
-    
-
-    
-    
-    
-    
-    
-
+    func updateAlert(_ alertText: String){
+        alerta = alertText
+        print(alertText)
+        let alert = UIAlertController(title: "Error :(", message: alerta, preferredStyle: .alert)
+        let aceptar = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+        alert.addAction(aceptar)
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
 // MARK: - OBJC Functions
@@ -112,7 +136,10 @@ extension UploadViewController {
     
     @objc func upload(){
         print("upload file")
-        
+       
+        let imageIdUploaded = TextAlerts.base64
+        self.createNewAccountViewModel.uploadValidator(imageIdUploaded)
+        //print("image64:", imageIdUploaded)
         let createPasswordViewController = CreatePasswordViewController()
         createPasswordViewController.modalPresentationStyle = .fullScreen
         present(createPasswordViewController, animated: true, completion: nil)

@@ -11,7 +11,7 @@ import CoreText
 //Regular Expresions 
 struct RegExp{
     static let Email: String = "^([a-z]|[A-Z])+(\\w|\\W)+@(([a-z]|[A-Z])+\\.([a-z]|[A-Z])+|([a-z]|[A-Z])+\\.([a-z]|[A-Z])+\\.([a-z]|[A-Z])+)$"
-    static let Phone: String = #"^\(?\d{3}\)?[ -]?\d{3}[ -]?\d{4}$"#
+    static let Phone: String = #"^\(?\d{5}\)?[ -]?\d{3}[ -]?\d{4}$"#
     static let Password: String = "^(?=.{8,}$)(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$"
     
 }

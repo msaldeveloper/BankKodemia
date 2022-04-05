@@ -20,23 +20,21 @@ class IdentityVerificationViewController: UIViewController {
     // Boton para continuar
     var incomingButton: UIButton = UIButton()
     
-    
     var backgroundColor = ConstantsUIColor.clearBackground
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = backgroundColor
         UIInit()
-
-        // Do any additional setup after loading the view.
+        
     }
+    
     
     func UIInit(){
         logoImage()
         suggestDetailInfoSection()
         legalInformationSection()
         continueButtonSection()
-       
     }
     
     func logoImage(){
@@ -85,11 +83,6 @@ class IdentityVerificationViewController: UIViewController {
         incomingButton.addLabelWhite(button: incomingButton, text: TextLocals.continue_button_message)
         
     }
-    
-    
-    
-    
-    
 
 }
 
