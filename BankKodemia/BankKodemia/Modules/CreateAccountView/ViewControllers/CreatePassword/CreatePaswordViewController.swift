@@ -151,7 +151,7 @@ class CreatePasswordViewController: UIViewController {
             .sink{ newAlertText in
                print("esperando acceso ->",newAlertText)
                 if newAlertText == "access"{
-                    
+                    self.activeSession()
                     
                 }else {
                     print("new alert -->>",newAlertText)
@@ -192,10 +192,16 @@ extension CreatePasswordViewController {
             createPasswordTextField.text ?? "",
             confirmPasswordTextField.text ?? "" )
         
+        createNewAccountViewModel.userCreate()
+        
+       
+    
+    }
+    func activeSession(){
         let successViewController = SuccessViewController()
         successViewController.modalPresentationStyle = .fullScreen
         present(successViewController, animated: true, completion: nil)
-    
     }
+    
 }
 

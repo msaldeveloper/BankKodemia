@@ -30,7 +30,7 @@ class SuccessViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = backgroundColor
         UIInit()
-        createNewAccountViewModel.userCreate()
+        //createNewAccountViewModel.userCreate()
         
     }
     

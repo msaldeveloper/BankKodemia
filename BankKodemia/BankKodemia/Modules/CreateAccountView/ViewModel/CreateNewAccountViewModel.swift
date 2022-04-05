@@ -212,24 +212,24 @@ class CreateNewAccountViewModel {
             CreateNewAccountViewModel.identityImageType,
             CreateNewAccountViewModel.occupationData
         )
-//            .sink{ result in
-//
-//            switch result.result {
-//            case .success(_):
-//                self.newAlert("access")
-//
-//            case .failure(_):
-//                self.newAlert("forbiden")
-//            }
-//        }
-//            .store(in: &cancellables)
+            .sink{ result in
+                print("Codigo de Validacion", result.result)
+            switch result.result {
+            case .success(_):
+                self.newAlert("access")
+
+            case .failure(_):
+                self.newAlert("forbiden")
+            }
+        }
+            .store(in: &cancellables)
     }
     private func newAlert(_ type : String){
         if type == "access" {
            let access: String = "access"
            newAlertText = access
        }else if type == "forbiden" {
-           let access: String = "Correo o contraseña incorrectos"
+           let access: String = "Datos incorrectos X"
            newAlertText = access
        }
    }

@@ -24,7 +24,7 @@ struct CreateAccount: Encodable {
 }
 //-> DataResponsePublisher<CreatedData>
 func createApp(_ testEmail: String,_ testName: String,_ testlastName: String,_ testBirthDate: String,_ testPassword: String,_ testPhone: String,_ testIdentityImage: String,_ testIdentityImageType: String,_ testOccupation: String
-) {
+)-> DataResponsePublisher<CreatedData> {
     let CreateAccount = CreateAccount(
         email: testEmail,
         name: testName,
@@ -37,13 +37,24 @@ func createApp(_ testEmail: String,_ testName: String,_ testlastName: String,_ t
         occupation: testOccupation
     )
     print(CreateAccount)
-//    let createPublisher = AF
-        AF
+    let createPublisher = AF
+        //AF
         .request(urlCreateAccount,
                 method: .post,
                 parameters: CreateAccount,
-                 encoder: JSONParameterEncoder.default).response{responseData in debugPrint(responseData)}
-//        .validate()
-//        .publishDecodable(type: CreatedData.self)
-//    return createPublisher
+                 encoder: JSONParameterEncoder.default)
+    .validate()
+    .publishDecodable(type: CreatedData.self)
+    return createPublisher
 }
+
+
+    // in case of errors use
+    //            let decoder = JSONDecoder()
+    //            do {
+    //                let decodedData = try decoder.decode(CreatedData.self, from: responseData.data!)
+    //                print(decodedData.success)
+    //            } catch {
+    //                print("an error ->",error)
+    //            }
+    //        }
