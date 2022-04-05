@@ -173,6 +173,7 @@ struct Text{
         static let PageTitle:String = "AGREGAR CONTACTO"
         static let ClabeLabel: String = "CLABE"
         static let CardLabel: String = "TARJETA"
+        static let ContactLabel:String = "CONTACTO"
         static let DigitsLabel: String = "18 dígitos"
         static let CardNumberLabel: String = "No. de tarjeta"
         static let InstitutionLabel: String = "Institución"

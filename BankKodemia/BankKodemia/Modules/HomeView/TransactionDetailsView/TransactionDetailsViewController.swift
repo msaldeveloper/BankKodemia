@@ -43,6 +43,18 @@ class TransactionDetailsViewController: UIViewController {
         initUI()
     }
     
+    var transaction : TransactionModel = TransactionModel(id: "", amount: 0, type: "", concept: "", createdAt: "", issuer: User(_id: "", email: "", name: "", lastName: ""), destinationUser: User(_id: "", email: "", name: "", lastName: ""), isIncome: false)
+    
+    init(transaction: TransactionModel){
+        super.init(nibName: nil, bundle: nil)
+        
+        self.transaction = transaction
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     func initUI(){
         
         view.addSubview(countButton)
@@ -61,7 +73,7 @@ class TransactionDetailsViewController: UIViewController {
         view.addSubview(titleView)
         titleView.formartTitle(view: view, textTitle: TextLocals.home_transaction_detail)
         
-        money.text = "$9100"
+        money.text = String(transaction.amount)
         money.textAlignment = .center
         money.font = ConstantsFont.f20SemiBold
         view.addSubview(money)
@@ -72,7 +84,7 @@ class TransactionDetailsViewController: UIViewController {
             money.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 8/9)
         ])
         
-        concept.text = "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW"
+        concept.text = transaction.concept
         concept.textAlignment = .center
         concept.numberOfLines = 0
         concept.textColor = .darkGray
@@ -98,7 +110,7 @@ class TransactionDetailsViewController: UIViewController {
             dateLabel.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/30)
         ])
         
-        dateDetail.text = "25 de enero de 2022 9 p.m."
+        dateDetail.text = transaction.createdAt
         dateDetail.font = ConstantsFont.f14Regular
         dateDetail.textColor = ConstantsUIColor.greyKodemia
         view.addSubview(dateDetail)
@@ -110,7 +122,7 @@ class TransactionDetailsViewController: UIViewController {
         view.addSubview(idLabel)
         idLabel.listDetails(view: view, previous: dateDetail, height: 1/30)
         
-        idDetail.text = "8973482774072974827483229738"
+        idDetail.text = transaction.id
         idDetail.font = ConstantsFont.f14Regular
         idDetail.textColor = ConstantsUIColor.greyKodemia
         view.addSubview(idDetail)
@@ -122,7 +134,7 @@ class TransactionDetailsViewController: UIViewController {
         view.addSubview(conceptLabel)
         conceptLabel.listDetails(view: view, previous: idDetail, height: 1/30)
         
-        conceptDetail.text = "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW"
+        conceptDetail.text = transaction.concept
         conceptDetail.font = ConstantsFont.f14Regular
         conceptDetail.textColor = ConstantsUIColor.greyKodemia
         conceptDetail.numberOfLines = 2
@@ -136,14 +148,15 @@ class TransactionDetailsViewController: UIViewController {
         countLabel.listDetails(view: view, previous: conceptDetail, height: 1/30)
         
         countDetail.text = """
+        \(transaction.issuer.name)
         Numero de cuenta
-        0000 2052 14
+        \(transaction.issuer._id)
         """
         countDetail.font = ConstantsFont.f14Regular
         countDetail.textColor = ConstantsUIColor.greyKodemia
-        countDetail.numberOfLines = 2
+        countDetail.numberOfLines = 3
         view.addSubview(countDetail)
-        countDetail.listDetails(view: view, previous: countLabel, height: 2/30)
+        countDetail.listDetails(view: view, previous: countLabel, height: 3/30)
         
     }
     

@@ -13,11 +13,11 @@ class HomeViewModel {
     
     static var token : HTTPHeaders = []
     
-    public var dataTableView = PassthroughSubject<[TransactionModel],Never>()//declarando publisher
+    public var dataTableView = PassthroughSubject<[[TransactionModel]],Never>()//declarando publisher
     public var reloadDataTableView = PassthroughSubject<Bool,Never>()//declarando publisher
     public var reloadBalance = PassthroughSubject<Double,Never>()
     
-    fileprivate var data: [TransactionModel] {
+    fileprivate var data: [[TransactionModel]] {
         didSet{
             dataTableView.send(data)
         }
@@ -41,7 +41,7 @@ class HomeViewModel {
         self.balance = 0
     }
     
-    private func newData(data: [TransactionModel]){
+    private func newData(data: [[TransactionModel]]){
         self.data = data
     }
     
@@ -75,8 +75,9 @@ class HomeViewModel {
     }
     
     private func cargaPorFavor(data: GetUserFullData?){
-        var list : [TransactionModel] = []
-        print(data ?? "NO HAY NADA DE NUEVO :(")
+        var dates : [[TransactionModel]] = []
+        var date : String = ""
+        
         for item in data?.data.transactions ?? [] {
             let id = item._id
             let amount = item.amount
@@ -88,10 +89,19 @@ class HomeViewModel {
             let isIncome = item.isIncome
             
             let transaction = TransactionModel(id: id, amount: amount, type: type, concept: concept, createdAt: createdAt, issuer: User(_id: issuer._id, email: issuer.email, name: issuer.name, lastName: issuer.lastName), destinationUser: User(_id: destinationUser?._id ?? "", email: destinationUser?.email ?? "", name: destinationUser?.name ?? "", lastName: destinationUser?.lastName ?? ""), isIncome: isIncome)
-            list.append(transaction)
+            
+            let day = transaction.createdAt[..<(transaction.createdAt.firstIndex(of: "T") ?? transaction.createdAt.endIndex)]
+            
+            if day == date{
+                dates[dates.count-1].append(transaction)
+            }else{
+                date = String(day)
+                dates.append([transaction])
+            }
         }
+        dates.reverse()
         self.reloadNewBalance(balance: data?.data.balance ?? 54)
-        self.newData(data: list)
+        self.newData(data: dates)
         self.reloadData()
     }
     

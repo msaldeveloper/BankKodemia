@@ -12,9 +12,9 @@ class AddNewRecipientViewController: UIViewController {
     var arrowButton: UIButton = UIButton()
     var logo : UIImageView = UIImageView()
     var initSessionLabel : UILabel = UILabel()
-    var clabeLabel : UILabel = UILabel()
-    var cardLabel : UILabel = UILabel()
-    var contactLabel : UILabel = UILabel()
+    var clabeLabel : UIButton = UIButton()
+    var cardLabel : UIButton = UIButton()
+    var contactButton : UIButton = UIButton()
     var labelsNav : UIView = UIView()
     
     var fieldDigit : UIView = UIView()
@@ -38,12 +38,11 @@ class AddNewRecipientViewController: UIViewController {
     var textFieldEmailTop : UILabel = UILabel()
     
     var addContactButton : UIButton = UIButton()
-    var addRecipientViewModel = AddRecipientViewModel()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = backgroundColor
-        self.addRecipientViewModel.listUserDataRequest()
         initUI()
     }
     func tokenBind(){
@@ -60,6 +59,7 @@ class AddNewRecipientViewController: UIViewController {
         nameTextComponent()
         emailComponent()
         addContactButtonComponent()
+        contactButtonComponent()
     }
     func logoComponent(){
         view.addSubview(logo)
@@ -81,15 +81,20 @@ class AddNewRecipientViewController: UIViewController {
         labelsNav.addAnchorsAndSize(width: nil, height: 30, left: 21, top: 27, right: 21, bottom: nil, withAnchor: .top, relativeToView: initSessionLabel)
         
         labelsNav.addSubview(clabeLabel)
-        clabeLabel.formatRecipientLabel(activate: true)
-        clabeLabel.text = Text.AddNewRecipient.ClabeLabel
+        clabeLabel.addLabelDark(button: clabeLabel, text: Text.AddNewRecipient.ClabeLabel)
+        let clabeButton = UITapGestureRecognizer(target: self, action: #selector(clabeButtonAction))
+        clabeLabel.addGestureRecognizer(clabeButton)
         clabeLabel.addAnchorsAndSize(width: nil, height: 27, left: 0, top: 2, right: nil, bottom: nil)
         
         labelsNav.addSubview(cardLabel)
-        cardLabel.formatRecipientLabel(activate: false)
-        cardLabel.text = Text.AddNewRecipient.CardLabel
-        cardLabel.addAnchorsAndSize(width: nil, height: 27, left: width/2.8, top: 2, right: nil, bottom: nil)
-    }
+        cardLabel.addLabelDark(button: cardLabel, text: Text.AddNewRecipient.CardLabel)
+        let cardButton = UITapGestureRecognizer(target: self, action: #selector(cardButtonAction))
+        cardLabel.addGestureRecognizer(cardButton)
+        cardLabel.addAnchorsAndSize(width: nil, height: 27, left: width/3.5, top: 2, right: nil, bottom: nil)
+        }
+    
+    
+    
     func digitComponent(){
         fieldDigit.formatUIView(activate: false)
         view.addSubview(fieldDigit)
@@ -175,6 +180,14 @@ class AddNewRecipientViewController: UIViewController {
         view.addSubview(textFieldEmailTop)
         textFieldEmailTop.addAnchorsAndSize(width: nil, height: nil, left: 21, top: nil, right: nil, bottom: 2, withAnchor: .bottom, relativeToView: textFieldEmail)
     }
+    func contactButtonComponent(){
+        contactButton.formartBlueGreen()
+        contactButton.addTarget(self, action: #selector(contactButtonAction), for: .touchUpInside)
+        view.addSubview(contactButton)
+        contactButton.addAnchorsAndSize(width: nil, height: 42, left: 21, top: 20, right: 21, bottom: nil, withAnchor: .top, relativeToView: fieldEmail)
+    
+        contactButton.addLabelWhite(button: contactButton, text: Text.AddNewRecipient.ContactLabel)
+    }
     func addContactButtonComponent(){
         addContactButton.formartBlueGreen()
         addContactButton.addTarget(self, action: #selector(addContact), for: .touchUpInside)
@@ -188,6 +201,42 @@ class AddNewRecipientViewController: UIViewController {
 }
 // MARK: - OBJC Functions
 extension AddNewRecipientViewController {
+    
+    @objc func clabeButtonAction(){
+        textFieldDigitLabelTop.text = Text.AddNewRecipient.DigitsLabel
+        print("clabe label push")
+        labelsNav.addSubview(clabeLabel)
+        clabeLabel.addLabelGreenblue(button: clabeLabel, text: Text.AddNewRecipient.ClabeLabel)
+        clabeLabel.addAnchorsAndSize(width: nil, height: 27, left: 0, top: 2, right: nil, bottom: nil)
+        
+        print("card label push")
+        labelsNav.addSubview(cardLabel)
+        cardLabel.addLabelDark(button: cardLabel, text: Text.AddNewRecipient.CardLabel)
+    
+        cardLabel.addAnchorsAndSize(width: nil, height: 27, left: width/3.5, top: 2, right: nil, bottom: nil)
+
+        
+        
+    }
+    @objc func cardButtonAction(){
+        textFieldDigitLabelTop.text = Text.AddNewRecipient.CardNumberLabel
+        labelsNav.addSubview(clabeLabel)
+        clabeLabel.addLabelDark(button: clabeLabel, text: Text.AddNewRecipient.ClabeLabel)
+        clabeLabel.addAnchorsAndSize(width: nil, height: 27, left: 0, top: 2, right: nil, bottom: nil)
+        
+        print("card label push")
+        labelsNav.addSubview(cardLabel)
+        cardLabel.addLabelGreenblue(button: cardLabel, text: Text.AddNewRecipient.CardLabel)
+        cardLabel.addAnchorsAndSize(width: nil, height: 27, left: width/3.5, top: 2, right: nil, bottom: nil)
+        
+    }
+    @objc func contactButtonAction(){
+        print("move to list usersViewController")
+        let ListUsersViewController = ListUsersViewController()
+        ListUsersViewController.modalPresentationStyle = .fullScreen
+        self.present(ListUsersViewController,animated: true,completion:{print("register button press")} )
+        
+    }
     @objc func backAction(){
         print("back button pressed")
         dismiss(animated: true)

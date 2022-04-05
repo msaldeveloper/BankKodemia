@@ -6,18 +6,17 @@
 //
 
 import UIKit
-import Combine
 
 class ContenidoTableViewCell: UITableViewCell {
 
-    var width = UIScreen.main.bounds.width
-    var heigth = UIScreen.main.bounds.height
+    var width = ConstantsUIKit.width
+    var heigth = ConstantsUIKit.height
     
-    var ownContent = UIView()
+    lazy var ownContent = UIView()
+    lazy var nameIssuer = UILabel()
+    lazy var date = UILabel()
+    lazy var amount = UILabel()
     
-    var nameIssuer = UILabel()
-    var date = UILabel()
-    var amount = UILabel()
     
     var transaction = TransactionModel(id: "", amount: 0, type: "", concept: "", createdAt: "", issuer: User(_id: "", email: "", name: "", lastName: ""), destinationUser: User(_id: "", email: "", name: "", lastName: ""), isIncome: false)
     
@@ -48,15 +47,31 @@ class ContenidoTableViewCell: UITableViewCell {
         nameIssuer = UILabel(frame: CGRect(x: 20, y: 0, width: width-40, height: (heigth/7 - 10)/3))
         nameIssuer.text = transaction.issuer.name
         nameIssuer.textAlignment = .left
-        nameIssuer.font = .boldSystemFont(ofSize: 18)
+        nameIssuer.font = ConstantsFont.f14Normal
         
         ownContent.addSubview(nameIssuer)
         
-        date = UILabel(frame: CGRect(x: 20, y: (heigth/7 - 10)/3, width: width-40, height: (heigth/7 - 10)/3))
-        date.text = transaction.createdAt
+        date = UILabel(frame: CGRect(x: 20, y: (heigth/7 - 10)/3, width: width/4, height: (heigth/7 - 10)/3))
+        
+        date.text = String(transaction.createdAt[(transaction.createdAt.index(after: transaction.createdAt.firstIndex(of: "T") ?? transaction.createdAt.endIndex) )...(transaction.createdAt.index(before: transaction.createdAt.firstIndex(of: ".") ?? transaction.createdAt.endIndex))])
         date.textAlignment = .left
+        date.font = ConstantsFont.f14Regular
         
         ownContent.addSubview(date)
+        
+        amount = UILabel(frame: CGRect(x: 20+width/4, y: (heigth/7 - 10)/3, width: 3*width/4-40, height: (heigth/7 - 10)/3))
+        var sign = ""
+        if transaction.type == "PAYMENT"{
+            sign = "+ $"
+            amount.textColor = ConstantsUIColor.greenBlue
+        }else{
+            sign = "- $"
+            amount.textColor = .red
+            
+        }
+        amount.text = sign + String(transaction.amount)
+        amount.font = ConstantsFont.f14Normal
+        ownContent.addSubview(amount)
         
     }
     
