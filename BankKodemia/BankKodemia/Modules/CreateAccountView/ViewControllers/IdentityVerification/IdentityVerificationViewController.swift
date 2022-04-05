@@ -9,6 +9,8 @@ import UIKit
 
 class IdentityVerificationViewController: UIViewController {
     lazy var logo : UIImageView = UIImageView()
+    var arrowButton: UIButton = UIButton()
+    var titleSuggestLabel: UILabel = UILabel()
     
     // SuggestDetailInfo: Indicaciones de la seccion
     var infoSuggestLabel: UILabel = UILabel()
@@ -32,6 +34,8 @@ class IdentityVerificationViewController: UIViewController {
     
     func UIInit(){
         logoImage()
+        returnButton()
+        titleLabel()
         suggestDetailInfoSection()
         legalInformationSection()
         continueButtonSection()
@@ -40,6 +44,17 @@ class IdentityVerificationViewController: UIViewController {
     func logoImage(){
         view.addSubview(logo)
         logo.logoFormart(view: view)
+    }
+    
+    func returnButton(){
+        view.addSubview(arrowButton)
+        arrowButton.backButton(view: view, textDinamic: Text.CreateAccount.PhoneVerification.title.uppercased(), widthText: width/4)
+        arrowButton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
+    }
+    
+    func titleLabel(){
+        view.addSubview(titleSuggestLabel)
+        titleSuggestLabel.formartTitle(view: view, textTitle: Text.CreateAccount.IdentityVerification.title)
     }
     
     func suggestDetailInfoSection(){
