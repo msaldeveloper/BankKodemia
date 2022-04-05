@@ -20,12 +20,14 @@ class ContenidoTableViewCell: UITableViewCell {
     
     var transaction = TransactionModel(id: "", amount: 0, type: "", concept: "", createdAt: "", issuer: User(_id: "", email: "", name: "", lastName: ""), destinationUser: User(_id: "", email: "", name: "", lastName: ""), isIncome: false)
     
+    var idMe = ""
     
-    init(transaction : TransactionModel){
+    init(transaction : TransactionModel, id: String){
         
         super.init(style: .default, reuseIdentifier: nil)
         
         self.transaction = transaction
+        self.idMe = id
         
         self.backgroundColor = .clear
         
@@ -63,7 +65,7 @@ class ContenidoTableViewCell: UITableViewCell {
         
         amount = UILabel(frame: CGRect(x: 20+width/4, y: (heigth/7 - 10)/3, width: 3*width/4-40, height: (heigth/7 - 10)/3))
         var sign = ""
-        if transaction.type == "PAYMENT"{
+        if (transaction.type == "PAYMENT" && transaction.issuer._id != idMe) || (transaction.type == "DEPOSIT" && transaction.issuer._id == idMe && transaction.isIncome){
             sign = "+ $"
             amount.textColor = ConstantsUIColor.greenBlue
         }else{
