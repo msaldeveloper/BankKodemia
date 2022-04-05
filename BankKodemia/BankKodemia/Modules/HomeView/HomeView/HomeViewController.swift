@@ -57,7 +57,6 @@ class HomeViewController: UIViewController {
         
         backImage.setImage(UIImage(named: "count"), for: .normal)
         backImage.addTarget(self, action:#selector(countImageAction) , for: .touchUpInside)
-        backImage.tintColor = UIColor.red
         view.addSubview(backImage)
         backImage.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -178,9 +177,12 @@ extension HomeViewController {
     }
     @objc func countImageAction(){
         print("image tap")
-        let profileViewController = ProfileViewController()
+        let profileViewController = ProfileViewController(user: HomeViewController.userMe)
         profileViewController.modalPresentationStyle = .fullScreen
         present(profileViewController,animated: true,completion:{print("register button press validated")} )
+        
+    }
+        
     @objc func goToDeposit () {
         print("depositando")
         let depositViewController = DepositViewController()

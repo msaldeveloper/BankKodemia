@@ -191,6 +191,11 @@ struct Text{
         static let listUsers = "/users"
         static let transactions = "/transactions"
     }
+    struct Profile {
+        static let titleProfile: String = "PERFIL"
+        static let idProfile: String = "ID Usuario"
+        static let emailProfile: String = "Correo Usuario"
+    }
 }
 
 
