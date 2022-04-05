@@ -16,6 +16,7 @@ class HomeViewModel {
     public var dataTableView = PassthroughSubject<[[TransactionModel]],Never>()//declarando publisher
     public var reloadDataTableView = PassthroughSubject<Bool,Never>()//declarando publisher
     public var reloadBalance = PassthroughSubject<Double,Never>()
+    public var reloadUserData = PassthroughSubject<UserModel,Never>()
     
     fileprivate var data: [[TransactionModel]] {
         didSet{
@@ -35,10 +36,17 @@ class HomeViewModel {
         }
     }
     
+    fileprivate var user: UserModel {
+        didSet{
+            reloadUserData.send(user)
+        }
+    }
+    
     init() {
         self.data = []
         self.reload = false
         self.balance = 0
+        self.user = UserModel(_id: "", email: "", name: "", lastName: "")
     }
     
     private func newData(data: [[TransactionModel]]){
@@ -51,6 +59,10 @@ class HomeViewModel {
     
     private func reloadNewBalance(balance: Double){
         self.balance = balance
+    }
+    
+    private func reloadNewUserData(user: UserModel){
+        self.user = user
     }
     
     var cancellables: [AnyCancellable] = []
@@ -69,12 +81,12 @@ class HomeViewModel {
     func leadData(){
         
         getUserRequest.getUserProfile(HomeViewModel.token).sink{ fullData in
-            self.cargaPorFavor(data: fullData.value)
+            self.carga(data: fullData.value)
         }.store(in: &cancellables)
         
     }
     
-    private func cargaPorFavor(data: GetUserFullData?){
+    private func carga(data: GetUserFullData?){
         var dates : [[TransactionModel]] = []
         var date : String = ""
         
@@ -93,14 +105,21 @@ class HomeViewModel {
             let day = transaction.createdAt[..<(transaction.createdAt.firstIndex(of: "T") ?? transaction.createdAt.endIndex)]
             
             if day == date{
-                dates[dates.count-1].append(transaction)
+                dates[dates.count-1].insert(transaction,at:0)
             }else{
                 date = String(day)
                 dates.append([transaction])
             }
         }
         dates.reverse()
-        self.reloadNewBalance(balance: data?.data.balance ?? 54)
+        
+        let name = data?.data.user.name ?? ""
+        let lastName = data?.data.user.lastName ?? ""
+        let email = data?.data.user.email ?? ""
+        let idMe = data?.data.user._id ?? ""
+        
+        self.reloadNewUserData(user: UserModel(_id: idMe, email: email, name: name, lastName: lastName))
+        self.reloadNewBalance(balance: data?.data.balance ?? 0.0)
         self.newData(data: dates)
         self.reloadData()
     }
