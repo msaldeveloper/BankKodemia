@@ -75,12 +75,11 @@ class WelcomeViewController: UIViewController {
         welcomeLogo.image = UIImage(named: "app")
         contentStackView.addArrangedSubview(welcomeLogo)
         welcomeLabel.translatesAutoresizingMaskIntoConstraints = false
-        
+        bankodemiaLogo.contentMode = .scaleAspectFit
         NSLayoutConstraint.activate([
             bankodemiaLogo.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
-            bankodemiaLogo.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
+            bankodemiaLogo.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.35),
             bankodemiaLogo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            bankodemiaLogo.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.2),
             welcomeLabel.topAnchor.constraint(equalTo: bankodemiaLogo.bottomAnchor, constant: 15),
             welcomeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             welcomeLabelNote.topAnchor.constraint(equalTo: welcomeLabel.bottomAnchor),

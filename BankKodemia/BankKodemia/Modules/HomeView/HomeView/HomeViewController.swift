@@ -29,6 +29,8 @@ class HomeViewController: UIViewController {
     var movementsList : [[TransactionModel]] = []
     
     private var cancellables: [AnyCancellable] = []
+    
+    static var userMe = UserModel(_id: "", email: "", name: "", lastName: "")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +45,7 @@ class HomeViewController: UIViewController {
         receiveBalance()
         newData()
         reloadData()
+        receiveUser()
         
         homeViewModel.leadData()
         
@@ -108,6 +111,8 @@ class HomeViewController: UIViewController {
         
     }
     
+    
+    
     //suscriptor para traer la data del tablaView
     fileprivate func newData(){
         self.homeViewModel
@@ -141,11 +146,14 @@ class HomeViewController: UIViewController {
             .store(in: &cancellables)
     }
     
-    @objc func goToDeposit () {
-        print("depositando")
-        let depositViewController = DepositViewController()
-        depositViewController.modalPresentationStyle = .fullScreen
-        present(depositViewController, animated: true, completion: nil)
+    //suscriptor para traer el balance del usuario
+    fileprivate func receiveUser(){
+        self.homeViewModel
+            .reloadUserData
+            .sink{ user in
+                HomeViewController.userMe = user
+            }
+            .store(in: &cancellables)
     }
     
 }
@@ -155,6 +163,12 @@ extension HomeViewController {
         let sendMoneyViewController = SendMoneyViewController()
         sendMoneyViewController.modalPresentationStyle = .fullScreen
         present(sendMoneyViewController,animated: true,completion:{print("register button press validated")} )
+    }
+    @objc func goToDeposit () {
+        print("depositando")
+        let depositViewController = DepositViewController()
+        depositViewController.modalPresentationStyle = .fullScreen
+        present(depositViewController, animated: true, completion: nil)
     }
 }
 //MARK: - table View
@@ -183,7 +197,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let transaction = movementsList[indexPath.section][indexPath.row]
-        let cell : UITableViewCell = ContenidoTableViewCell(transaction: transaction)
+        let cell : UITableViewCell = ContenidoTableViewCell(transaction: transaction, id: HomeViewController.userMe._id)
         return cell
     }
     
