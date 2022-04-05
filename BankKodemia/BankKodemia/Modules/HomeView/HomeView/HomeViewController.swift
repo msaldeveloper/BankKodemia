@@ -93,7 +93,7 @@ class HomeViewController: UIViewController {
             receivingMoneyButton.widthAnchor.constraint(equalToConstant: 5*width/12),
         ])
         receivingMoneyButton.addLabelWhite(button: receivingMoneyButton, text: TextLocals.home_receive_button)
-        
+        receivingMoneyButton.addTarget(self, action: #selector(goToDeposit), for: .touchUpInside)
         
         movementsTable.backgroundColor = .white
         view.addSubview(movementsTable)
@@ -139,6 +139,13 @@ class HomeViewController: UIViewController {
                 self.money.text = "$" + (self.money.text ?? "")
             }
             .store(in: &cancellables)
+    }
+    
+    @objc func goToDeposit () {
+        print("depositando")
+        let depositViewController = DepositViewController()
+        depositViewController.modalPresentationStyle = .fullScreen
+        present(depositViewController, animated: true, completion: nil)
     }
     
 }
