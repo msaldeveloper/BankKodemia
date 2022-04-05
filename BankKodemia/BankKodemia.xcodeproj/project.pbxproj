@@ -25,6 +25,9 @@
 		E73FFB5227F7D884004E46CB /* AddRecipientData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB5127F7D884004E46CB /* AddRecipientData.swift */; };
 		E73FFB5427F7DB16004E46CB /* AddRecipientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB5327F7DB16004E46CB /* AddRecipientViewModel.swift */; };
 		E73FFB5727F8FE6B004E46CB /* HomeUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB5627F8FE6B004E46CB /* HomeUserModel.swift */; };
+		E73FFB5927FBD314004E46CB /* ListUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB5827FBD314004E46CB /* ListUsersViewController.swift */; };
+		E73FFB5B27FBFB96004E46CB /* AddRecipientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB5A27FBFB96004E46CB /* AddRecipientModel.swift */; };
+		E73FFB5D27FBFE2C004E46CB /* AddRecipientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB5C27FBFE2C004E46CB /* AddRecipientTableViewCell.swift */; };
 		E754E2AA27F411A500CBFC47 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E754E2A927F411A500CBFC47 /* FirebaseAuth */; };
 		E754E2AC27F411A500CBFC47 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = E754E2AB27F411A500CBFC47 /* FirebaseAuthCombine-Community */; };
 		E754E2AE27F411A500CBFC47 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = E754E2AD27F411A500CBFC47 /* FirebaseDatabase */; };
@@ -100,6 +103,9 @@
 		E73FFB5127F7D884004E46CB /* AddRecipientData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipientData.swift; sourceTree = "<group>"; };
 		E73FFB5327F7DB16004E46CB /* AddRecipientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipientViewModel.swift; sourceTree = "<group>"; };
 		E73FFB5627F8FE6B004E46CB /* HomeUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeUserModel.swift; sourceTree = "<group>"; };
+		E73FFB5827FBD314004E46CB /* ListUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersViewController.swift; sourceTree = "<group>"; };
+		E73FFB5A27FBFB96004E46CB /* AddRecipientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipientModel.swift; sourceTree = "<group>"; };
+		E73FFB5C27FBFE2C004E46CB /* AddRecipientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipientTableViewCell.swift; sourceTree = "<group>"; };
 		E754E2B127F4145D00CBFC47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E754E2B327F4170600CBFC47 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E754E2B627F41C9300CBFC47 /* HomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataManager.swift; sourceTree = "<group>"; };
@@ -229,6 +235,8 @@
 				E73FFB5027F7D859004E46CB /* AddRecipientModels */,
 				E73FFB5527F7DBAD004E46CB /* AddRecipientViewModel */,
 				E70B647227ED996700F94109 /* AddNewRecipientViewController.swift */,
+				E73FFB5827FBD314004E46CB /* ListUsersViewController.swift */,
+				E73FFB5C27FBFE2C004E46CB /* AddRecipientTableViewCell.swift */,
 			);
 			path = AddRecipient;
 			sourceTree = "<group>";
@@ -285,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				E73FFB5127F7D884004E46CB /* AddRecipientData.swift */,
+				E73FFB5A27FBFB96004E46CB /* AddRecipientModel.swift */,
 			);
 			path = AddRecipientModels;
 			sourceTree = "<group>";
@@ -696,9 +705,11 @@
 				C59A81F927E6FD4B0038C662 /* UIImageView++.swift in Sources */,
 				E75D78A427E3167400F95DDD /* UIView++.swift in Sources */,
 				E75D789827E309D700F95DDD /* UIButton++.swift in Sources */,
+				E73FFB5927FBD314004E46CB /* ListUsersViewController.swift in Sources */,
 				FAF8163627EA5E710098989A /* PhoneAccountViewController.swift in Sources */,
 				E754E2B427F4170600CBFC47 /* HomeViewModel.swift in Sources */,
 				FA72741627FAA18E00BC81E6 /* CreateAccountDataManager.swift in Sources */,
+				E73FFB5D27FBFE2C004E46CB /* AddRecipientTableViewCell.swift in Sources */,
 				C98304BD27EE0F0500EFD48A /* HomeCardViewController.swift in Sources */,
 				FA72740E27FA2DC500BC81E6 /* ConstantsAlerts.swift in Sources */,
 				E75D78C627E45B0A00F95DDD /* ConstantsUIKit.swift in Sources */,
@@ -717,6 +728,7 @@
 				C5B7DE7E27ECF790004AE6C7 /* ShipViewController.swift in Sources */,
 				E70B646E27ED976300F94109 /* HomeServicesViewController.swift in Sources */,
 				FAA92A9A27E96C7700083E10 /* DetailAccountViewController.swift in Sources */,
+				E73FFB5B27FBFB96004E46CB /* AddRecipientModel.swift in Sources */,
 				FAF8164727EC230E0098989A /* SuccessViewController.swift in Sources */,
 				E75D78A627E3193900F95DDD /* LoginViewController.swift in Sources */,
 				E70B647327ED996700F94109 /* AddNewRecipientViewController.swift in Sources */,

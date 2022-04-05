@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 extension UIButton{
+    
     func formartBlueGreen(){
         self.layer.cornerRadius = 8
         self.backgroundColor = ConstantsUIColor.greenBlue
@@ -62,6 +63,22 @@ extension UIButton{
         button.addSubview(label)
         label.font = ConstantsFont.f18SemiBold
         label.textColor = .darkGray
+        label.textAlignment = .left
+        label.text = text
+        label.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            label.leadingAnchor.constraint(equalTo: button.leadingAnchor, constant: 0),
+            label.topAnchor.constraint(equalTo: button.topAnchor, constant: 0),
+            label.widthAnchor.constraint(equalTo: button.widthAnchor, multiplier: 1),
+            label.heightAnchor.constraint(equalTo: button.heightAnchor, multiplier: 1)
+        ])
+    }
+    
+    func addLabelDark(button: UIButton, text: String){
+        let label = UILabel()
+        button.addSubview(label)
+        label.font = ConstantsFont.f18SemiBold
+        label.textColor = .black
         label.textAlignment = .left
         label.text = text
         label.translatesAutoresizingMaskIntoConstraints = false

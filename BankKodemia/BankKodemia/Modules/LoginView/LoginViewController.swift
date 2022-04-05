@@ -189,6 +189,7 @@ class LoginViewController: UIViewController {
     }
     func sesionActiva(){
             print("Estamos logueados")
+        
     
             let  tabBarVC = UITabBarController()
             let home = HomeViewController()
@@ -199,9 +200,10 @@ class LoginViewController: UIViewController {
             target.title = "TARJETA"
             services.title = "SERVICIOS"
             //logOut.title = "LogOut"
-            UITabBar.appearance().tintColor = .black
-            UITabBar.appearance().isTranslucent = true
-            UITabBar.appearance().backgroundColor = UIColor.gray
+        UITabBar.appearance().unselectedItemTintColor = .white
+        UITabBar.appearance().tintColor = ConstantsUIColor.greenBlue
+            //UITabBar.appearance().isTranslucent = true
+            UITabBar.appearance().backgroundColor = UIColor.black
     //        home.tabBarItem.image = UIImage(named: "casa25")
     //        search.tabBarItem.image = UIImage(named: "search25")
             //logOut.tabBarItem.image = UIImage(named: "logout25")
