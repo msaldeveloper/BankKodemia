@@ -76,9 +76,9 @@ class LoginViewController: UIViewController {
         initSessionLabel.formartTitle(view: view, textTitle: TextLocals.init_session_top_message)
     }
     func welcomeLabel(){
-        initSessionWelcomeLabel = UILabel()
         initSessionWelcomeLabel.text = TextLocals.init_session_description_message
         initSessionWelcomeLabel.font = ConstantsFont.f16Normal
+        initSessionWelcomeLabel.textColor = .black
         initSessionWelcomeLabel.textAlignment = .left
         initSessionWelcomeLabel.lineBreakMode = .byWordWrapping
         initSessionWelcomeLabel.numberOfLines = 0
@@ -103,6 +103,7 @@ class LoginViewController: UIViewController {
         textFieldLabelTop = UILabel()
         textFieldLabelTop.text = TextLocals.init_session_top_email_input_message
         textFieldLabelTop.font = ConstantsFont.f14Normal
+        textFieldLabelTop.textColor = .black
         view.addSubview(textFieldLabelTop)
         textFieldLabelTop.addAnchorsAndSize(width: nil, height: nil, left: 21, top: nil, right: nil, bottom: 2, withAnchor: .bottom, relativeToView: textFieldEmail)
     }
@@ -123,6 +124,7 @@ class LoginViewController: UIViewController {
         passwordFieldLabelTop = UILabel()
         passwordFieldLabelTop.text = TextLocals.init_session_top_password_input_message
         passwordFieldLabelTop.font = ConstantsFont.f14Normal
+        passwordFieldLabelTop.textColor = .black
         view.addSubview(passwordFieldLabelTop)
         passwordFieldLabelTop.addAnchorsAndSize(width: nil, height: nil, left: 21, top: nil, right: nil, bottom: 2, withAnchor: .bottom, relativeToView: textFieldPassword)
     }
@@ -194,7 +196,7 @@ class LoginViewController: UIViewController {
             let  tabBarVC = UITabBarController()
             let home = HomeViewController()
             let target = HomeCardViewController()
-            let services = ShipViewController()//HomeServicesViewController()
+            let services = HomeServicesViewController()//HomeServicesViewController()
             //let logOut = ViewController()
             home.title = "INICIO"
             target.title = "TARJETA"

@@ -45,6 +45,7 @@ class IdentityVerificationViewController: UIViewController {
     func suggestDetailInfoSection(){
         
         infoSuggestLabel = UILabel()
+        infoSuggestLabel.textColor = .black
         infoSuggestLabel.text = Text.CreateAccount.IdentityVerification.TopMessage
         infoSuggestLabel.font = UIFont(name: "Poppins-Medium", size: 20)
         infoSuggestLabel.textAlignment = .left
@@ -64,12 +65,13 @@ class IdentityVerificationViewController: UIViewController {
         legalButton.addAnchorsAndSize(width: nil, height: 37, left: 21, top: (height/20)*2, right: 21, bottom: nil, withAnchor: .top, relativeToView: infoSuggestLabel)
                         
         legalTextLabel = UILabel()
+        legalTextLabel.textColor = .black
         legalTextLabel.text = Text.CreateAccount.IdentityVerification.BottonMessage
         legalTextLabel.numberOfLines = 0
         legalTextLabel.font = UIFont(name: "Poppins", size: 17)
         legalTextLabel.textAlignment = .justified
-        legalButton.addSubview(legalTextLabel)
-        legalTextLabel.addAnchorsAndSize(width: nil, height: nil, left: 0, top: nil, right: 21, bottom: 20)
+        view.addSubview(legalTextLabel)
+        legalTextLabel.addAnchorsAndSize(width: nil, height: nil, left: 21, top: 20, right: 21, bottom: nil,withAnchor: .top, relativeToView: infoSuggestLabel)
         
     }
     

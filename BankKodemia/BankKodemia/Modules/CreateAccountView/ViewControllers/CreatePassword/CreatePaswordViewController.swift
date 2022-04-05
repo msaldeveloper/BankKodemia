@@ -72,6 +72,7 @@ class CreatePasswordViewController: UIViewController {
     
     func suggestInfoSection(){
         infoSuggestLabel = UILabel()
+        infoSuggestLabel.textColor = .black
         infoSuggestLabel.text = Text.CreateAccount.CreatePassword.TopMessage
         infoSuggestLabel.font = UIFont(name: "Poppins-Medium", size: 20)
         infoSuggestLabel.textAlignment = .left
@@ -81,6 +82,7 @@ class CreatePasswordViewController: UIViewController {
         infoSuggestLabel.addAnchorsAndSize(width: nil, height: nil, left: 21, top: height/10, right: 21, bottom: nil, withAnchor: .top, relativeToView: logo)
         
         legalTopLabel = UILabel()
+        legalTopLabel.textColor = .black
         legalTopLabel.text = Text.CreateAccount.CreatePassword.MediumMessage
         legalTopLabel.font = UIFont(name: "Poppins", size: 16)
         legalTopLabel.textAlignment = .left
@@ -90,6 +92,7 @@ class CreatePasswordViewController: UIViewController {
         legalTopLabel.addAnchorsAndSize(width: nil, height: nil, left: 21, top: height/40, right: 21, bottom: nil, withAnchor: .top, relativeToView: infoSuggestLabel)
         
         legalBottomLabel = UILabel()
+        legalBottomLabel.textColor = .black
         legalBottomLabel.text = Text.CreateAccount.CreatePassword.BottomMessage
         legalBottomLabel.font = UIFont(name: "Poppins", size: 16)
         legalBottomLabel.textAlignment = .left
@@ -111,6 +114,7 @@ class CreatePasswordViewController: UIViewController {
         createPasswordTextField.infoTextFielFormat()
         
         createPasswordTextLabel = UILabel()
+        createPasswordTextLabel.textColor = .black
         createPasswordTextLabel.text = Text.CreateAccount.CreatePassword.CreateLabel
         createPasswordTextLabel.font = UIFont(name: "Poppins-Medium", size: 16)
         createPasswordFieldView.addSubview(createPasswordTextLabel)
@@ -128,6 +132,7 @@ class CreatePasswordViewController: UIViewController {
         confirmPasswordTextField.infoTextFielFormat()
         
         confirmPasswordTextLabel = UILabel()
+        confirmPasswordTextField.textColor = .black
         confirmPasswordTextLabel.text = Text.CreateAccount.CreatePassword.ConfirmLabel
         confirmPasswordTextLabel.font = UIFont(name: "Poppins-Medium", size: 16)
         confirmPasswordFieldView.addSubview(confirmPasswordTextLabel)

@@ -80,6 +80,7 @@ class IdSelectViewController: UIViewController {
     func suggestDetailInfoSection(){
         
         infoSuggestLabel = UILabel()
+        infoSuggestLabel.textColor = .black
         infoSuggestLabel.text = Text.CreateAccount.IdSelect.TopMessage
         infoSuggestLabel.font = UIFont(name: "Poppins-Medium", size: 20)
         infoSuggestLabel.textAlignment = .left
@@ -173,6 +174,7 @@ class IdSelectViewController: UIViewController {
         legalButton.addAnchorsAndSize(width: nil, height: nil, left: 21, top: nil, right: 21, bottom: 100)
                         
         legalTextLabel = UILabel()
+        legalTextLabel.textColor = .black
         legalTextLabel.text = Text.CreateAccount.IdSelect.BottomMessage
         legalTextLabel.numberOfLines = 0
         legalTextLabel.font = UIFont(name: "Poppins", size: 17)

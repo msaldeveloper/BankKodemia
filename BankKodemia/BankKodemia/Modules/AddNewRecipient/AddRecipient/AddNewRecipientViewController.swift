@@ -107,6 +107,7 @@ class AddNewRecipientViewController: UIViewController {
         textFieldDigit.addAnchorsAndSize(width: nil, height: nil, left: 10, top: 0, right: 10, bottom: 0)
         
         textFieldDigitLabelTop = UILabel()
+        textFieldDigitLabelTop.textColor = .black
         textFieldDigitLabelTop.text = Text.AddNewRecipient.DigitsLabel
         textFieldDigitLabelTop.font = UIFont(name: "Poppins-Medium", size: 16)
         view.addSubview(textFieldDigitLabelTop)
@@ -124,6 +125,7 @@ class AddNewRecipientViewController: UIViewController {
         textFieldNumOfCard.addAnchorsAndSize(width: nil, height: nil, left: 10, top: 0, right: 10, bottom: 0)
         
         textFieldNumOfCardTop = UILabel()
+        textFieldNumOfCardTop.textColor = .black
         textFieldNumOfCardTop.text = Text.AddNewRecipient.CardNumberLabel
         textFieldNumOfCardTop.font = UIFont(name: "Poppins-Medium", size: 16)
         view.addSubview(textFieldNumOfCardTop)
@@ -141,6 +143,7 @@ class AddNewRecipientViewController: UIViewController {
         textFieldInstitution.addAnchorsAndSize(width: nil, height: nil, left: 10, top: 0, right: 10, bottom: 0)
         
         textFieldInstitutionTop = UILabel()
+        textFieldInstitutionTop.textColor = .black
         textFieldInstitutionTop.text = Text.AddNewRecipient.InstitutionLabel
         textFieldInstitutionTop.font = UIFont(name: "Poppins-Medium", size: 16)
         view.addSubview(textFieldInstitutionTop)
@@ -158,6 +161,7 @@ class AddNewRecipientViewController: UIViewController {
         textFieldName.addAnchorsAndSize(width: nil, height: nil, left: 10, top: 0, right: 10, bottom: 0)
         
         textFieldNameTop = UILabel()
+        textFieldNameTop.textColor = .black
         textFieldNameTop.text = Text.AddNewRecipient.NameLabel
         textFieldNameTop.font = UIFont(name: "Poppins-Medium", size: 16)
         view.addSubview(textFieldNameTop)
@@ -175,6 +179,7 @@ class AddNewRecipientViewController: UIViewController {
         textFieldEmail.addAnchorsAndSize(width: nil, height: nil, left: 10, top: 0, right: 10, bottom: 0)
         
         textFieldEmailTop = UILabel()
+        textFieldEmailTop.textColor = .black
         textFieldEmailTop.text = Text.AddNewRecipient.EmailLabel
         textFieldEmailTop.font = UIFont(name: "Poppins-Medium", size: 16)
         view.addSubview(textFieldEmailTop)
@@ -205,6 +210,7 @@ extension AddNewRecipientViewController {
     @objc func clabeButtonAction(){
         textFieldDigitLabelTop.text = Text.AddNewRecipient.DigitsLabel
         print("clabe label push")
+        textFieldDigitLabelTop.textColor = .black
         labelsNav.addSubview(clabeLabel)
         clabeLabel.addLabelGreenblue(button: clabeLabel, text: Text.AddNewRecipient.ClabeLabel)
         clabeLabel.addAnchorsAndSize(width: nil, height: 27, left: 0, top: 2, right: nil, bottom: nil)

@@ -86,6 +86,7 @@ class DetailAccountViewController: UIViewController {
         infoSuggestDetailLabel = UILabel()
         infoSuggestDetailLabel.text = Text.CreateAccount.Detail.TopMessage
         infoSuggestDetailLabel.font = UIFont(name: "Poppins-Medium", size: 20)
+        infoSuggestDetailLabel.textColor = .black
         infoSuggestDetailLabel.textAlignment = .left
         infoSuggestDetailLabel.lineBreakMode = .byWordWrapping
         infoSuggestDetailLabel.numberOfLines = 0
@@ -105,6 +106,7 @@ class DetailAccountViewController: UIViewController {
         nameInfoTextField.infoTextFielFormat()
         
         nameInfoTextLabel = UILabel()
+        nameInfoTextLabel.textColor = .black
         nameInfoTextLabel.text = Text.CreateAccount.Detail.NameMessage
         nameInfoTextLabel.font = UIFont(name: "Poppins-Medium", size: 16)
         nameInfoTextField.addSubview(nameInfoTextLabel)
@@ -123,6 +125,7 @@ class DetailAccountViewController: UIViewController {
         lastNameInfoTextField.infoTextFielFormat()
         
         latNameInfoTextLabel = UILabel()
+        latNameInfoTextLabel.textColor = .black
         latNameInfoTextLabel.text = Text.CreateAccount.Detail.LastNameMessage
         latNameInfoTextLabel.font = UIFont(name: "Poppins-Medium", size: 16)
         lastNameInfoTextField.addSubview(latNameInfoTextLabel)
@@ -141,6 +144,7 @@ class DetailAccountViewController: UIViewController {
         occupationInfoTextField.infoTextFielFormat()
         
         occupationInfoTextLabel = UILabel()
+        occupationInfoTextLabel.textColor = .black
         occupationInfoTextLabel.text = Text.CreateAccount.Detail.OcupationMessage
         occupationInfoTextLabel.font = UIFont(name: "Poppins-Medium", size: 16)
         occupationInfoTextField.addSubview(occupationInfoTextLabel)
@@ -159,6 +163,7 @@ class DetailAccountViewController: UIViewController {
         dateInfoTextField.infoTextFielFormat()
         
         dateInfoTextLabel = UILabel()
+        dateInfoTextLabel.textColor = .black
         dateInfoTextLabel.text = Text.CreateAccount.Detail.Date
         dateInfoTextLabel.font = UIFont(name: "Poppins-Medium", size: 16)
         dateInfoFieldView.addSubview(dateInfoTextLabel)

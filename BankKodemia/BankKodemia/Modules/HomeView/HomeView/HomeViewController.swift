@@ -64,6 +64,7 @@ class HomeViewController: UIViewController {
         
         money.textAlignment = .center
         money.font = ConstantsFont.f20SemiBold
+        money.textColor = .black
         view.addSubview(money)
         money.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -71,7 +72,7 @@ class HomeViewController: UIViewController {
             money.topAnchor.constraint(equalTo: moneyTitle.bottomAnchor, constant: 3*height/120),
             money.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 4/5)
         ])
-        
+        sendMoneyButton.addTarget(self, action: #selector(sendButtonAction), for: .touchUpInside)
         sendMoneyButton.formartClear()
         view.addSubview(sendMoneyButton)
         sendMoneyButton.translatesAutoresizingMaskIntoConstraints = false
@@ -148,8 +149,15 @@ class HomeViewController: UIViewController {
     }
     
 }
-
-
+//MARK: - objc Actions
+extension HomeViewController {
+    @objc func sendButtonAction(){
+        let sendMoneyViewController = SendMoneyViewController()
+        sendMoneyViewController.modalPresentationStyle = .fullScreen
+        present(sendMoneyViewController,animated: true,completion:{print("register button press validated")} )
+    }
+}
+//MARK: - table View
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -157,8 +165,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView() // Aqui definimos el UIView el cual se va a retornar en la funcion
+        let view = UIView()
+        view.backgroundColor = ConstantsUIColor.greyBackGround
+        // Aqui definimos el UIView el cual se va a retornar en la funcion
         let label = UILabel(frame: CGRect(x: 10, y: 0, width: 8*width/9, height: 20))
+        label.textColor = .black
         label.text = String(movementsList[section][0].createdAt[..<(movementsList[section][0].createdAt.firstIndex(of: "T") ?? movementsList[section][0].createdAt.endIndex)])
         label.font = ConstantsFont.f14Normal
         view.addSubview(label)
