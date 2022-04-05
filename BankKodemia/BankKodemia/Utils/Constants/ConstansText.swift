@@ -189,7 +189,7 @@ struct Text{
         static let urlBase: String = "https://bankodemia.kodemia.mx"
         static let getUserFullProfile = "/users/me/profile"
         static let listUsers = "/users"
-        
+        static let transactions = "/transactions"
     }
 }
 
