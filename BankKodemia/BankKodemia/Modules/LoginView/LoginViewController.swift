@@ -194,7 +194,7 @@ class LoginViewController: UIViewController {
             let  tabBarVC = UITabBarController()
             let home = HomeViewController()
             let target = HomeCardViewController()
-            let services = AddNewRecipientViewController()//HomeServicesViewController()
+            let services = ShipViewController()//HomeServicesViewController()
             //let logOut = ViewController()
             home.title = "INICIO"
             target.title = "TARJETA"

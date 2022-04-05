@@ -124,9 +124,8 @@ extension UIButton{
     }
     
     func backButton(view: UIView, textDinamic: String, widthText: CGFloat){
-        self.backgroundColor = .green
         let arrowImage = UIImageView(frame: CGRect(x: 0, y: ConstantsUIKit.height/320, width: 3*ConstantsUIKit.height/160, height: 3*ConstantsUIKit.height/160))
-        arrowImage.backgroundColor = .red
+        arrowImage.image = UIImage(named: "backArrow")
         self.addSubview(arrowImage)
         let textButton = UILabel(frame: CGRect(x: 3*ConstantsUIKit.height/160 + ConstantsUIKit.width/36, y: -ConstantsUIKit.height/240, width: widthText, height: ConstantsUIKit.height/30))
         textButton.font = ConstantsFont.f14Normal
