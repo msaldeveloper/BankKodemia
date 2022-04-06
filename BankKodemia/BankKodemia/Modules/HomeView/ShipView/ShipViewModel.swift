@@ -15,7 +15,6 @@ class ShipViewModel {
 //    var addRecipientViewModel = AddRecipientViewModel()
     private var cancellables: [AnyCancellable] = []
     static var newToken = HTTPHeaders()
-    static var userId = "62170b9927cf12a652414ded"
     
     fileprivate var newAlertText: String {
         didSet{
@@ -28,12 +27,12 @@ class ShipViewModel {
         self.newAlertText = ""
     }
     
-    func shipDepositValidator(_ deposit: String, _ concept: String){
+    func shipDepositValidator(_ deposit: String, _ concept: String,_ id : String){
         if concept == "" {
             newAlert("concept")
         }else {
-            let parseDeposit = Int(deposit) ?? 0
-            makeDeposit(parseDeposit, concept)
+            let parseDeposit = Double(deposit) ?? 0.0
+            makeDeposit(parseDeposit, concept, id)
             if parseDeposit <= 0 {
                 newAlert("amount")
             }
@@ -51,9 +50,9 @@ class ShipViewModel {
         
     }
     
-    private func makeDeposit(_ deposit:Int,_ concept: String ){
+    private func makeDeposit(_ deposit:Double,_ concept: String,_ id: String){
         print("data before post",deposit,concept)
-        shipAction(deposit, concept, "PAYMENT", ShipViewModel.newToken, ShipViewModel.userId)
+        shipAction(deposit, concept, "PAYMENT", ShipViewModel.newToken, id)
             .sink{ result in
             switch result.result {
             case .success(_):

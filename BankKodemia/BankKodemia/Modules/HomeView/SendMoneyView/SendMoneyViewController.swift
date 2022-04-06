@@ -131,6 +131,14 @@ extension SendMoneyViewController: UITableViewDelegate, UITableViewDataSource{
         return height/10
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let vc = ShipViewController(name: contactsList[indexPath.row].name, id: contactsList[indexPath.row].id)
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
+        
+    }
+    
 }
 
 

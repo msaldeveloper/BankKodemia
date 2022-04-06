@@ -34,6 +34,9 @@ class ShipViewController: UIViewController{
     var shipViewModel = ShipViewModel()
     private var cancellables: [AnyCancellable] = []
     
+    var name : String = ""
+    var id: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -42,6 +45,17 @@ class ShipViewController: UIViewController{
         conceptTextField.delegate = self
         validationBind()
     }
+    
+    init(name: String, id:String){
+        super.init(nibName: nil, bundle: nil)
+        self.name = name
+        self.id = id
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
     func initUI(){
         
@@ -67,13 +81,13 @@ class ShipViewController: UIViewController{
             shipToLabel.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/30)
         ])
         
-        shipToNameDetail.text = "Cruz Eduardo Reveles Caldera"
+        shipToNameDetail.text = self.name
         shipToNameDetail.font = ConstantsFont.f14SemiBold
         shipToNameDetail.textColor = .black
         view.addSubview(shipToNameDetail)
         shipToNameDetail.listDetails(view: view, previous: shipToLabel, height: 1/30)
         
-        shipToCountDetail.text = "1234 1234 1234 1234 / BANORTE"
+        shipToCountDetail.text = self.id
         shipToCountDetail.textColor = ConstantsUIColor.greyKodemia
         shipToCountDetail.font = ConstantsFont.f14Regular
         view.addSubview(shipToCountDetail)
@@ -202,7 +216,7 @@ extension ShipViewController {
         dismiss(animated: true)
     }
     @objc func shipButton(){
-        self.shipViewModel.shipDepositValidator(quantityTextField.text ?? "", conceptTextField.text ?? "")
+        self.shipViewModel.shipDepositValidator(quantityTextField.text ?? "", conceptTextField.text ?? "", self.id)
     }
     
 }
