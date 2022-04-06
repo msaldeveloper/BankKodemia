@@ -10,6 +10,8 @@ import Combine
 
 class DetailAccountViewController: UIViewController {
     lazy var logo : UIImageView = UIImageView()
+    var arrowButton: UIButton = UIButton()
+    var titleSuggestLabel: UILabel = UILabel()
     //var UIDatePicker : UIControl = UIControl()
     var datePicker: UIDatePicker = UIDatePicker()
     
@@ -68,6 +70,8 @@ class DetailAccountViewController: UIViewController {
     
     func UIInit(){
         logoImage()
+        returnButton()
+        titleLabel()
         suggestDetailInfoSection()
         nameDetailInfoField()
         lastNameDetailInfoField()
@@ -79,6 +83,17 @@ class DetailAccountViewController: UIViewController {
     func logoImage(){
         view.addSubview(logo)
         logo.logoFormart(view: view)
+    }
+    
+    func returnButton(){
+        view.addSubview(arrowButton)
+        arrowButton.backButton(view: view, textDinamic: TextLocals.init_session_top_email_input_message.uppercased(), widthText: width/2)
+        arrowButton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
+    }
+    
+    func titleLabel(){
+        view.addSubview(titleSuggestLabel)
+        titleSuggestLabel.formartTitle(view: view, textTitle: Text.CreateAccount.Detail.title)
     }
     
     func suggestDetailInfoSection(){
