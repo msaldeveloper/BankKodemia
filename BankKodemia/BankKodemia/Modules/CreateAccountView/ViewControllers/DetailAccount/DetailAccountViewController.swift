@@ -7,14 +7,15 @@
 
 import UIKit
 import Combine
+import SwiftUI
 
 class DetailAccountViewController: UIViewController {
     lazy var logo : UIImageView = UIImageView()
     var arrowButton: UIButton = UIButton()
     var titleSuggestLabel: UILabel = UILabel()
     //var UIDatePicker : UIControl = UIControl()
+    var selectedDate : String = String()
     var datePicker: UIDatePicker = UIDatePicker()
-    
     // SuggestDetailInfo: Indicaciones de la seccion
     var infoSuggestDetailLabel: UILabel = UILabel()
     
@@ -53,6 +54,7 @@ class DetailAccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = backgroundColor
+        
         UIInit()
         validationBind()
         //Looks for single or multiple taps.
@@ -170,20 +172,29 @@ class DetailAccountViewController: UIViewController {
     func dateDetailInfoField(){
         
         dateInfoFieldView = UIView()
-        dateInfoFieldView.formatUIView(activate: false)
+        dateInfoFieldView.formatUIViewDate(activate: false)
         view.addSubview(dateInfoFieldView)
-        dateInfoFieldView.addAnchorsAndSize(width: nil, height: 37, left: 21, top: height/20, right: 21, bottom: nil, withAnchor: .top, relativeToView: occupationInfoFieldView)
+        dateInfoFieldView.addAnchorsAndSize(width: nil, height: 100, left: 21, top: height/20, right: 21, bottom: nil, withAnchor: .top, relativeToView: occupationInfoFieldView)
         
-        dateInfoFieldView.addSubview(dateInfoTextField)
-        dateInfoTextField.infoTextFielFormat()
+//        dateInfoFieldView.addSubview(dateInfoTextField)
+//        dateInfoTextField.infoTextFielFormat()
         
         dateInfoTextLabel = UILabel()
+
         dateInfoTextLabel.textColor = .black
         dateInfoTextLabel.text = Text.CreateAccount.Detail.Date
         dateInfoTextLabel.font = UIFont(name: "Poppins-Medium", size: 16)
         dateInfoFieldView.addSubview(dateInfoTextLabel)
         dateInfoTextLabel.addAnchorsAndSize(width: nil, height: nil, left: 0, top: nil, right: nil, bottom: 4, withAnchor: .bottom, relativeToView: dateInfoFieldView)
-        
+
+        //PICKER DATE
+        datePicker = UIDatePicker()
+        datePicker.preferredDatePickerStyle = .wheels
+        datePicker.datePickerMode = .date
+        datePicker.backgroundColor = UIColor.white
+        datePicker.addTarget(self, action: #selector(self.datePickerValueChanged(_:)), for: .valueChanged)
+        dateInfoFieldView.addSubview(datePicker)
+        datePicker.addAnchorsAndSize(width: nil, height: 150, left: 0, top: 5, right: 0, bottom: 5, withAnchor: .top, relativeToView: dateInfoTextLabel)        
     }
     
     func continueButtonSection(){
@@ -223,6 +234,25 @@ class DetailAccountViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    @objc func datePickerValueChanged(_ sender: UIDatePicker){
+            
+            // Create date formatter
+            let dateFormatter: DateFormatter = DateFormatter()
+            
+            // Set date format
+            dateFormatter.dateFormat = "yyyy/MM/dd"
+            
+            // Apply date format
+            self.selectedDate = dateFormatter.string(from: sender.date)
+            
+            print("Selected value \(selectedDate)")
+        }
+        
+        override func didReceiveMemoryWarning() {
+            super.didReceiveMemoryWarning()
+            // Dispose of any resources that can be recreated.
+        }
+    
     
     
     
@@ -242,11 +272,13 @@ extension DetailAccountViewController {
     @objc func continueButton(){
         print("continue button pressed")
                 
+        let selected = self.selectedDate.replacingOccurrences(of: "/", with: "-", options: .literal, range: nil)
+        print("Fecha de Nacimiento:", "\(selected)T00:00:00.022Z")
         self.createNewAccountViewModel.createAccountValidator(
             nameInfoTextField.text ?? "",
             lastNameInfoTextField.text ?? "",
             occupationInfoTextField.text ?? "",
-            dateInfoTextField.text ?? ""
+            "\(selected)T00:00:00.022Z"
         )
         
         let phoneAccountViewController = PhoneAccountViewController()
