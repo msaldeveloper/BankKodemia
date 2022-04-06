@@ -206,9 +206,9 @@ class LoginViewController: UIViewController {
         UITabBar.appearance().tintColor = ConstantsUIColor.greenBlue
             //UITabBar.appearance().isTranslucent = true
             UITabBar.appearance().backgroundColor = UIColor.black
-    //        home.tabBarItem.image = UIImage(named: "casa25")
-    //        search.tabBarItem.image = UIImage(named: "search25")
-            //logOut.tabBarItem.image = UIImage(named: "logout25")
+            home.tabBarItem.image = UIImage(named: "logo_tab")
+        target.tabBarItem.image = UIImage(named: "cards")
+            services.tabBarItem.image = UIImage(named: "List")
             tabBarVC.setViewControllers([home,target,services], animated: false)
             tabBarVC.modalPresentationStyle = .fullScreen
             present(tabBarVC, animated: true, completion: nil)
