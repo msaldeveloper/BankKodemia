@@ -14,22 +14,34 @@ class ListUsersViewController: UIViewController {
     var arrowButton: UIButton = UIButton()
     var logo : UIImageView = UIImageView()
     var initSessionLabel : UILabel = UILabel()
-    var movementsList : [UserDataModel] = []
+    var userList : [UserDataModel] = []
     private var cancellables: [AnyCancellable] = []
-    lazy var movementsTable : UITableView = UITableView()
+    lazy var userTable : UITableView = UITableView()
     
+    let searchContoller = UISearchController(searchResultsController: nil)
     
+    var filterUsers : [UserDataModel] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = backgroundColor
-        self.addRecipientViewModel.listUserDataRequest()
+        
+        definesPresentationContext = true
+        
         initUI()
+        
+        userTable.delegate = self
+        userTable.dataSource = self
+        searchContoller.searchResultsUpdater = self
+        userTable.tableHeaderView = searchContoller.searchBar
+        searchContoller.automaticallyShowsCancelButton = false
+        
+        self.addRecipientViewModel.listUserDataRequest()
+        
         reloadData()
         newData()
+        newDataFilter()
         
-        movementsTable.delegate = self
-        movementsTable.dataSource = self
     }
     func initUI(){
         logoComponent()
@@ -52,14 +64,14 @@ class ListUsersViewController: UIViewController {
         initSessionLabel.formartTitle(view: view, textTitle: Text.AddNewRecipient.PageTitle)
     }
     func newTable(){
-        movementsTable.backgroundColor = .white
-        view.addSubview(movementsTable)
-        movementsTable.translatesAutoresizingMaskIntoConstraints = false
+        userTable.backgroundColor = .white
+        view.addSubview(userTable)
+        userTable.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            movementsTable.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            movementsTable.topAnchor.constraint(equalTo: view.topAnchor, constant: 27*height/80),
-            movementsTable.widthAnchor.constraint(equalToConstant: width),
-            movementsTable.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 8/13)
+            userTable.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            userTable.topAnchor.constraint(equalTo: view.topAnchor, constant: 3*height/16),
+            userTable.widthAnchor.constraint(equalToConstant: width),
+            userTable.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 13/16)
         ])
     }
     
@@ -68,7 +80,17 @@ class ListUsersViewController: UIViewController {
         self.addRecipientViewModel
             .dataTableView
             .sink{ newList in
-                self.movementsList = newList
+                self.userList = newList
+            }
+            .store(in: &cancellables)
+    }
+    
+    //suscriptor para traer la data del tablaView
+    fileprivate func newDataFilter(){
+        self.addRecipientViewModel
+            .dataTableViewFilter
+            .sink{ newList in
+                self.filterUsers = newList
             }
             .store(in: &cancellables)
     }
@@ -79,7 +101,7 @@ class ListUsersViewController: UIViewController {
             .reloadDataTableView
             .sink{ _ in
                 DispatchQueue.main.async {
-                    self.movementsTable.reloadData()
+                    self.userTable.reloadData()
                 }
             }
             .store(in: &cancellables)
@@ -103,13 +125,21 @@ extension ListUsersViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(movementsList.count)
-        return movementsList.count
+        if filterUsers.isEmpty && searchContoller.searchBar.text == ""{
+            return userList.count
+        }else{
+            return filterUsers.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell : UITableViewCell = AddRecipientTableViewCell(userList: movementsList[indexPath.row])
-        return cell
+        if filterUsers.isEmpty && searchContoller.searchBar.text == ""{
+            let cell : UITableViewCell = AddRecipientTableViewCell(userList: userList[indexPath.row])
+            return cell
+        }else{
+            let cell : UITableViewCell = AddRecipientTableViewCell(userList: filterUsers[indexPath.row])
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -117,13 +147,38 @@ extension ListUsersViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//
-//        let transaction = movementsList[indexPath.row]
-//        let vc = AddRecipientViewModel(transaction: transaction)
-//        vc.modalPresentationStyle = .fullScreen
-//        present(vc, animated: true, completion: nil)
-//
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var nameSelect = ""
+        var idSelect = ""
+        if filterUsers.isEmpty && searchContoller.searchBar.text == ""{
+            nameSelect = userList[indexPath.row].name + " " + userList[indexPath.row].lastName
+            idSelect = userList[indexPath.row]._id
+        }else{
+            nameSelect = filterUsers[indexPath.row].name + " " + filterUsers[indexPath.row].lastName
+            idSelect = filterUsers[indexPath.row]._id
+        }
+        let alerta = UIAlertController(title: "Agregar contacto", message: """
+                                       ¿Deseas agregar a \(nameSelect)?
+                                       Id: \(idSelect)
+                                       """, preferredStyle: .alert)
+        let aceptar = UIAlertAction(title: "Aceptar", style: .default) { _ in
+            self.addRecipientViewModel.saveContact(name: nameSelect, id: idSelect)
+        }
+        let cancelar = UIAlertAction(title: "Cancelar", style: .default, handler: nil)
+        alerta.addAction(aceptar)
+        alerta.addAction(cancelar)
+        present(alerta, animated: true, completion: nil)
+
+    }
+    
+}
+
+
+//MARK: -EXTENSIONS SEARCH
+extension ListUsersViewController: UISearchResultsUpdating, UISearchBarDelegate{
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        addRecipientViewModel.filtroContenido(search: self.searchContoller.searchBar.text ?? "")
+    }
     
 }

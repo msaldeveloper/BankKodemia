@@ -17,12 +17,14 @@ class DepositViewController: UIViewController {
     
     lazy var shipToLabel : UILabel = UILabel()
     
+    lazy var moneySign : UILabel = UILabel()
     lazy var quantityLabel : UILabel = UILabel()
     lazy var quantityTextField : UITextField = UITextField()
     lazy var quantityMoneyField: UITextField = UITextField()
     lazy var quantityDetail : UILabel = UILabel()
     
     lazy var conceptLabel : UILabel = UILabel()
+    lazy var conceptCounLabel : UILabel = UILabel()
     lazy var conceptBackground : UIView = UIView()
     lazy var conceptTextField : UITextView = UITextView()
     
@@ -37,10 +39,12 @@ class DepositViewController: UIViewController {
         view.backgroundColor = .white
         initUI()
         validationBind()
+        quantityTextField.delegate = self
+        conceptTextField.delegate = self
         //Looks for single or multiple taps.
-             let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
 
-            view.addGestureRecognizer(tap)
+        view.addGestureRecognizer(tap)
     }
     
     func initUI(){
@@ -74,7 +78,7 @@ class DepositViewController: UIViewController {
         quantityLabel.listDetails(view: view, previous: shipToLabel, height: 1/30)
         
         quantityTextField.borderStyle = .none
-        quantityTextField.placeholder = "$0.0"
+        quantityTextField.placeholder = "0.0"
         quantityTextField.textAlignment = .center
         quantityTextField.font = ConstantsFont.f20SemiBold
         quantityTextField.keyboardType = .numberPad
@@ -87,7 +91,16 @@ class DepositViewController: UIViewController {
             quantityTextField.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 2/30)
         ])
         
-    
+        moneySign.backgroundColor = .clear
+        moneySign.textColor = .black
+        moneySign.text = "$"
+        moneySign.font = ConstantsFont.f20SemiBold
+        view.addSubview(moneySign)
+        moneySign.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            moneySign.centerYAnchor.constraint(equalTo: quantityTextField.centerYAnchor),
+            moneySign.trailingAnchor.constraint(equalTo: quantityTextField.leadingAnchor, constant: 0),
+        ])
     
         quantityDetail.text = "MXN"
         quantityDetail.font = ConstantsFont.f14Normal
@@ -101,6 +114,15 @@ class DepositViewController: UIViewController {
         conceptLabel.textColor = .darkGray
         view.addSubview(conceptLabel)
         conceptLabel.listDetails(view: view, previous: quantityDetail, height: 1/30)
+        
+        conceptCounLabel.font = ConstantsFont.f14Regular
+        conceptCounLabel.textColor = ConstantsUIColor.greyKodemia
+        view.addSubview(conceptCounLabel)
+        conceptCounLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            conceptCounLabel.centerYAnchor.constraint(equalTo: conceptLabel.centerYAnchor),
+            conceptCounLabel.leadingAnchor.constraint(equalTo: conceptLabel.trailingAnchor, constant: -19*width/30),
+        ])
 
         conceptBackground.backgroundColor = ConstantsUIColor.greyBackGround
         conceptBackground.layer.cornerRadius = 10
@@ -186,4 +208,27 @@ extension DepositViewController {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
+}
+// MARK: - Extension UITextView
+extension DepositViewController: UITextViewDelegate{
+    
+    func textViewDidChange(_ textView: UITextView) {
+        conceptCounLabel.text = String(conceptTextField.text.count) + "/40"
+        if conceptTextField.text.count == 41 {
+            conceptCounLabel.text = "40/40"
+            conceptTextField.text.remove(at: conceptTextField.text.index(before: conceptTextField.text.endIndex))
+        }
+    }
+    
+}
+
+// MARK: - Extension UITextField
+extension DepositViewController: UITextFieldDelegate{
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        if quantityTextField.text?.count == 21{
+            quantityTextField.text?.remove(at: (quantityTextField.text?.index(before: quantityTextField.text!.endIndex))!)
+        }
+    }
+    
 }

@@ -39,6 +39,9 @@ class AddNewRecipientViewController: UIViewController {
     
     var addContactButton : UIButton = UIButton()
     
+    var labelClabe = UILabel()
+    var labelCard = UILabel()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,13 +84,37 @@ class AddNewRecipientViewController: UIViewController {
         labelsNav.addAnchorsAndSize(width: nil, height: 30, left: 21, top: 27, right: 21, bottom: nil, withAnchor: .top, relativeToView: initSessionLabel)
         
         labelsNav.addSubview(clabeLabel)
-        clabeLabel.addLabelDark(button: clabeLabel, text: Text.AddNewRecipient.ClabeLabel)
+        //clabeLabel.addLabelDark(button: clabeLabel, text: Text.AddNewRecipient.ClabeLabel)
+        clabeLabel.addSubview(labelClabe)
+        labelClabe.font = ConstantsFont.f18SemiBold
+        labelClabe.textColor = ConstantsUIColor.greenBlue
+        labelClabe.textAlignment = .left
+        labelClabe.text = Text.AddNewRecipient.ClabeLabel
+        labelClabe.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            labelClabe.leadingAnchor.constraint(equalTo: clabeLabel.leadingAnchor, constant: 0),
+            labelClabe.topAnchor.constraint(equalTo: clabeLabel.topAnchor, constant: 0),
+            labelClabe.widthAnchor.constraint(equalTo: clabeLabel.widthAnchor, multiplier: 1),
+            labelClabe.heightAnchor.constraint(equalTo: clabeLabel.heightAnchor, multiplier: 1)
+        ])
         let clabeButton = UITapGestureRecognizer(target: self, action: #selector(clabeButtonAction))
         clabeLabel.addGestureRecognizer(clabeButton)
         clabeLabel.addAnchorsAndSize(width: nil, height: 27, left: 0, top: 2, right: nil, bottom: nil)
         
         labelsNav.addSubview(cardLabel)
-        cardLabel.addLabelDark(button: cardLabel, text: Text.AddNewRecipient.CardLabel)
+        //cardLabel.addLabelDark(button: cardLabel, text: Text.AddNewRecipient.CardLabel)
+        cardLabel.addSubview(labelCard)
+        labelCard.font = ConstantsFont.f18SemiBold
+        labelCard.textColor = .black
+        labelCard.textAlignment = .left
+        labelCard.text = Text.AddNewRecipient.CardLabel
+        labelCard.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            labelCard.leadingAnchor.constraint(equalTo: cardLabel.leadingAnchor, constant: 0),
+            labelCard.topAnchor.constraint(equalTo: cardLabel.topAnchor, constant: 0),
+            labelCard.widthAnchor.constraint(equalTo: cardLabel.widthAnchor, multiplier: 1),
+            labelCard.heightAnchor.constraint(equalTo: cardLabel.heightAnchor, multiplier: 1)
+        ])
         let cardButton = UITapGestureRecognizer(target: self, action: #selector(cardButtonAction))
         cardLabel.addGestureRecognizer(cardButton)
         cardLabel.addAnchorsAndSize(width: nil, height: 27, left: width/3.5, top: 2, right: nil, bottom: nil)
@@ -191,7 +218,7 @@ class AddNewRecipientViewController: UIViewController {
         view.addSubview(contactButton)
         contactButton.addAnchorsAndSize(width: nil, height: 42, left: 21, top: 20, right: 21, bottom: nil, withAnchor: .top, relativeToView: fieldEmail)
     
-        contactButton.addLabelWhite(button: contactButton, text: Text.AddNewRecipient.ContactLabel)
+        contactButton.addLabelWhite(button: contactButton, text: Text.AddNewRecipient.ListUsers)
     }
     func addContactButtonComponent(){
         addContactButton.formartBlueGreen()
@@ -209,38 +236,21 @@ extension AddNewRecipientViewController {
     
     @objc func clabeButtonAction(){
         textFieldDigitLabelTop.text = Text.AddNewRecipient.DigitsLabel
-        print("clabe label push")
-        textFieldDigitLabelTop.textColor = .black
-        labelsNav.addSubview(clabeLabel)
-        clabeLabel.addLabelGreenblue(button: clabeLabel, text: Text.AddNewRecipient.ClabeLabel)
-        clabeLabel.addAnchorsAndSize(width: nil, height: 27, left: 0, top: 2, right: nil, bottom: nil)
-        
-        print("card label push")
-        labelsNav.addSubview(cardLabel)
-        cardLabel.addLabelDark(button: cardLabel, text: Text.AddNewRecipient.CardLabel)
-    
-        cardLabel.addAnchorsAndSize(width: nil, height: 27, left: width/3.5, top: 2, right: nil, bottom: nil)
+        labelClabe.textColor = ConstantsUIColor.greenBlue
+        labelCard.textColor = ConstantsUIColor.blackKodemia
 
-        
-        
     }
     @objc func cardButtonAction(){
         textFieldDigitLabelTop.text = Text.AddNewRecipient.CardNumberLabel
-        labelsNav.addSubview(clabeLabel)
-        clabeLabel.addLabelDark(button: clabeLabel, text: Text.AddNewRecipient.ClabeLabel)
-        clabeLabel.addAnchorsAndSize(width: nil, height: 27, left: 0, top: 2, right: nil, bottom: nil)
-        
-        print("card label push")
-        labelsNav.addSubview(cardLabel)
-        cardLabel.addLabelGreenblue(button: cardLabel, text: Text.AddNewRecipient.CardLabel)
-        cardLabel.addAnchorsAndSize(width: nil, height: 27, left: width/3.5, top: 2, right: nil, bottom: nil)
+        labelCard.textColor = ConstantsUIColor.greenBlue
+        labelClabe.textColor = ConstantsUIColor.blackKodemia
         
     }
     @objc func contactButtonAction(){
         print("move to list usersViewController")
         let ListUsersViewController = ListUsersViewController()
         ListUsersViewController.modalPresentationStyle = .fullScreen
-        self.present(ListUsersViewController,animated: true,completion:{print("register button press")} )
+        self.present(ListUsersViewController,animated: true, completion: nil )
         
     }
     @objc func backAction(){
