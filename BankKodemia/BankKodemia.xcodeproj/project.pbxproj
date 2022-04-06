@@ -37,6 +37,10 @@
 		E73FFB5D27FBFE2C004E46CB /* AddRecipientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB5C27FBFE2C004E46CB /* AddRecipientTableViewCell.swift */; };
 		E73FFB6027FCCA9C004E46CB /* SuccessFullScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB5F27FCCA9C004E46CB /* SuccessFullScreenViewController.swift */; };
 		E73FFB6327FCD845004E46CB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB6227FCD845004E46CB /* ProfileViewController.swift */; };
+		E73FFB6627FD0558004E46CB /* ShipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB6527FD0558004E46CB /* ShipViewModel.swift */; };
+		E73FFB6827FD056E004E46CB /* ShipDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB6727FD056E004E46CB /* ShipDataManager.swift */; };
+		E73FFB6A27FD058F004E46CB /* ShipData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB6927FD058F004E46CB /* ShipData.swift */; };
+		E73FFB6C27FD05A2004E46CB /* ShipDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB6B27FD05A2004E46CB /* ShipDataModel.swift */; };
 		E754E2AA27F411A500CBFC47 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E754E2A927F411A500CBFC47 /* FirebaseAuth */; };
 		E754E2AC27F411A500CBFC47 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = E754E2AB27F411A500CBFC47 /* FirebaseAuthCombine-Community */; };
 		E754E2AE27F411A500CBFC47 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = E754E2AD27F411A500CBFC47 /* FirebaseDatabase */; };
@@ -124,6 +128,10 @@
 		E73FFB5C27FBFE2C004E46CB /* AddRecipientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipientTableViewCell.swift; sourceTree = "<group>"; };
 		E73FFB5F27FCCA9C004E46CB /* SuccessFullScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessFullScreenViewController.swift; sourceTree = "<group>"; };
 		E73FFB6227FCD845004E46CB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E73FFB6527FD0558004E46CB /* ShipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipViewModel.swift; sourceTree = "<group>"; };
+		E73FFB6727FD056E004E46CB /* ShipDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipDataManager.swift; sourceTree = "<group>"; };
+		E73FFB6927FD058F004E46CB /* ShipData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipData.swift; sourceTree = "<group>"; };
+		E73FFB6B27FD05A2004E46CB /* ShipDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipDataModel.swift; sourceTree = "<group>"; };
 		E754E2B127F4145D00CBFC47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E754E2B327F4170600CBFC47 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E754E2B627F41C9300CBFC47 /* HomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataManager.swift; sourceTree = "<group>"; };
@@ -308,7 +316,9 @@
 		E70B649927EF8F1300F94109 /* ShipView */ = {
 			isa = PBXGroup;
 			children = (
+				E73FFB6427FD0537004E46CB /* ShipModels */,
 				C5B7DE7D27ECF790004AE6C7 /* ShipViewController.swift */,
+				E73FFB6527FD0558004E46CB /* ShipViewModel.swift */,
 			);
 			path = ShipView;
 			sourceTree = "<group>";
@@ -369,6 +379,16 @@
 				E73FFB6227FCD845004E46CB /* ProfileViewController.swift */,
 			);
 			path = ProfileView;
+			sourceTree = "<group>";
+		};
+		E73FFB6427FD0537004E46CB /* ShipModels */ = {
+			isa = PBXGroup;
+			children = (
+				E73FFB6B27FD05A2004E46CB /* ShipDataModel.swift */,
+				E73FFB6927FD058F004E46CB /* ShipData.swift */,
+				E73FFB6727FD056E004E46CB /* ShipDataManager.swift */,
+			);
+			path = ShipModels;
 			sourceTree = "<group>";
 		};
 		E754E2B527F41C0200CBFC47 /* HomeModels */ = {
@@ -759,6 +779,7 @@
 				E75D78CF27E45D3E00F95DDD /* Network.swift in Sources */,
 				C929EEF427FC065300596736 /* DepositDataManager.swift in Sources */,
 				E75D789227E3099400F95DDD /* constraints.swift in Sources */,
+				E73FFB6827FD056E004E46CB /* ShipDataManager.swift in Sources */,
 				5336769B27F8418A00A0E0A5 /* ContenidoTableViewCell.swift in Sources */,
 				C929EEEF27FB891600596736 /* DepositViewController.swift in Sources */,
 				E75D787927E2FA2D00F95DDD /* AppDelegate.swift in Sources */,
@@ -767,10 +788,13 @@
 				FAF8163A27EA73220098989A /* IdentityVerificationViewController.swift in Sources */,
 				E75D789D27E309FA00F95DDD /* ConstantsColor.swift in Sources */,
 				C5B7DE7827EBE587004AE6C7 /* TransactionDetailsViewController.swift in Sources */,
+				E73FFB6A27FD058F004E46CB /* ShipData.swift in Sources */,
 				E754E2B727F41C9300CBFC47 /* HomeDataManager.swift in Sources */,
 				E73FFB5227F7D884004E46CB /* AddRecipientData.swift in Sources */,
 				FAF8163D27EA7A610098989A /* IdSelectViewController.swift in Sources */,
 				E75D789E27E309FA00F95DDD /* ConstansText.swift in Sources */,
+				E73FFB6C27FD05A2004E46CB /* ShipDataModel.swift in Sources */,
+				E73FFB6627FD0558004E46CB /* ShipViewModel.swift in Sources */,
 				E75D789727E309D700F95DDD /* TextField++.swift in Sources */,
 				E75D787A27E2FA2D00F95DDD /* SceneDelegate.swift in Sources */,
 				C59A81F927E6FD4B0038C662 /* UIImageView++.swift in Sources */,
