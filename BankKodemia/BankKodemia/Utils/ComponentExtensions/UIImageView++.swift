@@ -74,8 +74,3 @@ extension UIImageView{
     
 }
 
-//countButton = UIImageView(frame: CGRect(x: 3*width/40, y: height/16, width: width/15, height: width/15))
-//countButton.image = UIImage(named: "count")
-
-//logo.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-//logo.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),

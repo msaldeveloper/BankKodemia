@@ -12,12 +12,12 @@ extension UILabel{
     func formatRecipientLabel(activate: Bool){
         if activate == true{
             self.backgroundColor = .clear
-            self.font = UIFont(name: "Poppins-SemiBold", size: 18)
+            self.font = ConstantsFont.f18SemiBold
             self.textColor = ConstantsUIColor.greenBlue
             self.textAlignment = .center
         }else {
             self.backgroundColor = .clear
-            self.font = UIFont(name: "Poppins-SemiBold", size: 18)
+            self.font = ConstantsFont.f18SemiBold
             self.textColor = ConstantsUIColor.blackKodemia
             self.textAlignment = .center
         }
@@ -48,8 +48,7 @@ extension UILabel{
     
     func formartTitle(view: UIView, textTitle: String){
         self.textColor = .darkGray
-        self.font = UIFont(name: "Poppins-Medium", size: 18
-        )
+        self.font = ConstantsFont.f18Normal
         self.text = textTitle
         self.textAlignment = .center
         self.translatesAutoresizingMaskIntoConstraints = false

@@ -39,7 +39,7 @@ extension UITextField{
     func infoTextFielFormat(){
         
         self.formatTextField(" ")
-        self.font = UIFont(name: "Poppins-Medium", size: 18)
+        self.font = ConstantsFont.f14Normal
         self.keyboardType = .emailAddress
         self.addAnchorsAndSize(width: nil, height: nil, left: 10, top: 0, right: 10, bottom: 0)
     }

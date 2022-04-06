@@ -10,6 +10,12 @@ import Combine
 
 class CreatePasswordViewController: UIViewController {
     lazy var logo : UIImageView = UIImageView()
+    var eye : UIImageView = UIImageView()
+    var eyeButton : UIButton = UIButton()
+    
+    var eyeConfirm : UIImageView = UIImageView()
+    var eyeButtonConfirm : UIButton = UIButton()
+    
     var arrowButton: UIButton = UIButton()
     var titleSuggestLabel: UILabel = UILabel()
     
@@ -126,7 +132,19 @@ class CreatePasswordViewController: UIViewController {
         createPasswordFieldView.addAnchorsAndSize(width: nil, height: 37, left: 21, top: height/20, right: 21, bottom: nil, withAnchor: .top, relativeToView: legalBottomLabel)
         
         createPasswordFieldView.addSubview(createPasswordTextField)
+        createPasswordTextField.isSecureTextEntry = true
         createPasswordTextField.infoTextFielFormat()
+        
+        eyeButton = UIButton()
+        eyeButton.addTarget(self, action: #selector(visiblePassword), for: .touchUpInside)
+        createPasswordFieldView.addSubview(eyeButton)
+        eyeButton.addAnchorsAndSize(width: 30, height: 30, left: nil, top: 0, right: 10, bottom: 4, withAnchor: .bottom, relativeToView: createPasswordTextField)
+        
+        
+        eye = UIImageView()
+        eye.image = UIImage(named: "eye")
+        eyeButton.addSubview(eye)
+        eye.addAnchorsAndSize(width: 30, height: 30, left: nil, top: 0, right: nil, bottom: 4, withAnchor: .bottom, relativeToView: eyeButton)
         
         createPasswordTextLabel = UILabel()
         createPasswordTextLabel.textColor = .black
@@ -142,9 +160,24 @@ class CreatePasswordViewController: UIViewController {
         view.addSubview(confirmPasswordFieldView)
         confirmPasswordFieldView.addAnchorsAndSize(width: nil, height: 37, left: 21, top: height/20, right: 21, bottom: nil, withAnchor: .top, relativeToView: createPasswordFieldView)
         
+        
+        
         confirmPasswordFieldView.addSubview(confirmPasswordTextField)
         confirmPasswordTextField.isSecureTextEntry = true
         confirmPasswordTextField.infoTextFielFormat()
+        
+        eyeButtonConfirm = UIButton()
+        eyeButtonConfirm.addTarget(self, action: #selector(visiblePasswordConfirm), for: .touchUpInside)
+        confirmPasswordFieldView.addSubview(eyeButtonConfirm)
+        eyeButtonConfirm.addAnchorsAndSize(width: 30, height: 30, left: nil, top: 0, right: 10, bottom: 4, withAnchor: .bottom, relativeToView: confirmPasswordTextField)
+
+
+        eyeConfirm = UIImageView()
+        eyeConfirm.image = UIImage(named: "eye")
+        eyeButtonConfirm.addSubview(eyeConfirm)
+        eyeConfirm.addAnchorsAndSize(width: 30, height: 30, left: nil, top: 0, right: nil, bottom: 4, withAnchor: .bottom, relativeToView: eyeButtonConfirm)
+        
+        
         
         confirmPasswordTextLabel = UILabel()
         confirmPasswordTextField.textColor = .black
@@ -152,6 +185,8 @@ class CreatePasswordViewController: UIViewController {
         confirmPasswordTextLabel.font = UIFont(name: "Poppins-Medium", size: 16)
         confirmPasswordFieldView.addSubview(confirmPasswordTextLabel)
         confirmPasswordTextLabel.addAnchorsAndSize(width: nil, height: nil, left: 0, top: nil, right: nil, bottom: 4, withAnchor: .bottom, relativeToView: confirmPasswordFieldView)
+        
+        
         
     }
     
@@ -163,6 +198,36 @@ class CreatePasswordViewController: UIViewController {
         
         incomingButton.addLabelWhite(button: incomingButton, text: Text.CreateAccount.CreatePassword.ButtonCreateMessage)
     }
+    
+    @objc func visiblePassword(){
+        createPasswordTextField.isSecureTextEntry = false
+        eye.image = UIImage(named: "hidden")
+        eyeButton.addTarget(self, action: #selector(hiddenPassword), for: .touchUpInside)
+        //eye.isHidden = true
+    }
+    
+    @objc func hiddenPassword(){
+        createPasswordTextField.isSecureTextEntry = true
+        eye.image = UIImage(named: "eye")
+        eyeButton.addTarget(self, action: #selector(visiblePassword), for: .touchUpInside)
+        //eye.isHidden = true
+    }
+    
+    @objc func visiblePasswordConfirm(){
+        confirmPasswordTextField.isSecureTextEntry = false
+        eyeConfirm.image = UIImage(named: "hidden")
+        eyeButtonConfirm.addTarget(self, action: #selector(hiddenPasswordConfirm), for: .touchUpInside)
+        //eye.isHidden = true
+    }
+    
+    @objc func hiddenPasswordConfirm(){
+        confirmPasswordTextField.isSecureTextEntry = true
+        eyeConfirm.image = UIImage(named: "eye")
+        eyeButtonConfirm.addTarget(self, action: #selector(visiblePasswordConfirm), for: .touchUpInside)
+        //eye.isHidden = true
+    }
+    
+
     
     //suscriptor
     fileprivate func validationBind(){

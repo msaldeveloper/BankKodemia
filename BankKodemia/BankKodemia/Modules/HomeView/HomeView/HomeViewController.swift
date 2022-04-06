@@ -152,7 +152,7 @@ class HomeViewController: UIViewController {
             .reloadBalance
             .sink{ balance in
                 self.money.text = String(balance)
-                self.money.text = "$" + (self.money.text ?? "")
+                self.money.text = (self.money.text?.moneyFormart())
             }
             .store(in: &cancellables)
     }

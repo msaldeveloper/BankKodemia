@@ -66,14 +66,14 @@ class ContenidoTableViewCell: UITableViewCell {
         amount = UILabel(frame: CGRect(x: 20+width/4, y: (heigth/7 - 10)/3, width: 3*width/4-40, height: (heigth/7 - 10)/3))
         var sign = ""
         if (transaction.type == "PAYMENT" && transaction.issuer._id != idMe) || (transaction.type == "DEPOSIT" && transaction.issuer._id == idMe && transaction.isIncome){
-            sign = "+ $"
+            sign = "+ "
             amount.textColor = ConstantsUIColor.greenBlue
         }else{
-            sign = "- $"
+            sign = "- "
             amount.textColor = .red
             
         }
-        amount.text = sign + String(transaction.amount)
+        amount.text = sign + String(transaction.amount).moneyFormart()
         amount.font = ConstantsFont.f14Normal
         ownContent.addSubview(amount)
         
