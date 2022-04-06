@@ -10,29 +10,19 @@ import Combine
 
 class CreateAccountViewController: UIViewController {
     lazy var logo : UIImageView = UIImageView()
-    
-    // SuggestEmail: Indicaciones de la seccion
     var emailSuggest: UIView = UIView()
     var arrowButton: UIButton = UIButton()
     var titleSuggestLabel: UILabel = UILabel()
     var infoSuggestLabel: UILabel = UILabel()
-    
-    //
     var fieldEmail : UIView = UIView()
     var textFieldEmail : UITextField = UITextField()
     var textFieldLabelTop : UILabel = UILabel()
-    
-    // EmailField: Indicaciones de la seccion
     var emailFieldView: UIView = UIView()
     var emailTextLabel: UILabel = UILabel()
     var emailAccountTextField: UITextField = UITextField()
-    
-    //Legal Information
     var legalButton: UIButton = UIButton()
     var legalTextLabel: UILabel = UILabel()
     var legalTextLinkedLabel: UILabel = UILabel()
-    
-    // Boton para continuar
     var incomingFieldView: UIView = UIView()
     var incomingTextLabel: UILabel = UILabel()
     var incomingButton: UIButton = UIButton()
@@ -41,25 +31,18 @@ class CreateAccountViewController: UIViewController {
     private var createNewAccountViewModel = CreateNewAccountViewModel()
     private var cancellables: [AnyCancellable] = []
 
-    
     var backgroundColor = ConstantsUIColor.clearBackground
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = backgroundColor
         UIInit()
         validationBind()
-        //Looks for single or multiple taps.
              let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-
-            //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
             //tap.cancelsTouchesInView = false
-
             view.addGestureRecognizer(tap)
     }
     @objc func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
     
@@ -72,9 +55,7 @@ class CreateAccountViewController: UIViewController {
         createEmailSection()
         legalInformationSection()
         continueButtonSection()
-        
     }
-    
     
     func logoImage(){
         view.addSubview(logo)

@@ -36,7 +36,7 @@ func createApp(_ testEmail: String,_ testName: String,_ testlastName: String,_ t
         identityImageType: testIdentityImageType,
         occupation: testOccupation
     )
-    print(CreateAccount)
+    //print(CreateAccount)
     let createPublisher = AF
         //AF
         .request(urlCreateAccount,

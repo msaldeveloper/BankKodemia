@@ -49,7 +49,7 @@ struct TextLocals{
         
     // MARK: home and tab bar screens
     
-    static let home_available_cash_top_message: String = "DINERO DESPONIBLE"
+    static let home_available_cash_top_message: String = "DINERO DISPONIBLE"
     static let home_transaction_detail: String = "DETALLE DE TRANSACCIÓN"
     static let home_send_button: String = "Enviar"
     static let home_receive_button: String = "Recibir"
@@ -125,7 +125,7 @@ struct Text{
             static let TopMessage: String = "ESCRIBE TU TELÉFONO"
             static let ButtonBoldMessage: String = "Lo usarás para iniciar sesión"
             static let LabelNumberMessage: String = "Tu número de celular"
-            static let BottonMessage: String = "para protejer tu cuenta, te enviaremos un código vía SMS"
+            static let BottonMessage: String = "Para proteger tu cuenta, te enviaremos un código vía SMS"
         }
         
         struct IdentityVerification {
@@ -152,7 +152,7 @@ struct Text{
             static let title: String = "Contraseña"
             static let TopMessage: String = "Crea una contraseña segura"
             static let MediumMessage: String = "La usarás para entrar a la app y confirmar tus transacciones."
-            static let BottomMessage: String = "La contraseña debe de tener una mayuscula, un numero y un signo."
+            static let BottomMessage: String = "La contraseña debe de tener una extención de 8 digitos, una mayuscula, un numero y un signo."
             static let CreateLabel: String = "Contraseña"
             static let ConfirmLabel: String = "Confirma tu contraseña"
             static let ButtonCreateMessage: String = "Crear Contraseña"
@@ -187,7 +187,7 @@ struct Text{
         static let AddRecipientButton: String = "Agregar Contacto"
         static let BackToInitButton: String = "Volver a Inicio"
         static let ImageBottomLabel: String = "Tu contacto fue agregado con éxito"
-        static let ImageBottomLabelSuccess: String = "Tu transacción a sido finalizada"
+        static let ImageBottomLabelSuccess: String = "Tu transacción ha sido finalizada"
         
     }
     struct Routes {
