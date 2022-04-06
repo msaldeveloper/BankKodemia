@@ -11,6 +11,8 @@ import SwiftUI
 
 class DetailAccountViewController: UIViewController {
     lazy var logo : UIImageView = UIImageView()
+    var arrowButton: UIButton = UIButton()
+    var titleSuggestLabel: UILabel = UILabel()
     //var UIDatePicker : UIControl = UIControl()
     var selectedDate : String = String()
     var datePicker: UIDatePicker = UIDatePicker()
@@ -70,6 +72,8 @@ class DetailAccountViewController: UIViewController {
     
     func UIInit(){
         logoImage()
+        returnButton()
+        titleLabel()
         suggestDetailInfoSection()
         nameDetailInfoField()
         lastNameDetailInfoField()
@@ -83,11 +87,23 @@ class DetailAccountViewController: UIViewController {
         logo.logoFormart(view: view)
     }
     
+    func returnButton(){
+        view.addSubview(arrowButton)
+        arrowButton.backButton(view: view, textDinamic: TextLocals.init_session_top_email_input_message.uppercased(), widthText: width/2)
+        arrowButton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
+    }
+    
+    func titleLabel(){
+        view.addSubview(titleSuggestLabel)
+        titleSuggestLabel.formartTitle(view: view, textTitle: Text.CreateAccount.Detail.title)
+    }
+    
     func suggestDetailInfoSection(){
         
         infoSuggestDetailLabel = UILabel()
         infoSuggestDetailLabel.text = Text.CreateAccount.Detail.TopMessage
         infoSuggestDetailLabel.font = UIFont(name: "Poppins-Medium", size: 20)
+        infoSuggestDetailLabel.textColor = .black
         infoSuggestDetailLabel.textAlignment = .left
         infoSuggestDetailLabel.lineBreakMode = .byWordWrapping
         infoSuggestDetailLabel.numberOfLines = 0
@@ -107,6 +123,7 @@ class DetailAccountViewController: UIViewController {
         nameInfoTextField.infoTextFielFormat()
         
         nameInfoTextLabel = UILabel()
+        nameInfoTextLabel.textColor = .black
         nameInfoTextLabel.text = Text.CreateAccount.Detail.NameMessage
         nameInfoTextLabel.font = UIFont(name: "Poppins-Medium", size: 16)
         nameInfoTextField.addSubview(nameInfoTextLabel)
@@ -125,6 +142,7 @@ class DetailAccountViewController: UIViewController {
         lastNameInfoTextField.infoTextFielFormat()
         
         latNameInfoTextLabel = UILabel()
+        latNameInfoTextLabel.textColor = .black
         latNameInfoTextLabel.text = Text.CreateAccount.Detail.LastNameMessage
         latNameInfoTextLabel.font = UIFont(name: "Poppins-Medium", size: 16)
         lastNameInfoTextField.addSubview(latNameInfoTextLabel)
@@ -143,6 +161,7 @@ class DetailAccountViewController: UIViewController {
         occupationInfoTextField.infoTextFielFormat()
         
         occupationInfoTextLabel = UILabel()
+        occupationInfoTextLabel.textColor = .black
         occupationInfoTextLabel.text = Text.CreateAccount.Detail.OcupationMessage
         occupationInfoTextLabel.font = UIFont(name: "Poppins-Medium", size: 16)
         occupationInfoTextField.addSubview(occupationInfoTextLabel)
@@ -161,12 +180,13 @@ class DetailAccountViewController: UIViewController {
 //        dateInfoTextField.infoTextFielFormat()
         
         dateInfoTextLabel = UILabel()
-                dateInfoTextLabel.textColor = .black
-                dateInfoTextLabel.text = Text.CreateAccount.Detail.Date
-                dateInfoTextLabel.font = UIFont(name: "Poppins-Medium", size: 16)
-                dateInfoFieldView.addSubview(dateInfoTextLabel)
-                dateInfoTextLabel.addAnchorsAndSize(width: nil, height: nil, left: 0, top: nil, right: nil, bottom: 4, withAnchor: .bottom, relativeToView: dateInfoFieldView)
-        
+
+        dateInfoTextLabel.textColor = .black
+        dateInfoTextLabel.text = Text.CreateAccount.Detail.Date
+        dateInfoTextLabel.font = UIFont(name: "Poppins-Medium", size: 16)
+        dateInfoFieldView.addSubview(dateInfoTextLabel)
+        dateInfoTextLabel.addAnchorsAndSize(width: nil, height: nil, left: 0, top: nil, right: nil, bottom: 4, withAnchor: .bottom, relativeToView: dateInfoFieldView)
+
         //PICKER DATE
         datePicker = UIDatePicker()
         datePicker.preferredDatePickerStyle = .wheels
@@ -174,8 +194,7 @@ class DetailAccountViewController: UIViewController {
         datePicker.backgroundColor = UIColor.white
         datePicker.addTarget(self, action: #selector(self.datePickerValueChanged(_:)), for: .valueChanged)
         dateInfoFieldView.addSubview(datePicker)
-        datePicker.addAnchorsAndSize(width: nil, height: 150, left: 0, top: 5, right: 0, bottom: 5, withAnchor: .top, relativeToView: dateInfoTextLabel)
-        
+        datePicker.addAnchorsAndSize(width: nil, height: 150, left: 0, top: 5, right: 0, bottom: 5, withAnchor: .top, relativeToView: dateInfoTextLabel)        
     }
     
     func continueButtonSection(){

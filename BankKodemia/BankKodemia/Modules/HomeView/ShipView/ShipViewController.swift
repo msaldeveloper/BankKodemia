@@ -65,6 +65,7 @@ class ShipViewController: UIViewController{
         
         shipToNameDetail.text = "Cruz Eduardo Reveles Caldera"
         shipToNameDetail.font = ConstantsFont.f14SemiBold
+        shipToNameDetail.textColor = .black
         view.addSubview(shipToNameDetail)
         shipToNameDetail.listDetails(view: view, previous: shipToLabel, height: 1/30)
         
@@ -125,7 +126,7 @@ class ShipViewController: UIViewController{
             conceptCounLabel.leadingAnchor.constraint(equalTo: conceptLabel.trailingAnchor, constant: -19*width/30),
         ])
         
-        conceptBackground.backgroundColor = ConstantsUIColor.greyKodemia
+        conceptBackground.backgroundColor = ConstantsUIColor.greyBackGround
         conceptBackground.layer.cornerRadius = 10
         view.addSubview(conceptBackground)
         conceptBackground.translatesAutoresizingMaskIntoConstraints = false

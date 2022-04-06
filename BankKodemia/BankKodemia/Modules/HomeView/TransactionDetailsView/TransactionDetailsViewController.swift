@@ -35,6 +35,9 @@ class TransactionDetailsViewController: UIViewController {
     lazy var countLabel : UILabel = UILabel()
     lazy var countDetail : UILabel = UILabel()
     
+    lazy var recipientUserLabel : UILabel = UILabel()
+    lazy var recipientUserDetail : UILabel = UILabel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -57,12 +60,6 @@ class TransactionDetailsViewController: UIViewController {
     
     func initUI(){
         
-        view.addSubview(countButton)
-        countButton.countFormart(view: view)
-        
-        view.addSubview(helpButton)
-        helpButton.helpFormart(view: view)
-        
         view.addSubview(logo)
         logo.logoFormart(view: view)
         
@@ -73,7 +70,8 @@ class TransactionDetailsViewController: UIViewController {
         view.addSubview(titleView)
         titleView.formartTitle(view: view, textTitle: TextLocals.home_transaction_detail)
         
-        money.text = String(transaction.amount)
+        money.text = "$"+String(transaction.amount)
+        money.textColor = .black
         money.textAlignment = .center
         money.font = ConstantsFont.f20SemiBold
         view.addSubview(money)
@@ -157,6 +155,20 @@ class TransactionDetailsViewController: UIViewController {
         countDetail.numberOfLines = 3
         view.addSubview(countDetail)
         countDetail.listDetails(view: view, previous: countLabel, height: 3/30)
+        
+        if transaction.destinationUser.name != "" {
+            recipientUserLabel.text = "Receptor"
+            recipientUserLabel.font = ConstantsFont.f14SemiBold
+            recipientUserLabel.textColor = .darkGray
+            view.addSubview(recipientUserLabel)
+            recipientUserLabel.listDetails(view: view, previous: countDetail, height: 1/30)
+            
+            recipientUserDetail.text = transaction.destinationUser.name + " " + transaction.destinationUser.lastName
+            recipientUserDetail.font = ConstantsFont.f14Regular
+            recipientUserDetail.textColor = .darkGray
+            view.addSubview(recipientUserDetail)
+            recipientUserDetail.listDetails(view: view, previous: recipientUserLabel, height: 1/30)
+        }
         
     }
     

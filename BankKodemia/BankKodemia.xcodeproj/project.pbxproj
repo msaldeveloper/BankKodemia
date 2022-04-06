@@ -12,6 +12,10 @@
 		C5B7DE7827EBE587004AE6C7 /* TransactionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B7DE7727EBE587004AE6C7 /* TransactionDetailsViewController.swift */; };
 		C5B7DE7B27ECEAB6004AE6C7 /* SendMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B7DE7A27ECEAB6004AE6C7 /* SendMoneyViewController.swift */; };
 		C5B7DE7E27ECF790004AE6C7 /* ShipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B7DE7D27ECF790004AE6C7 /* ShipViewController.swift */; };
+		C929EEEF27FB891600596736 /* DepositViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C929EEEE27FB891600596736 /* DepositViewController.swift */; };
+		C929EEF127FBF7A900596736 /* DepositViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C929EEF027FBF7A800596736 /* DepositViewModel.swift */; };
+		C929EEF427FC065300596736 /* DepositDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C929EEF327FC065300596736 /* DepositDataManager.swift */; };
+		C929EEF627FC096F00596736 /* DepositedDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C929EEF527FC096F00596736 /* DepositedDataModel.swift */; };
 		C98304BD27EE0F0500EFD48A /* HomeCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98304BC27EE0F0500EFD48A /* HomeCardViewController.swift */; };
 		E70B646E27ED976300F94109 /* HomeServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70B646D27ED976300F94109 /* HomeServicesViewController.swift */; };
 		E70B647327ED996700F94109 /* AddNewRecipientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70B647227ED996700F94109 /* AddNewRecipientViewController.swift */; };
@@ -28,6 +32,8 @@
 		E73FFB5927FBD314004E46CB /* ListUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB5827FBD314004E46CB /* ListUsersViewController.swift */; };
 		E73FFB5B27FBFB96004E46CB /* AddRecipientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB5A27FBFB96004E46CB /* AddRecipientModel.swift */; };
 		E73FFB5D27FBFE2C004E46CB /* AddRecipientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB5C27FBFE2C004E46CB /* AddRecipientTableViewCell.swift */; };
+		E73FFB6027FCCA9C004E46CB /* SuccessFullScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB5F27FCCA9C004E46CB /* SuccessFullScreenViewController.swift */; };
+		E73FFB6327FCD845004E46CB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB6227FCD845004E46CB /* ProfileViewController.swift */; };
 		E754E2AA27F411A500CBFC47 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E754E2A927F411A500CBFC47 /* FirebaseAuth */; };
 		E754E2AC27F411A500CBFC47 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = E754E2AB27F411A500CBFC47 /* FirebaseAuthCombine-Community */; };
 		E754E2AE27F411A500CBFC47 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = E754E2AD27F411A500CBFC47 /* FirebaseDatabase */; };
@@ -91,6 +97,10 @@
 		C5B7DE7727EBE587004AE6C7 /* TransactionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsViewController.swift; sourceTree = "<group>"; };
 		C5B7DE7A27ECEAB6004AE6C7 /* SendMoneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyViewController.swift; sourceTree = "<group>"; };
 		C5B7DE7D27ECF790004AE6C7 /* ShipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipViewController.swift; sourceTree = "<group>"; };
+		C929EEEE27FB891600596736 /* DepositViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositViewController.swift; sourceTree = "<group>"; };
+		C929EEF027FBF7A800596736 /* DepositViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositViewModel.swift; sourceTree = "<group>"; };
+		C929EEF327FC065300596736 /* DepositDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositDataManager.swift; sourceTree = "<group>"; };
+		C929EEF527FC096F00596736 /* DepositedDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositedDataModel.swift; sourceTree = "<group>"; };
 		C98304BC27EE0F0500EFD48A /* HomeCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCardViewController.swift; sourceTree = "<group>"; };
 		E70B646D27ED976300F94109 /* HomeServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeServicesViewController.swift; sourceTree = "<group>"; };
 		E70B647227ED996700F94109 /* AddNewRecipientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewRecipientViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +116,8 @@
 		E73FFB5827FBD314004E46CB /* ListUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersViewController.swift; sourceTree = "<group>"; };
 		E73FFB5A27FBFB96004E46CB /* AddRecipientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipientModel.swift; sourceTree = "<group>"; };
 		E73FFB5C27FBFE2C004E46CB /* AddRecipientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipientTableViewCell.swift; sourceTree = "<group>"; };
+		E73FFB5F27FCCA9C004E46CB /* SuccessFullScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessFullScreenViewController.swift; sourceTree = "<group>"; };
+		E73FFB6227FCD845004E46CB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E754E2B127F4145D00CBFC47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E754E2B327F4170600CBFC47 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E754E2B627F41C9300CBFC47 /* HomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataManager.swift; sourceTree = "<group>"; };
@@ -202,6 +214,25 @@
 				C5B7DE7A27ECEAB6004AE6C7 /* SendMoneyViewController.swift */,
 			);
 			path = SendMoneyView;
+			sourceTree = "<group>";
+		};
+		C929EEED27FB88BB00596736 /* DepositView */ = {
+			isa = PBXGroup;
+			children = (
+				C929EEF227FC060300596736 /* DepositModels */,
+				C929EEEE27FB891600596736 /* DepositViewController.swift */,
+				C929EEF027FBF7A800596736 /* DepositViewModel.swift */,
+			);
+			path = DepositView;
+			sourceTree = "<group>";
+		};
+		C929EEF227FC060300596736 /* DepositModels */ = {
+			isa = PBXGroup;
+			children = (
+				C929EEF527FC096F00596736 /* DepositedDataModel.swift */,
+				C929EEF327FC065300596736 /* DepositDataManager.swift */,
+			);
+			path = DepositModels;
 			sourceTree = "<group>";
 		};
 		C98304BB27EE0EF500EFD48A /* HomeCard */ = {
@@ -307,6 +338,22 @@
 			path = AddRecipientViewModel;
 			sourceTree = "<group>";
 		};
+		E73FFB5E27FCCA7C004E46CB /* SuccessFulScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E73FFB5F27FCCA9C004E46CB /* SuccessFullScreenViewController.swift */,
+			);
+			path = SuccessFulScreen;
+			sourceTree = "<group>";
+		};
+		E73FFB6127FCD829004E46CB /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				E73FFB6227FCD845004E46CB /* ProfileViewController.swift */,
+			);
+			path = ProfileView;
+			sourceTree = "<group>";
+		};
 		E754E2B527F41C0200CBFC47 /* HomeModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -394,6 +441,7 @@
 		E75D78C727E45B4100F95DDD /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
+				C929EEED27FB88BB00596736 /* DepositView */,
 				E70B649927EF8F1300F94109 /* ShipView */,
 				C98304BB27EE0EF500EFD48A /* HomeCard */,
 				E70B646C27ED974100F94109 /* HomeServices */,
@@ -407,6 +455,8 @@
 		E75D78CB27E45C0600F95DDD /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				E73FFB6127FCD829004E46CB /* ProfileView */,
+				E73FFB5E27FCCA7C004E46CB /* SuccessFulScreen */,
 				E70B647B27EDB2F600F94109 /* WelcomeView */,
 				E70B646F27ED992900F94109 /* AddNewRecipient */,
 				FAF8164227EC08810098989A /* LoadingView */,
@@ -689,10 +739,13 @@
 				E70B64A127EFC83400F94109 /* LoggedInDataModel.swift in Sources */,
 				FAF8164027EAC5EA0098989A /* UploadViewController.swift in Sources */,
 				E75D78CF27E45D3E00F95DDD /* Network.swift in Sources */,
+				C929EEF427FC065300596736 /* DepositDataManager.swift in Sources */,
 				E75D789227E3099400F95DDD /* constraints.swift in Sources */,
 				5336769B27F8418A00A0E0A5 /* ContenidoTableViewCell.swift in Sources */,
+				C929EEEF27FB891600596736 /* DepositViewController.swift in Sources */,
 				E75D787927E2FA2D00F95DDD /* AppDelegate.swift in Sources */,
 				E75D789927E309D700F95DDD /* UILabel++.swift in Sources */,
+				C929EEF127FBF7A900596736 /* DepositViewModel.swift in Sources */,
 				FAF8163A27EA73220098989A /* IdentityVerificationViewController.swift in Sources */,
 				E75D789D27E309FA00F95DDD /* ConstantsColor.swift in Sources */,
 				C5B7DE7827EBE587004AE6C7 /* TransactionDetailsViewController.swift in Sources */,
@@ -710,6 +763,7 @@
 				E754E2B427F4170600CBFC47 /* HomeViewModel.swift in Sources */,
 				FA72741627FAA18E00BC81E6 /* CreateAccountDataManager.swift in Sources */,
 				E73FFB5D27FBFE2C004E46CB /* AddRecipientTableViewCell.swift in Sources */,
+				C929EEF627FC096F00596736 /* DepositedDataModel.swift in Sources */,
 				C98304BD27EE0F0500EFD48A /* HomeCardViewController.swift in Sources */,
 				FA72740E27FA2DC500BC81E6 /* ConstantsAlerts.swift in Sources */,
 				E75D78C627E45B0A00F95DDD /* ConstantsUIKit.swift in Sources */,
@@ -726,6 +780,8 @@
 				FAF8164427EC08980098989A /* LoadingViewController.swift in Sources */,
 				E73FFB5727F8FE6B004E46CB /* HomeUserModel.swift in Sources */,
 				C5B7DE7E27ECF790004AE6C7 /* ShipViewController.swift in Sources */,
+				E73FFB6327FCD845004E46CB /* ProfileViewController.swift in Sources */,
+				E73FFB6027FCCA9C004E46CB /* SuccessFullScreenViewController.swift in Sources */,
 				E70B646E27ED976300F94109 /* HomeServicesViewController.swift in Sources */,
 				FAA92A9A27E96C7700083E10 /* DetailAccountViewController.swift in Sources */,
 				E73FFB5B27FBFB96004E46CB /* AddRecipientModel.swift in Sources */,

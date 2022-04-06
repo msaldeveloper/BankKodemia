@@ -13,6 +13,7 @@ class LoginViewModel {
 
     var homeViewModel = HomeViewModel()
     var addRecipientViewModel = AddRecipientViewModel()
+    var depositViewModel = DepositViewModel()
     private var cancellables: [AnyCancellable] = []
     
     fileprivate var newAlertText: String {
@@ -52,6 +53,7 @@ class LoginViewModel {
     func tokenDispatcher(_ token: String){
         self.homeViewModel.tokenReciver(token: token)
         self.addRecipientViewModel.tokenReciver(token: token)
+        self.depositViewModel.tokenReciver(token: token)
     }
 
      private func newAlert(_ type : String){

@@ -60,12 +60,14 @@ class HomeServicesViewController: UIViewController {
         serviceCard1.addAnchorsAndSize(width: nil, height: 54, left: 21, top: 23, right: 21, bottom: nil, withAnchor: .top, relativeToView: initSessionLabel)
         
         boldTextField = UILabel()
+        boldTextField.textColor = .black
         boldTextField.text = TextLocals.home_services_recharge_cell
         boldTextField.font = UIFont(name: "Poppins-Medium", size: 16)
         serviceCard1.addSubview(boldTextField)
         boldTextField.addAnchorsAndSize(width: nil, height: nil, left: 11, top: 5, right: nil, bottom: nil)
         
         simpleTextField = UILabel()
+        simpleTextField.textColor = .black
         simpleTextField.text = TextLocals.home_services_cell_companies
         simpleTextField.font = UIFont(name: "Poppins-Regular", size: 14)
         serviceCard1.addSubview(simpleTextField)
@@ -77,12 +79,14 @@ class HomeServicesViewController: UIViewController {
         serviceCard2.addAnchorsAndSize(width: nil, height: 54, left: 21, top: 17, right: 21, bottom: nil, withAnchor: .top, relativeToView: serviceCard1)
         
         boldTextField = UILabel()
+        boldTextField.textColor = .black
         boldTextField.text = TextLocals.home_services_recharge_cell
         boldTextField.font = UIFont(name: "Poppins-Medium", size: 16)
         serviceCard2.addSubview(boldTextField)
         boldTextField.addAnchorsAndSize(width: nil, height: nil, left: 11, top: 5, right: nil, bottom: nil)
         
         simpleTextField = UILabel()
+        simpleTextField.textColor = .black
         simpleTextField.text = TextLocals.home_services_cell_companies
         simpleTextField.font = UIFont(name: "Poppins-Regular", size: 14)
         serviceCard2.addSubview(simpleTextField)
@@ -94,12 +98,14 @@ class HomeServicesViewController: UIViewController {
         serviceCard3.addAnchorsAndSize(width: nil, height: 54, left: 21, top: 17, right: 21, bottom: nil, withAnchor: .top, relativeToView: serviceCard2)
         
         boldTextField = UILabel()
+        boldTextField.textColor = .black
         boldTextField.text = TextLocals.home_services_recharge_cell
         boldTextField.font = UIFont(name: "Poppins-Medium", size: 16)
         serviceCard3.addSubview(boldTextField)
         boldTextField.addAnchorsAndSize(width: nil, height: nil, left: 11, top: 5, right: nil, bottom: nil)
         
         simpleTextField = UILabel()
+        simpleTextField.textColor = .black
         simpleTextField.text = TextLocals.home_services_cell_companies
         simpleTextField.font = UIFont(name: "Poppins-Regular", size: 14)
         serviceCard3.addSubview(simpleTextField)
@@ -111,12 +117,14 @@ class HomeServicesViewController: UIViewController {
         serviceCard4.addAnchorsAndSize(width: nil, height: 54, left: 21, top: 17, right: 21, bottom: nil, withAnchor: .top, relativeToView: serviceCard3)
         
         boldTextField = UILabel()
+        boldTextField.textColor = .black
         boldTextField.text = TextLocals.home_services_recharge_cell
         boldTextField.font = UIFont(name: "Poppins-Medium", size: 16)
         serviceCard4.addSubview(boldTextField)
         boldTextField.addAnchorsAndSize(width: nil, height: nil, left: 11, top: 5, right: nil, bottom: nil)
         
         simpleTextField = UILabel()
+        simpleTextField.textColor = .black
         simpleTextField.text = TextLocals.home_services_cell_companies
         simpleTextField.font = UIFont(name: "Poppins-Regular", size: 14)
         serviceCard4.addSubview(simpleTextField)
@@ -128,12 +136,14 @@ class HomeServicesViewController: UIViewController {
         serviceCard5.addAnchorsAndSize(width: nil, height: 54, left: 21, top: 17, right: 21, bottom: nil, withAnchor: .top, relativeToView: serviceCard4)
         
         boldTextField = UILabel()
+        boldTextField.textColor = .black
         boldTextField.text = TextLocals.home_services_recharge_cell
         boldTextField.font = UIFont(name: "Poppins-Medium", size: 16)
         serviceCard5.addSubview(boldTextField)
         boldTextField.addAnchorsAndSize(width: nil, height: nil, left: 11, top: 5, right: nil, bottom: nil)
         
         simpleTextField = UILabel()
+        simpleTextField.textColor = .black
         simpleTextField.text = TextLocals.home_services_cell_companies
         simpleTextField.font = UIFont(name: "Poppins-Regular", size: 14)
         serviceCard5.addSubview(simpleTextField)
@@ -145,12 +155,14 @@ class HomeServicesViewController: UIViewController {
         serviceCard6.addAnchorsAndSize(width: nil, height: 54, left: 21, top: 17, right: 21, bottom: nil, withAnchor: .top, relativeToView: serviceCard5)
         
         boldTextField = UILabel()
+        boldTextField.textColor = .black
         boldTextField.text = TextLocals.home_services_recharge_cell
         boldTextField.font = UIFont(name: "Poppins-Medium", size: 16)
         serviceCard6.addSubview(boldTextField)
         boldTextField.addAnchorsAndSize(width: nil, height: nil, left: 11, top: 5, right: nil, bottom: nil)
         
         simpleTextField = UILabel()
+        simpleTextField.textColor = .black
         simpleTextField.text = TextLocals.home_services_cell_companies
         simpleTextField.font = UIFont(name: "Poppins-Regular", size: 14)
         serviceCard6.addSubview(simpleTextField)
