@@ -42,6 +42,9 @@
 		E73FFB6827FD056E004E46CB /* ShipDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB6727FD056E004E46CB /* ShipDataManager.swift */; };
 		E73FFB6A27FD058F004E46CB /* ShipData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB6927FD058F004E46CB /* ShipData.swift */; };
 		E73FFB6C27FD05A2004E46CB /* ShipDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB6B27FD05A2004E46CB /* ShipDataModel.swift */; };
+		E73FFB7427FDEE49004E46CB /* BankKodemiaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB7327FDEE49004E46CB /* BankKodemiaTests.swift */; };
+		E73FFB7C27FDF1C3004E46CB /* LoginViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB7B27FDF1C3004E46CB /* LoginViewModelTest.swift */; };
+		E73FFB7E27FDF209004E46CB /* LoginViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB7D27FDF209004E46CB /* LoginViewControllerTest.swift */; };
 		E754E2AA27F411A500CBFC47 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E754E2A927F411A500CBFC47 /* FirebaseAuth */; };
 		E754E2AC27F411A500CBFC47 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = E754E2AB27F411A500CBFC47 /* FirebaseAuthCombine-Community */; };
 		E754E2AE27F411A500CBFC47 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = E754E2AD27F411A500CBFC47 /* FirebaseDatabase */; };
@@ -99,6 +102,16 @@
 		FAF8164727EC230E0098989A /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8164627EC230E0098989A /* SuccessViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		E73FFB7527FDEE49004E46CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E75D785127E2F7E300F95DDD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E75D785827E2F7E300F95DDD;
+			remoteInfo = BankKodemia;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		5336769A27F8418A00A0E0A5 /* ContenidoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContenidoTableViewCell.swift; sourceTree = "<group>"; };
 		53864A1927FD4D4E00F6FE7D /* SendMoneyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyViewModel.swift; sourceTree = "<group>"; };
@@ -134,6 +147,10 @@
 		E73FFB6727FD056E004E46CB /* ShipDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipDataManager.swift; sourceTree = "<group>"; };
 		E73FFB6927FD058F004E46CB /* ShipData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipData.swift; sourceTree = "<group>"; };
 		E73FFB6B27FD05A2004E46CB /* ShipDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipDataModel.swift; sourceTree = "<group>"; };
+		E73FFB7127FDEE48004E46CB /* BankKodemiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankKodemiaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E73FFB7327FDEE49004E46CB /* BankKodemiaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankKodemiaTests.swift; sourceTree = "<group>"; };
+		E73FFB7B27FDF1C3004E46CB /* LoginViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTest.swift; sourceTree = "<group>"; };
+		E73FFB7D27FDF209004E46CB /* LoginViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTest.swift; sourceTree = "<group>"; };
 		E754E2B127F4145D00CBFC47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E754E2B327F4170600CBFC47 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E754E2B627F41C9300CBFC47 /* HomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataManager.swift; sourceTree = "<group>"; };
@@ -190,6 +207,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E73FFB6E27FDEE48004E46CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E75D785627E2F7E300F95DDD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -332,14 +356,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		E70B649F27EFC7F300F94109 /* UserLoginModels */ = {
-			isa = PBXGroup;
-			children = (
-				E70B64A827EFCE2B00F94109 /* LoggedInModels */,
-			);
-			path = UserLoginModels;
-			sourceTree = "<group>";
-		};
 		E70B64A827EFCE2B00F94109 /* LoggedInModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,6 +409,24 @@
 			path = ShipModels;
 			sourceTree = "<group>";
 		};
+		E73FFB7227FDEE49004E46CB /* BankKodemiaTests */ = {
+			isa = PBXGroup;
+			children = (
+				E73FFB7A27FDF161004E46CB /* LoggedInModuleTest */,
+				E73FFB7327FDEE49004E46CB /* BankKodemiaTests.swift */,
+			);
+			path = BankKodemiaTests;
+			sourceTree = "<group>";
+		};
+		E73FFB7A27FDF161004E46CB /* LoggedInModuleTest */ = {
+			isa = PBXGroup;
+			children = (
+				E73FFB7B27FDF1C3004E46CB /* LoginViewModelTest.swift */,
+				E73FFB7D27FDF209004E46CB /* LoginViewControllerTest.swift */,
+			);
+			path = LoggedInModuleTest;
+			sourceTree = "<group>";
+		};
 		E754E2B527F41C0200CBFC47 /* HomeModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -407,6 +441,7 @@
 			isa = PBXGroup;
 			children = (
 				E75D785B27E2F7E300F95DDD /* BankKodemia */,
+				E73FFB7227FDEE49004E46CB /* BankKodemiaTests */,
 				E75D785A27E2F7E300F95DDD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -415,6 +450,7 @@
 			isa = PBXGroup;
 			children = (
 				E75D785927E2F7E300F95DDD /* BankKodemia.app */,
+				E73FFB7127FDEE48004E46CB /* BankKodemiaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -438,7 +474,7 @@
 		E75D787627E2F99C00F95DDD /* LoginView */ = {
 			isa = PBXGroup;
 			children = (
-				E70B649F27EFC7F300F94109 /* UserLoginModels */,
+				E70B64A827EFCE2B00F94109 /* LoggedInModels */,
 				E75D78A527E3193900F95DDD /* LoginViewController.swift */,
 				E70B649A27EF919100F94109 /* LoginViewModel.swift */,
 			);
@@ -677,6 +713,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E73FFB7027FDEE48004E46CB /* BankKodemiaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E73FFB7927FDEE49004E46CB /* Build configuration list for PBXNativeTarget "BankKodemiaTests" */;
+			buildPhases = (
+				E73FFB6D27FDEE48004E46CB /* Sources */,
+				E73FFB6E27FDEE48004E46CB /* Frameworks */,
+				E73FFB6F27FDEE48004E46CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E73FFB7627FDEE49004E46CB /* PBXTargetDependency */,
+			);
+			name = BankKodemiaTests;
+			productName = BankKodemiaTests;
+			productReference = E73FFB7127FDEE48004E46CB /* BankKodemiaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		E75D785827E2F7E300F95DDD /* BankKodemia */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E75D786D27E2F7E400F95DDD /* Build configuration list for PBXNativeTarget "BankKodemia" */;
@@ -708,9 +762,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1320;
+				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					E73FFB7027FDEE48004E46CB = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = E75D785827E2F7E300F95DDD;
+					};
 					E75D785827E2F7E300F95DDD = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -734,11 +792,19 @@
 			projectRoot = "";
 			targets = (
 				E75D785827E2F7E300F95DDD /* BankKodemia */,
+				E73FFB7027FDEE48004E46CB /* BankKodemiaTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E73FFB6F27FDEE48004E46CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E75D785727E2F7E300F95DDD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -770,6 +836,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E73FFB6D27FDEE48004E46CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E73FFB7E27FDF209004E46CB /* LoginViewControllerTest.swift in Sources */,
+				E73FFB7C27FDF1C3004E46CB /* LoginViewModelTest.swift in Sources */,
+				E73FFB7427FDEE49004E46CB /* BankKodemiaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E75D785527E2F7E300F95DDD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -843,6 +919,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		E73FFB7627FDEE49004E46CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E75D785827E2F7E300F95DDD /* BankKodemia */;
+			targetProxy = E73FFB7527FDEE49004E46CB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		E75D786727E2F7E400F95DDD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -855,6 +939,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		E73FFB7727FDEE49004E46CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4QKPASA53W;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.msalda.BankKodemiaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BankKodemia.app/BankKodemia";
+			};
+			name = Debug;
+		};
+		E73FFB7827FDEE49004E46CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4QKPASA53W;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.msalda.BankKodemiaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BankKodemia.app/BankKodemia";
+			};
+			name = Release;
+		};
 		E75D786B27E2F7E400F95DDD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1028,6 +1150,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E73FFB7927FDEE49004E46CB /* Build configuration list for PBXNativeTarget "BankKodemiaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E73FFB7727FDEE49004E46CB /* Debug */,
+				E73FFB7827FDEE49004E46CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E75D785427E2F7E300F95DDD /* Build configuration list for PBXProject "BankKodemia" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
