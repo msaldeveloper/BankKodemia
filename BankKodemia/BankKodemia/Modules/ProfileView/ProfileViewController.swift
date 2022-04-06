@@ -123,9 +123,16 @@ extension ProfileViewController {
         dismiss(animated: true)
     }
     @objc func exit(){
-        let exit = WelcomeViewController()
-        exit.modalPresentationStyle = .fullScreen
-        present(exit,animated: true,completion:{print("register button press validated")} )
-        
+        let alerta = UIAlertController(title: "Cerrar Sesion", message: "¿Desea cerrar sesión?", preferredStyle: .alert)
+        let aceptar = UIAlertAction(title: "Acceptar", style: .default) { _ in
+            UserDefaults.standard.removeObject(forKey: "correo")
+            let exit = WelcomeViewController()
+            exit.modalPresentationStyle = .fullScreen
+            self.present(exit,animated: true,completion: nil )
+        }
+        let cancelar = UIAlertAction(title: "Cancelar", style: .default, handler: nil)
+        alerta.addAction(aceptar)
+        alerta.addAction(cancelar)
+        present(alerta, animated: true, completion: nil)
     }
 }

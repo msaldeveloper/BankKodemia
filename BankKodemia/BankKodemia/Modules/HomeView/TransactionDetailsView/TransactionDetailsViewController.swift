@@ -108,7 +108,7 @@ class TransactionDetailsViewController: UIViewController {
             dateLabel.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/30)
         ])
         
-        dateDetail.text = transaction.createdAt
+        dateDetail.text = String(transaction.createdAt[..<(transaction.createdAt.firstIndex(of: "T") ?? transaction.createdAt.endIndex)]).dateFormart() + ", " + String(transaction.createdAt[(transaction.createdAt.index(after: transaction.createdAt.firstIndex(of: "T") ?? transaction.createdAt.endIndex) )...(transaction.createdAt.index(before: transaction.createdAt.firstIndex(of: ".") ?? transaction.createdAt.endIndex))])
         dateDetail.font = ConstantsFont.f14Regular
         dateDetail.textColor = ConstantsUIColor.greyKodemia
         view.addSubview(dateDetail)
