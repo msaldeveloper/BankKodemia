@@ -187,7 +187,7 @@ struct Text{
         static let AddRecipientButton: String = "Agregar Contacto"
         static let BackToInitButton: String = "Volver a Inicio"
         static let ImageBottomLabel: String = "Tu contacto fue agregado con éxito"
-        static let ImageBottomLabelSuccess: String = "Tu transacción a sido finalizada"
+        static let ImageBottomLabelSuccess: String = "Tu transacción ha sido finalizada"
         
     }
     struct Routes {
