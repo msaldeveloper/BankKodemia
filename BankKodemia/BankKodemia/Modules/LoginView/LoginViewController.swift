@@ -97,11 +97,10 @@ class LoginViewController: UIViewController {
         
         textFieldEmail = UITextField()
         textFieldEmail.formatTextField(TextLocals.init_session_email_input_message)
+        textFieldEmail.text = UserDefaults.standard.object(forKey: "correo") as? String ?? ""
         textFieldEmail.keyboardType = .emailAddress
         fieldEmail.addSubview(textFieldEmail)
         textFieldEmail.addAnchorsAndSize(width: nil, height: nil, left: 10, top: 0, right: 10, bottom: 0)
-        
-        
 
         textFieldLabelTop = UILabel()
         textFieldLabelTop.text = TextLocals.init_session_top_email_input_message
@@ -118,6 +117,7 @@ class LoginViewController: UIViewController {
         
         textFieldPassword = UITextField()
         textFieldPassword.formatTextField(TextLocals.init_session_password_input_message)
+        textFieldPassword.isSecureTextEntry = true
         fieldPassword.addSubview(textFieldPassword)
         textFieldPassword.addAnchorsAndSize(width: nil, height: nil, left: 10, top: 0, right: 10, bottom: 0)
         
@@ -216,8 +216,8 @@ class LoginViewController: UIViewController {
     }
     func sesionActiva(){
             print("Estamos logueados")
+            UserDefaults.standard.set(textFieldEmail.text, forKey: "correo")
         
-    
             let  tabBarVC = UITabBarController()
             let home = HomeViewController()
             let target = HomeCardViewController()
@@ -226,24 +226,24 @@ class LoginViewController: UIViewController {
             target.title = "TARJETA"
             services.title = "SERVICIOS"
             //logOut.title = "LogOut"
-        UITabBar.appearance().unselectedItemTintColor = .white
-        UITabBar.appearance().tintColor = ConstantsUIColor.greenBlue
-            //UITabBar.appearance().isTranslucent = true
+            UITabBar.appearance().unselectedItemTintColor = .white
+            UITabBar.appearance().tintColor = ConstantsUIColor.greenBlue
+                //UITabBar.appearance().isTranslucent = true
             UITabBar.appearance().backgroundColor = UIColor.black
             home.tabBarItem.image = UIImage(named: "logo_tab")
-        target.tabBarItem.image = UIImage(named: "cards")
+            target.tabBarItem.image = UIImage(named: "cards")
             services.tabBarItem.image = UIImage(named: "List")
             tabBarVC.setViewControllers([home,target,services], animated: false)
             tabBarVC.modalPresentationStyle = .fullScreen
             present(tabBarVC, animated: true, completion: nil)
-            }
-    }
-
-    extension UITabBar {
-        static func setAppearanceTabbar(){
-            UITabBar.appearance().backgroundColor = .red
         }
+}
+
+extension UITabBar {
+    static func setAppearanceTabbar(){
+        UITabBar.appearance().backgroundColor = .red
     }
+}
 // MARK: - OBJC Functions
 extension LoginViewController {
     @objc func backAction(){

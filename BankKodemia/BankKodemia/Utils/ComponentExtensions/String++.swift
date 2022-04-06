@@ -38,5 +38,45 @@ extension String{
         
     }
     
+    func dateFormart() -> String{
+        
+        let year = String(self[..<(self.firstIndex(of: "-") ?? self.endIndex)])
+        let help = String(self[(self.index(after: self.firstIndex(of: "-") ?? self.endIndex))...index(before: self.endIndex)])
+        var month = String(help[..<(help.firstIndex(of: "-") ?? help.endIndex)])
+        let day = String(help[(help.index(after: help.firstIndex(of: "-") ?? help.endIndex))...index(before: help.endIndex)])
+        
+        switch month {
+            case "01":
+                month = "ENERO"
+            case "02":
+                month = "FEBRERO"
+            case "03":
+                month = "MARZO"
+            case "04":
+                month = "ABRIL"
+            case "05":
+                month = "MAYO"
+            case "06":
+                month = "JUNIO"
+            case "07":
+                month = "JULIO"
+            case "08":
+                month = "AGOSTO"
+            case "09":
+                month = "SEPTIEMBRE"
+            case "10":
+                month = "OCTUBRE"
+            case "11":
+                month = "NOVIEMBRE"
+            case "12":
+                month = "DICIEMBRE"
+            
+            default:
+                month = ":("
+        }
+        
+        return day + " " + month + " " + year
+    }
+    
 }
 

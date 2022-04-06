@@ -203,7 +203,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         // Aqui definimos el UIView el cual se va a retornar en la funcion
         let label = UILabel(frame: CGRect(x: 10, y: 0, width: 8*width/9, height: 20))
         label.textColor = .black
-        label.text = String(movementsList[section][0].createdAt[..<(movementsList[section][0].createdAt.firstIndex(of: "T") ?? movementsList[section][0].createdAt.endIndex)])
+        label.text = String(movementsList[section][0].createdAt[..<(movementsList[section][0].createdAt.firstIndex(of: "T") ?? movementsList[section][0].createdAt.endIndex)]).dateFormart()
         label.font = ConstantsFont.f14Normal
         view.addSubview(label)
         
