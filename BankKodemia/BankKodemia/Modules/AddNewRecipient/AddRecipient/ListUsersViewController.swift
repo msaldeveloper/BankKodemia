@@ -69,9 +69,9 @@ class ListUsersViewController: UIViewController {
         userTable.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             userTable.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            userTable.topAnchor.constraint(equalTo: view.topAnchor, constant: 3*height/16),
+            userTable.topAnchor.constraint(equalTo: initSessionLabel.bottomAnchor, constant: 0),
             userTable.widthAnchor.constraint(equalToConstant: width),
-            userTable.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 13/16)
+            userTable.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
     
