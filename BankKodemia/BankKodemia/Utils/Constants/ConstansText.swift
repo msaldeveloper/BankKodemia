@@ -112,6 +112,7 @@ struct Text{
         }
         
         struct Detail {
+            static let title: String = "Ingresa tus datos"
             static let TopMessage: String = "Escríbelos tal como aparecen en tu identificación oficial sin abreviaturas"
             static let NameMessage: String = "Nombre(s)"
             static let LastNameMessage: String = "Apellido(s)"
@@ -120,6 +121,7 @@ struct Text{
         }
         
         struct PhoneVerification {
+            static let title: String = "Escribe tu teléfono"
             static let TopMessage: String = "ESCRIBE TU TELÉFONO"
             static let ButtonBoldMessage: String = "Lo usarás para iniciar sesión"
             static let LabelNumberMessage: String = "Tu número de celular"
@@ -127,6 +129,7 @@ struct Text{
         }
         
         struct IdentityVerification {
+            static let title: String = "Identidad"
             static let TopMessage: String = "Ahora, vamos a verificar tu identidad para proteger tu cuenta."
             static let BottonMessage: String = "Deberás subir una fotografía de tu INE o pasaporte vigente y tomarte una selfie. Si eres extranjero necesitarás una fotografía de tu documento migratorio (FM3)"
         }
@@ -146,6 +149,7 @@ struct Text{
         }
         
         struct CreatePassword {
+            static let title: String = "Contraseña"
             static let TopMessage: String = "Crea una contraseña segura"
             static let MediumMessage: String = "La usarás para entrar a la app y confirmar tus transacciones."
             static let BottomMessage: String = "La contraseña debe de tener una mayuscula, un numero y un signo."
