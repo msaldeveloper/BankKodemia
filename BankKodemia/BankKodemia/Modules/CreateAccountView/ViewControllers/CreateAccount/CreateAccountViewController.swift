@@ -66,6 +66,8 @@ class CreateAccountViewController: UIViewController {
     // MARK: - Navigation
     func UIInit(){
         logoImage()
+        returnButton()
+        titleLabel()
         suggestEmailSection()
         createEmailSection()
         legalInformationSection()
@@ -77,6 +79,17 @@ class CreateAccountViewController: UIViewController {
     func logoImage(){
         view.addSubview(logo)
         logo.logoFormart(view: view)
+    }
+    
+    func returnButton(){
+        view.addSubview(arrowButton)
+        arrowButton.backButton(view: view, textDinamic: TextLocals.init_session_back_message, widthText: width/4)
+        arrowButton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
+    }
+    
+    func titleLabel(){
+        view.addSubview(titleSuggestLabel)
+        titleSuggestLabel.formartTitle(view: view, textTitle: TextLocals.init_session_top_email_input_message)
     }
     
     func suggestEmailSection(){

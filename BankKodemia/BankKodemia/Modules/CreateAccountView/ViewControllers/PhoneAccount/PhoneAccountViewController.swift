@@ -10,7 +10,8 @@ import Combine
 
 class PhoneAccountViewController: UIViewController, UITextViewDelegate {
     lazy var logo : UIImageView = UIImageView()
-    
+    var arrowButton: UIButton = UIButton()
+    var titleSuggestLabel: UILabel = UILabel()
     // SuggestDetailInfo: Indicaciones de la seccion
     var infoSuggestLabel: UILabel = UILabel()
     
@@ -53,6 +54,8 @@ class PhoneAccountViewController: UIViewController, UITextViewDelegate {
     
     func UIInit(){
         logoImage()
+        returnButton()
+        titleLabel()
         suggestDetailInfoSection()
         phoneInfoFieldSection()
         legalInformationSection()
@@ -63,6 +66,17 @@ class PhoneAccountViewController: UIViewController, UITextViewDelegate {
     func logoImage(){
         view.addSubview(logo)
         logo.logoFormart(view: view)
+    }
+    
+    func returnButton(){
+        view.addSubview(arrowButton)
+        arrowButton.backButton(view: view, textDinamic: Text.CreateAccount.Detail.title.uppercased(), widthText: width/2)
+        arrowButton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
+    }
+    
+    func titleLabel(){
+        view.addSubview(titleSuggestLabel)
+        titleSuggestLabel.formartTitle(view: view, textTitle: Text.CreateAccount.PhoneVerification.title)
     }
     
     func suggestDetailInfoSection(){
@@ -194,7 +208,7 @@ extension PhoneAccountViewController {
         
         self.createNewAccountViewModel.phoneAccountValidator(phoneInfoTextField.text ?? "")
         self.createNewAccountViewModel.PhoneRegExpValidator(phoneInfoTextField.text ?? "")
-        
+
         let identityVerificarionViewController = IdentityVerificationViewController()
         identityVerificarionViewController.modalPresentationStyle = .fullScreen
         present(identityVerificarionViewController, animated: true, completion: nil)

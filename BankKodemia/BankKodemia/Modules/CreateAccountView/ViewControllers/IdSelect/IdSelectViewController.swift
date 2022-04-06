@@ -10,6 +10,8 @@ import Combine
 
 class IdSelectViewController: UIViewController {
     lazy var logo : UIImageView = UIImageView()
+    var arrowButton: UIButton = UIButton()
+    var titleSuggestLabel: UILabel = UILabel()
     
     // SuggestDetailInfo: Indicaciones de la seccion
     var infoSuggestLabel : UILabel = UILabel()
@@ -27,7 +29,7 @@ class IdSelectViewController: UIViewController {
     var passportButtonLabel : UILabel = UILabel()
     var immigrantDocumentButtonlabel : UILabel = UILabel()
     
-    var arrowButton : UIImageView = UIImageView()
+//    var arrowButton : UIImageView = UIImageView()
     var ineRightArrow : UIImageView = UIImageView()
     var passportRightArrow : UIImageView = UIImageView()
     var immigrantDocumentRightArrow : UIImageView = UIImageView()
@@ -65,6 +67,8 @@ class IdSelectViewController: UIViewController {
     
     func UIInit(){
         logoImage()
+        returnButton()
+        titleLabel()
         suggestDetailInfoSection()
         ineSelectorButton()
         immigrantDocumentSelectorButton()
@@ -75,6 +79,17 @@ class IdSelectViewController: UIViewController {
     func logoImage(){
         view.addSubview(logo)
         logo.logoFormart(view: view)
+    }
+    
+    func returnButton(){
+        view.addSubview(arrowButton)
+        arrowButton.backButton(view: view, textDinamic: Text.CreateAccount.IdentityVerification.title.uppercased(), widthText: width/4)
+        arrowButton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
+    }
+    
+    func titleLabel(){
+        view.addSubview(titleSuggestLabel)
+        titleSuggestLabel.formartTitle(view: view, textTitle: Text.CreateAccount.IdentityVerification.title)
     }
     
     func suggestDetailInfoSection(){
