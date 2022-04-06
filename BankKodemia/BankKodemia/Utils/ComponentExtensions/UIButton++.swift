@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 extension UIButton{
+    
     func formartBlueGreen(){
         self.layer.cornerRadius = 8
         self.backgroundColor = ConstantsUIColor.greenBlue
@@ -73,6 +74,22 @@ extension UIButton{
         ])
     }
     
+    func addLabelDark(button: UIButton, text: String){
+        let label = UILabel()
+        button.addSubview(label)
+        label.font = ConstantsFont.f18SemiBold
+        label.textColor = .black
+        label.textAlignment = .left
+        label.text = text
+        label.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            label.leadingAnchor.constraint(equalTo: button.leadingAnchor, constant: 0),
+            label.topAnchor.constraint(equalTo: button.topAnchor, constant: 0),
+            label.widthAnchor.constraint(equalTo: button.widthAnchor, multiplier: 1),
+            label.heightAnchor.constraint(equalTo: button.heightAnchor, multiplier: 1)
+        ])
+    }
+    
     func addLabelUploader(button: UIButton, text: String){
         let label = UILabel()
         button.addSubview(label)
@@ -107,9 +124,8 @@ extension UIButton{
     }
     
     func backButton(view: UIView, textDinamic: String, widthText: CGFloat){
-        self.backgroundColor = .green
         let arrowImage = UIImageView(frame: CGRect(x: 0, y: ConstantsUIKit.height/320, width: 3*ConstantsUIKit.height/160, height: 3*ConstantsUIKit.height/160))
-        arrowImage.backgroundColor = .red
+        arrowImage.image = UIImage(named: "backArrow")
         self.addSubview(arrowImage)
         let textButton = UILabel(frame: CGRect(x: 3*ConstantsUIKit.height/160 + ConstantsUIKit.width/36, y: -ConstantsUIKit.height/240, width: widthText, height: ConstantsUIKit.height/30))
         textButton.font = ConstantsFont.f14Normal

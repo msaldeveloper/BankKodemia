@@ -14,6 +14,7 @@ extension UITextField{
     func formatTextField(_ inputText : String){
         self.textAlignment = .left
         self.autocapitalizationType = .none
+        self.textColor = .black
         self.backgroundColor = .clear
         self.layer.cornerRadius = 4
         self.attributedPlaceholder = NSAttributedString(

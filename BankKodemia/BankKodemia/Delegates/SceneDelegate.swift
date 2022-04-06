@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
 
-                let view = HomeCardViewController()//cambiar por view a probar
+                let view = WelcomeViewController()//cambiar por view a probar
                 window?.rootViewController = view
                 window?.makeKeyAndVisible()
     }

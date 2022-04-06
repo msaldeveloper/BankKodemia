@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 
 class LoginViewController: UIViewController {
@@ -24,6 +25,9 @@ class LoginViewController: UIViewController {
     var linkMessageLabel: UILabel = UILabel()
     var initSessionBottomButton: UIButton = UIButton()
     var initSessionButtonLabel: UILabel = UILabel()
+    var alerta = ""
+    private var loginViewModel = LoginViewModel()
+    private var cancellables: [AnyCancellable] = []
 
     var backgroundColor = ConstantsUIColor.clearBackground
 
@@ -31,8 +35,18 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = backgroundColor
         UIInit()
+        validationBind()
+        //Looks for single or multiple taps.
+             let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
 
-        // Do any additional setup after loading the view.
+            //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+            //tap.cancelsTouchesInView = false
+
+            view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     
@@ -62,9 +76,9 @@ class LoginViewController: UIViewController {
         initSessionLabel.formartTitle(view: view, textTitle: TextLocals.init_session_top_message)
     }
     func welcomeLabel(){
-        initSessionWelcomeLabel = UILabel()
         initSessionWelcomeLabel.text = TextLocals.init_session_description_message
         initSessionWelcomeLabel.font = ConstantsFont.f16Normal
+        initSessionWelcomeLabel.textColor = .black
         initSessionWelcomeLabel.textAlignment = .left
         initSessionWelcomeLabel.lineBreakMode = .byWordWrapping
         initSessionWelcomeLabel.numberOfLines = 0
@@ -89,6 +103,7 @@ class LoginViewController: UIViewController {
         textFieldLabelTop = UILabel()
         textFieldLabelTop.text = TextLocals.init_session_top_email_input_message
         textFieldLabelTop.font = ConstantsFont.f14Normal
+        textFieldLabelTop.textColor = .black
         view.addSubview(textFieldLabelTop)
         textFieldLabelTop.addAnchorsAndSize(width: nil, height: nil, left: 21, top: nil, right: nil, bottom: 2, withAnchor: .bottom, relativeToView: textFieldEmail)
     }
@@ -109,6 +124,7 @@ class LoginViewController: UIViewController {
         passwordFieldLabelTop = UILabel()
         passwordFieldLabelTop.text = TextLocals.init_session_top_password_input_message
         passwordFieldLabelTop.font = ConstantsFont.f14Normal
+        passwordFieldLabelTop.textColor = .black
         view.addSubview(passwordFieldLabelTop)
         passwordFieldLabelTop.addAnchorsAndSize(width: nil, height: nil, left: 21, top: nil, right: nil, bottom: 2, withAnchor: .bottom, relativeToView: textFieldPassword)
     }
@@ -149,10 +165,61 @@ class LoginViewController: UIViewController {
         
         
     }
+    //suscriptor
+    fileprivate func validationBind(){
+        self.loginViewModel
+            .validationState
+            .sink{ newAlertText in
+               print("esperando acceso ->",newAlertText)
+                if newAlertText == "access"{
+                    self.sesionActiva()
+                }else {
+                    print("new alert -->>",newAlertText)
+                    self.updateAlert(newAlertText)//self.sesionActiva()
+                }
+            }
+            .store(in: &cancellables)
+    }
     
+    func updateAlert(_ alertText: String){
+        alerta = alertText
+        print(alertText)
+        let alert = UIAlertController(title: "Error :(", message: alerta, preferredStyle: .alert)
+        let aceptar = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+        alert.addAction(aceptar)
+        self.present(alert, animated: true, completion: nil)
+    }
+    func sesionActiva(){
+            print("Estamos logueados")
+        
     
+            let  tabBarVC = UITabBarController()
+            let home = HomeViewController()
+            let target = HomeCardViewController()
+            let services = HomeServicesViewController()
+            home.title = "INICIO"
+            target.title = "TARJETA"
+            services.title = "SERVICIOS"
+            //logOut.title = "LogOut"
+        UITabBar.appearance().unselectedItemTintColor = .white
+        UITabBar.appearance().tintColor = ConstantsUIColor.greenBlue
+            //UITabBar.appearance().isTranslucent = true
+            UITabBar.appearance().backgroundColor = UIColor.black
+            home.tabBarItem.image = UIImage(named: "logo_tab")
+        target.tabBarItem.image = UIImage(named: "cards")
+            services.tabBarItem.image = UIImage(named: "List")
+            tabBarVC.setViewControllers([home,target,services], animated: false)
+            tabBarVC.modalPresentationStyle = .fullScreen
+            present(tabBarVC, animated: true, completion: nil)
+            }
+    }
 
-}
+    extension UITabBar {
+        static func setAppearanceTabbar(){
+            UITabBar.appearance().backgroundColor = .red
+        }
+    
+    }
 // MARK: - OBJC Functions
 extension LoginViewController {
     @objc func backAction(){
@@ -164,5 +231,7 @@ extension LoginViewController {
     }
     @objc func continueButton(){
         print("continue button pressed")
+        self.loginViewModel.loginValidator(self.textFieldEmail.text ?? "", self.textFieldPassword.text ?? "")
+        
     }
 }

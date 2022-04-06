@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>photo image id picker from library</string>
+	<key>NSCameraUsageDescription</key>
+	<string>photo image id picker</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Poppins-ThinItalic.ttf</string>

@@ -73,18 +73,21 @@ class HomeCardViewController: UIViewController {
         cardImage.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(cardNumberLabel)
+        cardNumberLabel.textColor = .black
         cardNumberLabel.text = TextLocals.home_card_number_of_card_message
         cardNumberLabel.font = UIFont(name: "Poppins-Medium", size: 14)
         cardNumberLabel.textAlignment = .left
         cardNumberLabel.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(cardNumber)
-        cardNumber.text = "4444 4444 4444 4444"
+        cardNumber.textColor = .black
+        cardNumber.text = "4321 9876 1234 7890"
         cardNumber.font = UIFont(name: "Poppins-Regular", size: 14)
         cardNumber.textAlignment = .left
         cardNumber.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(validityLabel)
+        validityLabel.textColor = .black
         validityLabel.text = TextLocals.home_card_validity_message
         validityLabel.font = UIFont(name: "Poppins-Medium", size: 14)
         validityLabel.textAlignment = .left
@@ -92,18 +95,21 @@ class HomeCardViewController: UIViewController {
         
         
         view.addSubview(validity)
+        validity.textColor = .black
         validity.text = "11/26"
         validity.font = UIFont(name: "Poppins-Regular", size: 14)
         validity.textAlignment = .left
         validity.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(cvvLabel)
+        cvvLabel.textColor = .black
         cvvLabel.text = TextLocals.home_card_cvv_message
         cvvLabel.font = UIFont(name: "Poppins-Medium", size: 14)
         cvvLabel.textAlignment = .left
         cvvLabel.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(cvv)
+        cvv.textColor = .black
         cvv.text = "125"
         cvv.font = UIFont(name: "Poppins-Regular", size: 14)
         cvv.textAlignment = .left

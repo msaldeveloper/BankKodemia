@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import Combine
 
-class ShipViewController: UIViewController {
-    
+class ShipViewController: UIViewController{
+    var alerta = ""
     let width = ConstantsUIKit.width
     let height = ConstantsUIKit.height
     lazy var logo : UIImageView = UIImageView()
@@ -19,21 +20,42 @@ class ShipViewController: UIViewController {
     lazy var shipToNameDetail : UILabel = UILabel()
     lazy var shipToCountDetail : UILabel = UILabel()
     
+    lazy var moneySign : UILabel = UILabel()
     lazy var quantityLabel : UILabel = UILabel()
     lazy var quantityTextField : UITextField = UITextField()
     lazy var quantityDetail : UILabel = UILabel()
     
     lazy var conceptLabel : UILabel = UILabel()
+    lazy var conceptCounLabel : UILabel = UILabel()
     lazy var conceptBackground : UIView = UIView()
     lazy var conceptTextField : UITextView = UITextView()
     
     lazy var makeTransferButton : UIButton = UIButton()
+    var shipViewModel = ShipViewModel()
+    private var cancellables: [AnyCancellable] = []
+    
+    var name : String = ""
+    var id: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         initUI()
+        quantityTextField.delegate = self
+        conceptTextField.delegate = self
+        validationBind()
     }
+    
+    init(name: String, id:String){
+        super.init(nibName: nil, bundle: nil)
+        self.name = name
+        self.id = id
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
     func initUI(){
         
@@ -59,12 +81,13 @@ class ShipViewController: UIViewController {
             shipToLabel.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/30)
         ])
         
-        shipToNameDetail.text = "Cruz Eduardo Reveles Caldera"
+        shipToNameDetail.text = self.name
         shipToNameDetail.font = ConstantsFont.f14SemiBold
+        shipToNameDetail.textColor = .black
         view.addSubview(shipToNameDetail)
         shipToNameDetail.listDetails(view: view, previous: shipToLabel, height: 1/30)
         
-        shipToCountDetail.text = "1234 1234 1234 1234 / BANORTE"
+        shipToCountDetail.text = self.id
         shipToCountDetail.textColor = ConstantsUIColor.greyKodemia
         shipToCountDetail.font = ConstantsFont.f14Regular
         view.addSubview(shipToCountDetail)
@@ -77,7 +100,7 @@ class ShipViewController: UIViewController {
         quantityLabel.listDetails(view: view, previous: shipToCountDetail, height: 1/30)
         
         quantityTextField.borderStyle = .none
-        quantityTextField.placeholder = "$0.0"
+        quantityTextField.placeholder = "0.0"
         quantityTextField.textAlignment = .center
         quantityTextField.font = ConstantsFont.f20SemiBold
         view.addSubview(quantityTextField)
@@ -85,8 +108,18 @@ class ShipViewController: UIViewController {
         NSLayoutConstraint.activate([
             quantityTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             quantityTextField.topAnchor.constraint(equalTo: quantityLabel.bottomAnchor, constant: 0),
-            quantityTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 8/9),
             quantityTextField.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 2/30)
+        ])
+        
+        moneySign.backgroundColor = .clear
+        moneySign.textColor = .black
+        moneySign.text = "$"
+        moneySign.font = ConstantsFont.f20SemiBold
+        view.addSubview(moneySign)
+        moneySign.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            moneySign.centerYAnchor.constraint(equalTo: quantityTextField.centerYAnchor),
+            moneySign.trailingAnchor.constraint(equalTo: quantityTextField.leadingAnchor, constant: 0),
         ])
         
         quantityDetail.text = TextLocals.send_cash_spei_message
@@ -102,7 +135,16 @@ class ShipViewController: UIViewController {
         view.addSubview(conceptLabel)
         conceptLabel.listDetails(view: view, previous: quantityDetail, height: 1/30)
         
-        conceptBackground.backgroundColor = ConstantsUIColor.greyKodemia
+        conceptCounLabel.font = ConstantsFont.f14Regular
+        conceptCounLabel.textColor = ConstantsUIColor.greyKodemia
+        view.addSubview(conceptCounLabel)
+        conceptCounLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            conceptCounLabel.centerYAnchor.constraint(equalTo: conceptLabel.centerYAnchor),
+            conceptCounLabel.leadingAnchor.constraint(equalTo: conceptLabel.trailingAnchor, constant: -19*width/30),
+        ])
+        
+        conceptBackground.backgroundColor = ConstantsUIColor.greyBackGround
         conceptBackground.layer.cornerRadius = 10
         view.addSubview(conceptBackground)
         conceptBackground.translatesAutoresizingMaskIntoConstraints = false
@@ -129,17 +171,43 @@ class ShipViewController: UIViewController {
         makeTransferButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             makeTransferButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            makeTransferButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -height/16),
+            makeTransferButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -height/10),
             makeTransferButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 8/9),
             makeTransferButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/20)
         ])
         
         makeTransferButton.addLabelWhite(button: makeTransferButton, text: TextLocals.send_cash_transfer_button)
+        makeTransferButton.addTarget(self, action: #selector(shipButton), for: .touchUpInside)
         
         
     }
-    
-
+    fileprivate func validationBind(){
+        self.shipViewModel
+            .validationState
+            .sink{ newAlertText in
+               print("esperando acceso ->",newAlertText)
+                if newAlertText == "success"{
+                    self.successfulSreen()
+                }else {
+                    print("new alert -->>",newAlertText)
+                    self.updateAlert(newAlertText)//self.sesionActiva()
+                }
+            }
+            .store(in: &cancellables)
+    }
+    func successfulSreen(){
+        let successFulScreen = SuccessFullScreenViewController()
+        successFulScreen.modalPresentationStyle = .fullScreen
+        present(successFulScreen,animated: true,completion:{print("register button press validated")} )
+    }
+    func updateAlert(_ alertText: String){
+        alerta = alertText
+        print(alertText)
+        let alert = UIAlertController(title: "Error :(", message: alerta, preferredStyle: .alert)
+        let aceptar = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+        alert.addAction(aceptar)
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 // MARK: - OBJC Functions
 extension ShipViewController {
@@ -147,4 +215,31 @@ extension ShipViewController {
         print("back button pressed")
         dismiss(animated: true)
     }
+    @objc func shipButton(){
+        self.shipViewModel.shipDepositValidator(quantityTextField.text ?? "", conceptTextField.text ?? "", self.id)
+    }
+    
+}
+// MARK: - Extension UITextView
+extension ShipViewController: UITextViewDelegate{
+    
+    func textViewDidChange(_ textView: UITextView) {
+        conceptCounLabel.text = String(conceptTextField.text.count) + "/40"
+        if conceptTextField.text.count == 41 {
+            conceptCounLabel.text = "40/40"
+            conceptTextField.text.remove(at: conceptTextField.text.index(before: conceptTextField.text.endIndex))
+        }
+    }
+    
+}
+
+// MARK: - Extension UITextField
+extension ShipViewController: UITextFieldDelegate{
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        if quantityTextField.text?.count == 21{
+            quantityTextField.text?.remove(at: (quantityTextField.text?.index(before: quantityTextField.text!.endIndex))!)
+        }
+    }
+    
 }

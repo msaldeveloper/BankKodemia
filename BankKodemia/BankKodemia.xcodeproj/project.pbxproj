@@ -7,15 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5336769B27F8418A00A0E0A5 /* ContenidoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5336769A27F8418A00A0E0A5 /* ContenidoTableViewCell.swift */; };
+		53864A1A27FD4D4E00F6FE7D /* SendMoneyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53864A1927FD4D4E00F6FE7D /* SendMoneyViewModel.swift */; };
+		53864A1D27FD4DCB00F6FE7D /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53864A1C27FD4DCB00F6FE7D /* ContactModel.swift */; };
+		53864A1F27FD50CC00F6FE7D /* SendMoneyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53864A1E27FD50CC00F6FE7D /* SendMoneyTableViewCell.swift */; };
 		C59A81F927E6FD4B0038C662 /* UIImageView++.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59A81F827E6FD4B0038C662 /* UIImageView++.swift */; };
 		C5B7DE7827EBE587004AE6C7 /* TransactionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B7DE7727EBE587004AE6C7 /* TransactionDetailsViewController.swift */; };
 		C5B7DE7B27ECEAB6004AE6C7 /* SendMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B7DE7A27ECEAB6004AE6C7 /* SendMoneyViewController.swift */; };
 		C5B7DE7E27ECF790004AE6C7 /* ShipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B7DE7D27ECF790004AE6C7 /* ShipViewController.swift */; };
+		C929EEEF27FB891600596736 /* DepositViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C929EEEE27FB891600596736 /* DepositViewController.swift */; };
+		C929EEF127FBF7A900596736 /* DepositViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C929EEF027FBF7A800596736 /* DepositViewModel.swift */; };
+		C929EEF427FC065300596736 /* DepositDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C929EEF327FC065300596736 /* DepositDataManager.swift */; };
+		C929EEF627FC096F00596736 /* DepositedDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C929EEF527FC096F00596736 /* DepositedDataModel.swift */; };
 		C98304BD27EE0F0500EFD48A /* HomeCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98304BC27EE0F0500EFD48A /* HomeCardViewController.swift */; };
 		E70B646E27ED976300F94109 /* HomeServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70B646D27ED976300F94109 /* HomeServicesViewController.swift */; };
 		E70B647327ED996700F94109 /* AddNewRecipientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70B647227ED996700F94109 /* AddNewRecipientViewController.swift */; };
 		E70B647627ED999100F94109 /* ConfirmNewRecipientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70B647527ED999100F94109 /* ConfirmNewRecipientViewController.swift */; };
 		E70B647D27EDB32500F94109 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70B647C27EDB32500F94109 /* WelcomeViewController.swift */; };
+		E70B649B27EF919100F94109 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70B649A27EF919100F94109 /* LoginViewModel.swift */; };
+		E70B64A127EFC83400F94109 /* LoggedInDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70B64A027EFC83400F94109 /* LoggedInDataModel.swift */; };
+		E70B64AB27EFF6D300F94109 /* LoginInDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70B64AA27EFF6D200F94109 /* LoginInDataManager.swift */; };
+		E71F303327F0249A00E6E9DF /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E71F303227F0249A00E6E9DF /* Alamofire */; };
+		E73FFB4F27F7D84A004E46CB /* AddRecipientDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB4E27F7D84A004E46CB /* AddRecipientDataManager.swift */; };
+		E73FFB5227F7D884004E46CB /* AddRecipientData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB5127F7D884004E46CB /* AddRecipientData.swift */; };
+		E73FFB5427F7DB16004E46CB /* AddRecipientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB5327F7DB16004E46CB /* AddRecipientViewModel.swift */; };
+		E73FFB5727F8FE6B004E46CB /* HomeUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB5627F8FE6B004E46CB /* HomeUserModel.swift */; };
+		E73FFB5927FBD314004E46CB /* ListUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB5827FBD314004E46CB /* ListUsersViewController.swift */; };
+		E73FFB5B27FBFB96004E46CB /* AddRecipientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB5A27FBFB96004E46CB /* AddRecipientModel.swift */; };
+		E73FFB5D27FBFE2C004E46CB /* AddRecipientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB5C27FBFE2C004E46CB /* AddRecipientTableViewCell.swift */; };
+		E73FFB6027FCCA9C004E46CB /* SuccessFullScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB5F27FCCA9C004E46CB /* SuccessFullScreenViewController.swift */; };
+		E73FFB6327FCD845004E46CB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB6227FCD845004E46CB /* ProfileViewController.swift */; };
+		E73FFB6627FD0558004E46CB /* ShipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB6527FD0558004E46CB /* ShipViewModel.swift */; };
+		E73FFB6827FD056E004E46CB /* ShipDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB6727FD056E004E46CB /* ShipDataManager.swift */; };
+		E73FFB6A27FD058F004E46CB /* ShipData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB6927FD058F004E46CB /* ShipData.swift */; };
+		E73FFB6C27FD05A2004E46CB /* ShipDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FFB6B27FD05A2004E46CB /* ShipDataModel.swift */; };
+		E754E2AA27F411A500CBFC47 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E754E2A927F411A500CBFC47 /* FirebaseAuth */; };
+		E754E2AC27F411A500CBFC47 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = E754E2AB27F411A500CBFC47 /* FirebaseAuthCombine-Community */; };
+		E754E2AE27F411A500CBFC47 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = E754E2AD27F411A500CBFC47 /* FirebaseDatabase */; };
+		E754E2B027F411A500CBFC47 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = E754E2AF27F411A500CBFC47 /* FirebaseRemoteConfig */; };
+		E754E2B227F4145D00CBFC47 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E754E2B127F4145D00CBFC47 /* GoogleService-Info.plist */; };
+		E754E2B427F4170600CBFC47 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E754E2B327F4170600CBFC47 /* HomeViewModel.swift */; };
+		E754E2B727F41C9300CBFC47 /* HomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E754E2B627F41C9300CBFC47 /* HomeDataManager.swift */; };
+		E754E2B927F5B22D00CBFC47 /* HomeUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E754E2B827F5B22D00CBFC47 /* HomeUserData.swift */; };
 		E75D786627E2F7E400F95DDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75D786527E2F7E400F95DDD /* Assets.xcassets */; };
 		E75D786927E2F7E400F95DDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E75D786727E2F7E400F95DDD /* LaunchScreen.storyboard */; };
 		E75D787927E2FA2D00F95DDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75D787727E2FA2D00F95DDD /* AppDelegate.swift */; };
@@ -31,6 +64,11 @@
 		E75D78C627E45B0A00F95DDD /* ConstantsUIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75D78C527E45B0A00F95DDD /* ConstantsUIKit.swift */; };
 		E75D78CA27E45B7800F95DDD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75D78C927E45B7800F95DDD /* HomeViewController.swift */; };
 		E75D78CF27E45D3E00F95DDD /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75D78CE27E45D3E00F95DDD /* Network.swift */; };
+		FA72740E27FA2DC500BC81E6 /* ConstantsAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72740D27FA2DC500BC81E6 /* ConstantsAlerts.swift */; };
+		FA72741027FA5E4000BC81E6 /* ConstantRegExp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72740F27FA5E4000BC81E6 /* ConstantRegExp.swift */; };
+		FA72741427FAA15600BC81E6 /* CreateAccountDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72741327FAA15600BC81E6 /* CreateAccountDataModel.swift */; };
+		FA72741627FAA18E00BC81E6 /* CreateAccountDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72741527FAA18E00BC81E6 /* CreateAccountDataManager.swift */; };
+		FA9F2D2427F8ACF4008073A7 /* CreateNewAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9F2D2327F8ACF3008073A7 /* CreateNewAccountViewModel.swift */; };
 		FAA4979C27E66094007FCC32 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA4979B27E66094007FCC32 /* CreateAccountViewController.swift */; };
 		FAA497B027E6BAFE007FCC32 /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA4979E27E6BAFC007FCC32 /* Poppins-MediumItalic.ttf */; };
 		FAA497B127E6BAFE007FCC32 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA4979F27E6BAFC007FCC32 /* Poppins-Light.ttf */; };
@@ -61,15 +99,43 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5336769A27F8418A00A0E0A5 /* ContenidoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContenidoTableViewCell.swift; sourceTree = "<group>"; };
+		53864A1927FD4D4E00F6FE7D /* SendMoneyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyViewModel.swift; sourceTree = "<group>"; };
+		53864A1C27FD4DCB00F6FE7D /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
+		53864A1E27FD50CC00F6FE7D /* SendMoneyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyTableViewCell.swift; sourceTree = "<group>"; };
 		C59A81F827E6FD4B0038C662 /* UIImageView++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView++.swift"; sourceTree = "<group>"; };
 		C5B7DE7727EBE587004AE6C7 /* TransactionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsViewController.swift; sourceTree = "<group>"; };
 		C5B7DE7A27ECEAB6004AE6C7 /* SendMoneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyViewController.swift; sourceTree = "<group>"; };
 		C5B7DE7D27ECF790004AE6C7 /* ShipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipViewController.swift; sourceTree = "<group>"; };
+		C929EEEE27FB891600596736 /* DepositViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositViewController.swift; sourceTree = "<group>"; };
+		C929EEF027FBF7A800596736 /* DepositViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositViewModel.swift; sourceTree = "<group>"; };
+		C929EEF327FC065300596736 /* DepositDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositDataManager.swift; sourceTree = "<group>"; };
+		C929EEF527FC096F00596736 /* DepositedDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositedDataModel.swift; sourceTree = "<group>"; };
 		C98304BC27EE0F0500EFD48A /* HomeCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCardViewController.swift; sourceTree = "<group>"; };
 		E70B646D27ED976300F94109 /* HomeServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeServicesViewController.swift; sourceTree = "<group>"; };
 		E70B647227ED996700F94109 /* AddNewRecipientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewRecipientViewController.swift; sourceTree = "<group>"; };
 		E70B647527ED999100F94109 /* ConfirmNewRecipientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmNewRecipientViewController.swift; sourceTree = "<group>"; };
 		E70B647C27EDB32500F94109 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		E70B649A27EF919100F94109 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		E70B64A027EFC83400F94109 /* LoggedInDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInDataModel.swift; sourceTree = "<group>"; };
+		E70B64AA27EFF6D200F94109 /* LoginInDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInDataManager.swift; sourceTree = "<group>"; };
+		E73FFB4E27F7D84A004E46CB /* AddRecipientDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipientDataManager.swift; sourceTree = "<group>"; };
+		E73FFB5127F7D884004E46CB /* AddRecipientData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipientData.swift; sourceTree = "<group>"; };
+		E73FFB5327F7DB16004E46CB /* AddRecipientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipientViewModel.swift; sourceTree = "<group>"; };
+		E73FFB5627F8FE6B004E46CB /* HomeUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeUserModel.swift; sourceTree = "<group>"; };
+		E73FFB5827FBD314004E46CB /* ListUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersViewController.swift; sourceTree = "<group>"; };
+		E73FFB5A27FBFB96004E46CB /* AddRecipientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipientModel.swift; sourceTree = "<group>"; };
+		E73FFB5C27FBFE2C004E46CB /* AddRecipientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipientTableViewCell.swift; sourceTree = "<group>"; };
+		E73FFB5F27FCCA9C004E46CB /* SuccessFullScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessFullScreenViewController.swift; sourceTree = "<group>"; };
+		E73FFB6227FCD845004E46CB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E73FFB6527FD0558004E46CB /* ShipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipViewModel.swift; sourceTree = "<group>"; };
+		E73FFB6727FD056E004E46CB /* ShipDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipDataManager.swift; sourceTree = "<group>"; };
+		E73FFB6927FD058F004E46CB /* ShipData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipData.swift; sourceTree = "<group>"; };
+		E73FFB6B27FD05A2004E46CB /* ShipDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipDataModel.swift; sourceTree = "<group>"; };
+		E754E2B127F4145D00CBFC47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E754E2B327F4170600CBFC47 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		E754E2B627F41C9300CBFC47 /* HomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataManager.swift; sourceTree = "<group>"; };
+		E754E2B827F5B22D00CBFC47 /* HomeUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUserData.swift; sourceTree = "<group>"; };
 		E75D785927E2F7E300F95DDD /* BankKodemia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankKodemia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E75D786527E2F7E400F95DDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E75D786827E2F7E400F95DDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -87,6 +153,11 @@
 		E75D78C527E45B0A00F95DDD /* ConstantsUIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsUIKit.swift; sourceTree = "<group>"; };
 		E75D78C927E45B7800F95DDD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E75D78CE27E45D3E00F95DDD /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		FA72740D27FA2DC500BC81E6 /* ConstantsAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsAlerts.swift; sourceTree = "<group>"; };
+		FA72740F27FA5E4000BC81E6 /* ConstantRegExp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantRegExp.swift; sourceTree = "<group>"; };
+		FA72741327FAA15600BC81E6 /* CreateAccountDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountDataModel.swift; sourceTree = "<group>"; };
+		FA72741527FAA18E00BC81E6 /* CreateAccountDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountDataManager.swift; sourceTree = "<group>"; };
+		FA9F2D2327F8ACF3008073A7 /* CreateNewAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewAccountViewModel.swift; sourceTree = "<group>"; };
 		FAA4979B27E66094007FCC32 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		FAA4979E27E6BAFC007FCC32 /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
 		FAA4979F27E6BAFC007FCC32 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
@@ -121,16 +192,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E71F303327F0249A00E6E9DF /* Alamofire in Frameworks */,
+				E754E2AC27F411A500CBFC47 /* FirebaseAuthCombine-Community in Frameworks */,
+				E754E2AE27F411A500CBFC47 /* FirebaseDatabase in Frameworks */,
+				E754E2AA27F411A500CBFC47 /* FirebaseAuth in Frameworks */,
+				E754E2B027F411A500CBFC47 /* FirebaseRemoteConfig in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		53864A1B27FD4DB500F6FE7D /* SendMoneyModels */ = {
+			isa = PBXGroup;
+			children = (
+				53864A1C27FD4DCB00F6FE7D /* ContactModel.swift */,
+			);
+			path = SendMoneyModels;
+			sourceTree = "<group>";
+		};
 		C5B7DE7227EBE517004AE6C7 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
+				E754E2B527F41C0200CBFC47 /* HomeModels */,
 				E75D78C927E45B7800F95DDD /* HomeViewController.swift */,
+				E754E2B327F4170600CBFC47 /* HomeViewModel.swift */,
+				5336769A27F8418A00A0E0A5 /* ContenidoTableViewCell.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -146,9 +233,30 @@
 		C5B7DE7927ECEA92004AE6C7 /* SendMoneyView */ = {
 			isa = PBXGroup;
 			children = (
+				53864A1B27FD4DB500F6FE7D /* SendMoneyModels */,
 				C5B7DE7A27ECEAB6004AE6C7 /* SendMoneyViewController.swift */,
+				53864A1927FD4D4E00F6FE7D /* SendMoneyViewModel.swift */,
 			);
 			path = SendMoneyView;
+			sourceTree = "<group>";
+		};
+		C929EEED27FB88BB00596736 /* DepositView */ = {
+			isa = PBXGroup;
+			children = (
+				C929EEF227FC060300596736 /* DepositModels */,
+				C929EEEE27FB891600596736 /* DepositViewController.swift */,
+				C929EEF027FBF7A800596736 /* DepositViewModel.swift */,
+			);
+			path = DepositView;
+			sourceTree = "<group>";
+		};
+		C929EEF227FC060300596736 /* DepositModels */ = {
+			isa = PBXGroup;
+			children = (
+				C929EEF527FC096F00596736 /* DepositedDataModel.swift */,
+				C929EEF327FC065300596736 /* DepositDataManager.swift */,
+			);
+			path = DepositModels;
 			sourceTree = "<group>";
 		};
 		C98304BB27EE0EF500EFD48A /* HomeCard */ = {
@@ -179,7 +287,12 @@
 		E70B647027ED993600F94109 /* AddRecipient */ = {
 			isa = PBXGroup;
 			children = (
+				E73FFB5027F7D859004E46CB /* AddRecipientModels */,
+				E73FFB5527F7DBAD004E46CB /* AddRecipientViewModel */,
 				E70B647227ED996700F94109 /* AddNewRecipientViewController.swift */,
+				E73FFB5827FBD314004E46CB /* ListUsersViewController.swift */,
+				53864A1E27FD50CC00F6FE7D /* SendMoneyTableViewCell.swift */,
+				E73FFB5C27FBFE2C004E46CB /* AddRecipientTableViewCell.swift */,
 			);
 			path = AddRecipient;
 			sourceTree = "<group>";
@@ -203,9 +316,89 @@
 		E70B649927EF8F1300F94109 /* ShipView */ = {
 			isa = PBXGroup;
 			children = (
+				E73FFB6427FD0537004E46CB /* ShipModels */,
 				C5B7DE7D27ECF790004AE6C7 /* ShipViewController.swift */,
+				E73FFB6527FD0558004E46CB /* ShipViewModel.swift */,
 			);
 			path = ShipView;
+			sourceTree = "<group>";
+		};
+		E70B649E27EFC7E100F94109 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E70B649F27EFC7F300F94109 /* UserLoginModels */ = {
+			isa = PBXGroup;
+			children = (
+				E70B64A827EFCE2B00F94109 /* LoggedInModels */,
+			);
+			path = UserLoginModels;
+			sourceTree = "<group>";
+		};
+		E70B64A827EFCE2B00F94109 /* LoggedInModels */ = {
+			isa = PBXGroup;
+			children = (
+				E70B64A027EFC83400F94109 /* LoggedInDataModel.swift */,
+				E70B64AA27EFF6D200F94109 /* LoginInDataManager.swift */,
+			);
+			path = LoggedInModels;
+			sourceTree = "<group>";
+		};
+		E73FFB5027F7D859004E46CB /* AddRecipientModels */ = {
+			isa = PBXGroup;
+			children = (
+				E73FFB5127F7D884004E46CB /* AddRecipientData.swift */,
+				E73FFB5A27FBFB96004E46CB /* AddRecipientModel.swift */,
+			);
+			path = AddRecipientModels;
+			sourceTree = "<group>";
+		};
+		E73FFB5527F7DBAD004E46CB /* AddRecipientViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E73FFB4E27F7D84A004E46CB /* AddRecipientDataManager.swift */,
+				E73FFB5327F7DB16004E46CB /* AddRecipientViewModel.swift */,
+			);
+			path = AddRecipientViewModel;
+			sourceTree = "<group>";
+		};
+		E73FFB5E27FCCA7C004E46CB /* SuccessFulScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E73FFB5F27FCCA9C004E46CB /* SuccessFullScreenViewController.swift */,
+			);
+			path = SuccessFulScreen;
+			sourceTree = "<group>";
+		};
+		E73FFB6127FCD829004E46CB /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				E73FFB6227FCD845004E46CB /* ProfileViewController.swift */,
+			);
+			path = ProfileView;
+			sourceTree = "<group>";
+		};
+		E73FFB6427FD0537004E46CB /* ShipModels */ = {
+			isa = PBXGroup;
+			children = (
+				E73FFB6B27FD05A2004E46CB /* ShipDataModel.swift */,
+				E73FFB6927FD058F004E46CB /* ShipData.swift */,
+				E73FFB6727FD056E004E46CB /* ShipDataManager.swift */,
+			);
+			path = ShipModels;
+			sourceTree = "<group>";
+		};
+		E754E2B527F41C0200CBFC47 /* HomeModels */ = {
+			isa = PBXGroup;
+			children = (
+				E73FFB5627F8FE6B004E46CB /* HomeUserModel.swift */,
+				E754E2B827F5B22D00CBFC47 /* HomeUserData.swift */,
+				E754E2B627F41C9300CBFC47 /* HomeDataManager.swift */,
+			);
+			path = HomeModels;
 			sourceTree = "<group>";
 		};
 		E75D785027E2F7E300F95DDD = {
@@ -235,6 +428,7 @@
 				E75D786527E2F7E400F95DDD /* Assets.xcassets */,
 				E75D786727E2F7E400F95DDD /* LaunchScreen.storyboard */,
 				E75D786A27E2F7E400F95DDD /* Info.plist */,
+				E754E2B127F4145D00CBFC47 /* GoogleService-Info.plist */,
 			);
 			path = BankKodemia;
 			sourceTree = "<group>";
@@ -242,7 +436,9 @@
 		E75D787627E2F99C00F95DDD /* LoginView */ = {
 			isa = PBXGroup;
 			children = (
+				E70B649F27EFC7F300F94109 /* UserLoginModels */,
 				E75D78A527E3193900F95DDD /* LoginViewController.swift */,
+				E70B649A27EF919100F94109 /* LoginViewModel.swift */,
 			);
 			path = LoginView;
 			sourceTree = "<group>";
@@ -282,6 +478,7 @@
 		E75D78C727E45B4100F95DDD /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
+				C929EEED27FB88BB00596736 /* DepositView */,
 				E70B649927EF8F1300F94109 /* ShipView */,
 				C98304BB27EE0EF500EFD48A /* HomeCard */,
 				E70B646C27ED974100F94109 /* HomeServices */,
@@ -295,10 +492,12 @@
 		E75D78CB27E45C0600F95DDD /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				E73FFB6127FCD829004E46CB /* ProfileView */,
+				E73FFB5E27FCCA7C004E46CB /* SuccessFulScreen */,
 				E70B647B27EDB2F600F94109 /* WelcomeView */,
 				E70B646F27ED992900F94109 /* AddNewRecipient */,
 				FAF8164227EC08810098989A /* LoadingView */,
-				FAA497CD27E960E5007FCC32 /* CreateNewAccountViews */,
+				FAA497CD27E960E5007FCC32 /* CreateAccountView */,
 				E75D787627E2F99C00F95DDD /* LoginView */,
 				E75D78C727E45B4100F95DDD /* HomeView */,
 			);
@@ -317,17 +516,59 @@
 		E75D78CD27E45D2500F95DDD /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E70B649E27EFC7E100F94109 /* Models */,
 				E75D78CE27E45D3E00F95DDD /* Network.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
 		};
-		FAA4979A27E66058007FCC32 /* CreateAccountView */ = {
+		FA72740B27FA2CD700BC81E6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FA9F2D2327F8ACF3008073A7 /* CreateNewAccountViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FA72740C27FA2CF500BC81E6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FAF8164527EC22F30098989A /* Success */,
+				FAF8163E27EAC5C70098989A /* Upload */,
+				FAF8163B27EA7A010098989A /* IdSelect */,
+				FAF8163827EA72CB0098989A /* IdentityVerification */,
+				FAF8163427EA5E540098989A /* PhoneAccount */,
+				FAA92A9827E96C2C00083E10 /* DetailAccount */,
+				FAA92A9527E96BA700083E10 /* CreatePassword */,
+				FAA4979A27E66058007FCC32 /* CreateAccount */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FA72741127FA7AA000BC81E6 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				FA72740D27FA2DC500BC81E6 /* ConstantsAlerts.swift */,
+				FA72740F27FA5E4000BC81E6 /* ConstantRegExp.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		FA72741227FAA04E00BC81E6 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				FA72741327FAA15600BC81E6 /* CreateAccountDataModel.swift */,
+				FA72741527FAA18E00BC81E6 /* CreateAccountDataManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		FAA4979A27E66058007FCC32 /* CreateAccount */ = {
 			isa = PBXGroup;
 			children = (
 				FAA4979B27E66094007FCC32 /* CreateAccountViewController.swift */,
 			);
-			path = CreateAccountView;
+			path = CreateAccount;
 			sourceTree = "<group>";
 		};
 		FAA4979D27E6BADB007FCC32 /* fonts */ = {
@@ -355,67 +596,63 @@
 			path = fonts;
 			sourceTree = "<group>";
 		};
-		FAA497CD27E960E5007FCC32 /* CreateNewAccountViews */ = {
+		FAA497CD27E960E5007FCC32 /* CreateAccountView */ = {
 			isa = PBXGroup;
 			children = (
-				FAF8164527EC22F30098989A /* SuccessView */,
-				FAF8163E27EAC5C70098989A /* UploadView */,
-				FAF8163B27EA7A010098989A /* IdSelectView */,
-				FAF8163827EA72CB0098989A /* IdentityVerificationView */,
-				FAF8163427EA5E540098989A /* PhoneAccountView */,
-				FAA92A9827E96C2C00083E10 /* DetailAccountView */,
-				FAA92A9527E96BA700083E10 /* CreatePasswordView */,
-				FAA4979A27E66058007FCC32 /* CreateAccountView */,
+				FA72741227FAA04E00BC81E6 /* Networking */,
+				FA72741127FA7AA000BC81E6 /* Constants */,
+				FA72740C27FA2CF500BC81E6 /* ViewControllers */,
+				FA72740B27FA2CD700BC81E6 /* ViewModel */,
 			);
-			path = CreateNewAccountViews;
+			path = CreateAccountView;
 			sourceTree = "<group>";
 		};
-		FAA92A9527E96BA700083E10 /* CreatePasswordView */ = {
+		FAA92A9527E96BA700083E10 /* CreatePassword */ = {
 			isa = PBXGroup;
 			children = (
 				FAA92A9627E96BD000083E10 /* CreatePaswordViewController.swift */,
 			);
-			path = CreatePasswordView;
+			path = CreatePassword;
 			sourceTree = "<group>";
 		};
-		FAA92A9827E96C2C00083E10 /* DetailAccountView */ = {
+		FAA92A9827E96C2C00083E10 /* DetailAccount */ = {
 			isa = PBXGroup;
 			children = (
 				FAA92A9927E96C7700083E10 /* DetailAccountViewController.swift */,
 			);
-			path = DetailAccountView;
+			path = DetailAccount;
 			sourceTree = "<group>";
 		};
-		FAF8163427EA5E540098989A /* PhoneAccountView */ = {
+		FAF8163427EA5E540098989A /* PhoneAccount */ = {
 			isa = PBXGroup;
 			children = (
 				FAF8163527EA5E710098989A /* PhoneAccountViewController.swift */,
 			);
-			path = PhoneAccountView;
+			path = PhoneAccount;
 			sourceTree = "<group>";
 		};
-		FAF8163827EA72CB0098989A /* IdentityVerificationView */ = {
+		FAF8163827EA72CB0098989A /* IdentityVerification */ = {
 			isa = PBXGroup;
 			children = (
 				FAF8163927EA73220098989A /* IdentityVerificationViewController.swift */,
 			);
-			path = IdentityVerificationView;
+			path = IdentityVerification;
 			sourceTree = "<group>";
 		};
-		FAF8163B27EA7A010098989A /* IdSelectView */ = {
+		FAF8163B27EA7A010098989A /* IdSelect */ = {
 			isa = PBXGroup;
 			children = (
 				FAF8163C27EA7A610098989A /* IdSelectViewController.swift */,
 			);
-			path = IdSelectView;
+			path = IdSelect;
 			sourceTree = "<group>";
 		};
-		FAF8163E27EAC5C70098989A /* UploadView */ = {
+		FAF8163E27EAC5C70098989A /* Upload */ = {
 			isa = PBXGroup;
 			children = (
 				FAF8163F27EAC5EA0098989A /* UploadViewController.swift */,
 			);
-			path = UploadView;
+			path = Upload;
 			sourceTree = "<group>";
 		};
 		FAF8164227EC08810098989A /* LoadingView */ = {
@@ -426,12 +663,12 @@
 			path = LoadingView;
 			sourceTree = "<group>";
 		};
-		FAF8164527EC22F30098989A /* SuccessView */ = {
+		FAF8164527EC22F30098989A /* Success */ = {
 			isa = PBXGroup;
 			children = (
 				FAF8164627EC230E0098989A /* SuccessViewController.swift */,
 			);
-			path = SuccessView;
+			path = Success;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -450,6 +687,13 @@
 			dependencies = (
 			);
 			name = BankKodemia;
+			packageProductDependencies = (
+				E71F303227F0249A00E6E9DF /* Alamofire */,
+				E754E2A927F411A500CBFC47 /* FirebaseAuth */,
+				E754E2AB27F411A500CBFC47 /* FirebaseAuthCombine-Community */,
+				E754E2AD27F411A500CBFC47 /* FirebaseDatabase */,
+				E754E2AF27F411A500CBFC47 /* FirebaseRemoteConfig */,
+			);
 			productName = BankKodemia;
 			productReference = E75D785927E2F7E300F95DDD /* BankKodemia.app */;
 			productType = "com.apple.product-type.application";
@@ -478,6 +722,10 @@
 				Base,
 			);
 			mainGroup = E75D785027E2F7E300F95DDD;
+			packageReferences = (
+				E71F303127F0249900E6E9DF /* XCRemoteSwiftPackageReference "Alamofire" */,
+				E754E2A827F411A500CBFC47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = E75D785A27E2F7E300F95DDD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -512,6 +760,7 @@
 				E75D786627E2F7E400F95DDD /* Assets.xcassets in Resources */,
 				FAA497C027E6BAFE007FCC32 /* Poppins-ThinItalic.ttf in Resources */,
 				FAA497B127E6BAFE007FCC32 /* Poppins-Light.ttf in Resources */,
+				E754E2B227F4145D00CBFC47 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,36 +772,68 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAA4979C27E66094007FCC32 /* CreateAccountViewController.swift in Sources */,
+				FA9F2D2427F8ACF4008073A7 /* CreateNewAccountViewModel.swift in Sources */,
+				53864A1D27FD4DCB00F6FE7D /* ContactModel.swift in Sources */,
+				E70B64A127EFC83400F94109 /* LoggedInDataModel.swift in Sources */,
 				FAF8164027EAC5EA0098989A /* UploadViewController.swift in Sources */,
 				E75D78CF27E45D3E00F95DDD /* Network.swift in Sources */,
+				C929EEF427FC065300596736 /* DepositDataManager.swift in Sources */,
 				E75D789227E3099400F95DDD /* constraints.swift in Sources */,
+				E73FFB6827FD056E004E46CB /* ShipDataManager.swift in Sources */,
+				5336769B27F8418A00A0E0A5 /* ContenidoTableViewCell.swift in Sources */,
+				C929EEEF27FB891600596736 /* DepositViewController.swift in Sources */,
 				E75D787927E2FA2D00F95DDD /* AppDelegate.swift in Sources */,
 				E75D789927E309D700F95DDD /* UILabel++.swift in Sources */,
+				C929EEF127FBF7A900596736 /* DepositViewModel.swift in Sources */,
 				FAF8163A27EA73220098989A /* IdentityVerificationViewController.swift in Sources */,
 				E75D789D27E309FA00F95DDD /* ConstantsColor.swift in Sources */,
 				C5B7DE7827EBE587004AE6C7 /* TransactionDetailsViewController.swift in Sources */,
+				E73FFB6A27FD058F004E46CB /* ShipData.swift in Sources */,
+				E754E2B727F41C9300CBFC47 /* HomeDataManager.swift in Sources */,
+				E73FFB5227F7D884004E46CB /* AddRecipientData.swift in Sources */,
 				FAF8163D27EA7A610098989A /* IdSelectViewController.swift in Sources */,
 				E75D789E27E309FA00F95DDD /* ConstansText.swift in Sources */,
+				E73FFB6C27FD05A2004E46CB /* ShipDataModel.swift in Sources */,
+				E73FFB6627FD0558004E46CB /* ShipViewModel.swift in Sources */,
 				E75D789727E309D700F95DDD /* TextField++.swift in Sources */,
 				E75D787A27E2FA2D00F95DDD /* SceneDelegate.swift in Sources */,
 				C59A81F927E6FD4B0038C662 /* UIImageView++.swift in Sources */,
 				E75D78A427E3167400F95DDD /* UIView++.swift in Sources */,
 				E75D789827E309D700F95DDD /* UIButton++.swift in Sources */,
+				53864A1F27FD50CC00F6FE7D /* SendMoneyTableViewCell.swift in Sources */,
+				E73FFB5927FBD314004E46CB /* ListUsersViewController.swift in Sources */,
 				FAF8163627EA5E710098989A /* PhoneAccountViewController.swift in Sources */,
+				E754E2B427F4170600CBFC47 /* HomeViewModel.swift in Sources */,
+				FA72741627FAA18E00BC81E6 /* CreateAccountDataManager.swift in Sources */,
+				53864A1A27FD4D4E00F6FE7D /* SendMoneyViewModel.swift in Sources */,
+				E73FFB5D27FBFE2C004E46CB /* AddRecipientTableViewCell.swift in Sources */,
+				C929EEF627FC096F00596736 /* DepositedDataModel.swift in Sources */,
 				C98304BD27EE0F0500EFD48A /* HomeCardViewController.swift in Sources */,
+				FA72740E27FA2DC500BC81E6 /* ConstantsAlerts.swift in Sources */,
 				E75D78C627E45B0A00F95DDD /* ConstantsUIKit.swift in Sources */,
 				C5B7DE7B27ECEAB6004AE6C7 /* SendMoneyViewController.swift in Sources */,
+				E70B649B27EF919100F94109 /* LoginViewModel.swift in Sources */,
 				FAA92A9727E96BD000083E10 /* CreatePaswordViewController.swift in Sources */,
 				E70B647627ED999100F94109 /* ConfirmNewRecipientViewController.swift in Sources */,
 				E70B647D27EDB32500F94109 /* WelcomeViewController.swift in Sources */,
 				E75D78CA27E45B7800F95DDD /* HomeViewController.swift in Sources */,
+				FA72741027FA5E4000BC81E6 /* ConstantRegExp.swift in Sources */,
+				FA72741427FAA15600BC81E6 /* CreateAccountDataModel.swift in Sources */,
+				E754E2B927F5B22D00CBFC47 /* HomeUserData.swift in Sources */,
+				E70B64AB27EFF6D300F94109 /* LoginInDataManager.swift in Sources */,
 				FAF8164427EC08980098989A /* LoadingViewController.swift in Sources */,
+				E73FFB5727F8FE6B004E46CB /* HomeUserModel.swift in Sources */,
 				C5B7DE7E27ECF790004AE6C7 /* ShipViewController.swift in Sources */,
+				E73FFB6327FCD845004E46CB /* ProfileViewController.swift in Sources */,
+				E73FFB6027FCCA9C004E46CB /* SuccessFullScreenViewController.swift in Sources */,
 				E70B646E27ED976300F94109 /* HomeServicesViewController.swift in Sources */,
 				FAA92A9A27E96C7700083E10 /* DetailAccountViewController.swift in Sources */,
+				E73FFB5B27FBFB96004E46CB /* AddRecipientModel.swift in Sources */,
 				FAF8164727EC230E0098989A /* SuccessViewController.swift in Sources */,
 				E75D78A627E3193900F95DDD /* LoginViewController.swift in Sources */,
 				E70B647327ED996700F94109 /* AddNewRecipientViewController.swift in Sources */,
+				E73FFB5427F7DB16004E46CB /* AddRecipientViewModel.swift in Sources */,
+				E73FFB4F27F7D84A004E46CB /* AddRecipientDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -762,6 +1043,53 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E71F303127F0249900E6E9DF /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		E754E2A827F411A500CBFC47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E71F303227F0249A00E6E9DF /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E71F303127F0249900E6E9DF /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		E754E2A927F411A500CBFC47 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E754E2A827F411A500CBFC47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		E754E2AB27F411A500CBFC47 /* FirebaseAuthCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E754E2A827F411A500CBFC47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAuthCombine-Community";
+		};
+		E754E2AD27F411A500CBFC47 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E754E2A827F411A500CBFC47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		E754E2AF27F411A500CBFC47 /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E754E2A827F411A500CBFC47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E75D785127E2F7E300F95DDD /* Project object */;
 }

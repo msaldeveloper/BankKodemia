@@ -49,7 +49,7 @@ struct TextLocals{
         
     // MARK: home and tab bar screens
     
-    static let home_available_cash_top_message: String = "DINERO DESPONIBLE"
+    static let home_available_cash_top_message: String = "DINERO DISPONIBLE"
     static let home_transaction_detail: String = "DETALLE DE TRANSACCIÓN"
     static let home_send_button: String = "Enviar"
     static let home_receive_button: String = "Recibir"
@@ -112,6 +112,7 @@ struct Text{
         }
         
         struct Detail {
+            static let title: String = "Ingresa tus datos"
             static let TopMessage: String = "Escríbelos tal como aparecen en tu identificación oficial sin abreviaturas"
             static let NameMessage: String = "Nombre(s)"
             static let LastNameMessage: String = "Apellido(s)"
@@ -120,13 +121,15 @@ struct Text{
         }
         
         struct PhoneVerification {
+            static let title: String = "Escribe tu teléfono"
             static let TopMessage: String = "ESCRIBE TU TELÉFONO"
             static let ButtonBoldMessage: String = "Lo usarás para iniciar sesión"
             static let LabelNumberMessage: String = "Tu número de celular"
-            static let BottonMessage: String = "para protejer tu cuenta, te enviaremos un código vía SMS"
+            static let BottonMessage: String = "Para proteger tu cuenta, te enviaremos un código vía SMS"
         }
         
         struct IdentityVerification {
+            static let title: String = "Identidad"
             static let TopMessage: String = "Ahora, vamos a verificar tu identidad para proteger tu cuenta."
             static let BottonMessage: String = "Deberás subir una fotografía de tu INE o pasaporte vigente y tomarte una selfie. Si eres extranjero necesitarás una fotografía de tu documento migratorio (FM3)"
         }
@@ -146,9 +149,10 @@ struct Text{
         }
         
         struct CreatePassword {
+            static let title: String = "Contraseña"
             static let TopMessage: String = "Crea una contraseña segura"
             static let MediumMessage: String = "La usarás para entrar a la app y confirmar tus transacciones."
-            static let BottomMessage: String = "Usa al menos 6 caracteres alfanuméricos, no consecutivos ni repetidos."
+            static let BottomMessage: String = "La contraseña debe de tener una extención de 8 digitos, una mayuscula, un numero y un signo."
             static let CreateLabel: String = "Contraseña"
             static let ConfirmLabel: String = "Confirma tu contraseña"
             static let ButtonCreateMessage: String = "Crear Contraseña"
@@ -173,6 +177,8 @@ struct Text{
         static let PageTitle:String = "AGREGAR CONTACTO"
         static let ClabeLabel: String = "CLABE"
         static let CardLabel: String = "TARJETA"
+        static let ContactLabel:String = "CONTACTO"
+        static let ListUsers: String = "Lista de usuarios"
         static let DigitsLabel: String = "18 dígitos"
         static let CardNumberLabel: String = "No. de tarjeta"
         static let InstitutionLabel: String = "Institución"
@@ -181,8 +187,19 @@ struct Text{
         static let AddRecipientButton: String = "Agregar Contacto"
         static let BackToInitButton: String = "Volver a Inicio"
         static let ImageBottomLabel: String = "Tu contacto fue agregado con éxito"
+        static let ImageBottomLabelSuccess: String = "Tu transacción ha sido finalizada"
         
-        
+    }
+    struct Routes {
+        static let urlBase: String = "https://bankodemia.kodemia.mx"
+        static let getUserFullProfile = "/users/me/profile"
+        static let listUsers = "/users"
+        static let transactions = "/transactions"
+    }
+    struct Profile {
+        static let titleProfile: String = "PERFIL"
+        static let idProfile: String = "ID Usuario"
+        static let emailProfile: String = "Correo Usuario"
     }
 }
 
