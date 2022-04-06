@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import Combine
 
 class ShipViewController: UIViewController{
-    
+    var alerta = ""
     let width = ConstantsUIKit.width
     let height = ConstantsUIKit.height
     lazy var logo : UIImageView = UIImageView()
@@ -30,6 +31,8 @@ class ShipViewController: UIViewController{
     lazy var conceptTextField : UITextView = UITextView()
     
     lazy var makeTransferButton : UIButton = UIButton()
+    var shipViewModel = ShipViewModel()
+    private var cancellables: [AnyCancellable] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +40,7 @@ class ShipViewController: UIViewController{
         initUI()
         quantityTextField.delegate = self
         conceptTextField.delegate = self
+        validationBind()
     }
     
     func initUI(){
@@ -159,10 +163,37 @@ class ShipViewController: UIViewController{
         ])
         
         makeTransferButton.addLabelWhite(button: makeTransferButton, text: TextLocals.send_cash_transfer_button)
+        makeTransferButton.addTarget(self, action: #selector(shipButton), for: .touchUpInside)
         
         
     }
-    
+    fileprivate func validationBind(){
+        self.shipViewModel
+            .validationState
+            .sink{ newAlertText in
+               print("esperando acceso ->",newAlertText)
+                if newAlertText == "success"{
+                    self.successfulSreen()
+                }else {
+                    print("new alert -->>",newAlertText)
+                    self.updateAlert(newAlertText)//self.sesionActiva()
+                }
+            }
+            .store(in: &cancellables)
+    }
+    func successfulSreen(){
+        let successFulScreen = SuccessFullScreenViewController()
+        successFulScreen.modalPresentationStyle = .fullScreen
+        present(successFulScreen,animated: true,completion:{print("register button press validated")} )
+    }
+    func updateAlert(_ alertText: String){
+        alerta = alertText
+        print(alertText)
+        let alert = UIAlertController(title: "Error :(", message: alerta, preferredStyle: .alert)
+        let aceptar = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+        alert.addAction(aceptar)
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 // MARK: - OBJC Functions
 extension ShipViewController {
@@ -170,6 +201,10 @@ extension ShipViewController {
         print("back button pressed")
         dismiss(animated: true)
     }
+    @objc func shipButton(){
+        self.shipViewModel.shipDepositValidator(quantityTextField.text ?? "", conceptTextField.text ?? "")
+    }
+    
 }
 // MARK: - Extension UITextView
 extension ShipViewController: UITextViewDelegate{

@@ -14,6 +14,8 @@ class LoginViewModel {
     var homeViewModel = HomeViewModel()
     var addRecipientViewModel = AddRecipientViewModel()
     var depositViewModel = DepositViewModel()
+    var shipViewModel = ShipViewModel()
+    
     private var cancellables: [AnyCancellable] = []
     
     fileprivate var newAlertText: String {
@@ -54,6 +56,7 @@ class LoginViewModel {
         self.homeViewModel.tokenReciver(token: token)
         self.addRecipientViewModel.tokenReciver(token: token)
         self.depositViewModel.tokenReciver(token: token)
+        self.shipViewModel.tokenReciver(token: token)
     }
 
      private func newAlert(_ type : String){
