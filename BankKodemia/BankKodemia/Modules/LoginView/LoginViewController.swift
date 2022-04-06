@@ -10,6 +10,9 @@ import Combine
 
 
 class LoginViewController: UIViewController {
+    var eye : UIImageView = UIImageView()
+    var eyeButton : UIButton = UIButton()
+    
     lazy var logo : UIImageView = UIImageView()
     var arrowButton: UIButton = UIButton()
     var initSessionLabel: UILabel = UILabel()
@@ -99,7 +102,7 @@ class LoginViewController: UIViewController {
         textFieldEmail.addAnchorsAndSize(width: nil, height: nil, left: 10, top: 0, right: 10, bottom: 0)
         
         
-        
+
         textFieldLabelTop = UILabel()
         textFieldLabelTop.text = TextLocals.init_session_top_email_input_message
         textFieldLabelTop.font = ConstantsFont.f14Normal
@@ -115,9 +118,19 @@ class LoginViewController: UIViewController {
         
         textFieldPassword = UITextField()
         textFieldPassword.formatTextField(TextLocals.init_session_password_input_message)
-        textFieldPassword.isSecureTextEntry = true
         fieldPassword.addSubview(textFieldPassword)
         textFieldPassword.addAnchorsAndSize(width: nil, height: nil, left: 10, top: 0, right: 10, bottom: 0)
+        
+        eyeButton = UIButton()
+        eyeButton.addTarget(self, action: #selector(visiblePassword), for: .touchUpInside)
+        fieldPassword.addSubview(eyeButton)
+        eyeButton.addAnchorsAndSize(width: 30, height: 30, left: nil, top: 0, right: 10, bottom: 4, withAnchor: .bottom, relativeToView: textFieldPassword)
+        
+        
+        eye = UIImageView()
+        eye.image = UIImage(named: "eye")
+        eyeButton.addSubview(eye)
+        eye.addAnchorsAndSize(width: 30, height: 30, left: nil, top: 0, right: nil, bottom: 4, withAnchor: .bottom, relativeToView: eyeButton)
         
         
         
@@ -181,6 +194,18 @@ class LoginViewController: UIViewController {
             .store(in: &cancellables)
     }
     
+    @objc func visiblePassword(){
+        textFieldPassword.isSecureTextEntry = false
+        eye.image = UIImage(named: "hidden")
+        eyeButton.addTarget(self, action: #selector(hiddenPassword), for: .touchUpInside)
+    }
+    
+    @objc func hiddenPassword(){
+        textFieldPassword.isSecureTextEntry = true
+        eye.image = UIImage(named: "eye")
+        eyeButton.addTarget(self, action: #selector(visiblePassword), for: .touchUpInside)
+    }
+    
     func updateAlert(_ alertText: String){
         alerta = alertText
         print(alertText)
@@ -218,7 +243,6 @@ class LoginViewController: UIViewController {
         static func setAppearanceTabbar(){
             UITabBar.appearance().backgroundColor = .red
         }
-    
     }
 // MARK: - OBJC Functions
 extension LoginViewController {
