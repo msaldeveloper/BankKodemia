@@ -11,7 +11,6 @@ import Combine
 let urlListUserRequest = Text.Routes.urlBase+Text.Routes.listUsers
 
 class ListUserRequest {
-    //->DataResponsePublisher<ListUsers>
     func getUserData(_ token : HTTPHeaders )->DataResponsePublisher<ListUsers>{
        return AF
             .request(urlListUserRequest, method: .get, headers: token)

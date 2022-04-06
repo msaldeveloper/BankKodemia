@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class SendMoneyViewController: UIViewController {
     
@@ -18,6 +19,11 @@ class SendMoneyViewController: UIViewController {
     lazy var addContact : UIImageView = UIImageView()
     lazy var contactsTable : UITableView = UITableView()
     lazy var buttonAddContact : UIButton = UIButton()
+    
+    let sendMoneyViewModel : SendMoneyViewModel = SendMoneyViewModel()
+    var contactsList : [ContactModel] = []
+    
+    private var cancellables: [AnyCancellable] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +31,14 @@ class SendMoneyViewController: UIViewController {
         view.backgroundColor = .white
         
         initUI()
+        
+        contactsTable.delegate = self
+        contactsTable.dataSource = self
+        
+        newData()
+        reloadData()
+        
+        sendMoneyViewModel.selesctPosts()
     }
     
     func initUI(){
@@ -40,7 +54,6 @@ class SendMoneyViewController: UIViewController {
         titleView.formartTitle(view: view, textTitle: TextLocals.send_cash_top_message)
         
         view.addSubview(buttonAddContact)
-        buttonAddContact.backgroundColor = .red
         let gesture = UITapGestureRecognizer(target: self, action: #selector(addContactAction))
         buttonAddContact.addGestureRecognizer(gesture)
         buttonAddContact.translatesAutoresizingMaskIntoConstraints = false
@@ -62,7 +75,7 @@ class SendMoneyViewController: UIViewController {
             addContact.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/15)
         ])
         
-        contactsTable.backgroundColor = .systemGray5
+        contactsTable.backgroundColor = .white
         view.addSubview(contactsTable)
         contactsTable.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -73,7 +86,54 @@ class SendMoneyViewController: UIViewController {
         ])
         
     }
+    
+    //suscriptor para traer la data del tablaView
+    fileprivate func newData(){
+        self.sendMoneyViewModel
+            .dataTableView
+            .sink{ newList in
+                self.contactsList = newList
+            }
+            .store(in: &cancellables)
+    }
+    
+    //suscriptor para saber cuando recargar la data de la tableView
+    fileprivate func reloadData(){
+        self.sendMoneyViewModel
+            .reloadDataTableView
+            .sink{ _ in
+                self.contactsTable.reloadData()
+            }
+            .store(in: &cancellables)
+    }
+    
 }
+
+//MARK: -EXTENSIONS TABLE VIEW
+
+extension SendMoneyViewController: UITableViewDelegate, UITableViewDataSource{
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return contactsList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell : UITableViewCell = SendMoneyTableViewCell(name: contactsList[indexPath.row].name, id: contactsList[indexPath.row].id)
+        return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return height/10
+    }
+    
+}
+
+
 
 // MARK: - OBJC Functions
 extension SendMoneyViewController {
