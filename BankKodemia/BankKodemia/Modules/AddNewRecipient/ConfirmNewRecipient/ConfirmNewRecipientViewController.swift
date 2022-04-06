@@ -66,7 +66,7 @@ class ConfirmNewRecipientViewController: UIViewController {
 extension ConfirmNewRecipientViewController {
     @objc func backToInitAction(){
         print("backToInit button pressed")
-        let homeViewModel = HomeViewController()
+        let homeViewModel = SendMoneyViewController()
         homeViewModel.modalPresentationStyle = .fullScreen
         present(homeViewModel,animated: true,completion:{print("home back")} )
     }
