@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5336769B27F8418A00A0E0A5 /* ContenidoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5336769A27F8418A00A0E0A5 /* ContenidoTableViewCell.swift */; };
+		53864A1A27FD4D4E00F6FE7D /* SendMoneyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53864A1927FD4D4E00F6FE7D /* SendMoneyViewModel.swift */; };
+		53864A1D27FD4DCB00F6FE7D /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53864A1C27FD4DCB00F6FE7D /* ContactModel.swift */; };
+		53864A1F27FD50CC00F6FE7D /* SendMoneyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53864A1E27FD50CC00F6FE7D /* SendMoneyTableViewCell.swift */; };
 		C59A81F927E6FD4B0038C662 /* UIImageView++.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59A81F827E6FD4B0038C662 /* UIImageView++.swift */; };
 		C5B7DE7827EBE587004AE6C7 /* TransactionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B7DE7727EBE587004AE6C7 /* TransactionDetailsViewController.swift */; };
 		C5B7DE7B27ECEAB6004AE6C7 /* SendMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B7DE7A27ECEAB6004AE6C7 /* SendMoneyViewController.swift */; };
@@ -93,6 +96,9 @@
 
 /* Begin PBXFileReference section */
 		5336769A27F8418A00A0E0A5 /* ContenidoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContenidoTableViewCell.swift; sourceTree = "<group>"; };
+		53864A1927FD4D4E00F6FE7D /* SendMoneyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyViewModel.swift; sourceTree = "<group>"; };
+		53864A1C27FD4DCB00F6FE7D /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
+		53864A1E27FD50CC00F6FE7D /* SendMoneyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyTableViewCell.swift; sourceTree = "<group>"; };
 		C59A81F827E6FD4B0038C662 /* UIImageView++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView++.swift"; sourceTree = "<group>"; };
 		C5B7DE7727EBE587004AE6C7 /* TransactionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsViewController.swift; sourceTree = "<group>"; };
 		C5B7DE7A27ECEAB6004AE6C7 /* SendMoneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyViewController.swift; sourceTree = "<group>"; };
@@ -189,6 +195,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		53864A1B27FD4DB500F6FE7D /* SendMoneyModels */ = {
+			isa = PBXGroup;
+			children = (
+				53864A1C27FD4DCB00F6FE7D /* ContactModel.swift */,
+			);
+			path = SendMoneyModels;
+			sourceTree = "<group>";
+		};
 		C5B7DE7227EBE517004AE6C7 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,7 +225,9 @@
 		C5B7DE7927ECEA92004AE6C7 /* SendMoneyView */ = {
 			isa = PBXGroup;
 			children = (
+				53864A1B27FD4DB500F6FE7D /* SendMoneyModels */,
 				C5B7DE7A27ECEAB6004AE6C7 /* SendMoneyViewController.swift */,
+				53864A1927FD4D4E00F6FE7D /* SendMoneyViewModel.swift */,
 			);
 			path = SendMoneyView;
 			sourceTree = "<group>";
@@ -267,6 +283,7 @@
 				E73FFB5527F7DBAD004E46CB /* AddRecipientViewModel */,
 				E70B647227ED996700F94109 /* AddNewRecipientViewController.swift */,
 				E73FFB5827FBD314004E46CB /* ListUsersViewController.swift */,
+				53864A1E27FD50CC00F6FE7D /* SendMoneyTableViewCell.swift */,
 				E73FFB5C27FBFE2C004E46CB /* AddRecipientTableViewCell.swift */,
 			);
 			path = AddRecipient;
@@ -736,6 +753,7 @@
 			files = (
 				FAA4979C27E66094007FCC32 /* CreateAccountViewController.swift in Sources */,
 				FA9F2D2427F8ACF4008073A7 /* CreateNewAccountViewModel.swift in Sources */,
+				53864A1D27FD4DCB00F6FE7D /* ContactModel.swift in Sources */,
 				E70B64A127EFC83400F94109 /* LoggedInDataModel.swift in Sources */,
 				FAF8164027EAC5EA0098989A /* UploadViewController.swift in Sources */,
 				E75D78CF27E45D3E00F95DDD /* Network.swift in Sources */,
@@ -758,10 +776,12 @@
 				C59A81F927E6FD4B0038C662 /* UIImageView++.swift in Sources */,
 				E75D78A427E3167400F95DDD /* UIView++.swift in Sources */,
 				E75D789827E309D700F95DDD /* UIButton++.swift in Sources */,
+				53864A1F27FD50CC00F6FE7D /* SendMoneyTableViewCell.swift in Sources */,
 				E73FFB5927FBD314004E46CB /* ListUsersViewController.swift in Sources */,
 				FAF8163627EA5E710098989A /* PhoneAccountViewController.swift in Sources */,
 				E754E2B427F4170600CBFC47 /* HomeViewModel.swift in Sources */,
 				FA72741627FAA18E00BC81E6 /* CreateAccountDataManager.swift in Sources */,
+				53864A1A27FD4D4E00F6FE7D /* SendMoneyViewModel.swift in Sources */,
 				E73FFB5D27FBFE2C004E46CB /* AddRecipientTableViewCell.swift in Sources */,
 				C929EEF627FC096F00596736 /* DepositedDataModel.swift in Sources */,
 				C98304BD27EE0F0500EFD48A /* HomeCardViewController.swift in Sources */,
