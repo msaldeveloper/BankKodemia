@@ -70,7 +70,7 @@ class PhoneAccountViewController: UIViewController, UITextViewDelegate {
     
     func returnButton(){
         view.addSubview(arrowButton)
-        arrowButton.backButton(view: view, textDinamic: Text.CreateAccount.Detail.title.uppercased(), widthText: width/4)
+        arrowButton.backButton(view: view, textDinamic: Text.CreateAccount.Detail.title.uppercased(), widthText: width/2)
         arrowButton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
     }
     

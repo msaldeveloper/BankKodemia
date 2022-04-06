@@ -87,7 +87,7 @@ class DetailAccountViewController: UIViewController {
     
     func returnButton(){
         view.addSubview(arrowButton)
-        arrowButton.backButton(view: view, textDinamic: TextLocals.init_session_top_email_input_message.uppercased(), widthText: width/4)
+        arrowButton.backButton(view: view, textDinamic: TextLocals.init_session_top_email_input_message.uppercased(), widthText: width/2)
         arrowButton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
     }
     
