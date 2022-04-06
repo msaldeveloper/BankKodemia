@@ -106,7 +106,11 @@ class ListUsersViewController: UIViewController {
             }
             .store(in: &cancellables)
     }
-
+    func successfulSreen(){
+        let successFulScreen = ConfirmNewRecipientViewController()
+        successFulScreen.modalPresentationStyle = .fullScreen
+        present(successFulScreen,animated: true,completion:{print("register button press validated")} )
+    }
     
 }
 extension ListUsersViewController {
@@ -163,12 +167,13 @@ extension ListUsersViewController: UITableViewDelegate, UITableViewDataSource{
                                        """, preferredStyle: .alert)
         let aceptar = UIAlertAction(title: "Aceptar", style: .default) { _ in
             self.addRecipientViewModel.saveContact(name: nameSelect, id: idSelect)
+            self.successfulSreen()
         }
         let cancelar = UIAlertAction(title: "Cancelar", style: .default, handler: nil)
         alerta.addAction(aceptar)
         alerta.addAction(cancelar)
         present(alerta, animated: true, completion: nil)
-
+        
     }
     
 }

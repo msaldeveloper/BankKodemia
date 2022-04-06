@@ -44,6 +44,11 @@ class ShipViewController: UIViewController{
         quantityTextField.delegate = self
         conceptTextField.delegate = self
         validationBind()
+             let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+            view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     init(name: String, id:String){
@@ -103,6 +108,7 @@ class ShipViewController: UIViewController{
         quantityTextField.placeholder = "0.0"
         quantityTextField.textAlignment = .center
         quantityTextField.font = ConstantsFont.f20SemiBold
+        quantityTextField.keyboardType = .numberPad
         view.addSubview(quantityTextField)
         quantityTextField.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
