@@ -87,7 +87,6 @@ class DepositViewController: UIViewController {
         NSLayoutConstraint.activate([
             quantityTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             quantityTextField.topAnchor.constraint(equalTo: quantityLabel.bottomAnchor, constant: 0),
-            quantityTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 8/9),
             quantityTextField.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 2/30)
         ])
         
