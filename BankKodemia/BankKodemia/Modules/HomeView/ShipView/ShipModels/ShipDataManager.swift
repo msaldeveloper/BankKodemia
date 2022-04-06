@@ -12,13 +12,13 @@ import Combine
 let urlShip = Text.Routes.urlBase + Text.Routes.transactions
 
 struct ShipDeposit: Encodable {
-    let amount: Int
+    let amount: Double
     let concept: String
     let destinationUser: String
     let type: String
 }
 //-> DataResponsePublisher<ShipData>
-func shipAction(_ amount: Int,_ concept: String, _ type: String, _ token : HTTPHeaders, _ destination: String)-> DataResponsePublisher<ShipData>{
+func shipAction(_ amount: Double,_ concept: String, _ type: String, _ token : HTTPHeaders, _ destination: String)-> DataResponsePublisher<ShipData>{
     let deposit = ShipDeposit(amount: amount, concept: concept, destinationUser: destination, type: type)
     let shipPublisher = AF
         .request(urlDeposit,

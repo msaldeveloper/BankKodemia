@@ -37,9 +37,10 @@ class SuccessFullScreenViewController: UIViewController {
         personsImage.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             personsImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            personsImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: (height/20)*2),
+            personsImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: (height/25)*2),
             //personsImage.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1)
-            personsImage.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1)
+            personsImage.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1),
+            personsImage.heightAnchor.constraint(equalTo: view.widthAnchor)
         ])
     }
     func bottomImageLabelComponent(){
