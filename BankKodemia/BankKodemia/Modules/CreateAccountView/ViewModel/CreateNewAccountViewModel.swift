@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import FirebaseAuth
+import FirebaseDatabase
 import Combine
 
 class CreateNewAccountViewModel {
@@ -56,7 +58,6 @@ class CreateNewAccountViewModel {
             } else if type == "regexEmail" {
                 let textRegex: String =  TextAlerts.InvalidEmail
                 newAlertText = textRegex
-                
             }
         }
         
@@ -111,10 +112,9 @@ class CreateNewAccountViewModel {
         if phone == ""{
             newAlertPhone("phone")
         } else {
-            var newPhone = phone
-            newPhone.insert("+", at: phone.startIndex)
-            let phone = newPhone
-            CreateNewAccountViewModel.phoneData = phone
+            let lada = "+52"
+            let newPhone = lada+phone
+            CreateNewAccountViewModel.phoneData = newPhone
         }
     }
         private func newAlertPhone(_ type: String){
@@ -216,8 +216,8 @@ class CreateNewAccountViewModel {
                 print("Codigo de Validacion", result.result)
             switch result.result {
             case .success(_):
+                Auth.auth().createUser(withEmail: CreateNewAccountViewModel.emailData, password: CreateNewAccountViewModel.passwordData, completion: nil)
                 self.newAlert("access")
-
             case .failure(_):
                 self.newAlert("forbiden")
             }
