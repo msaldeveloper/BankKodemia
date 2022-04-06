@@ -70,7 +70,7 @@ class TransactionDetailsViewController: UIViewController {
         view.addSubview(titleView)
         titleView.formartTitle(view: view, textTitle: TextLocals.home_transaction_detail)
         
-        money.text = "$"+String(transaction.amount)
+        money.text = String(transaction.amount).moneyFormart()
         money.textColor = .black
         money.textAlignment = .center
         money.font = ConstantsFont.f20SemiBold

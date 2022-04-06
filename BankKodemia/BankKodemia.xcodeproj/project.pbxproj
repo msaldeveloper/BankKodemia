@@ -11,6 +11,7 @@
 		53864A1A27FD4D4E00F6FE7D /* SendMoneyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53864A1927FD4D4E00F6FE7D /* SendMoneyViewModel.swift */; };
 		53864A1D27FD4DCB00F6FE7D /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53864A1C27FD4DCB00F6FE7D /* ContactModel.swift */; };
 		53864A1F27FD50CC00F6FE7D /* SendMoneyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53864A1E27FD50CC00F6FE7D /* SendMoneyTableViewCell.swift */; };
+		53A10EAD27FDC6760048057C /* String++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A10EAC27FDC6760048057C /* String++.swift */; };
 		C59A81F927E6FD4B0038C662 /* UIImageView++.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59A81F827E6FD4B0038C662 /* UIImageView++.swift */; };
 		C5B7DE7827EBE587004AE6C7 /* TransactionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B7DE7727EBE587004AE6C7 /* TransactionDetailsViewController.swift */; };
 		C5B7DE7B27ECEAB6004AE6C7 /* SendMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B7DE7A27ECEAB6004AE6C7 /* SendMoneyViewController.swift */; };
@@ -103,6 +104,7 @@
 		53864A1927FD4D4E00F6FE7D /* SendMoneyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyViewModel.swift; sourceTree = "<group>"; };
 		53864A1C27FD4DCB00F6FE7D /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
 		53864A1E27FD50CC00F6FE7D /* SendMoneyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyTableViewCell.swift; sourceTree = "<group>"; };
+		53A10EAC27FDC6760048057C /* String++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String++.swift"; sourceTree = "<group>"; };
 		C59A81F827E6FD4B0038C662 /* UIImageView++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView++.swift"; sourceTree = "<group>"; };
 		C5B7DE7727EBE587004AE6C7 /* TransactionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsViewController.swift; sourceTree = "<group>"; };
 		C5B7DE7A27ECEAB6004AE6C7 /* SendMoneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyViewController.swift; sourceTree = "<group>"; };
@@ -461,6 +463,7 @@
 				E75D789627E309D700F95DDD /* UILabel++.swift */,
 				E75D78A327E3167400F95DDD /* UIView++.swift */,
 				C59A81F827E6FD4B0038C662 /* UIImageView++.swift */,
+				53A10EAC27FDC6760048057C /* String++.swift */,
 			);
 			path = ComponentExtensions;
 			sourceTree = "<group>";
@@ -825,6 +828,7 @@
 				E73FFB5727F8FE6B004E46CB /* HomeUserModel.swift in Sources */,
 				C5B7DE7E27ECF790004AE6C7 /* ShipViewController.swift in Sources */,
 				E73FFB6327FCD845004E46CB /* ProfileViewController.swift in Sources */,
+				53A10EAD27FDC6760048057C /* String++.swift in Sources */,
 				E73FFB6027FCCA9C004E46CB /* SuccessFullScreenViewController.swift in Sources */,
 				E70B646E27ED976300F94109 /* HomeServicesViewController.swift in Sources */,
 				FAA92A9A27E96C7700083E10 /* DetailAccountViewController.swift in Sources */,
