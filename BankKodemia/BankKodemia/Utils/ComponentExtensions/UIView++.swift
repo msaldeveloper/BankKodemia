@@ -56,4 +56,25 @@ extension UIView{
 
     }
     
+    func formatUIViewDate(activate : Bool){
+        if activate == true {
+            self.backgroundColor = .clear
+            self.layer.cornerRadius = 6
+            self.layer.borderWidth = 0
+            self.layer.shadowColor = UIColor.black.cgColor
+            self.layer.shadowOpacity = 0.1
+            self.layer.shadowOffset = CGSize(width: 0.5, height: 0.4)
+            
+            
+        }else {
+            self.backgroundColor = .clear
+            self.layer.cornerRadius = 6
+            self.layer.borderWidth = 0
+            self.layer.shadowColor = UIColor.black.cgColor
+            self.layer.shadowOpacity = 0.1
+            self.layer.shadowOffset = CGSize(width: 0.5, height: 0.4)
+        }
+
+    }
+    
 }
